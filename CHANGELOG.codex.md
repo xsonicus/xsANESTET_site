@@ -123,3 +123,19 @@ Moved partner, delivery, certificate and contact content into accessible interna
 - Risk/Rollback: low
 - Issue/Request: Responsive collisions and subtle accessibility defects could pass screenshot-only review; release metadata was inconsistent with the prepared build.
 Extended geometry QA to ten widths and all theme/view combinations; fixed product-label and cart safe zones, active-tab contrast, support accessible naming, branded stencil loading behavior, and animation visibility/reduced-motion controls.
+
+## 2026-08-28T13:25:24.258Z - Version 11.1.1
+
+- Previous version: 11.1.0
+- Bump: explicit
+## 2026-08-28T13:26:27.148Z - Extend the hero promise to always and everywhere
+- ID: 2026-08-28T13-26-27-148Z-extend-the-hero-promise-to-always-and-everywhere
+- Version: 11.1.1
+- Category: fix
+- Branch: main
+- Head: 8e0c486
+- Files: app/storefront.tsx, package.json, package-lock.json, README.md, docs/RELEASE_HISTORY.md, docs/releases/2026.08.28-v11.1.1.md
+- Verification: npm run build; npm run qa:layout: 10 widths x 2 themes x 3 views; desktop and mobile visual screenshots; git diff --check
+- Risk/Rollback: low; rollback to immutable v11.1.0 release
+- Issue/Request: User requested adding «и везде» after «всегда» everywhere.
+Updated the shared hero copy for Clinical Luxe and Chromatic Serum so every site presentation ends the headline with «всегда и везде»; bumped the storefront patch release to 11.1.1 and revalidated all responsive safe zones.
