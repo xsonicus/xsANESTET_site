@@ -48,4 +48,13 @@ Initialized project versioning, added public release documentation, CI quality c
 - Files: app/storefront.tsx, app/globals.css, scripts/qa-layout.mjs, docs/COMMERCE_BACKEND_ROADMAP.md, docs/RELEASE_HISTORY.md, README.md
 - Verification: npm run build; npm run qa:layout: 7 widths x 2 themes x 3 presentations
 - Risk/Rollback: Exact stock is not exposed until a reliable source is connected; the legacy miniShop2 snapshot tracks positive remains for only 3 of 23 products.
-Added a compact sticky selector for the original public storefront, the preserved one-page presentation and the commerce-first full presentation. Documented a single-source commerce backend contract for 1C, CDEK, stock, orders, promotions and administration.
+Added a compact sticky selector for the original public storefront, the preserved one-page presentation and the commerce-first full presentation. Documented a single-source commerce backend contract for 1C, CDEK, stock, orders, promotions and administration.## 2026-08-28T09:21:25.248Z - Restore perfect accessibility score
+- ID: 2026-08-28T09-21-25-248Z-restore-perfect-accessibility-score
+- Version: 1.0.1
+- Category: fix
+- Branch: main
+- Head: ef2b705
+- Files: app/storefront.tsx, README.md, docs/RELEASE_HISTORY.md, docs/releases/2026.08.28-v10.1.md
+- Verification: Production build; Responsive layout QA; Lighthouse accessibility rerun
+- Risk/Rollback: No visual or commerce behavior change.
+Removed an ARIA control reference to an unmounted dynamic panel and aligned the cart accessible name with its visible two-digit count.

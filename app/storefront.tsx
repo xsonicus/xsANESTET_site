@@ -8,7 +8,7 @@ import { formatPrice, products } from "./products";
 type CartLine = { id: number; quantity: number };
 
 const CART_STORAGE_KEY = "anestet-cart-v1";
-const SITE_RELEASE = "2026.08.28-v10";
+const SITE_RELEASE = "2026.08.28-v10.1";
 const GITHUB_RELEASES_URL = "https://github.com/xsonicus/xsANESTET_site/releases";
 const productIds = new Set(products.map((product) => product.id));
 
@@ -328,7 +328,7 @@ export default function Storefront() {
         <button
           className="cart-button"
           type="button"
-          aria-label={`Открыть корзину, ${cartCount} товаров`}
+          aria-label={`Корзина ${String(cartCount).padStart(2, "0")}: открыть, ${cartCount} товаров`}
           aria-haspopup="dialog"
           aria-expanded={cartOpen}
           onClick={() => setCartOpen(true)}
@@ -483,10 +483,10 @@ export default function Storefront() {
           <h2 id="shopping-title">Сразу купить<br />или подобрать</h2>
         </div>
         <div className="shopping-tabs" role="group" aria-label="Режим просмотра магазина">
-          <button id="shopping-tab-catalog" type="button" aria-pressed={shoppingMode === "catalog"} aria-controls="catalog" className={shoppingMode === "catalog" ? "active" : ""} onClick={() => setShoppingMode("catalog")}>
+          <button id="shopping-tab-catalog" type="button" aria-pressed={shoppingMode === "catalog"} className={shoppingMode === "catalog" ? "active" : ""} onClick={() => setShoppingMode("catalog")}>
             <span>01</span><strong>Каталог товаров</strong><small>Для тех, кто уже знает, что нужно</small>
           </button>
-          <button id="shopping-tab-guide" type="button" aria-pressed={shoppingMode === "guide"} aria-controls="shopping-panel-guide" className={shoppingMode === "guide" ? "active" : ""} onClick={() => setShoppingMode("guide")}>
+          <button id="shopping-tab-guide" type="button" aria-pressed={shoppingMode === "guide"} className={shoppingMode === "guide" ? "active" : ""} onClick={() => setShoppingMode("guide")}>
             <span>02</span><strong>Подбор по этапам</strong><small>Понятный маршрут до, во время и после процедуры</small>
           </button>
         </div>
