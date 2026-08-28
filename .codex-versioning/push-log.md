@@ -34,4 +34,10 @@
 - Commit: c6c7cf5
 - Version: 11.1.1
 - Fixes marked: 1
-- Notes: ANESTET v11.1.1 hero-copy patch pushed; awaiting CI before tagging and VPS deployment.
+- Notes: ANESTET v11.1.1 hero-copy patch pushed; awaiting CI before tagging and VPS deployment.## 2026-08-28T13:37:10.060Z - Push
+- Remote: origin
+- Branch: main
+- Commit: e2f9fa8
+- Version: 11.1.2
+- Fixes marked: 1
+- Notes: ANESTET v11.1.2 comparison-switcher fix pushed; awaiting CI before tag and VPS deploy.
