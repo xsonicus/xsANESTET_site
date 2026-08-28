@@ -22,4 +22,10 @@
 - Commit: 8b01947b
 - Version: 1.1.1
 - Fixes marked: 3
-- Notes: Published GitHub releases 2026.08.28-v11 and 2026.08.28-v11.0.1; deployed v11.0.1 atomically to VPS with active Order API.
+- Notes: Published GitHub releases 2026.08.28-v11 and 2026.08.28-v11.0.1; deployed v11.0.1 atomically to VPS with active Order API.## 2026-08-28T12:58:14.688Z - Push
+- Remote: origin
+- Branch: main
+- Commit: eb38c39
+- Version: 11.1.0
+- Fixes marked: 2
+- Notes: ANESTET storefront v11.1.0 implementation commit pushed; awaiting CI before release tag and VPS deployment.
