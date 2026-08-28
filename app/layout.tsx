@@ -9,6 +9,12 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="ru">
+      <head>
+        <link rel="preload" href="/assets/fonts/OpenSans-Regular.woff" as="font" type="font/woff" crossOrigin="anonymous" />
+        <link rel="preload" href="/assets/fonts/OpenSans-SemiBold.woff" as="font" type="font/woff" crossOrigin="anonymous" />
+        <link rel="preload" href="/assets/fonts/OpenSans-Bold.woff" as="font" type="font/woff" crossOrigin="anonymous" />
+        <link rel="preload" href="/assets/fonts/Unbounded-Regular.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+      </head>
       <body>{children}</body>
     </html>
   );

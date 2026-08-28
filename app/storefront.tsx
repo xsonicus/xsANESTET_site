@@ -19,7 +19,7 @@ type OrderForm = {
 };
 
 const CART_STORAGE_KEY = "anestet-cart-v1";
-const SITE_RELEASE = "2026.08.28-v11";
+const SITE_RELEASE = "2026.08.28-v11.0.1";
 const GITHUB_RELEASES_URL = "https://github.com/xsonicus/xsANESTET_site/releases";
 const SUPPORT_EMAIL = "support@anestet.com";
 const SUPPORT_PHONE = "+7 910 177-41-42";

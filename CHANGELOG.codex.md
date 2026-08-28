@@ -86,4 +86,14 @@ Raised the hero product category label to the theme ink color with stronger weig
 - Verification: npm run build; npm run qa:layout; node --check server/order-api.mjs; local Order API accepted a valid order and recomputed totals; Playwright desktop About/social review; Playwright 390x844 cart and checkout review; npm audit --omit=dev (0 vulnerabilities)
 - Risk/Rollback: medium
 - Issue/Request: The redesigned storefront was visually complete but lacked a durable order capture path, full source-brand content, original typography, official social entry points, and a secure integration boundary for external commerce systems.
-Release 2026.08.28-v11 adds the original Open Sans and Unbounded typography, novelty-only Queen Key hero rotation with balanced packshot scale, source-derived About content and official social/support links, complete delivery checkout, and a server-side order API that validates catalog prices and stores order records on the VPS.
+Release 2026.08.28-v11 adds the original Open Sans and Unbounded typography, novelty-only Queen Key hero rotation with balanced packshot scale, source-derived About content and official social/support links, complete delivery checkout, and a server-side order API that validates catalog prices and stores order records on the VPS.## 2026-08-28T10:36:35.070Z - Preload original brand fonts to eliminate hero layout shift
+- ID: 2026-08-28T10-36-35-070Z-preload-original-brand-fonts-to-eliminate-hero-layout-shift
+- Version: 1.1.1
+- Category: performance
+- Branch: main
+- Head: fe61571
+- Files: app/layout.tsx, app/storefront.tsx, README.md, docs/RELEASE_HISTORY.md, docs/releases/2026.08.28-v11.0.1.md
+- Verification: npm run build; npm run qa:layout; git diff --check
+- Risk/Rollback: low
+- Issue/Request: Live Lighthouse attributed 0.186 CLS to late Open Sans and Unbounded swaps moving the mobile hero product scene.
+Preloaded Open Sans and Unbounded font files from the document head so the v11 hero and product scene keep stable geometry during first paint.
