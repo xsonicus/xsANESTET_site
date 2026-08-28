@@ -57,4 +57,13 @@ Added a compact sticky selector for the original public storefront, the preserve
 - Files: app/storefront.tsx, README.md, docs/RELEASE_HISTORY.md, docs/releases/2026.08.28-v10.1.md
 - Verification: Production build; Responsive layout QA; Lighthouse accessibility rerun
 - Risk/Rollback: No visual or commerce behavior change.
-Removed an ARIA control reference to an unmounted dynamic panel and aligned the cart accessible name with its visible two-digit count.
+Removed an ARIA control reference to an unmounted dynamic panel and aligned the cart accessible name with its visible two-digit count.## 2026-08-28T09:33:03.086Z - Center serum halo on tall viewports
+- ID: 2026-08-28T09-33-03-086Z-center-serum-halo-on-tall-viewports
+- Version: 1.0.2
+- Category: fix
+- Branch: main
+- Head: a1b0259
+- Files: app/globals.css, app/storefront.tsx, scripts/qa-layout.mjs, README.md, docs/RELEASE_HISTORY.md, docs/releases/2026.08.28-v10.2.md
+- Verification: Visual screenshot at 1431x1728; Layout QA: 8 screens x 2 themes x 3 presentations
+- Risk/Rollback: Scoped responsive CSS only; mobile layout remains unchanged.
+Anchored the Chromatic Serum halo to the exact center of the product column, increased the gap between the vertical side note and headline on portrait desktop/tablet ratios, and added 1431x1728 to the release QA matrix.

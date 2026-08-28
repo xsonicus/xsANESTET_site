@@ -38,7 +38,7 @@ The first screen uses the original ANESTET wordmark in the header and as a low-c
 
 `https://anestet.139-180-214-133.sslip.io`
 
-The static export is deployed behind nginx with HTTPS. Releases are immutable directories under `/var/www/anestet/releases/`; `/var/www/anestet/current` is switched atomically. The pre-GitHub one-page release remains preserved as `20260828-v9`; the current GitHub-tracked release is `20260828-v10.1`.
+The static export is deployed behind nginx with HTTPS. Releases are immutable directories under `/var/www/anestet/releases/`; `/var/www/anestet/current` is switched atomically. The pre-GitHub one-page release remains preserved as `20260828-v9`; the current GitHub-tracked release is `20260828-v10.2`.
 
 ## Versioning and public change history
 
@@ -60,7 +60,7 @@ Repository: `https://github.com/xsonicus/xsANESTET_site`
 
 - Static Next.js export.
 - Desktop and mobile Playwright screenshots in `output/playwright/`.
-- Automated `npm run qa:layout` gate: 7 widths × 2 themes × 3 site presentations; text clipping, safe-edge violations, heading collisions, product/button overlap and horizontal overflow are release blockers.
+- Automated `npm run qa:layout` gate: 8 target screens × 2 themes × 3 site presentations; text clipping, safe-edge violations, heading collisions, product/button overlap and horizontal overflow are release blockers. The matrix includes the tall 1431 × 1728 viewport.
 - `prefers-reduced-motion` fallback.
 - Keyboard-visible focus, semantic theme selector, semantic filters and cart controls.
 - Transparent WebP hero/featured packshots preserve alpha; the main hero image is 38 KB and is loaded as the high-priority LCP resource.

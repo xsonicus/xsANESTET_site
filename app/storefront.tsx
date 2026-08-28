@@ -8,7 +8,7 @@ import { formatPrice, products } from "./products";
 type CartLine = { id: number; quantity: number };
 
 const CART_STORAGE_KEY = "anestet-cart-v1";
-const SITE_RELEASE = "2026.08.28-v10.1";
+const SITE_RELEASE = "2026.08.28-v10.2";
 const GITHUB_RELEASES_URL = "https://github.com/xsonicus/xsANESTET_site/releases";
 const productIds = new Set(products.map((product) => product.id));
 

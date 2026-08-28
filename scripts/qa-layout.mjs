@@ -54,14 +54,24 @@ const address = server.address();
 const baseUrl = `http://127.0.0.1:${address.port}`;
 const browser = await chromium.launch({ executablePath: await findChrome(), headless: true });
 const page = await browser.newPage();
-const widths = [360, 390, 760, 1024, 1440, 1687, 2048];
+const viewports = [
+  { width: 360, height: 844 },
+  { width: 390, height: 844 },
+  { width: 760, height: 1000 },
+  { width: 1024, height: 1000 },
+  { width: 1431, height: 1728 },
+  { width: 1440, height: 1000 },
+  { width: 1687, height: 1000 },
+  { width: 2048, height: 1000 },
+];
 const themes = ["clinical", "serum"];
 const views = ["full-catalog", "full-guide", "onepage"];
 const failures = [];
 
 try {
-  for (const width of widths) {
-    await page.setViewportSize({ width, height: width < 760 ? 844 : 1000 });
+  for (const viewport of viewports) {
+    const { width, height } = viewport;
+    await page.setViewportSize(viewport);
     await page.emulateMedia({ colorScheme: "light", reducedMotion: "reduce" });
     await page.goto(`${baseUrl}/?qa=${width}`, { waitUntil: "networkidle" });
     await page.addStyleTag({ content: "*,*::before,*::after{animation:none!important;transition:none!important}[data-reveal]{opacity:1!important;transform:none!important}" });
@@ -159,4 +169,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log(`LAYOUT QA PASS: ${widths.length} ширин × ${themes.length} темы × ${views.length} представления, пересечений и касаний краёв нет.`);
+console.log(`LAYOUT QA PASS: ${viewports.length} экранов × ${themes.length} темы × ${views.length} представления, пересечений и касаний краёв нет.`);
