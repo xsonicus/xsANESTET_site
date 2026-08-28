@@ -1,0 +1,54 @@
+.msfavorites {
+	cursor: pointer;
+}
+.msfavorites:hover {
+	text-decoration: none;
+}
+
+.msfavorites i {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.msfavorites-icon-heart {
+	width: 17px;
+	height: 17px;
+	background: url(img/icon-heart.png) 0 0 no-repeat;
+}
+.msfavorites-icon-star {
+	width: 17px;
+	height: 17px;
+	background: url(img/icon-star.png) 0 0 no-repeat;
+}
+
+.msfavorites.load .msfavorites-icon-heart,
+.msfavorites.load .msfavorites-icon-star
+{
+	background-position: 0 bottom;
+}
+.msfavorites.voted .msfavorites-icon-heart,
+.msfavorites.voted .msfavorites-icon-star
+{
+	background-position: 0 center;
+}
+
+.msfavorites .msfavorites-text-add,
+.msfavorites .msfavorites-text-remove,
+.msfavorites.load .msfavorites-text-remove,
+.msfavorites.load.voted .msfavorites-text-add,
+.msfavorites.load .msfavorites-text-load {
+	display: none;
+}
+
+.msfavorites .msfavorites-text-load,
+.msfavorites.load .msfavorites-text-add,
+.msfavorites.load.voted .msfavorites-text-remove {
+	display: inline-block;
+}
+
+.msfavorites-total-all {
+	display: none;
+}
+.msfavorites-total-all.load, .msfavorites-total-all.visible {
+	display: inline-block;
+}

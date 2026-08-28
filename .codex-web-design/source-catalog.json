@@ -1,0 +1,162 @@
+[
+  {
+    "id": "vercel-web-design-guidelines",
+    "name": "Vercel Web Design Guidelines",
+    "repository": "https://github.com/vercel-labs/agent-skills/tree/main/skills/web-design-guidelines",
+    "license": "MIT",
+    "license_risk": "low",
+    "capabilities": [
+      "ui-review",
+      "accessibility",
+      "agent-skill",
+      "fresh-guidelines"
+    ],
+    "use": "Use the fresh-rule review pattern; do not treat a cached checklist as permanent truth."
+  },
+  {
+    "id": "motion",
+    "name": "Motion",
+    "repository": "https://github.com/motiondivision/motion",
+    "license": "MIT",
+    "license_risk": "low",
+    "capabilities": [
+      "animation",
+      "react",
+      "javascript",
+      "vue",
+      "reduced-motion"
+    ],
+    "use": "Use for purposeful React/JavaScript animation, gestures and scroll-linked sequences."
+  },
+  {
+    "id": "lenis",
+    "name": "Lenis",
+    "repository": "https://github.com/darkroomengineering/lenis",
+    "license": "MIT",
+    "license_risk": "low",
+    "capabilities": [
+      "smooth-scroll",
+      "scroll-sync",
+      "webgl"
+    ],
+    "use": "Use only when smooth scrolling materially supports the narrative; keep native and reduced-motion fallbacks."
+  },
+  {
+    "id": "react-three-fiber",
+    "name": "React Three Fiber",
+    "repository": "https://github.com/pmndrs/react-three-fiber",
+    "license": "MIT",
+    "license_risk": "low",
+    "capabilities": [
+      "3d",
+      "webgl",
+      "react",
+      "threejs"
+    ],
+    "use": "Use for inspectable product/place/object 3D scenes when 3D is a core experience, not decoration."
+  },
+  {
+    "id": "radix-primitives",
+    "name": "Radix Primitives",
+    "repository": "https://github.com/radix-ui/primitives",
+    "license": "MIT",
+    "license_risk": "low",
+    "capabilities": [
+      "components",
+      "accessibility",
+      "design-system",
+      "interaction"
+    ],
+    "use": "Use low-level accessible behavior as a foundation, then apply a project-specific visual language."
+  },
+  {
+    "id": "shadcn-ui",
+    "name": "shadcn/ui",
+    "repository": "https://github.com/shadcn-ui/ui",
+    "license": "MIT",
+    "license_risk": "low",
+    "capabilities": [
+      "components",
+      "accessibility",
+      "react",
+      "design-system"
+    ],
+    "use": "Use selected primitives, not an undifferentiated card-grid template or copied default theme."
+  },
+  {
+    "id": "nextjs",
+    "name": "Next.js",
+    "repository": "https://github.com/vercel/next.js",
+    "license": "MIT",
+    "license_risk": "low",
+    "capabilities": [
+      "framework",
+      "images",
+      "fonts",
+      "performance",
+      "react"
+    ],
+    "use": "Use built-in image/font optimization and stable dimensions when Next.js matches the project."
+  },
+  {
+    "id": "lighthouse",
+    "name": "Lighthouse and Lighthouse CI",
+    "repository": "https://github.com/GoogleChrome/lighthouse",
+    "license": "Apache-2.0",
+    "license_risk": "low",
+    "capabilities": [
+      "performance",
+      "accessibility",
+      "seo",
+      "ci",
+      "audit"
+    ],
+    "use": "Use repeatable mobile and desktop audits as release evidence; account for run variance."
+  },
+  {
+    "id": "web-vitals",
+    "name": "web-vitals",
+    "repository": "https://github.com/GoogleChrome/web-vitals",
+    "license": "Apache-2.0",
+    "license_risk": "low",
+    "capabilities": [
+      "lcp",
+      "inp",
+      "cls",
+      "field-metrics",
+      "performance"
+    ],
+    "use": "Measure field or realistic lab evidence for LCP, INP and CLS instead of relying on visual intuition."
+  },
+  {
+    "id": "playwright",
+    "name": "Playwright",
+    "repository": "https://github.com/microsoft/playwright",
+    "license": "Apache-2.0",
+    "license_risk": "low",
+    "capabilities": [
+      "browser-testing",
+      "screenshots",
+      "responsive",
+      "visual-regression"
+    ],
+    "use": "Verify desktop/mobile framing, interaction, console/network health and nonblank 3D canvases."
+  },
+  {
+    "id": "anthropic-frontend-design",
+    "name": "Anthropic Frontend Design",
+    "repository": "https://github.com/anthropics/claude-plugins-official/tree/04be702cfa1e9f4730b559bd32276ab3e8e992d0/plugins/frontend-design",
+    "license": "Apache-2.0",
+    "license_risk": "low",
+    "capabilities": [
+      "distinctive-design",
+      "art-direction",
+      "typography",
+      "interface-copy",
+      "animation",
+      "anti-generic",
+      "reduced-motion"
+    ],
+    "use": "Use the pinned local skill to ground design in the subject, choose one signature element and keep motion purposeful; preserve approved compositions and verify reduced motion."
+  }
+]

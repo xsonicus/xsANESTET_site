@@ -1,0 +1,26 @@
+# Dependencies and generated application output
+node_modules/
+.next/
+out/
+output/
+.playwright-cli/
+tsconfig.tsbuildinfo
+
+# Local operating-system and editor files
+.DS_Store
+*.log
+
+# Credentials and environment-specific configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# The original MODX snapshot is intentionally source-only. Never commit runtime secrets.
+original_site/core/config/
+original_site/core/cache/
+original_site/core/logs/
+original_site/config.core.php.local

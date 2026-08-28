@@ -1,0 +1,128 @@
+{
+  "schema_version": "website-stack.v1",
+  "framework": "Next.js 16 static export with React and CSS",
+  "component_behavior": "Radix primitives or carefully selected shadcn components with a custom visual layer",
+  "animation": "Motion",
+  "smooth_scroll": "native scrolling",
+  "three_d": "not required",
+  "media": "responsive images with stable dimensions, modern formats, meaningful alt text, lazy loading below the fold, and self-hosted/subset fonts where licensing allows",
+  "validation": [
+    "Playwright desktop/mobile screenshots",
+    "console and failed-request checks",
+    "Lighthouse mobile and desktop",
+    "Core Web Vitals evidence",
+    "keyboard and reduced-motion pass"
+  ],
+  "budgets": {
+    "lcp_ms": 2500,
+    "inp_ms": 200,
+    "cls": 0.1,
+    "lighthouse_performance": 90,
+    "lighthouse_accessibility": 95
+  },
+  "sources": [
+    {
+      "id": "motion",
+      "name": "Motion",
+      "repository": "https://github.com/motiondivision/motion",
+      "license": "MIT",
+      "license_risk": "low",
+      "capabilities": [
+        "animation",
+        "react",
+        "javascript",
+        "vue",
+        "reduced-motion"
+      ],
+      "use": "Use for purposeful React/JavaScript animation, gestures and scroll-linked sequences."
+    },
+    {
+      "id": "radix-primitives",
+      "name": "Radix Primitives",
+      "repository": "https://github.com/radix-ui/primitives",
+      "license": "MIT",
+      "license_risk": "low",
+      "capabilities": [
+        "components",
+        "accessibility",
+        "design-system",
+        "interaction"
+      ],
+      "use": "Use low-level accessible behavior as a foundation, then apply a project-specific visual language."
+    },
+    {
+      "id": "shadcn-ui",
+      "name": "shadcn/ui",
+      "repository": "https://github.com/shadcn-ui/ui",
+      "license": "MIT",
+      "license_risk": "low",
+      "capabilities": [
+        "components",
+        "accessibility",
+        "react",
+        "design-system"
+      ],
+      "use": "Use selected primitives, not an undifferentiated card-grid template or copied default theme."
+    },
+    {
+      "id": "nextjs",
+      "name": "Next.js",
+      "repository": "https://github.com/vercel/next.js",
+      "license": "MIT",
+      "license_risk": "low",
+      "capabilities": [
+        "framework",
+        "images",
+        "fonts",
+        "performance",
+        "react"
+      ],
+      "use": "Use built-in image/font optimization and stable dimensions when Next.js matches the project."
+    },
+    {
+      "id": "lighthouse",
+      "name": "Lighthouse and Lighthouse CI",
+      "repository": "https://github.com/GoogleChrome/lighthouse",
+      "license": "Apache-2.0",
+      "license_risk": "low",
+      "capabilities": [
+        "performance",
+        "accessibility",
+        "seo",
+        "ci",
+        "audit"
+      ],
+      "use": "Use repeatable mobile and desktop audits as release evidence; account for run variance."
+    },
+    {
+      "id": "web-vitals",
+      "name": "web-vitals",
+      "repository": "https://github.com/GoogleChrome/web-vitals",
+      "license": "Apache-2.0",
+      "license_risk": "low",
+      "capabilities": [
+        "lcp",
+        "inp",
+        "cls",
+        "field-metrics",
+        "performance"
+      ],
+      "use": "Measure field or realistic lab evidence for LCP, INP and CLS instead of relying on visual intuition."
+    },
+    {
+      "id": "playwright",
+      "name": "Playwright",
+      "repository": "https://github.com/microsoft/playwright",
+      "license": "Apache-2.0",
+      "license_risk": "low",
+      "capabilities": [
+        "browser-testing",
+        "screenshots",
+        "responsive",
+        "visual-regression"
+      ],
+      "use": "Verify desktop/mobile framing, interaction, console/network health and nonblank 3D canvases."
+    }
+  ],
+  "install_policy": "Recommend dependencies only. Never install packages or copy external assets/code without project review and an applicable license check."
+}

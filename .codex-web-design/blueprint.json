@@ -1,0 +1,124 @@
+{
+  "schema_version": "website-blueprint.v1",
+  "brief": {
+    "schema_version": "website-design-brief.v1",
+    "site_type": "product",
+    "identity": {
+      "name": "ANESTET — light and dark storefront",
+      "topic": "Professional skincare ecommerce with Clinical Luxe light theme and Chromatic Serum dark theme",
+      "audience": "Cosmetologists and clients choosing professional pre- and post-procedure skincare",
+      "primary_action": "Choose a product by care stage and add it to cart"
+    },
+    "art_direction": {
+      "direction": "Clinical editorial laboratory: bright precision versus deep navy antipode, unified by real packshots, original wordmarks and one restrained moving brand rail",
+      "signature": "Choose one memorable visual or interaction motif rooted in Professional skincare ecommerce with Clinical Luxe light theme and Chromatic Serum dark theme; repeat it with restraint rather than adding unrelated effects.",
+      "differentiation": "The concept must be explainable in one sentence and must not depend on a copied reference layout.",
+      "anti_template": [
+        "Do not begin from a generic centered headline plus floating card grid.",
+        "Do not copy another site's composition, assets, typography or motion sequence pixel-for-pixel.",
+        "Do not use purple-gradient, beige editorial, dark-slate SaaS or bento-card defaults unless the subject itself demands them."
+      ]
+    },
+    "content_truth": {
+      "supplied_proof": [
+        "23 verified catalog products",
+        "Original ANESTET and Queen Key logos",
+        "Seven published declarations of conformity",
+        "Transparent product packshots"
+      ],
+      "rule": "Testimonials, metrics, awards, scarcity, prices and guarantees must come from supplied evidence or remain clearly marked placeholders."
+    },
+    "assets": {
+      "available": [
+        "ANESTET blue transparent wordmark",
+        "Queen Key transparent logo",
+        "23 transparent product packshots",
+        "Queen Key Recovery Milk hero image",
+        "Generated evidence image with exact hero product"
+      ],
+      "missing_rule": "Use image search, supplied media or generated bitmap assets. The primary visual must show the real subject, product, place, person or learning outcome."
+    },
+    "constraints": [
+      "Exactly two visual themes: Clinical Luxe light and Chromatic Serum dark",
+      "Default theme follows browser color-scheme",
+      "No Quiet Ritual selector",
+      "No catalog-wide scanning line",
+      "Clinical product shadows visible without hover",
+      "Diagonal ANESTET marquee on hero and horizontal marquee in footer",
+      "Responsive from 360px",
+      "Respect prefers-reduced-motion",
+      "Preserve verified product facts and contacts"
+    ],
+    "first_viewport": "Make the brand/product/place/person or literal offer unmistakable, avoid a split-card hero, and keep a visible hint of the next section on mobile and desktop.",
+    "acceptance": [
+      "Clear purpose and audience-specific hierarchy",
+      "Original visual language with a single coherent point of view",
+      "Responsive layout with no overlap or clipped text",
+      "Keyboard, semantic, contrast and reduced-motion accessibility",
+      "Real visual assets and truthful evidence",
+      "Measured performance and browser verification before release"
+    ]
+  },
+  "sections": [
+    {
+      "order": 1,
+      "id": "hero-product-view",
+      "purpose": "Make the brand/product/place/person or literal offer unmistakable, avoid a split-card hero, and keep a visible hint of the next section on mobile and desktop."
+    },
+    {
+      "order": 2,
+      "id": "proof",
+      "purpose": "Advance the product narrative with new evidence or action; do not repeat the previous section."
+    },
+    {
+      "order": 3,
+      "id": "use-cases",
+      "purpose": "Advance the product narrative with new evidence or action; do not repeat the previous section."
+    },
+    {
+      "order": 4,
+      "id": "product-details",
+      "purpose": "Advance the product narrative with new evidence or action; do not repeat the previous section."
+    },
+    {
+      "order": 5,
+      "id": "comparison",
+      "purpose": "Advance the product narrative with new evidence or action; do not repeat the previous section."
+    },
+    {
+      "order": 6,
+      "id": "evidence",
+      "purpose": "Advance the product narrative with new evidence or action; do not repeat the previous section."
+    },
+    {
+      "order": 7,
+      "id": "faq",
+      "purpose": "Advance the product narrative with new evidence or action; do not repeat the previous section."
+    },
+    {
+      "order": 8,
+      "id": "purchase-cta",
+      "purpose": "Advance the product narrative with new evidence or action; do not repeat the previous section."
+    }
+  ],
+  "layout_system": {
+    "grid": "Use stable responsive tracks and constrained content widths; allow deliberate asymmetry only when reading order remains obvious.",
+    "spacing": "Use a named spacing scale and section rhythm; avoid turning full-width sections into floating cards.",
+    "cards": "Cards are for repeated items, modals and framed tools only. No nested cards. Default radius is 8px or less.",
+    "type": "Reserve display scale for the true hero. Use compact headings in panels. Font size must not scale directly with viewport width; letter spacing is zero, never negative.",
+    "controls": "Use familiar icons for tool actions, proper controls for settings, visible focus states, and tooltips for unfamiliar icon-only actions."
+  },
+  "palette_rule": "Use a subject-specific multi-note palette with neutral support and one purposeful accent; reject one-hue and fashionable default palettes that obscure the subject.",
+  "asset_plan": [
+    "Hero asset reveals the real subject rather than acting as dark, blurred atmosphere.",
+    "Each major section earns its media; decorative assets do not compete with evidence.",
+    "Define aspect ratio and dimensions before loading to prevent layout shift.",
+    "Record source, license and generation provenance for every non-owned asset."
+  ],
+  "responsive_plan": [
+    "Verify at least 1440x900, 1024x768, 390x844 and 360x800.",
+    "Keep the primary CTA and next-section hint visible without content overlap.",
+    "Long words, localized text, hover labels and dynamic content must not resize fixed-format controls.",
+    "Recompose, do not merely shrink, expressive desktop layouts on mobile."
+  ]
+}

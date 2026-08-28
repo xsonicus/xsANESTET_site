@@ -1,0 +1,51 @@
+# Codex Changelog
+
+Project: xsANESTET_site
+
+This file is maintained by Project Versioner. It tracks code fixes, verification, risks, and push history for Codex-assisted work.
+## 2026-08-28T09:06:44.112Z - Commerce-first catalog and separate care guide
+- ID: 2026-08-28T09-06-44-112Z-commerce-first-catalog-and-separate-care-guide
+- Version: 1.0.0
+- Category: feature
+- Branch: main
+- Head: (no git head)
+- Files: app/storefront.tsx, app/globals.css, scripts/qa-layout.mjs
+- Verification: npm run build; npm run qa:layout: 7 widths x 2 themes x 3 presentations
+- Risk/Rollback: The previous one-page deployment remains available as VPS release 20260828-v9.
+Made the catalogue the default shopping route, moved the detailed three-stage explanation into a separate thematic view, and preserved the complete one-page presentation as a selectable mode.## 2026-08-28T09:06:44.169Z - Persistent cart and Queen Key hero carousel
+- ID: 2026-08-28T09-06-44-169Z-persistent-cart-and-queen-key-hero-carousel
+- Version: 1.0.0
+- Category: feature
+- Branch: main
+- Head: (no git head)
+- Files: app/storefront.tsx, app/globals.css, app/icons.tsx
+- Verification: Playwright desktop and mobile cart flow; Hero automatic and manual carousel check; npm audit --omit=dev
+- Risk/Rollback: Payment, delivery and warehouse stock are explicitly not fabricated; they require real backend integrations.
+Added a persistent quantity-aware cart with WhatsApp order composition and a 4.6-second hero carousel limited to the two current blue Queen Key products, including direct add-to-cart.## 2026-08-28T09:06:44.219Z - Safe-edge visual QA rule
+- ID: 2026-08-28T09-06-44-219Z-safe-edge-visual-qa-rule
+- Version: 1.0.0
+- Category: fix
+- Branch: main
+- Head: (no git head)
+- Files: app/globals.css, scripts/qa-layout.mjs
+- Verification: npm run qa:layout
+- Risk/Rollback: Low risk; visual-only spacing change.
+Inset every care-step label and introduced a release-blocking automated rule requiring visible card content to stay inside a 12px safe area on all tested responsive states.## 2026-08-28T09:06:44.268Z - GitHub release infrastructure and original MODX snapshot
+- ID: 2026-08-28T09-06-44-268Z-github-release-infrastructure-and-original-modx-snapshot
+- Version: 1.0.0
+- Category: infra
+- Branch: main
+- Head: (no git head)
+- Files: .github/workflows/quality.yml, .gitignore, README.md, docs/RELEASE_HISTORY.md, docs/ORIGINAL_INFRASTRUCTURE.md, original_site, deploy/anestet.139-180-214-133.sslip.io.conf
+- Verification: Original snapshot inventory reviewed; GitHub credentials verified; Secrets excluded by .gitignore and documentation
+- Risk/Rollback: Git history begins truthfully at v10; pre-Git versions are documented as immutable VPS artifacts, not reconstructed commits.
+Initialized project versioning, added public release documentation, CI quality checks, modification label in the footer, deployment configuration, and documented the safe original MODX/miniShop2 snapshot without secrets.## 2026-08-28T09:09:13.237Z - Connected original, one-page and full storefront views
+- ID: 2026-08-28T09-09-13-237Z-connected-original-one-page-and-full-storefront-views
+- Version: 1.0.0
+- Category: feature
+- Branch: main
+- Head: (no git head)
+- Files: app/storefront.tsx, app/globals.css, scripts/qa-layout.mjs, docs/COMMERCE_BACKEND_ROADMAP.md, docs/RELEASE_HISTORY.md, README.md
+- Verification: npm run build; npm run qa:layout: 7 widths x 2 themes x 3 presentations
+- Risk/Rollback: Exact stock is not exposed until a reliable source is connected; the legacy miniShop2 snapshot tracks positive remains for only 3 of 23 products.
+Added a compact sticky selector for the original public storefront, the preserved one-page presentation and the commerce-first full presentation. Documented a single-source commerce backend contract for 1C, CDEK, stock, orders, promotions and administration.

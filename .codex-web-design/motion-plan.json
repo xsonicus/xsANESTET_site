@@ -1,0 +1,61 @@
+{
+  "schema_version": "website-motion-plan.v1",
+  "intensity": "restrained",
+  "beats": [
+    {
+      "id": "entry",
+      "trigger": "initial render",
+      "purpose": "establish hierarchy",
+      "properties": [
+        "opacity",
+        "transform"
+      ],
+      "duration_ms": 360
+    },
+    {
+      "id": "signature",
+      "trigger": "first meaningful scroll or direct interaction",
+      "purpose": "deliver the single memorable interaction tied to the subject",
+      "properties": [
+        "transform",
+        "clip-path",
+        "opacity"
+      ],
+      "duration_ms": 650
+    },
+    {
+      "id": "section-reveal",
+      "trigger": "content enters viewport",
+      "purpose": "support reading order",
+      "properties": [
+        "opacity",
+        "transform"
+      ],
+      "duration_ms": 420
+    },
+    {
+      "id": "microinteraction",
+      "trigger": "hover, focus and press",
+      "purpose": "confirm affordance",
+      "properties": [
+        "transform",
+        "opacity",
+        "color"
+      ],
+      "duration_ms": 180
+    }
+  ],
+  "rules": [
+    "Prefer transform, opacity, filter and clip-path; do not animate layout properties in hot paths.",
+    "Use one coordinated entrance and one signature interaction instead of continuous motion everywhere.",
+    "Scroll animation must preserve native input, focus navigation and content access.",
+    "Pause offscreen work and avoid unbounded decorative frame loops.",
+    "Never gate content, navigation or conversion behind animation completion."
+  ],
+  "reduced_motion": {
+    "required": true,
+    "behavior": "Honor prefers-reduced-motion. Replace translation, scale, parallax and smooth scrolling with immediate state changes or short opacity transitions.",
+    "verification": "Test the actual OS/browser reduced-motion mode in Playwright or a real browser, not only a code branch."
+  },
+  "three_d_verification": []
+}
