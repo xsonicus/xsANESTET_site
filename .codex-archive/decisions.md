@@ -16,3 +16,12 @@ Decision: All legacy-site customer journeys are migrated into the new ANESTET in
 Rationale: Preserves one coherent purchase journey, prevents broken/stylistically inconsistent handoffs, and allows backend integrations to be replaced behind the new UI without changing customer navigation.
 
 Branch: main
+
+
+## 2026-08-28T13:34:46.231Z - Allow legacy site only as an explicit comparison target
+
+Decision: The top site-version switcher contains exactly three choices: Старый сайт, Одностраничный, Полный сайт. Старый сайт opens qkcosmetic.ru in a new tab. No other customer journey in the new storefront may hand off to the legacy store.
+
+Rationale: The user needs a deliberate side-by-side comparison of the historical, one-page and full variants while preserving the autonomous new-site purchase flow.
+
+Branch: main

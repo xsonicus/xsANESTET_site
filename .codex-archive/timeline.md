@@ -34,3 +34,10 @@ File: /Users/xsonicus/CodexRuntime/xsANESTET_site/.codex-archive/prompts/2026-08
 Prompt saved.
 
 File: /Users/xsonicus/CodexRuntime/xsANESTET_site/.codex-archive/prompts/2026-08-28T11-42-01-147Z-повышение-качества-портрета-александра.md
+
+
+## 2026-08-28T13:34:43.397Z - Prompt: Restore three-way site comparison switcher
+
+Replace the top Information shortcut with a direct old-site comparison button so the three controls compare old, one-page and full-site variants.
+
+File: /Users/xsonicus/CodexRuntime/xsANESTET_site/.codex-archive/prompts/2026-08-28T13-34-41-784Z-restore-three-way-site-comparison-switcher.md

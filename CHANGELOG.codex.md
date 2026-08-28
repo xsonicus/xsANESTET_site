@@ -139,3 +139,19 @@ Extended geometry QA to ten widths and all theme/view combinations; fixed produc
 - Risk/Rollback: low; rollback to immutable v11.1.0 release
 - Issue/Request: User requested adding «и везде» after «всегда» everywhere.
 Updated the shared hero copy for Clinical Luxe and Chromatic Serum so every site presentation ends the headline with «всегда и везде»; bumped the storefront patch release to 11.1.1 and revalidated all responsive safe zones.
+
+## 2026-08-28T13:35:23.555Z - Version 11.1.2
+
+- Previous version: 11.1.1
+- Bump: explicit
+## 2026-08-28T13:36:46.879Z - Restore the three-way site comparison switcher
+- ID: 2026-08-28T13-36-46-879Z-restore-the-three-way-site-comparison-switcher
+- Version: 11.1.2
+- Category: fix
+- Branch: main
+- Head: eedfd81
+- Files: app/storefront.tsx, README.md, docs/RELEASE_HISTORY.md, docs/releases/2026.08.28-v11.1.2.md, .codex-archive, .codex-memory, package.json, package-lock.json
+- Verification: qkcosmetic.ru HTTP 200; npm run build; npm run qa:layout: 10 widths x 2 themes x 3 views; Playwright verified exact three labels, target=_blank, onepage/full state and retained company info section; git diff --check
+- Risk/Rollback: low; comparison link is isolated to the top switcher; rollback to immutable v11.1.1
+- Issue/Request: User clarified that the top control exists to compare old, one-page and full-site variants, not to open the internal information section.
+Replaced the top Information shortcut with a verified external Старый сайт link, retained internal one-page and full-site mode controls, and documented the legacy-link boundary so all other storefront journeys remain internal.

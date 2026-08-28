@@ -28,3 +28,8 @@
 ## External integration boundary
 - CDEK live tariff/labels, YooKassa acquiring, 1C/Bitrix stock/order sync, VK feed API and WhatsApp Business API remain fail-closed until verified production endpoints, credentials and SKU rules are supplied.
 - Secrets must remain server-side under `/etc/anestet/*.env`; never copy or expose keys from an unrelated or inaccessible source.
+
+## Superseding navigation rule — v11.1.2
+- The top comparison switcher must contain exactly `Старый сайт / Одностраничный / Полный сайт`.
+- `Старый сайт` is the sole intentional customer-facing link to `https://qkcosmetic.ru/` and opens it in a new tab for comparison.
+- All catalogue, support, company, delivery, certificate and checkout journeys inside the new storefront remain internal; no other legacy-site handoff is allowed.

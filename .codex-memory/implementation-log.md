@@ -13,3 +13,8 @@ Published v11 and v11.0.1, deployed static release and Node Order API, verified 
 ## 2026-08-28T12:34:51.823Z - Prepared autonomous ANESTET v11.1.0
 
 Implemented internal company sections, top social/support controls, all-novelty hero, true-alpha packshots, portrait/social assets and expanded responsive QA. Browser cart checkout and internal content verified; build/layout/audit gates passed. Pending commit, GitHub CI/tag/release and immutable VPS activation.
+
+
+## 2026-08-28T13:36:21.206Z - Three-way comparison switcher restored
+
+Replaced the top Information shortcut with a verified qkcosmetic.ru old-site link, kept the one-page/full internal modes, and retained the internal company information section. Build and 10 × 2 × 3 layout QA pass.

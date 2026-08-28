@@ -26,7 +26,7 @@ The segmented control at the top changes composition, typography, palette and mo
 
 The compact site-version control links the new site's related states:
 
-- `Информация` — migrated partner, delivery, certificate and contact content inside the new storefront;
+- `Старый сайт` — opens the original `qkcosmetic.ru` storefront in a new tab for deliberate visual comparison only;
 - `Одностраничный` — the complete catalogue and care guide in one continuous page (`?site=onepage`);
 - `Полный сайт` — the commerce-first view with the catalogue and thematic guide separated (`?site=full`).
 
@@ -38,7 +38,7 @@ The first screen uses the original ANESTET wordmark in the header and as a low-c
 
 `https://anestet.139-180-214-133.sslip.io`
 
-The static export is deployed behind nginx with HTTPS. Releases are immutable directories under `/var/www/anestet/releases/`; `/var/www/anestet/current` is switched atomically. The pre-GitHub one-page release remains preserved as `20260828-v9`; the current prepared release is `20260828-v11.1.1`.
+The static export is deployed behind nginx with HTTPS. Releases are immutable directories under `/var/www/anestet/releases/`; `/var/www/anestet/current` is switched atomically. The pre-GitHub one-page release remains preserved as `20260828-v9`; the current prepared release is `20260828-v11.1.2`.
 
 ## Versioning and public change history
 
