@@ -6,10 +6,33 @@ import { ArrowIcon, BagIcon, CloseIcon, MinusIcon, PlusIcon, SparkIcon } from ".
 import { formatPrice, products } from "./products";
 
 type CartLine = { id: number; quantity: number };
+type DeliveryId = "pickup" | "moscow-courier" | "cdek-door" | "cdek-pvz" | "ozon-pvz";
+type OrderForm = {
+  name: string;
+  phone: string;
+  email: string;
+  postalCode: string;
+  address: string;
+  comment: string;
+  delivery: DeliveryId;
+  payment: "cash";
+};
 
 const CART_STORAGE_KEY = "anestet-cart-v1";
-const SITE_RELEASE = "2026.08.28-v10.2";
+const SITE_RELEASE = "2026.08.28-v11";
 const GITHUB_RELEASES_URL = "https://github.com/xsonicus/xsANESTET_site/releases";
+const SUPPORT_EMAIL = "support@anestet.com";
+const SUPPORT_PHONE = "+7 910 177-41-42";
+const initialOrderForm: OrderForm = {
+  name: "",
+  phone: "",
+  email: "",
+  postalCode: "",
+  address: "",
+  comment: "",
+  delivery: "pickup",
+  payment: "cash",
+};
 const productIds = new Set(products.map((product) => product.id));
 
 function parseStoredCart(value: string | null): CartLine[] {
@@ -38,17 +61,39 @@ type ThemeId = (typeof themes)[number]["id"];
 const themeCopy: Record<ThemeId, { eyebrow: string; title: string; accent: string; lead: string }> = {
   clinical: {
     eyebrow: "Профессиональный уход · Москва",
-    title: "Точная формула",
-    accent: "успокоенной кожи",
-    lead: "Средства для ухода до и после косметологических процедур — с понятной навигацией по этапам и форматам.",
+    title: "Точная формула,",
+    accent: "спокойная кожа",
+    lead: "Уход, который говорит сам за себя. Профессиональные средства до, во время и после косметологических процедур.",
   },
   serum: {
     eyebrow: "Ночная лаборатория · Professional care",
-    title: "Точная формула",
-    accent: "успокоенной кожи",
-    lead: "Профессиональные формулы ANESTET для подготовки кожи, сопровождения процедуры и восстановления после ухода.",
+    title: "Точная формула,",
+    accent: "спокойная кожа",
+    lead: "Уход, который говорит сам за себя. Формулы ANESTET для подготовки кожи, сопровождения процедуры и восстановления.",
   },
 };
+
+const deliveryOptions: Array<{ id: DeliveryId; title: string; note: string; cost: (subtotal: number) => number | null }> = [
+  { id: "pickup", title: "Самовывоз", note: "Москва, ул. Иловайская, д. 20, корп. 2", cost: () => 0 },
+  { id: "moscow-courier", title: "Курьер по Москве", note: "500 ₽, бесплатно от 4 000 ₽", cost: (subtotal) => subtotal >= 4000 ? 0 : 500 },
+  { id: "cdek-door", title: "CDEK до двери", note: "Стоимость и срок подтверждаются после расчёта CDEK", cost: () => null },
+  { id: "cdek-pvz", title: "CDEK до пункта выдачи", note: "Укажите город и удобный ПВЗ в адресе или комментарии", cost: () => null },
+  { id: "ozon-pvz", title: "OZON до пункта выдачи", note: "250 ₽, бесплатно от 2 000 ₽", cost: (subtotal) => subtotal >= 2000 ? 0 : 250 },
+];
+
+const brandPrinciples = [
+  ["Поддержка мастеров", "Профессиональные средства создаются с учётом реальных процедур, особенностей кожи и условий работы мастера."],
+  ["Развитие и инновации", "Формулы развиваются на основе опыта специалистов. Так появились FION и Queen Key."],
+  ["Честные результаты", "Стабильность и предсказуемость продукта поддерживаются контролем качества в собственной лаборатории."],
+  ["Фокус на формуле", "В центре продукта — рабочий состав, эффективность и удобство применения."],
+] as const;
+
+const socialCards = [
+  { network: "VK", eyebrow: "Видео", title: "Процедуры и продукты в работе", note: "Официальная видеолента ANESTET", href: "https://vk.com/video/@queenkeyanestet" },
+  { network: "VK", eyebrow: "Новости", title: "Запуски, формулы и события", note: "Сообщество Queen Key × ANESTET", href: "https://vk.com/queenkeyanestet" },
+  { network: "TG", eyebrow: "Канал", title: "Коротко о главном для мастеров", note: "Официальный Telegram ANESTET", href: "https://t.me/Anestetprofessional" },
+  { network: "LINK", eyebrow: "Все площадки", title: "Контакты и актуальные ссылки", note: "Официальный Taplink бренда", href: "https://taplink.cc/anestet" },
+] as const;
 
 const careStages = [
   {
@@ -120,6 +165,10 @@ export default function Storefront() {
   const [cart, setCart] = useState<CartLine[]>([]);
   const [cartReady, setCartReady] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
+  const [checkoutOpen, setCheckoutOpen] = useState(false);
+  const [orderForm, setOrderForm] = useState<OrderForm>(initialOrderForm);
+  const [orderSubmitting, setOrderSubmitting] = useState(false);
+  const [orderResult, setOrderResult] = useState<{ id?: string; error?: string } | null>(null);
   const cartDialogRef = useRef<HTMLDialogElement>(null);
 
   useEffect(() => {
@@ -240,6 +289,9 @@ export default function Storefront() {
   }), [cart]);
   const cartCount = cart.reduce((total, line) => total + line.quantity, 0);
   const cartSubtotal = cartEntries.reduce((total, line) => total + line.product.price * line.quantity, 0);
+  const selectedDelivery = deliveryOptions.find((option) => option.id === orderForm.delivery) ?? deliveryOptions[0];
+  const deliveryCost = selectedDelivery.cost(cartSubtotal);
+  const orderTotal = cartSubtotal + (deliveryCost ?? 0);
   const checkoutHref = useMemo(() => {
     const lines = cartEntries.map(({ product, quantity }) => `• ${product.compactTitle} — ${quantity} × ${formatPrice(product.price)}`);
     const message = [
@@ -247,12 +299,20 @@ export default function Storefront() {
       "",
       ...lines,
       "",
-      `Итого: ${formatPrice(cartSubtotal)}`,
+      `Товары: ${formatPrice(cartSubtotal)}`,
+      `Доставка: ${selectedDelivery.title}${deliveryCost === null ? " — требуется расчёт" : ` — ${formatPrice(deliveryCost)}`}`,
+      `Итого без неподтверждённого тарифа: ${formatPrice(orderTotal)}`,
+      orderForm.name ? `Получатель: ${orderForm.name}` : "",
+      orderForm.phone ? `Телефон: ${orderForm.phone}` : "",
+      orderForm.email ? `E-mail: ${orderForm.email}` : "",
+      orderForm.postalCode ? `Индекс: ${orderForm.postalCode}` : "",
+      orderForm.address ? `Адрес / ПВЗ: ${orderForm.address}` : "",
+      orderForm.comment ? `Комментарий: ${orderForm.comment}` : "",
       "",
-      "Подскажите, пожалуйста, условия оплаты и доставки.",
-    ].join("\n");
+      "Пожалуйста, подтвердите наличие, итоговую стоимость и срок доставки.",
+    ].filter(Boolean).join("\n");
     return `https://wa.me/79101774142?text=${encodeURIComponent(message)}`;
-  }, [cartEntries, cartSubtotal]);
+  }, [cartEntries, cartSubtotal, deliveryCost, orderForm, orderTotal, selectedDelivery.title]);
 
   const addToCart = (id: number) => setCart((current) => {
     const existing = current.find((line) => line.id === id);
@@ -265,6 +325,38 @@ export default function Storefront() {
     return quantity > 0 ? [{ ...line, quantity: Math.min(99, quantity) }] : [];
   }));
   const removeFromCart = (id: number) => setCart((current) => current.filter((line) => line.id !== id));
+  const updateOrderField = <Key extends keyof OrderForm>(key: Key, value: OrderForm[Key]) => {
+    setOrderForm((current) => ({ ...current, [key]: value }));
+    setOrderResult(null);
+  };
+  const submitOrder = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (!cartEntries.length || orderSubmitting) return;
+    setOrderSubmitting(true);
+    setOrderResult(null);
+    try {
+      const response = await fetch("/api/orders", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          customer: { name: orderForm.name, phone: orderForm.phone, email: orderForm.email },
+          delivery: { id: orderForm.delivery, postalCode: orderForm.postalCode, address: orderForm.address },
+          payment: orderForm.payment,
+          comment: orderForm.comment,
+          items: cartEntries.map(({ product, quantity }) => ({ id: product.id, quantity })),
+          source: siteMode,
+          release: SITE_RELEASE,
+        }),
+      });
+      const result = await response.json() as { ok?: boolean; orderId?: string; error?: string };
+      if (!response.ok || !result.ok || !result.orderId) throw new Error(result.error || "Не удалось записать заказ");
+      setOrderResult({ id: result.orderId });
+    } catch (error) {
+      setOrderResult({ error: error instanceof Error ? error.message : "Не удалось записать заказ" });
+    } finally {
+      setOrderSubmitting(false);
+    }
+  };
   const showHeroProduct = (direction: number) => setHeroProductIndex((current) => (
     current + direction + queenKeyHeroProducts.length
   ) % queenKeyHeroProducts.length);
@@ -323,7 +415,8 @@ export default function Storefront() {
         <nav aria-label="Главное меню">
           <a href="#shopping" onClick={() => setShoppingMode("catalog")}>Каталог</a>
           <a href="#shopping" onClick={() => setShoppingMode("guide")}>Система ухода</a>
-          <a href="#proof">О бренде</a>
+          {siteMode === "full" && <a href="#about">О бренде</a>}
+          <a href={`mailto:${SUPPORT_EMAIL}`}>Поддержка</a>
         </nav>
         <button
           className="cart-button"
@@ -359,7 +452,15 @@ export default function Storefront() {
             </button>
           </header>
 
-          {cartEntries.length === 0 ? (
+          {orderResult?.id ? (
+            <div className="cart-empty cart-success" role="status">
+              <SparkIcon />
+              <h3>Заказ принят</h3>
+              <p>Номер {orderResult.id}. Менеджер проверит наличие, тариф доставки и свяжется с вами для подтверждения.</p>
+              <a href={checkoutHref} target="_blank" rel="noreferrer">Продублировать в WhatsApp <ArrowIcon /></a>
+              <button type="button" className="cart-clear" onClick={() => { setCart([]); setOrderResult(null); setCheckoutOpen(false); }}>Готово, очистить корзину</button>
+            </div>
+          ) : cartEntries.length === 0 ? (
             <div className="cart-empty">
               <BagIcon size={34} title="" />
               <h3>Корзина пока пуста</h3>
@@ -392,16 +493,61 @@ export default function Storefront() {
               </div>
               <footer className="cart-summary">
                 <div><span>Товары · {cartCount}</span><strong>{formatPrice(cartSubtotal)}</strong></div>
-                <p>Оплата и доставка подтверждаются менеджером после отправки состава заказа.</p>
-                <a className="cart-checkout" href={checkoutHref} target="_blank" rel="noreferrer">
-                  Оформить в WhatsApp <ArrowIcon />
-                </a>
+                {!checkoutOpen ? (
+                  <>
+                    <p>Выберите доставку, оставьте контакты и получите номер заказа. Наличие и внешние тарифы подтверждаются менеджером.</p>
+                    <button type="button" className="cart-checkout" onClick={() => setCheckoutOpen(true)}>
+                      Перейти к оформлению <ArrowIcon />
+                    </button>
+                  </>
+                ) : (
+                  <form className="checkout-form" onSubmit={submitOrder}>
+                    <fieldset>
+                      <legend>Способы доставки</legend>
+                      <div className="delivery-options">
+                        {deliveryOptions.map((option) => (
+                          <label key={option.id} className={orderForm.delivery === option.id ? "selected" : ""}>
+                            <input type="radio" name="delivery" value={option.id} checked={orderForm.delivery === option.id} onChange={() => updateOrderField("delivery", option.id)} />
+                            <span><strong>{option.title}</strong><small>{option.note}</small></span>
+                          </label>
+                        ))}
+                      </div>
+                    </fieldset>
+                    <fieldset>
+                      <legend>Получатель и адрес</legend>
+                      <div className="checkout-fields">
+                        <label><span>Имя *</span><input required autoComplete="name" value={orderForm.name} onChange={(event) => updateOrderField("name", event.target.value)} /></label>
+                        <label><span>Телефон *</span><input required type="tel" autoComplete="tel" placeholder="+7 999 000-00-00" value={orderForm.phone} onChange={(event) => updateOrderField("phone", event.target.value)} /></label>
+                        <label><span>E-mail *</span><input required type="email" autoComplete="email" value={orderForm.email} onChange={(event) => updateOrderField("email", event.target.value)} /></label>
+                        {orderForm.delivery !== "pickup" && <label><span>Почтовый индекс</span><input inputMode="numeric" autoComplete="postal-code" value={orderForm.postalCode} onChange={(event) => updateOrderField("postalCode", event.target.value)} /></label>}
+                        {orderForm.delivery !== "pickup" && <label className="wide"><span>Адрес доставки / выбранный ПВЗ *</span><textarea required autoComplete="street-address" value={orderForm.address} onChange={(event) => updateOrderField("address", event.target.value)} /></label>}
+                        <label className="wide"><span>Комментарий</span><textarea value={orderForm.comment} onChange={(event) => updateOrderField("comment", event.target.value)} /></label>
+                      </div>
+                    </fieldset>
+                    <fieldset>
+                      <legend>Способ оплаты</legend>
+                      <label className="payment-option selected"><input type="radio" name="payment" checked readOnly /><span><strong>Оплата при подтверждении</strong><small>Менеджер согласует доступный способ после проверки заказа</small></span></label>
+                    </fieldset>
+                    <div className="checkout-total">
+                      <span>Доставка</span><strong>{deliveryCost === null ? "По тарифу" : formatPrice(deliveryCost)}</strong>
+                      <span>Предварительный итог</span><strong>{formatPrice(orderTotal)}</strong>
+                    </div>
+                    {orderResult?.error && <p className="checkout-error" role="alert">{orderResult.error}. Можно отправить заказ через WhatsApp ниже.</p>}
+                    <button className="cart-checkout" type="submit" disabled={orderSubmitting}>{orderSubmitting ? "Записываем заказ…" : "Подтвердить заказ"}<ArrowIcon /></button>
+                    <a className="checkout-fallback" href={checkoutHref} target="_blank" rel="noreferrer">Или отправить в WhatsApp</a>
+                    <p className="checkout-legal">Отправляя форму, вы соглашаетесь на обработку данных для оформления и обратной связи по заказу.</p>
+                  </form>
+                )}
                 <button type="button" className="cart-clear" onClick={() => setCart([])}>Очистить корзину</button>
               </footer>
             </>
           )}
         </div>
       </dialog>
+
+      <a className="support-button" href={`mailto:${SUPPORT_EMAIL}?subject=${encodeURIComponent("Поддержка ANESTET")}`} aria-label={`Написать в поддержку: ${SUPPORT_EMAIL}`}>
+        <span>Поддержка</span><strong>{SUPPORT_EMAIL}</strong>
+      </a>
 
       <section className="hero" id="top" aria-labelledby="hero-title" data-motion>
         <div className="hero-atmosphere" aria-hidden="true">
@@ -458,6 +604,7 @@ export default function Storefront() {
             height={900}
             loading="eager"
             fetchPriority="high"
+            style={{ "--hero-product-scale": heroProduct.heroScale ?? 1 } as React.CSSProperties}
           />
           <div className="hero-product-controls" aria-label="Новые продукты Queen Key">
             <button type="button" className="previous" onClick={() => showHeroProduct(-1)} aria-label="Предыдущий продукт"><ArrowIcon /></button>
@@ -579,6 +726,7 @@ export default function Storefront() {
               <article className="product-card" key={product.id} data-reveal style={{ "--card-index": index } as React.CSSProperties}>
                 <div className="product-media">
                   <span className="product-tag">{product.tag}</span>
+                  {product.isNew && <span className="product-new">Новинка</span>}
                   <Image src={product.image} alt={product.title} width={720} height={720} loading="lazy" />
                 </div>
                 <button type="button" className={cartQuantity ? "quick-add selected" : "quick-add"} onClick={() => addToCart(product.id)} aria-label={cartQuantity ? `Добавить ещё: ${product.title}. В корзине ${cartQuantity}` : `Добавить ${product.title} в корзину`}>
@@ -607,6 +755,31 @@ export default function Storefront() {
         <p data-reveal>Все цифры основаны на текущем каталоге и опубликованных документах сайта.</p>
       </section>
 
+      {siteMode === "full" && (
+        <section className="about-brand" id="about" aria-labelledby="about-title">
+          <div className="about-portrait" data-reveal>
+            <span className="about-year">2016—2026</span>
+            <Image src="/assets/img/partners/hero-partners.png" alt="Александр, представитель ANESTET" width={681} height={544} loading="lazy" />
+          </div>
+          <div className="about-copy" data-reveal>
+            <p className="section-index">О бренде / собственная лаборатория</p>
+            <h2 id="about-title">Создаём то, что нужно вашей работе</h2>
+            <p className="about-intro">Мы начали путь в 2016 году с профессиональных средств для мастеров перманента и косметологов. В 2024 году появились FION — развитие формул ANESTET — и Queen Key, премиальная уходовая косметика для лица. Продукты разрабатываются и производятся в собственной лаборатории в Москве с контролем качества на каждом этапе.</p>
+            <div className="about-principles">
+              {brandPrinciples.map(([title, text], index) => (
+                <article key={title}><span>{String(index + 1).padStart(2, "0")}</span><div><h3>{title}</h3><p>{text}</p></div></article>
+              ))}
+            </div>
+            <nav className="brand-links" aria-label="Материалы о компании">
+              <a href="https://qkcosmetic.ru/partners" target="_blank" rel="noreferrer">Партнёрам <ArrowIcon /></a>
+              <a href="https://qkcosmetic.ru/delivery" target="_blank" rel="noreferrer">Доставка и оплата <ArrowIcon /></a>
+              <a href="https://qkcosmetic.ru/certificates" target="_blank" rel="noreferrer">Сертификаты <ArrowIcon /></a>
+              <a href="https://qkcosmetic.ru/contacts" target="_blank" rel="noreferrer">Контакты <ArrowIcon /></a>
+            </nav>
+          </div>
+        </section>
+      )}
+
       <section className="evidence" aria-labelledby="evidence-title">
         <div className="evidence-image" data-reveal>
           <Image src="/assets/img/about/anestet-recovery-hand-v2.webp" alt="Восстанавливающие сливки Queen Key в профессиональной beauty-среде" width={1254} height={1254} loading="lazy" />
@@ -619,12 +792,33 @@ export default function Storefront() {
         </div>
       </section>
 
+      <section className="social-feed" id="social" aria-labelledby="social-title" data-motion>
+        <header data-reveal>
+          <div><p className="section-index">ANESTET в эфире</p><h2 id="social-title">Новости, видео, формулы</h2></div>
+          <p>Официальные площадки бренда. Карточки ведут прямо в исходную публикационную ленту.</p>
+        </header>
+        <div className="social-feed-window">
+          <div className="social-feed-track">
+            {[...socialCards, ...socialCards].map((card, index) => (
+              <a className="social-card" href={card.href} target="_blank" rel="noreferrer" key={`${card.network}-${card.eyebrow}-${index}`} aria-hidden={index >= socialCards.length ? "true" : undefined} tabIndex={index >= socialCards.length ? -1 : undefined}>
+                <span className="social-network">{card.network}</span>
+                <p>{card.eyebrow}</p>
+                <h3>{card.title}</h3>
+                <small>{card.note}</small>
+                <ArrowIcon />
+              </a>
+            ))}
+          </div>
+        </div>
+        <p className="social-feed-note">Автоматическая загрузка отдельных постов подключается через VK API; до выдачи токена здесь используются официальные разделы сообщества.</p>
+      </section>
+
       <footer className="footer" data-motion>
         <div className="footer-brand-stage">
           <div className="footer-brand-primary" data-reveal>
             <p className="footer-brand-kicker"><span>ANESTET / PROFESSIONAL CARE</span><span>МОСКВА · 2026</span></p>
             <Image className="footer-anestet-logo" src="/assets/img/anestet-logo-2024-blue.png" alt="ANESTET" width={2709} height={1042} />
-            <p className="footer-brand-statement">Профессиональный уход<br />до процедуры, во время и после.</p>
+            <p className="footer-brand-statement">Профессиональный уход<br />{" "}до процедуры, во время и после.</p>
           </div>
           <div className="footer-brand-secondary" data-reveal>
             <div className="footer-brand-orbit" aria-hidden="true">
@@ -646,11 +840,17 @@ export default function Storefront() {
           </div>
         </div>
         <div className="footer-grid">
-          <div><p>Связаться</p><a href="mailto:support@anestet.com">support@anestet.com</a><a href="tel:+79101774142">+7 910 177-41-42</a></div>
-          <div><p>Адрес</p><span>Москва, ул. Иловайская,<br />д. 20, корп. 2</span></div>
-          <div><p>Режим работы</p><span>Пн—Пт / 09:00—18:00<br />Сб—Вс / выходной</span></div>
+          <div><p>Связаться</p><a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a><a href="tel:+79101774142">{SUPPORT_PHONE}</a></div>
+          <div><p>Адрес</p><span>Москва, ул. Иловайская,<br />{" "}д. 20, корп. 2</span></div>
+          <div><p>Режим работы</p><span>Пн—Пт / 09:00—18:00<br />{" "}Сб—Вс / выходной</span></div>
           <div><p>Дизайн</p><span>{themes.find((item) => item.id === theme)?.number} / {themes.find((item) => item.id === theme)?.title}</span></div>
         </div>
+        <nav className="footer-socials" aria-label="Социальные сети ANESTET">
+          <a href="https://vk.com/queenkeyanestet" target="_blank" rel="noreferrer">VK</a>
+          <a href="https://t.me/Anestetprofessional" target="_blank" rel="noreferrer">Telegram</a>
+          <a href="https://taplink.cc/anestet" target="_blank" rel="noreferrer">Все ссылки</a>
+          <a href={`mailto:${SUPPORT_EMAIL}`}>Поддержка</a>
+        </nav>
         <div className="footer-bottom">
           <div>
             <p className="footer-note">ANESTET · профессиональные средства для косметологического ухода</p>

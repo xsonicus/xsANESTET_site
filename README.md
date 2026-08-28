@@ -30,7 +30,7 @@ The compact site-version control links three related states:
 - `Одностраничный` — the complete catalogue and care guide in one continuous page (`?site=onepage`);
 - `Полный сайт` — the commerce-first view with the catalogue and thematic guide separated (`?site=full`).
 
-The full view opens directly on products. Its hero rotates the two current blue Queen Key products every 4.6 seconds, supports manual navigation and adds directly to the persistent cart. The cart supports quantity changes and creates a complete WhatsApp order without inventing payment or delivery state.
+The full view opens directly on products. Its hero rotates only the current blue Queen Key novelties every 4.6 seconds, supports manual navigation and adds directly to the persistent cart. The cart supports quantity changes, delivery and address selection, creates a server-side order number and keeps WhatsApp as an explicit operator fallback.
 
 The first screen uses the original ANESTET wordmark in the header and as a low-contrast diagonal motion rail. A second, slower oversized ANESTET rail crosses it at the opposite angle with a restrained blur, creating one layered brand signature behind the readable content. The footer combines the original high-resolution ANESTET and Queen Key brand assets. All 23 catalog packshots use real transparency instead of white rectangular backplates.
 
@@ -38,7 +38,7 @@ The first screen uses the original ANESTET wordmark in the header and as a low-c
 
 `https://anestet.139-180-214-133.sslip.io`
 
-The static export is deployed behind nginx with HTTPS. Releases are immutable directories under `/var/www/anestet/releases/`; `/var/www/anestet/current` is switched atomically. The pre-GitHub one-page release remains preserved as `20260828-v9`; the current GitHub-tracked release is `20260828-v10.2`.
+The static export is deployed behind nginx with HTTPS. Releases are immutable directories under `/var/www/anestet/releases/`; `/var/www/anestet/current` is switched atomically. The pre-GitHub one-page release remains preserved as `20260828-v9`; the current GitHub-tracked release is `20260828-v11`.
 
 ## Versioning and public change history
 
@@ -54,6 +54,7 @@ Repository: `https://github.com/xsonicus/xsANESTET_site`
 - Product names, prices, images and public business information: current `qkcosmetic.ru` catalog snapshot captured on 2026-08-28.
 - Original server export: `original_site/`; infrastructure boundary: `docs/ORIGINAL_INFRASTRUCTURE.md`.
 - Commerce integration plan for 1C, CDEK, warehouse stock, promotions and administration: `docs/COMMERCE_BACKEND_ROADMAP.md`.
+- Live adapter status and secret-handling boundary: `docs/INTEGRATION_STATUS.md`.
 - No passwords, private keys, database credentials, MODX session data, cache or server logs are stored in this project.
 
 ## Verification

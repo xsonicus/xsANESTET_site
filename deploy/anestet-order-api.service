@@ -1,0 +1,23 @@
+[Unit]
+Description=ANESTET storefront order API
+After=network.target
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+EnvironmentFile=-/etc/anestet/order-api.env
+Environment=ANESTET_API_HOST=127.0.0.1
+Environment=ANESTET_API_PORT=4317
+Environment=ANESTET_ORDER_STORE=/var/lib/anestet/orders.jsonl
+ExecStart=/usr/local/bin/node /var/www/anestet/current-server/order-api.mjs
+Restart=always
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/anestet
+
+[Install]
+WantedBy=multi-user.target

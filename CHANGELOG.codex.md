@@ -66,4 +66,24 @@ Removed an ARIA control reference to an unmounted dynamic panel and aligned the 
 - Files: app/globals.css, app/storefront.tsx, scripts/qa-layout.mjs, README.md, docs/RELEASE_HISTORY.md, docs/releases/2026.08.28-v10.2.md
 - Verification: Visual screenshot at 1431x1728; Layout QA: 8 screens x 2 themes x 3 presentations
 - Risk/Rollback: Scoped responsive CSS only; mobile layout remains unchanged.
-Anchored the Chromatic Serum halo to the exact center of the product column, increased the gap between the vertical side note and headline on portrait desktop/tablet ratios, and added 1431x1728 to the release QA matrix.
+Anchored the Chromatic Serum halo to the exact center of the product column, increased the gap between the vertical side note and headline on portrait desktop/tablet ratios, and added 1431x1728 to the release QA matrix.## 2026-08-28T09:46:06.887Z - Preserve hero label contrast over animated halo
+- ID: 2026-08-28T09-46-06-887Z-preserve-hero-label-contrast-over-animated-halo
+- Version: 1.0.3
+- Category: fix
+- Branch: main
+- Head: 8d24929
+- Files: app/globals.css, app/storefront.tsx, README.md, docs/RELEASE_HISTORY.md, docs/releases/2026.08.28-v10.2.1.md
+- Verification: npm run build; npm run qa:layout; Lighthouse accessibility audit; Live 1431x1728 Playwright inspection
+- Risk/Rollback: Low; scoped typography color/weight change. Roll back by switching the VPS symlink to 20260828-v10.2.
+- Issue/Request: Lighthouse found the mobile category label could sit over the pale animated halo with insufficient contrast.
+Raised the hero product category label to the theme ink color with stronger weight so the light mobile halo cannot reduce readability, while retaining the tall-viewport centering and spacing fix.## 2026-08-28T10:26:12.596Z - Commerce-ready storefront with source-faithful brand content
+- ID: 2026-08-28T10-26-12-596Z-commerce-ready-storefront-with-source-faithful-brand-content
+- Version: 1.1.0
+- Category: feature
+- Branch: main
+- Head: 8d24929
+- Files: app/storefront.tsx, app/globals.css, app/products.ts, server/order-api.mjs, deploy/anestet-order-api.service, deploy/anestet.139-180-214-133.sslip.io.conf, deploy/anestet-order-api.env.example, docs/COMMERCE_BACKEND_ROADMAP.md, docs/INTEGRATION_STATUS.md, docs/RELEASE_HISTORY.md, docs/releases/2026.08.28-v11.md, README.md, .codex-memory, .codex-archive
+- Verification: npm run build; npm run qa:layout; node --check server/order-api.mjs; local Order API accepted a valid order and recomputed totals; Playwright desktop About/social review; Playwright 390x844 cart and checkout review; npm audit --omit=dev (0 vulnerabilities)
+- Risk/Rollback: medium
+- Issue/Request: The redesigned storefront was visually complete but lacked a durable order capture path, full source-brand content, original typography, official social entry points, and a secure integration boundary for external commerce systems.
+Release 2026.08.28-v11 adds the original Open Sans and Unbounded typography, novelty-only Queen Key hero rotation with balanced packshot scale, source-derived About content and official social/support links, complete delivery checkout, and a server-side order API that validates catalog prices and stores order records on the VPS.
