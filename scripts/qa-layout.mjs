@@ -57,11 +57,13 @@ const page = await browser.newPage();
 const viewports = [
   { width: 360, height: 844 },
   { width: 390, height: 844 },
+  { width: 674, height: 406 },
   { width: 760, height: 1000 },
   { width: 1024, height: 1000 },
   { width: 1431, height: 1728 },
   { width: 1440, height: 1000 },
   { width: 1687, height: 1000 },
+  { width: 1912, height: 1858 },
   { width: 2048, height: 1000 },
 ];
 const themes = ["clinical", "serum"];
@@ -88,17 +90,114 @@ try {
           await page.locator(".shopping-tabs button").nth(view === "full-catalog" ? 0 : 1).click();
         }
         await page.waitForTimeout(30);
-        const result = await page.evaluate(() => {
+        const result = await page.evaluate(async () => {
         const visible = (element) => {
           const style = getComputedStyle(element);
           const rect = element.getBoundingClientRect();
-          return style.display !== "none" && style.visibility !== "hidden" && rect.width > 0 && rect.height > 0;
+          return style.display !== "none" && style.visibility !== "hidden" && Number(style.opacity) > 0 && rect.width > 0 && rect.height > 0;
         };
         const intersects = (first, second) => {
           const a = first.getBoundingClientRect();
           const b = second.getBoundingClientRect();
           return Math.min(a.right, b.right) - Math.max(a.left, b.left) > 1 &&
             Math.min(a.bottom, b.bottom) - Math.max(a.top, b.top) > 1;
+        };
+        const label = (element) => {
+          const id = element.id ? `#${element.id}` : "";
+          const classes = typeof element.className === "string" && element.className.trim()
+            ? `.${element.className.trim().split(/\s+/).join(".")}`
+            : "";
+          return `${element.tagName.toLowerCase()}${id}${classes}`;
+        };
+        const collision = (collisions, description, first, second) => {
+          if (first && second && visible(first) && visible(second) && intersects(first, second)) {
+            collisions.push(`${description} (${label(first)} ↔ ${label(second)})`);
+          }
+        };
+        const opaqueImageRect = async (image) => {
+          const fallback = image.getBoundingClientRect();
+          if (!(image instanceof HTMLImageElement)) return fallback;
+          try {
+            const source = image.currentSrc || image.src;
+            globalThis.__qaOpaqueImageBounds ??= new Map();
+            let bounds = globalThis.__qaOpaqueImageBounds.get(source);
+            if (!bounds) {
+              const storageKey = `qa-opaque:${new URL(source, location.href).href}`;
+              const stored = sessionStorage.getItem(storageKey);
+              if (stored) bounds = JSON.parse(stored);
+            }
+            if (!bounds) {
+              const response = await fetch(source);
+              if (!response.ok) return fallback;
+              const bitmap = await createImageBitmap(await response.blob());
+              const naturalWidth = bitmap.width;
+              const naturalHeight = bitmap.height;
+              const maxSampleSide = 320;
+              const sampleScale = Math.min(1, maxSampleSide / Math.max(naturalWidth, naturalHeight));
+              const width = Math.max(1, Math.round(naturalWidth * sampleScale));
+              const height = Math.max(1, Math.round(naturalHeight * sampleScale));
+              const canvas = document.createElement("canvas");
+              canvas.width = width;
+              canvas.height = height;
+              const context = canvas.getContext("2d", { willReadFrequently: true });
+              if (!context) return fallback;
+              context.drawImage(bitmap, 0, 0, width, height);
+              bitmap.close();
+              const pixels = context.getImageData(0, 0, width, height).data;
+              let minX = width;
+              let minY = height;
+              let maxX = -1;
+              let maxY = -1;
+              for (let y = 0; y < height; y += 1) {
+                for (let x = 0; x < width; x += 1) {
+                  if (pixels[(y * width + x) * 4 + 3] < 48) continue;
+                  minX = Math.min(minX, x);
+                  minY = Math.min(minY, y);
+                  maxX = Math.max(maxX, x);
+                  maxY = Math.max(maxY, y);
+                }
+              }
+              bounds = maxX >= minX && maxY >= minY
+                ? { left: minX / width, top: minY / height, right: (maxX + 1) / width, bottom: (maxY + 1) / height, naturalWidth, naturalHeight }
+                : { left: 0, top: 0, right: 1, bottom: 1, naturalWidth, naturalHeight };
+              globalThis.__qaOpaqueImageBounds.set(source, bounds);
+              sessionStorage.setItem(storageKey, JSON.stringify(bounds));
+            }
+
+            const naturalRatio = bounds.naturalWidth / bounds.naturalHeight;
+            const elementRatio = fallback.width / fallback.height;
+            const objectFit = getComputedStyle(image).objectFit;
+            let renderedWidth = fallback.width;
+            let renderedHeight = fallback.height;
+            if (objectFit === "contain" || objectFit === "scale-down") {
+              if (naturalRatio > elementRatio) renderedHeight = fallback.width / naturalRatio;
+              else renderedWidth = fallback.height * naturalRatio;
+            } else if (objectFit === "cover") {
+              if (naturalRatio > elementRatio) renderedWidth = fallback.height * naturalRatio;
+              else renderedHeight = fallback.width / naturalRatio;
+            }
+            const left = fallback.left + (fallback.width - renderedWidth) / 2;
+            const top = fallback.top + (fallback.height - renderedHeight) / 2;
+            return {
+              left: left + renderedWidth * bounds.left,
+              top: top + renderedHeight * bounds.top,
+              right: left + renderedWidth * bounds.right,
+              bottom: top + renderedHeight * bounds.bottom,
+              width: renderedWidth * (bounds.right - bounds.left),
+              height: renderedHeight * (bounds.bottom - bounds.top),
+            };
+          } catch {
+            return fallback;
+          }
+        };
+        const collisionWithImage = async (collisions, description, image, control) => {
+          if (!image || !control || !visible(image) || !visible(control)) return;
+          const a = await opaqueImageRect(image);
+          const b = control.getBoundingClientRect();
+          if (Math.min(a.right, b.right) - Math.max(a.left, b.left) > 1 &&
+              Math.min(a.bottom, b.bottom) - Math.max(a.top, b.top) > 1) {
+            collisions.push(`${description} (${label(image)} ↔ ${label(control)})`);
+          }
         };
         const paintsOutside = (element) => {
           const boundary = element.getBoundingClientRect();
@@ -123,17 +222,41 @@ try {
         const collisions = [];
         const title = document.querySelector(".hero h1");
         const halo = document.querySelector(".product-halo");
-        if (title && halo && visible(title) && visible(halo) && intersects(title, halo)) collisions.push("hero title ↔ product halo");
+        collision(collisions, "hero title ↔ product halo", title, halo);
+
+        const heroImage = document.querySelector(".hero-product-image");
+        const heroLabel = document.querySelector(".hero-product-label");
+        const heroControls = document.querySelector(".hero-product-controls");
+        await collisionWithImage(collisions, "hero image ↔ product label", heroImage, heroLabel);
+        await collisionWithImage(collisions, "hero image ↔ carousel controls", heroImage, heroControls);
+        collision(collisions, "hero label ↔ carousel controls", heroLabel, heroControls);
+
         document.querySelectorAll(".guide-stage").forEach((stage, index) => {
           const header = stage.querySelector("header");
           const copy = stage.querySelector(".guide-stage-copy");
           if (header && copy && visible(header) && visible(copy) && intersects(header, copy)) collisions.push(`guide stage ${index + 1}: header ↔ copy`);
         });
-        document.querySelectorAll(".product-card").forEach((card, index) => {
+        for (const [index, card] of [...document.querySelectorAll(".product-card")].entries()) {
           const image = card.querySelector(".product-media img");
-          const button = card.querySelector(".quick-add");
-          if (image && button && visible(image) && visible(button) && intersects(image, button)) collisions.push(`product ${index + 1}: image ↔ cart button`);
+          if (!image || !visible(image)) continue;
+          for (const [selector, description] of [
+            [".product-tag", "category badge"],
+            [".product-new", "new badge"],
+            [".quick-add", "cart button"],
+          ]) {
+            const control = card.querySelector(selector);
+            await collisionWithImage(collisions, `product ${index + 1}: image ↔ ${description}`, image, control);
+          }
+        }
+
+        document.querySelectorAll(".support-button").forEach((support) => {
+          if (!visible(support) || getComputedStyle(support).position !== "fixed") return;
+          document.querySelectorAll(".primary-action,.hero-product-add,.quick-add,.guide-action,.cart-checkout").forEach((cta) => {
+            collision(collisions, "fixed support ↔ CTA", support, cta);
+          });
+          collision(collisions, "fixed support ↔ hero product label", support, heroLabel);
         });
+
         document.querySelectorAll(".care-step").forEach((card, index) => {
           if (!visible(card)) return;
           const boundary = card.getBoundingClientRect();
@@ -145,15 +268,36 @@ try {
             }
           });
         });
+        const documentWidth = Math.max(
+          document.documentElement.scrollWidth,
+          document.body?.scrollWidth ?? 0,
+        );
+        const horizontalOverflow = Math.max(0, documentWidth - innerWidth);
+        const overflowElements = horizontalOverflow
+          ? [...document.querySelectorAll("body *")]
+            .filter(visible)
+            .filter((element) => {
+              const rect = element.getBoundingClientRect();
+              const position = getComputedStyle(element).position;
+              if (position === "fixed") return false;
+              return rect.left < -1 || rect.right > innerWidth + 1;
+            })
+            .slice(0, 20)
+            .map((element) => {
+              const rect = element.getBoundingClientRect();
+              return `${label(element)} [${Math.round(rect.left)}, ${Math.round(rect.right)}]`;
+            })
+          : [];
         return {
-          horizontalOverflow: Math.max(0, document.documentElement.scrollWidth - innerWidth),
+          horizontalOverflow,
+          overflowElements,
           textOverflow,
-          collisions,
+          collisions: [...new Set(collisions)],
         };
         });
 
         if (result.horizontalOverflow || result.textOverflow.length || result.collisions.length) {
-          failures.push({ width, theme, view, ...result });
+          failures.push({ width, height, theme, view, ...result });
         }
       }
     }

@@ -19,8 +19,9 @@ type OrderForm = {
 };
 
 const CART_STORAGE_KEY = "anestet-cart-v1";
-const SITE_RELEASE = "2026.08.28-v11.0.1";
+const SITE_RELEASE = "2026.08.28-v11.1.0";
 const GITHUB_RELEASES_URL = "https://github.com/xsonicus/xsANESTET_site/releases";
+const HERO_WORDMARK_PATH = "M1784 0H1502L1341 344H457L296 0H14L734 1500H1064ZM899 1291 559 562H1239ZM3248 298V1500H3504V0H3168L2222 1216V0H1966V1500H2310ZM4147 640 4081 228H5096V0H3788L3908 750L3788 1500H5086V1272H4081L4147 860H5038V640ZM5548 488Q5560 398 5623 330Q5686 262 5790.5 225Q5895 188 6030 188Q6163 188 6262 216.5Q6361 245 6414.5 298Q6468 351 6468 422Q6468 482 6438.5 520Q6409 558 6341.5 581.5Q6274 605 6154 620L5830 662Q5647 686 5533.5 737Q5420 788 5366 871.5Q5312 955 5312 1078Q5312 1214 5395 1315.5Q5478 1417 5630.5 1472.5Q5783 1528 5986 1528Q6186 1528 6343.5 1468Q6501 1408 6593 1299.5Q6685 1191 6694 1050H6426Q6416 1129 6359 1188Q6302 1247 6204.5 1279.5Q6107 1312 5980 1312Q5858 1312 5766.5 1285Q5675 1258 5625.5 1207Q5576 1156 5576 1088Q5576 1033 5604 997.5Q5632 962 5695.5 938.5Q5759 915 5868 900L6196 854Q6401 826 6516.5 778.5Q6632 731 6682 653Q6732 575 6732 450Q6732 307 6644 198.5Q6556 90 6396 31Q6236 -28 6026 -28Q5812 -28 5645.5 36.5Q5479 101 5383.5 218Q5288 335 5280 488ZM6842 1500H8346V1268H7726V0H7462V1268H6842ZM8853 640 8787 228H9802V0H8494L8614 750L8494 1500H9792V1272H8787L8853 860H9744V640ZM9942 1500H11446V1268H10826V0H10562V1268H9942Z";
 const SUPPORT_EMAIL = "support@anestet.com";
 const SUPPORT_PHONE = "+7 910 177-41-42";
 const initialOrderForm: OrderForm = {
@@ -58,17 +59,19 @@ const themes = [
 
 type ThemeId = (typeof themes)[number]["id"];
 
-const themeCopy: Record<ThemeId, { eyebrow: string; title: string; accent: string; lead: string }> = {
+const themeCopy: Record<ThemeId, { eyebrow: string; title: string; accent: string; closing: string; lead: string }> = {
   clinical: {
     eyebrow: "Профессиональный уход · Москва",
     title: "Точная формула,",
-    accent: "спокойная кожа",
+    accent: "спокойная кожа,",
+    closing: "всегда",
     lead: "Уход, который говорит сам за себя. Профессиональные средства до, во время и после косметологических процедур.",
   },
   serum: {
     eyebrow: "Ночная лаборатория · Professional care",
     title: "Точная формула,",
-    accent: "спокойная кожа",
+    accent: "спокойная кожа,",
+    closing: "всегда",
     lead: "Уход, который говорит сам за себя. Формулы ANESTET для подготовки кожи, сопровождения процедуры и восстановления.",
   },
 };
@@ -89,10 +92,10 @@ const brandPrinciples = [
 ] as const;
 
 const socialCards = [
-  { network: "VK", eyebrow: "Видео", title: "Процедуры и продукты в работе", note: "Официальная видеолента ANESTET", href: "https://vk.com/video/@queenkeyanestet" },
-  { network: "VK", eyebrow: "Новости", title: "Запуски, формулы и события", note: "Сообщество Queen Key × ANESTET", href: "https://vk.com/queenkeyanestet" },
-  { network: "TG", eyebrow: "Канал", title: "Коротко о главном для мастеров", note: "Официальный Telegram ANESTET", href: "https://t.me/Anestetprofessional" },
-  { network: "LINK", eyebrow: "Все площадки", title: "Контакты и актуальные ссылки", note: "Официальный Taplink бренда", href: "https://taplink.cc/anestet" },
+  { network: "VK", icon: "/assets/icons/social/vk.svg", eyebrow: "Видео", title: "Процедуры и продукты в работе", note: "Официальная видеолента ANESTET", href: "https://vk.com/video/@queenkeyanestet" },
+  { network: "VK", icon: "/assets/icons/social/vk.svg", eyebrow: "Новости", title: "Запуски, формулы и события", note: "Сообщество Queen Key × ANESTET", href: "https://vk.com/queenkeyanestet" },
+  { network: "Telegram", icon: "/assets/icons/social/telegram.svg", eyebrow: "Канал", title: "Коротко о главном для мастеров", note: "Официальный Telegram ANESTET", href: "https://t.me/Anestetprofessional" },
+  { network: "Taplink", icon: "/assets/icons/social/taplink.svg", eyebrow: "Все площадки", title: "Контакты и актуальные ссылки", note: "Официальный Taplink бренда", href: "https://taplink.cc/anestet" },
 ] as const;
 
 const careStages = [
@@ -146,13 +149,44 @@ const proof = [
   { value: "7", label: "деклараций соответствия" },
 ];
 
-const queenKeyHeroProducts = [60, 42].flatMap((id) => {
-  const product = products.find((item) => item.id === id);
-  return product ? [product] : [];
-});
+const heroProducts = products.filter((product) => product.isNew);
+const productPackshot = (id: number) => `/assets/img/optimized/cards/${id}.webp`;
 
 type ShoppingMode = "catalog" | "guide";
 type SiteMode = "onepage" | "full";
+type CompanySection = "partners" | "delivery" | "certificates" | "contacts";
+
+const companySections: Array<{ id: CompanySection; label: string }> = [
+  { id: "partners", label: "Партнёрам" },
+  { id: "delivery", label: "Доставка и оплата" },
+  { id: "certificates", label: "Сертификаты" },
+  { id: "contacts", label: "Контакты" },
+];
+
+const partnerLogos = [
+  ["golden-apple.png", "Золотое яблоко"], ["pmu-market.png", "PMU Market"],
+  ["permanentum.png", "Permanentum"], ["materialova.png", "Materialova"],
+  ["aurabeauty.png", "Aura Beauty"], ["tattoo-barracuda.jpg", "Tattoo Barracuda"],
+  ["kdv.jpg", "KDV"], ["velvet-handles.png", "Velvet Handles"],
+  ["allget-market.png", "Allget Market"], ["browuska.png", "Browuska"],
+  ["clinique.png", "Clinique"], ["dom24.png", "DOM 24"],
+  ["estetik.png", "Estetik"], ["icolorpmu.png", "iColor PMU"],
+  ["inkcastleshop.png", "Ink Castle Shop"], ["permanentlux.png", "Permanent Lux"],
+  ["pm-magaz.jpg", "PM Magazin"], ["pm24shop.jpg", "PM24 Shop"],
+  ["pro-pmu-shop.jpg", "Pro PMU Shop"], ["shira-studio.jpg", "Shira Studio"],
+  ["siberica.png", "Siberica"], ["syndromeshop.png", "Syndrome Shop"],
+  ["tatu-shop.png", "Tatu Shop"], ["extreme.png", "Extreme"],
+] as const;
+
+const certificateDocuments = [
+  ["ds-geli-dlya-pervichnogo-ohlazhdeniya.png", "Гели для первичного охлаждения ANESTET"],
+  ["ds-geli-dlya-pervichnogo-ohlazhdeniya-fion.png", "Гели для первичного охлаждения FION"],
+  ["ds-geli-dlya-vtorichnogo-ohlazhdeniya.png", "Гели для второго этапа ANESTET"],
+  ["ds-geli-dlya-vtorichnogo-ohlazhdeniya-fion.png", "Гели для второго этапа FION"],
+  ["ds-krem-queen-key.png", "Крем Queen Key"],
+  ["ds-vosstanavlivayushhie-slivki-s-d-pantenolom-queen-key.png", "Восстанавливающие сливки Queen Key"],
+  ["ds-delikatnyij-gel-s-romashkoj-queen-key.png", "Деликатный гель с ромашкой Queen Key"],
+] as const;
 
 export default function Storefront() {
   const [theme, setTheme] = useState<ThemeId>("clinical");
@@ -160,6 +194,7 @@ export default function Storefront() {
   const [filter, setFilter] = useState("Все");
   const [shoppingMode, setShoppingMode] = useState<ShoppingMode>("catalog");
   const [siteMode, setSiteMode] = useState<SiteMode>("full");
+  const [companySection, setCompanySection] = useState<CompanySection>("partners");
   const [heroProductIndex, setHeroProductIndex] = useState(0);
   const [heroCarouselPaused, setHeroCarouselPaused] = useState(false);
   const [cart, setCart] = useState<CartLine[]>([]);
@@ -208,10 +243,10 @@ export default function Storefront() {
   }, [cartOpen]);
 
   useEffect(() => {
-    if (heroCarouselPaused || queenKeyHeroProducts.length < 2 || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (heroCarouselPaused || heroProducts.length < 2 || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const interval = window.setInterval(() => {
       if (!document.hidden) {
-        setHeroProductIndex((current) => (current + 1) % queenKeyHeroProducts.length);
+        setHeroProductIndex((current) => (current + 1) % heroProducts.length);
       }
     }, 4600);
     return () => window.clearInterval(interval);
@@ -282,7 +317,7 @@ export default function Storefront() {
   }, [filter]);
 
   const copy = themeCopy[theme];
-  const heroProduct = (queenKeyHeroProducts[heroProductIndex] ?? queenKeyHeroProducts[0])!;
+  const heroProduct = (heroProducts[heroProductIndex] ?? heroProducts[0])!;
   const cartEntries = useMemo(() => cart.flatMap((line) => {
     const product = products.find((item) => item.id === line.id);
     return product ? [{ ...line, product }] : [];
@@ -348,7 +383,11 @@ export default function Storefront() {
           release: SITE_RELEASE,
         }),
       });
-      const result = await response.json() as { ok?: boolean; orderId?: string; error?: string };
+      const contentType = response.headers.get("content-type") || "";
+      const result = contentType.includes("application/json")
+        ? await response.json() as { ok?: boolean; orderId?: string; error?: string }
+        : null;
+      if (!result) throw new Error("Сервис оформления временно недоступен. Отправьте заказ через WhatsApp или поддержку.");
       if (!response.ok || !result.ok || !result.orderId) throw new Error(result.error || "Не удалось записать заказ");
       setOrderResult({ id: result.orderId });
     } catch (error) {
@@ -358,13 +397,17 @@ export default function Storefront() {
     }
   };
   const showHeroProduct = (direction: number) => setHeroProductIndex((current) => (
-    current + direction + queenKeyHeroProducts.length
-  ) % queenKeyHeroProducts.length);
+    current + direction + heroProducts.length
+  ) % heroProducts.length);
   const chooseSiteMode = (mode: SiteMode) => {
     setSiteMode(mode);
     const url = new URL(window.location.href);
     url.searchParams.set("site", mode);
     window.history.replaceState({}, "", `${url.pathname}${url.search}${url.hash}`);
+  };
+  const openCompanySection = (section: CompanySection) => {
+    setCompanySection(section);
+    window.requestAnimationFrame(() => document.querySelector("#company-info")?.scrollIntoView({ behavior: "smooth", block: "start" }));
   };
 
   return (
@@ -373,7 +416,7 @@ export default function Storefront() {
 
       <nav className="site-mode-switcher" aria-label="Версия сайта">
         <span>Версия сайта</span>
-        <a href="https://qkcosmetic.ru/">Было</a>
+        <a href="#company-info" onClick={() => openCompanySection("partners")}>Информация</a>
         <button type="button" className={siteMode === "onepage" ? "active" : ""} aria-pressed={siteMode === "onepage"} onClick={() => chooseSiteMode("onepage")}>Одностраничный</button>
         <button type="button" className={siteMode === "full" ? "active" : ""} aria-pressed={siteMode === "full"} onClick={() => chooseSiteMode("full")}>Полный сайт</button>
       </nav>
@@ -412,23 +455,36 @@ export default function Storefront() {
         <a className="wordmark" href="#top">
           <Image className="brand-logo" src="/assets/img/anestet-logo-2024-blue.png" alt="ANESTET" width={2709} height={1042} loading="eager" />
         </a>
-        <nav aria-label="Главное меню">
+        <nav className="primary-nav" aria-label="Главное меню">
           <a href="#shopping" onClick={() => setShoppingMode("catalog")}>Каталог</a>
           <a href="#shopping" onClick={() => setShoppingMode("guide")}>Система ухода</a>
           {siteMode === "full" && <a href="#about">О бренде</a>}
-          <a href={`mailto:${SUPPORT_EMAIL}`}>Поддержка</a>
+          <a href="#company-info" onClick={() => openCompanySection("contacts")}>Поддержка</a>
         </nav>
-        <button
-          className="cart-button"
-          type="button"
-          aria-label={`Корзина ${String(cartCount).padStart(2, "0")}: открыть, ${cartCount} товаров`}
-          aria-haspopup="dialog"
-          aria-expanded={cartOpen}
-          onClick={() => setCartOpen(true)}
-        >
-          <BagIcon />
-          <span>{String(cartCount).padStart(2, "0")}</span>
-        </button>
+        <div className="header-actions">
+          <nav className="header-socials" aria-label="Социальные сети и поддержка">
+            <a href="https://vk.com/queenkeyanestet" target="_blank" rel="noreferrer" aria-label="ANESTET во ВКонтакте">
+              <Image src="/assets/icons/social/vk.svg" alt="" width={24} height={24} aria-hidden="true" />
+            </a>
+            <a href="https://t.me/Anestetprofessional" target="_blank" rel="noreferrer" aria-label="ANESTET в Telegram">
+              <Image src="/assets/icons/social/telegram.svg" alt="" width={24} height={24} aria-hidden="true" />
+            </a>
+          </nav>
+          <a className="header-support-button" href="#company-info" onClick={() => openCompanySection("contacts")} aria-label={`Поддержка — открыть контакты: ${SUPPORT_EMAIL}`}>
+            <span>Поддержка</span><small>{SUPPORT_EMAIL}</small>
+          </a>
+          <button
+            className="cart-button"
+            type="button"
+            aria-label={`Корзина ${String(cartCount).padStart(2, "0")}: открыть, ${cartCount} товаров`}
+            aria-haspopup="dialog"
+            aria-expanded={cartOpen}
+            onClick={() => setCartOpen(true)}
+          >
+            <BagIcon />
+            <span>{String(cartCount).padStart(2, "0")}</span>
+          </button>
+        </div>
       </header>
 
       <dialog
@@ -473,7 +529,7 @@ export default function Storefront() {
                 {cartEntries.map(({ product, quantity }) => (
                   <article className="cart-line" key={product.id}>
                     <div className="cart-line-image">
-                      <Image src={product.image} alt="" width={180} height={180} />
+                      <Image src={productPackshot(product.id)} alt="" width={180} height={180} />
                     </div>
                     <div className="cart-line-copy">
                       <p>{product.brand}</p>
@@ -545,10 +601,6 @@ export default function Storefront() {
         </div>
       </dialog>
 
-      <a className="support-button" href={`mailto:${SUPPORT_EMAIL}?subject=${encodeURIComponent("Поддержка ANESTET")}`} aria-label={`Написать в поддержку: ${SUPPORT_EMAIL}`}>
-        <span>Поддержка</span><strong>{SUPPORT_EMAIL}</strong>
-      </a>
-
       <section className="hero" id="top" aria-labelledby="hero-title" data-motion>
         <div className="hero-atmosphere" aria-hidden="true">
           <span className="serum-orb serum-orb-a" />
@@ -559,7 +611,9 @@ export default function Storefront() {
           <div className="hero-brand-track">
             {[0, 1].map((group) => (
               <div className="hero-brand-group" key={group}>
-                <Image src="/assets/img/anestet-logo-2024-blue.png" alt="" width={2709} height={1042} />
+                <svg className="hero-brand-logo-stencil" viewBox="0 0 11478 1556" aria-hidden="true" focusable="false">
+                  <path d={HERO_WORDMARK_PATH} transform="translate(0 1528) scale(1 -1)" />
+                </svg>
                 <span>CLINICAL CARE</span>
                 <span>PROFESSIONAL CARE</span>
               </div>
@@ -570,14 +624,16 @@ export default function Storefront() {
           <div className="hero-brand-track hero-brand-track-secondary">
             {[0, 1].map((group) => (
               <div className="hero-brand-group hero-brand-group-secondary" key={group}>
-                <Image className="hero-brand-secondary-logo" src="/assets/img/anestet-logo-2024-blue.png" alt="" width={2709} height={1042} />
+                <svg className="hero-brand-logo-stencil hero-brand-secondary-logo" viewBox="0 0 11478 1556" aria-hidden="true" focusable="false">
+                  <path d={HERO_WORDMARK_PATH} transform="translate(0 1528) scale(1 -1)" />
+                </svg>
               </div>
             ))}
           </div>
         </div>
         <div className="hero-copy" data-reveal data-visible="true">
           <p className="eyebrow"><SparkIcon /> {copy.eyebrow}</p>
-          <h1 id="hero-title">{copy.title}<em>{copy.accent}</em></h1>
+          <h1 id="hero-title"><span className="hero-title-opening">{copy.title}</span><em>{copy.accent}</em><span className="hero-title-closing">{copy.closing}</span></h1>
           <p className="hero-lead">{copy.lead}</p>
           <div className="hero-actions">
             <a className="primary-action" href="#shopping" onClick={() => setShoppingMode("catalog")}>Выбрать средство <ArrowIcon /></a>
@@ -594,21 +650,23 @@ export default function Storefront() {
           onBlur={() => setHeroCarouselPaused(false)}
         >
           <div className="product-halo" aria-hidden="true" />
-          <p className="hero-product-code">QK / NEW / {heroProduct.id}</p>
-          <Image
-            className="hero-product-image"
-            key={heroProduct.id}
-            src={heroProduct.image}
-            alt={heroProduct.title}
-            width={900}
-            height={900}
-            loading="eager"
-            fetchPriority="high"
-            style={{ "--hero-product-scale": heroProduct.heroScale ?? 1 } as React.CSSProperties}
-          />
-          <div className="hero-product-controls" aria-label="Новые продукты Queen Key">
+          <p className="hero-product-code">{heroProduct.brand} / NEW / {heroProduct.id}</p>
+          <div className="hero-packshot-frame">
+            <Image
+              className="hero-product-image"
+              key={heroProduct.id}
+              src={productPackshot(heroProduct.id)}
+              alt={heroProduct.title}
+              fill
+              sizes="(max-width: 760px) 92vw, 46vw"
+              loading="eager"
+              fetchPriority="high"
+              style={{ "--hero-product-scale": heroProduct.heroScale ?? 1 } as React.CSSProperties}
+            />
+          </div>
+          <div className="hero-product-controls" aria-label="Все новинки ANESTET">
             <button type="button" className="previous" onClick={() => showHeroProduct(-1)} aria-label="Предыдущий продукт"><ArrowIcon /></button>
-            <span>{String(heroProductIndex + 1).padStart(2, "0")} / {String(queenKeyHeroProducts.length).padStart(2, "0")}</span>
+            <span>{String(heroProductIndex + 1).padStart(2, "0")} / {String(heroProducts.length).padStart(2, "0")}</span>
             <button type="button" onClick={() => showHeroProduct(1)} aria-label="Следующий продукт"><ArrowIcon /></button>
           </div>
           <div className="hero-product-label" aria-live="polite">
@@ -620,14 +678,14 @@ export default function Storefront() {
             </button>
           </div>
         </div>
-        <p className="hero-side-note">Профессиональные формулы<br />для ежедневной практики</p>
+        <p className="hero-side-note">Профессиональные формулы<br />{" "}для ежедневной практики</p>
         <div className="scroll-cue" aria-hidden="true"><span /> Листайте</div>
       </section>
 
       {siteMode === "full" ? <section className="shopping-navigation" id="shopping" aria-labelledby="shopping-title">
         <div>
           <p className="section-index">Быстрый маршрут</p>
-          <h2 id="shopping-title">Сразу купить<br />или подобрать</h2>
+          <h2 id="shopping-title">Сразу купить<br />{" "}или подобрать</h2>
         </div>
         <div className="shopping-tabs" role="group" aria-label="Режим просмотра магазина">
           <button id="shopping-tab-catalog" type="button" aria-pressed={shoppingMode === "catalog"} className={shoppingMode === "catalog" ? "active" : ""} onClick={() => setShoppingMode("catalog")}>
@@ -664,7 +722,7 @@ export default function Storefront() {
       <section className="selection-guide" id="guide" aria-labelledby="guide-title">
         <div className="guide-heading" data-reveal>
           <p className="section-index">Как выбрать / полный маршрут</p>
-          <h2 id="guide-title">Сначала задача.<br />Затем формула.</h2>
+          <h2 id="guide-title">Сначала задача.<br />{" "}Затем формула.</h2>
           <p>Выберите момент применения, формат работы и зону ухода. Ниже — подробная навигация по данным и описаниям текущего каталога ANESTET.</p>
         </div>
 
@@ -727,7 +785,9 @@ export default function Storefront() {
                 <div className="product-media">
                   <span className="product-tag">{product.tag}</span>
                   {product.isNew && <span className="product-new">Новинка</span>}
-                  <Image src={product.image} alt={product.title} width={720} height={720} loading="lazy" />
+                  <div className="product-packshot-frame">
+                    <Image src={productPackshot(product.id)} alt={product.title} fill sizes="(max-width: 390px) 100vw, (max-width: 760px) 50vw, (max-width: 1100px) 33vw, 25vw" loading="lazy" />
+                  </div>
                 </div>
                 <button type="button" className={cartQuantity ? "quick-add selected" : "quick-add"} onClick={() => addToCart(product.id)} aria-label={cartQuantity ? `Добавить ещё: ${product.title}. В корзине ${cartQuantity}` : `Добавить ${product.title} в корзину`}>
                   {cartQuantity ? `В корзине · ${cartQuantity}` : "В корзину"}
@@ -759,7 +819,7 @@ export default function Storefront() {
         <section className="about-brand" id="about" aria-labelledby="about-title">
           <div className="about-portrait" data-reveal>
             <span className="about-year">2016—2026</span>
-            <Image src="/assets/img/partners/hero-partners.png" alt="Александр, представитель ANESTET" width={681} height={544} loading="lazy" />
+            <Image src="/assets/img/partners/alexander-portrait-hq-v2.webp" alt="Александр, представитель ANESTET" width={1363} height={1154} loading="lazy" />
           </div>
           <div className="about-copy" data-reveal>
             <p className="section-index">О бренде / собственная лаборатория</p>
@@ -771,14 +831,98 @@ export default function Storefront() {
               ))}
             </div>
             <nav className="brand-links" aria-label="Материалы о компании">
-              <a href="https://qkcosmetic.ru/partners" target="_blank" rel="noreferrer">Партнёрам <ArrowIcon /></a>
-              <a href="https://qkcosmetic.ru/delivery" target="_blank" rel="noreferrer">Доставка и оплата <ArrowIcon /></a>
-              <a href="https://qkcosmetic.ru/certificates" target="_blank" rel="noreferrer">Сертификаты <ArrowIcon /></a>
-              <a href="https://qkcosmetic.ru/contacts" target="_blank" rel="noreferrer">Контакты <ArrowIcon /></a>
+              <a href="#company-info" onClick={() => openCompanySection("partners")}>Партнёрам <ArrowIcon /></a>
+              <a href="#company-info" onClick={() => openCompanySection("delivery")}>Доставка и оплата <ArrowIcon /></a>
+              <a href="#company-info" onClick={() => openCompanySection("certificates")}>Сертификаты <ArrowIcon /></a>
+              <a href="#company-info" onClick={() => openCompanySection("contacts")}>Контакты <ArrowIcon /></a>
             </nav>
           </div>
         </section>
       )}
+
+      <section className="company-info" id="company-info" aria-labelledby="company-info-title">
+        <header data-reveal>
+          <div>
+            <p className="section-index">Всё внутри нового сайта</p>
+            <h2 id="company-info-title">Информация и документы</h2>
+          </div>
+          <p>Материалы перенесены из исходного сайта и теперь открываются здесь — без перехода в старый магазин.</p>
+        </header>
+        <div className="company-tabs" role="tablist" aria-label="Информация о компании">
+          {companySections.map((section, index) => (
+            <button
+              type="button"
+              role="tab"
+              id={`company-tab-${section.id}`}
+              aria-selected={companySection === section.id}
+              aria-controls="company-panel"
+              tabIndex={companySection === section.id ? 0 : -1}
+              className={companySection === section.id ? "active" : ""}
+              onClick={() => setCompanySection(section.id)}
+              onKeyDown={(event) => {
+                const currentIndex = companySections.findIndex((item) => item.id === section.id);
+                const lastIndex = companySections.length - 1;
+                let nextIndex: number | null = null;
+                if (event.key === "ArrowRight" || event.key === "ArrowDown") nextIndex = currentIndex === lastIndex ? 0 : currentIndex + 1;
+                if (event.key === "ArrowLeft" || event.key === "ArrowUp") nextIndex = currentIndex === 0 ? lastIndex : currentIndex - 1;
+                if (event.key === "Home") nextIndex = 0;
+                if (event.key === "End") nextIndex = lastIndex;
+                if (nextIndex === null) return;
+                event.preventDefault();
+                const nextSection = companySections[nextIndex];
+                setCompanySection(nextSection.id);
+                window.requestAnimationFrame(() => document.querySelector<HTMLButtonElement>(`#company-tab-${nextSection.id}`)?.focus());
+              }}
+              key={section.id}
+            >
+              <span>{String(index + 1).padStart(2, "0")}</span>{section.label}
+            </button>
+          ))}
+        </div>
+        <div className="company-panel" role="tabpanel" id="company-panel" aria-labelledby={`company-tab-${companySection}`} data-reveal>
+          {companySection === "partners" && (
+            <div className="partners-panel">
+              <div className="company-panel-copy"><p>Партнёрская сеть</p><h3>ANESTET рядом с мастерами</h3><p>Продукцию представляют профессиональные магазины и профильные площадки. По вопросам сотрудничества напишите команде бренда.</p><a href={`mailto:${SUPPORT_EMAIL}?subject=${encodeURIComponent("Партнёрство с ANESTET")}`}>Стать партнёром <ArrowIcon /></a></div>
+              <div className="partner-logo-grid">
+                {partnerLogos.map(([file, name]) => <div key={file}><Image src={`/assets/img/partners/${file}`} alt={name} width={190} height={92} loading="lazy" /></div>)}
+              </div>
+            </div>
+          )}
+          {companySection === "delivery" && (
+            <div className="delivery-panel">
+              <div className="company-panel-copy"><p>Оформление заказа</p><h3>Доставка и оплата</h3><p>Точный тариф CDEK подтверждается после расчёта. При оформлении заказа можно указать адрес, индекс, ПВЗ и комментарий.</p><button type="button" onClick={() => setCartOpen(true)}>Открыть корзину <ArrowIcon /></button></div>
+              <div className="delivery-info-list">
+                {deliveryOptions.map((option) => <article key={option.id}><strong>{option.title}</strong><p>{option.note}</p></article>)}
+                <article><strong>Оплата</strong><p>Наличными при согласованном способе получения. Подключение онлайн-оплаты выполняется после выдачи рабочего платёжного шлюза.</p></article>
+              </div>
+            </div>
+          )}
+          {companySection === "certificates" && (
+            <div className="certificates-panel">
+              <div className="company-panel-copy"><p>7 документов</p><h3>Декларации соответствия</h3><p>Откройте документ в полном размере. Все файлы хранятся на новом сайте.</p></div>
+              <div className="certificate-grid">
+                {certificateDocuments.map(([file, title], index) => (
+                  <a href={`/assets/img/certificates/${file}`} target="_blank" rel="noreferrer" key={file}>
+                    <Image src={`/assets/img/certificates/${file}`} alt={title} width={320} height={440} loading="lazy" />
+                    <span>{String(index + 1).padStart(2, "0")}</span><strong>{title}</strong><ArrowIcon />
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+          {companySection === "contacts" && (
+            <div className="contacts-panel">
+              <div className="company-panel-copy"><p>Связаться с нами</p><h3>Контакты ANESTET</h3><p>Поддержка по продуктам, заказам, доставке и партнёрству.</p></div>
+              <div className="contact-cards">
+                <a href={`mailto:${SUPPORT_EMAIL}`}><span>E-mail</span><strong>{SUPPORT_EMAIL}</strong><ArrowIcon /></a>
+                <a href="tel:+79101774142"><span>Телефон</span><strong>{SUPPORT_PHONE}</strong><ArrowIcon /></a>
+                <article><span>Самовывоз</span><strong>Москва, ул. Иловайская, д. 20, корп. 2</strong></article>
+                <details><summary>Реквизиты компании</summary><p>ИП Ермолаев Александр Михайлович<br />ИНН 331204181474 · ОГРНИП 324330000038211<br />601408, Владимирская обл., Вязниковский р-н, п. Мстёра, ул. Остров 2-я линия, д. 28, кв. 1</p></details>
+              </div>
+            </div>
+          )}
+        </div>
+      </section>
 
       <section className="evidence" aria-labelledby="evidence-title">
         <div className="evidence-image" data-reveal>
@@ -788,7 +932,7 @@ export default function Storefront() {
           <p className="section-index">Прозрачность / документы</p>
           <h2 id="evidence-title">Красота любит доказательства</h2>
           <p>Для ключевых линеек опубликованы декларации соответствия. Документы помогают проверить назначение и происхождение средств перед выбором.</p>
-          <a href="https://qkcosmetic.ru/certificates" target="_blank" rel="noreferrer">Посмотреть сертификаты <ArrowIcon /></a>
+          <a href="#company-info" onClick={() => openCompanySection("certificates")}>Посмотреть сертификаты <ArrowIcon /></a>
         </div>
       </section>
 
@@ -801,7 +945,8 @@ export default function Storefront() {
           <div className="social-feed-track">
             {[...socialCards, ...socialCards].map((card, index) => (
               <a className="social-card" href={card.href} target="_blank" rel="noreferrer" key={`${card.network}-${card.eyebrow}-${index}`} aria-hidden={index >= socialCards.length ? "true" : undefined} tabIndex={index >= socialCards.length ? -1 : undefined}>
-                <span className="social-network">{card.network}</span>
+                <div className="social-network"><Image src={card.icon} alt="" width={64} height={64} aria-hidden="true" /><span>{card.network}</span></div>
+                <Image className="social-network-watermark" src={card.icon} alt="" width={210} height={210} aria-hidden="true" />
                 <p>{card.eyebrow}</p>
                 <h3>{card.title}</h3>
                 <small>{card.note}</small>

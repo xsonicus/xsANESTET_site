@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="taplink-title">
+  <title id="taplink-title">Taplink</title>
+  <circle cx="32" cy="32" r="29" fill="#12B2FF"/>
+  <circle cx="32" cy="32" r="25" fill="#FFFFFF"/>
+  <g fill="#12B2FF">
+    <rect x="17" y="19" width="30" height="6" rx="3"/>
+    <rect x="17" y="29" width="30" height="6" rx="3"/>
+    <rect x="17" y="39" width="30" height="6" rx="3"/>
+  </g>
+</svg>

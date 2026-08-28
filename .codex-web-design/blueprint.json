@@ -4,14 +4,14 @@
     "schema_version": "website-design-brief.v1",
     "site_type": "product",
     "identity": {
-      "name": "ANESTET — light and dark storefront",
-      "topic": "Professional skincare ecommerce with Clinical Luxe light theme and Chromatic Serum dark theme",
-      "audience": "Cosmetologists and clients choosing professional pre- and post-procedure skincare",
-      "primary_action": "Choose a product by care stage and add it to cart"
+      "name": "ANESTET Professional Care",
+      "topic": "профессиональные средства ANESTET и QUEEN KEY для подготовки, сопровождения и восстановления кожи",
+      "audience": "косметологи и клиенты профессионального beauty-магазина, которым нужен быстрый выбор и оформление заказа",
+      "primary_action": "выбрать новинку или товар и оформить заказ"
     },
     "art_direction": {
-      "direction": "Clinical editorial laboratory: bright precision versus deep navy antipode, unified by real packshots, original wordmarks and one restrained moving brand rail",
-      "signature": "Choose one memorable visual or interaction motif rooted in Professional skincare ecommerce with Clinical Luxe light theme and Chromatic Serum dark theme; repeat it with restraint rather than adding unrelated effects.",
+      "direction": "две взаимосвязанные темы: клиническая светлая и глубокая navy; точная брендовая типографика, реальные packshot-продукты, спокойная профессиональная динамика",
+      "signature": "Choose one memorable visual or interaction motif rooted in профессиональные средства ANESTET и QUEEN KEY для подготовки, сопровождения и восстановления кожи; repeat it with restraint rather than adding unrelated effects.",
       "differentiation": "The concept must be explainable in one sentence and must not depend on a copied reference layout.",
       "anti_template": [
         "Do not begin from a generic centered headline plus floating card grid.",
@@ -21,33 +21,30 @@
     },
     "content_truth": {
       "supplied_proof": [
-        "23 verified catalog products",
-        "Original ANESTET and Queen Key logos",
-        "Seven published declarations of conformity",
-        "Transparent product packshots"
+        "полный каталог из исходного магазина",
+        "декларации соответствия и сертификаты",
+        "реальный основатель бренда",
+        "реальные цены, форматы и способы доставки"
       ],
       "rule": "Testimonials, metrics, awards, scarcity, prices and guarantees must come from supplied evidence or remain clearly marked placeholders."
     },
     "assets": {
       "available": [
-        "ANESTET blue transparent wordmark",
-        "Queen Key transparent logo",
-        "23 transparent product packshots",
-        "Queen Key Recovery Milk hero image",
-        "Generated evidence image with exact hero product"
+        "23 локальных packshot с настоящим alpha",
+        "оригинальные логотипы ANESTET и QUEEN KEY",
+        "портрет основателя",
+        "сертификаты и партнёрские логотипы",
+        "локальные иконки VK и Telegram"
       ],
       "missing_rule": "Use image search, supplied media or generated bitmap assets. The primary visual must show the real subject, product, place, person or learning outcome."
     },
     "constraints": [
-      "Exactly two visual themes: Clinical Luxe light and Chromatic Serum dark",
-      "Default theme follows browser color-scheme",
-      "No Quiet Ritual selector",
-      "No catalog-wide scanning line",
-      "Clinical product shadows visible without hover",
-      "Diagonal ANESTET marquee on hero and horizontal marquee in footer",
-      "Responsive from 360px",
-      "Respect prefers-reduced-motion",
-      "Preserve verified product facts and contacts"
+      "никаких покупательских переходов на старый магазин",
+      "никаких наложений текста, товара и кнопок на 10 контрольных ширинах",
+      "только две темы, автоматически по prefers-color-scheme",
+      "в hero вращаются все 8 новинок каждые 4.6 секунды",
+      "reduced motion обязателен",
+      "внешние интеграции включаются только с подтверждёнными production credentials"
     ],
     "first_viewport": "Make the brand/product/place/person or literal offer unmistakable, avoid a split-card hero, and keep a visible hint of the next section on mobile and desktop.",
     "acceptance": [

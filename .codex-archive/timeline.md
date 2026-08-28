@@ -13,3 +13,24 @@ The source-faithful full storefront and preserved one-page view were released wi
 
 Branch: main
 Head: f85c9af
+
+
+## 2026-08-28T11:42:01.110Z - Prompt: Полная сверка правок, все новинки в hero и дефект поддержки
+
+Prompt saved.
+
+File: /Users/xsonicus/CodexRuntime/xsANESTET_site/.codex-archive/prompts/2026-08-28T11-42-01-077Z-полная-сверка-правок-все-новинки-в-hero-и-дефект-поддержки.md
+
+
+## 2026-08-28T11:42:01.143Z - Prompt: Пропорции каталога и безопасная зона плашек
+
+Prompt saved.
+
+File: /Users/xsonicus/CodexRuntime/xsANESTET_site/.codex-archive/prompts/2026-08-28T11-42-01-118Z-пропорции-каталога-и-безопасная-зона-плашек.md
+
+
+## 2026-08-28T11:42:01.171Z - Prompt: Повышение качества портрета Александра
+
+Prompt saved.
+
+File: /Users/xsonicus/CodexRuntime/xsANESTET_site/.codex-archive/prompts/2026-08-28T11-42-01-147Z-повышение-качества-портрета-александра.md

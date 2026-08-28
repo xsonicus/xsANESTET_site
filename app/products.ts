@@ -20,7 +20,7 @@ export const products: Product[] = [
   { id: 38, brand: "ANESTET", title: "Гель для вторичного охлаждения base, 5 мл", compactTitle: "Base 02 · 5 мл", price: 450, image: "/assets/img/optimized/transparent/38.webp", tag: "Второй этап" },
   { id: 39, brand: "FION", title: "Гель для вторичного охлаждения FION ultra, 30 мл", compactTitle: "FION Ultra 02 · 30 мл", price: 2400, image: "/assets/img/optimized/transparent/39.webp", tag: "Второй этап" },
   { id: 40, brand: "FION", title: "Гель для вторичного охлаждения FION ultra, 5 мл", compactTitle: "FION Ultra 02 · 5 мл", price: 450, image: "/assets/img/optimized/transparent/40.webp", tag: "Второй этап" },
-  { id: 42, brand: "QUEEN KEY", title: "Восстанавливающий крем для лица с церамидами, 50 мл", compactTitle: "Repair Ceramide · 50 мл", price: 2500, image: "/assets/img/optimized/transparent/42.webp", tag: "Восстановление", isNew: true, heroScale: 1.2 },
+  { id: 42, brand: "QUEEN KEY", title: "Восстанавливающий крем для лица с церамидами, 50 мл", compactTitle: "Repair Ceramide · 50 мл", price: 2500, image: "/assets/img/optimized/transparent/42.webp", tag: "Восстановление", isNew: true, heroScale: 1.05 },
   { id: 48, brand: "LIGHT FROST", title: "Гель для наружного применения Light Frost, 30 мл", compactTitle: "Light Frost · 30 мл", price: 750, image: "/assets/img/optimized/transparent/48.webp", tag: "Компактный формат" },
   { id: 49, brand: "LIGHT FROST", title: "Гель для наружного применения Light Frost, 150 мл", compactTitle: "Light Frost · 150 мл", price: 2750, image: "/assets/img/optimized/transparent/49.webp", tag: "Средний формат" },
   { id: 50, brand: "LIGHT FROST", title: "Гель для наружного применения Light Frost, 400 мл", compactTitle: "Light Frost · 400 мл", price: 5400, image: "/assets/img/optimized/transparent/50.webp", tag: "Профессиональный объём" },
@@ -33,7 +33,7 @@ export const products: Product[] = [
   { id: 57, brand: "АНЕСТОДЕРМ", title: "Гель косметический Анестодерм, 300 мл", compactTitle: "Анестодерм · 300 мл", price: 5050, image: "/assets/img/optimized/transparent/anestoderm-300ml.webp", tag: "Профессиональный объём" },
   { id: 58, brand: "MILDEP", title: "Крем Mildep Professional, 30 мл", compactTitle: "Mildep Pro · 30 мл", price: 700, image: "/assets/img/optimized/transparent/mildep-30ml.webp", tag: "Крем" },
   { id: 59, brand: "MILDEP", title: "Крем Mildep Professional, 300 мл", compactTitle: "Mildep Pro · 300 мл", price: 4000, image: "/assets/img/optimized/transparent/mildep-300ml.webp", tag: "Профессиональный объём" },
-  { id: 60, brand: "QUEEN KEY", title: "Восстанавливающие сливки с Д-пантенолом, 200 мл", compactTitle: "Recovery Milk · 200 мл", price: 890, image: "/assets/img/optimized/slivki-cutout.webp", tag: "После процедуры", isNew: true, heroScale: 1 },
+  { id: 60, brand: "QUEEN KEY", title: "Восстанавливающие сливки с Д-пантенолом, 200 мл", compactTitle: "Recovery Milk · 200 мл", price: 890, image: "/assets/img/optimized/slivki-cutout.webp", tag: "После процедуры", isNew: true },
 ];
 
 export const formatPrice = (price: number) => new Intl.NumberFormat("ru-RU").format(price) + " ₽";

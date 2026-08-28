@@ -1,6 +1,6 @@
 {
   "schema_version": "website-stack.v1",
-  "framework": "Next.js 16 static export with React and CSS",
+  "framework": "Next.js 16 static export with local order API",
   "component_behavior": "Radix primitives or carefully selected shadcn components with a custom visual layer",
   "animation": "Motion",
   "smooth_scroll": "native scrolling",

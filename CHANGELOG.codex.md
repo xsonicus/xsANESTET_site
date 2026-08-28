@@ -97,3 +97,29 @@ Release 2026.08.28-v11 adds the original Open Sans and Unbounded typography, nov
 - Risk/Rollback: low
 - Issue/Request: Live Lighthouse attributed 0.186 CLS to late Open Sans and Unbounded swaps moving the mobile hero product scene.
 Preloaded Open Sans and Unbounded font files from the document head so the v11 hero and product scene keep stable geometry during first paint.
+
+## 2026-08-28T12:34:37.388Z - Version 11.1.0
+
+- Previous version: 1.1.1
+- Bump: explicit
+## 2026-08-28T12:34:37.393Z - Autonomous storefront content and complete novelty experience
+- ID: 2026-08-28T12-34-37-393Z-autonomous-storefront-content-and-complete-novelty-experience
+- Version: 11.1.0
+- Category: feature
+- Branch: main
+- Head: fb8a8a2
+- Files: app/storefront.tsx, app/globals.css, app/products.ts, public/assets/img/optimized/cards, public/assets/img/partners/alexander-portrait-hq-v2.webp, public/assets/icons/social, public/assets/img/certificates, scripts/normalize-product-packshots.mjs
+- Verification: npm run build; npm run qa:layout: 10 screens x 2 themes x 3 presentations; Playwright cart and internal company tabs; No qkcosmetic.ru link in app UI
+- Risk/Rollback: medium
+- Issue/Request: The new storefront still depended on legacy-site links, showed an incomplete novelty set, and had inconsistent packshot backgrounds/scales and incomplete top-level support access.
+Moved partner, delivery, certificate and contact content into accessible internal tabs; removed legacy-shop navigation from the new interface; added top VK, Telegram and working support controls; rotated all eight novelties in the hero; normalized all 23 catalog packshots to true-alpha WebP; upgraded the founder portrait and social platform visuals.## 2026-08-28T12:34:37.459Z - Release-blocking layout, accessibility and LCP hardening
+- ID: 2026-08-28T12-34-37-459Z-release-blocking-layout-accessibility-and-lcp-hardening
+- Version: 11.1.0
+- Category: fix
+- Branch: main
+- Head: fb8a8a2
+- Files: app/storefront.tsx, app/globals.css, scripts/qa-layout.mjs, README.md, docs/RELEASE_HISTORY.md, docs/releases/2026.08.28-v11.1.0.md, package.json, package-lock.json
+- Verification: npm run build; npm run qa:layout; Lighthouse Accessibility 100, Best Practices 100, SEO 100; npm audit --omit=dev: 0 vulnerabilities; git diff --check
+- Risk/Rollback: low
+- Issue/Request: Responsive collisions and subtle accessibility defects could pass screenshot-only review; release metadata was inconsistent with the prepared build.
+Extended geometry QA to ten widths and all theme/view combinations; fixed product-label and cart safe zones, active-tab contrast, support accessible naming, branded stencil loading behavior, and animation visibility/reduced-motion controls.

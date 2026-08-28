@@ -1,6 +1,6 @@
 {
   "schema_version": "website-motion-plan.v1",
-  "intensity": "restrained",
+  "intensity": "expressive",
   "beats": [
     {
       "id": "entry",
@@ -10,7 +10,7 @@
         "opacity",
         "transform"
       ],
-      "duration_ms": 360
+      "duration_ms": 620
     },
     {
       "id": "signature",

@@ -24,13 +24,13 @@ The deployable static bundle is written to `out/`.
 
 The segmented control at the top changes composition, typography, palette and motion while preserving the same catalog and functionality. Clinical Luxe and Chromatic Serum follow the browser light/dark preference by default; a visitor can switch between them manually or return to automatic mode.
 
-The compact site-version control links three related states:
+The compact site-version control links the new site's related states:
 
-- `Было` — the original public MODX storefront;
+- `Информация` — migrated partner, delivery, certificate and contact content inside the new storefront;
 - `Одностраничный` — the complete catalogue and care guide in one continuous page (`?site=onepage`);
 - `Полный сайт` — the commerce-first view with the catalogue and thematic guide separated (`?site=full`).
 
-The full view opens directly on products. Its hero rotates only the current blue Queen Key novelties every 4.6 seconds, supports manual navigation and adds directly to the persistent cart. The cart supports quantity changes, delivery and address selection, creates a server-side order number and keeps WhatsApp as an explicit operator fallback.
+The full view opens directly on products. Its hero rotates all eight current novelties every 4.6 seconds, supports manual navigation and adds directly to the persistent cart. The cart supports quantity changes, five delivery options, recipient details and address selection, creates a server-side order number and keeps WhatsApp as an explicit operator fallback.
 
 The first screen uses the original ANESTET wordmark in the header and as a low-contrast diagonal motion rail. A second, slower oversized ANESTET rail crosses it at the opposite angle with a restrained blur, creating one layered brand signature behind the readable content. The footer combines the original high-resolution ANESTET and Queen Key brand assets. All 23 catalog packshots use real transparency instead of white rectangular backplates.
 
@@ -38,7 +38,7 @@ The first screen uses the original ANESTET wordmark in the header and as a low-c
 
 `https://anestet.139-180-214-133.sslip.io`
 
-The static export is deployed behind nginx with HTTPS. Releases are immutable directories under `/var/www/anestet/releases/`; `/var/www/anestet/current` is switched atomically. The pre-GitHub one-page release remains preserved as `20260828-v9`; the current GitHub-tracked release is `20260828-v11.0.1`.
+The static export is deployed behind nginx with HTTPS. Releases are immutable directories under `/var/www/anestet/releases/`; `/var/www/anestet/current` is switched atomically. The pre-GitHub one-page release remains preserved as `20260828-v9`; the current prepared release is `20260828-v11.1.0`.
 
 ## Versioning and public change history
 
@@ -51,7 +51,7 @@ Repository: `https://github.com/xsonicus/xsANESTET_site`
 
 ## Source provenance
 
-- Product names, prices, images and public business information: current `qkcosmetic.ru` catalog snapshot captured on 2026-08-28.
+- Product names, prices, images and public business information: preserved source catalog snapshot captured on 2026-08-28. The new interface does not send visitors to the legacy shop.
 - Original server export: `original_site/`; infrastructure boundary: `docs/ORIGINAL_INFRASTRUCTURE.md`.
 - Commerce integration plan for 1C, CDEK, warehouse stock, promotions and administration: `docs/COMMERCE_BACKEND_ROADMAP.md`.
 - Live adapter status and secret-handling boundary: `docs/INTEGRATION_STATUS.md`.
@@ -61,7 +61,7 @@ Repository: `https://github.com/xsonicus/xsANESTET_site`
 
 - Static Next.js export.
 - Desktop and mobile Playwright screenshots in `output/playwright/`.
-- Automated `npm run qa:layout` gate: 8 target screens × 2 themes × 3 site presentations; text clipping, safe-edge violations, heading collisions, product/button overlap and horizontal overflow are release blockers. The matrix includes the tall 1431 × 1728 viewport.
+- Automated `npm run qa:layout` gate: 10 target screens × 2 themes × 3 site presentations; text clipping, safe-edge violations, heading collisions, product/button overlap and horizontal overflow are release blockers. The matrix includes the tall 1431 × 1728 viewport.
 - `prefers-reduced-motion` fallback.
 - Keyboard-visible focus, semantic theme selector, semantic filters and cart controls.
 - Transparent WebP hero/featured packshots preserve alpha; the main hero image is 38 KB and is loaded as the high-priority LCP resource.

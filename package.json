@@ -1,12 +1,13 @@
 {
   "name": "xs-anestet-design-lab",
-  "version": "1.0.0",
+  "version": "11.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "assets:normalize": "node scripts/normalize-product-packshots.mjs",
     "qa:layout": "node scripts/qa-layout.mjs"
   },
   "dependencies": {

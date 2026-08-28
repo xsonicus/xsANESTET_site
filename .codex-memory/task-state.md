@@ -22,3 +22,6 @@
 ## Quality evidence
 - Accessibility 100, Best Practices 100, SEO 100.
 - Font preloading reduced synthetic CLS from 0.186 to 0.089. Synthetic performance remains affected by the explicitly required autoplay carousel becoming a later LCP candidate; no functional or visual regression was introduced to mask the metric.
+
+
+Release 2026.08.28-v11.1.0 rule: the new storefront must be autonomous. No UI link may open qkcosmetic.ru or the legacy shop. Partner, delivery/payment, certificates, contacts and support live in internal accessible tabs. External links are limited to official VK, Telegram, Taplink, WhatsApp, mail, phone and GitHub release history. Hero rotates all eight current novelties every 4.6 seconds with direct add-to-cart. All 23 catalog packshots use true alpha and normalized safe zones. Release requires build + 10-width layout QA in both themes and all three views, Playwright cart/content smoke, console clean, accessibility/Lighthouse evidence and immutable VPS rollback.
