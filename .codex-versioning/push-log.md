@@ -16,4 +16,10 @@
 - Branch: main
 - Commit: bb6fa55
 - Version: 1.0.2
-- Fixes marked: 1
+- Fixes marked: 1## 2026-08-28T10:40:40.764Z - Push
+- Remote: origin
+- Branch: main
+- Commit: 8b01947b
+- Version: 1.1.1
+- Fixes marked: 3
+- Notes: Published GitHub releases 2026.08.28-v11 and 2026.08.28-v11.0.1; deployed v11.0.1 atomically to VPS with active Order API.
