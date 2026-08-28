@@ -40,4 +40,10 @@
 - Commit: e2f9fa8
 - Version: 11.1.2
 - Fixes marked: 1
-- Notes: ANESTET v11.1.2 comparison-switcher fix pushed; awaiting CI before tag and VPS deploy.
+- Notes: ANESTET v11.1.2 comparison-switcher fix pushed; awaiting CI before tag and VPS deploy.## 2026-08-28T13:58:14.349Z - Push
+- Remote: origin
+- Branch: main
+- Commit: b99c411cd90cf8f36a955f91c448c88bfaf3372c
+- Version: 11.1.3
+- Fixes marked: 1
+- Notes: ANESTET v11.1.3 mobile header safe-zone fix pushed; release and VPS deployment follow.
