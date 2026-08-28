@@ -28,4 +28,10 @@
 - Commit: eb38c39
 - Version: 11.1.0
 - Fixes marked: 2
-- Notes: ANESTET storefront v11.1.0 implementation commit pushed; awaiting CI before release tag and VPS deployment.
+- Notes: ANESTET storefront v11.1.0 implementation commit pushed; awaiting CI before release tag and VPS deployment.## 2026-08-28T13:26:48.553Z - Push
+- Remote: origin
+- Branch: main
+- Commit: c6c7cf5
+- Version: 11.1.1
+- Fixes marked: 1
+- Notes: ANESTET v11.1.1 hero-copy patch pushed; awaiting CI before tagging and VPS deployment.
