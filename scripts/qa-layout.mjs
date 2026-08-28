@@ -57,6 +57,7 @@ const page = await browser.newPage();
 const viewports = [
   { width: 360, height: 844 },
   { width: 390, height: 844 },
+  { width: 644, height: 684 },
   { width: 674, height: 406 },
   { width: 760, height: 1000 },
   { width: 1024, height: 1000 },
@@ -220,6 +221,23 @@ try {
           .filter(paintsOutside)
           .map((element) => `${element.tagName.toLowerCase()}.${element.className || "-"}: ${element.textContent?.trim()}`);
         const collisions = [];
+        const header = document.querySelector(".site-header");
+        const wordmark = document.querySelector(".wordmark");
+        const headerActions = document.querySelector(".header-actions");
+        collision(collisions, "header wordmark ↔ actions", wordmark, headerActions);
+        if (header && visible(header)) {
+          const headerRect = header.getBoundingClientRect();
+          for (const element of [wordmark, ...document.querySelectorAll(".header-socials a,.header-support-button,.cart-button")]) {
+            if (!element || !visible(element)) continue;
+            const rect = element.getBoundingClientRect();
+            if (rect.left < Math.max(0, headerRect.left) - 1 || rect.right > Math.min(innerWidth, headerRect.right) + 1) {
+              collisions.push(`header control outside viewport (${label(element)} [${Math.round(rect.left)}, ${Math.round(rect.right)}] / ${innerWidth})`);
+            }
+            if (rect.top < headerRect.top - 1 || rect.bottom > headerRect.bottom + 1) {
+              collisions.push(`header control outside header vertically (${label(element)})`);
+            }
+          }
+        }
         const title = document.querySelector(".hero h1");
         const halo = document.querySelector(".product-halo");
         collision(collisions, "hero title ↔ product halo", title, halo);

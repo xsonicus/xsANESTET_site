@@ -38,7 +38,7 @@ The first screen uses the original ANESTET wordmark in the header and as a low-c
 
 `https://anestet.139-180-214-133.sslip.io`
 
-The static export is deployed behind nginx with HTTPS. Releases are immutable directories under `/var/www/anestet/releases/`; `/var/www/anestet/current` is switched atomically. The pre-GitHub one-page release remains preserved as `20260828-v9`; the current prepared release is `20260828-v11.1.2`.
+The static export is deployed behind nginx with HTTPS. Releases are immutable directories under `/var/www/anestet/releases/`; `/var/www/anestet/current` is switched atomically. The pre-GitHub one-page release remains preserved as `20260828-v9`; the current prepared release is `20260828-v11.1.3`.
 
 ## Versioning and public change history
 

@@ -155,3 +155,19 @@ Updated the shared hero copy for Clinical Luxe and Chromatic Serum so every site
 - Risk/Rollback: low; comparison link is isolated to the top switcher; rollback to immutable v11.1.1
 - Issue/Request: User clarified that the top control exists to compare old, one-page and full-site variants, not to open the internal information section.
 Replaced the top Information shortcut with a verified external Старый сайт link, retained internal one-page and full-site mode controls, and documented the legacy-link boundary so all other storefront journeys remain internal.
+
+## 2026-08-28T13:52:04.516Z - Version 11.1.3
+
+- Previous version: 11.1.2
+- Bump: patch
+## 2026-08-28T13:53:57.960Z - Stabilize the mobile header action row
+- ID: 2026-08-28T13-53-57-960Z-stabilize-the-mobile-header-action-row
+- Version: 11.1.3
+- Category: fix
+- Branch: main
+- Head: ab31ef1
+- Files: app/globals.css, scripts/qa-layout.mjs, app/storefront.tsx, package.json, package-lock.json, README.md, docs/RELEASE_HISTORY.md, docs/releases/2026.08.28-v11.1.3.md
+- Verification: npm run build; npm run qa:layout: 11 widths x 2 themes x 3 views; Playwright visual review at 644px Clinical Luxe, 390px Chromatic Serum, and 360px Clinical Luxe; Playwright header interaction check: no overflow, all controls within header, 44px touch targets, keyboard focus, cart opens, no console/network errors; git diff --check
+- Risk/Rollback: low; CSS-only responsive header change with immutable rollback to v11.1.2
+- Issue/Request: User reported that at a small/intermediate resolution the round social controls moved upward and the cart was pushed out of the viewport; requested smaller centered circles and the ANESTET mark shifted left.
+Reworked the mobile header into a shrink-safe two-column grid, aligned the ANESTET wordmark to the left, normalized VK, Telegram, support, and cart controls to accessible 44px circles, moved the cart count into a compact badge, and expanded layout QA with an exact 644px viewport plus per-control viewport/header collision assertions.
