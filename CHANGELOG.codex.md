@@ -254,4 +254,14 @@ Published the complete two-theme ANESTET storefront, 23 authentic shadow-free pa
 - Verification: npm run build && npm run qa:layout: PASS, 11 widths x 2 themes x 3 presentations; npm run qa:admin: PASS; npx tsc --noEmit: PASS; npm audit --omit=dev: 0 vulnerabilities; git diff --check: PASS; Codex in-app Browser hero/founder visual QA with overflow=false; Local Chrome interaction smoke: stage 02 -> four products, product 39 focused and targeted, console warnings/errors=0
 - Risk/Rollback: low-to-medium; static storefront patch only. Roll back the /var/www/anestet/current symlink to immutable 20260901-v13.1.2; Order API and Admin API remain unchanged.
 - Issue/Request: Cumulative user visual corrections requested product-led hero wording from the previous storefront, animated headline replacement, a larger founder nameplate, smaller oversized sections and fully clickable care-stage product navigation.
-Replaced the abstract hero slogan with product-specific source descriptions and synchronized wind-out/type-in copy motion with the approved Prism transition; enlarged the Alexander Ermolaev founder caption while preserving the original portrait and reducing empty space; shortened evidence and footer scenes with restrained runway/silk motion; reduced the care-guide heading; and added stage-scoped catalog navigation plus focused product deep links.
+Replaced the abstract hero slogan with product-specific source descriptions and synchronized wind-out/type-in copy motion with the approved Prism transition; enlarged the Alexander Ermolaev founder caption while preserving the original portrait and reducing empty space; shortened evidence and footer scenes with restrained runway/silk motion; reduced the care-guide heading; and added stage-scoped catalog navigation plus focused product deep links.## 2026-08-31T22:49:25.974Z - Mark ANESTET v13.1.3 active production state
+- ID: 2026-08-31T22-49-25-974Z-mark-anestet-v13.1.3-active-production-state
+- Version: 13.1.3
+- Category: release
+- Branch: main
+- Head: 3725c9b
+- Files: README.md, .codex-memory/task-state.md, .codex-memory/correction-register.md
+- Verification: Public storefront and /admin returned 200; Order API and Admin API health returned ok; Anonymous admin session returned 200 authenticated false; Public catalog returned 23 products and id60 price 890 compareAtPrice 1190; Public Codex Browser showed release 13.1.3, full founder name, product-led hero and overflow=false; Public Chrome interaction smoke selected product 39 with no console warnings/errors or request failures
+- Risk/Rollback: documentation-only follow-up; no runtime code change
+- Issue/Request: Deployment status documentation must reflect the exact active immutable static release while distinguishing unchanged Order/Admin API releases.
+Updated the durable task state, correction lineage and README after atomic VPS promotion and successful public storefront, API, catalog, responsive and interaction smoke checks.
