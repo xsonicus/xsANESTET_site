@@ -6,6 +6,8 @@ import { randomBytes } from "node:crypto";
 const host = process.env.ANESTET_API_HOST || "127.0.0.1";
 const port = Number(process.env.ANESTET_API_PORT || 4317);
 const orderStore = process.env.ANESTET_ORDER_STORE || "/var/lib/anestet/orders.jsonl";
+const callbackStore = process.env.ANESTET_CALLBACK_STORE || "/var/lib/anestet/callbacks.jsonl";
+const catalogStore = process.env.ANESTET_CATALOG_STORE || "/var/lib/anestet/catalog.json";
 const adminToken = process.env.ANESTET_ADMIN_TOKEN || "";
 const maxBodyBytes = 64 * 1024;
 
@@ -62,7 +64,18 @@ async function readBody(request) {
   return JSON.parse(Buffer.concat(chunks).toString("utf8"));
 }
 
-function validateOrder(input) {
+async function currentCatalog() {
+  try {
+    const parsed = JSON.parse(await readFile(catalogStore, "utf8"));
+    if (!Array.isArray(parsed?.products)) throw new Error("Catalog store has an unsupported schema");
+    return new Map(parsed.products.filter((product) => product?.active !== false).map((product) => [Number(product.id), [clean(product.compactTitle, 120), Number(product.price)]]));
+  } catch (error) {
+    if (error?.code === "ENOENT") return catalog;
+    throw error;
+  }
+}
+
+async function validateOrder(input) {
   if (!input || typeof input !== "object") throw new Error("Некорректные данные заказа");
   const customer = input.customer || {};
   const name = clean(customer.name, 100);
@@ -72,12 +85,13 @@ function validateOrder(input) {
   if (phone.replace(/\D/g, "").length < 10) throw new Error("Проверьте номер телефона");
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) throw new Error("Проверьте e-mail");
 
+  const liveCatalog = await currentCatalog();
   const requestedItems = Array.isArray(input.items) ? input.items : [];
   if (!requestedItems.length || requestedItems.length > 50) throw new Error("Корзина пуста или содержит слишком много позиций");
   const items = requestedItems.map((line) => {
     const id = Number(line?.id);
     const quantity = Number(line?.quantity);
-    const product = catalog.get(id);
+    const product = liveCatalog.get(id);
     if (!product || !Number.isInteger(quantity) || quantity < 1 || quantity > 99) throw new Error("В корзине есть некорректная позиция");
     return { id, title: product[0], price: product[1], quantity, total: product[1] * quantity };
   });
@@ -110,7 +124,7 @@ async function createOrder(request, response) {
   if (rateLimited(address)) return json(response, 429, { ok: false, error: "Слишком много попыток. Повторите через минуту" });
   try {
     const input = await readBody(request);
-    const order = validateOrder(input);
+    const order = await validateOrder(input);
     const now = new Date();
     const orderId = `AN-${now.toISOString().slice(0, 10).replaceAll("-", "")}-${randomBytes(3).toString("hex").toUpperCase()}`;
     const record = { orderId, createdAt: now.toISOString(), status: "new", ...order };
@@ -119,6 +133,35 @@ async function createOrder(request, response) {
     return json(response, 201, { ok: true, orderId, status: "new", quoteRequired: order.delivery.quoteRequired });
   } catch (error) {
     const message = error instanceof Error ? error.message : "Не удалось создать заказ";
+    return json(response, message === "PAYLOAD_TOO_LARGE" ? 413 : 400, { ok: false, error: message === "PAYLOAD_TOO_LARGE" ? "Слишком большой запрос" : message });
+  }
+}
+
+async function createCallback(request, response) {
+  const address = request.headers["x-forwarded-for"]?.split(",")[0]?.trim() || request.socket.remoteAddress || "unknown";
+  if (rateLimited(`callback:${address}`)) return json(response, 429, { ok: false, error: "Слишком много попыток. Повторите через минуту" });
+  try {
+    const input = await readBody(request);
+    const phone = clean(input?.phone, 40);
+    if (phone.replace(/\D/g, "").length < 10) throw new Error("Проверьте номер телефона");
+    if (input?.consent !== true) throw new Error("Нужно согласие на обработку персональных данных");
+    const now = new Date();
+    const requestId = `CALL-${now.toISOString().slice(0, 10).replaceAll("-", "")}-${randomBytes(3).toString("hex").toUpperCase()}`;
+    const record = {
+      requestId,
+      createdAt: now.toISOString(),
+      status: "new",
+      phone,
+      consent: true,
+      marketing: input?.marketing === true,
+      source: clean(input?.source, 30),
+      release: clean(input?.release, 50),
+    };
+    await mkdir(dirname(callbackStore), { recursive: true, mode: 0o750 });
+    await appendFile(callbackStore, `${JSON.stringify(record)}\n`, { encoding: "utf8", mode: 0o640 });
+    return json(response, 201, { ok: true, requestId, status: "new" });
+  } catch (error) {
+    const message = error instanceof Error ? error.message : "Не удалось записать заявку";
     return json(response, message === "PAYLOAD_TOO_LARGE" ? 413 : 400, { ok: false, error: message === "PAYLOAD_TOO_LARGE" ? "Слишком большой запрос" : message });
   }
 }
@@ -140,10 +183,10 @@ const server = createServer(async (request, response) => {
   if (request.method === "GET" && url.pathname === "/api/health") return json(response, 200, { ok: true, service: "anestet-order-api", version: 1 });
   if (request.method === "POST" && url.pathname === "/api/orders") return createOrder(request, response);
   if (request.method === "GET" && url.pathname === "/api/orders") return listOrders(request, response);
+  if (request.method === "POST" && url.pathname === "/api/callbacks") return createCallback(request, response);
   return json(response, 404, { ok: false, error: "Not found" });
 });
 
 server.listen(port, host, () => {
   console.log(`ANESTET order API listening on http://${host}:${port}`);
 });
-

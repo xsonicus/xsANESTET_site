@@ -67,7 +67,7 @@ const viewports = [
   { width: 1912, height: 1858 },
   { width: 2048, height: 1000 },
 ];
-const themes = ["clinical", "serum"];
+const themes = ["serum", "clinical"];
 const views = ["full-catalog", "full-guide", "onepage"];
 const failures = [];
 

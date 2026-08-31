@@ -1,35 +1,43 @@
-# ANESTET current task state
+# Текущее утверждённое состояние QK Cosmetic / ANESTET
 
-## Live release
-- Version: `2026.08.28-v11.1.0`
-- Site: `https://anestet.139-180-214-133.sslip.io/?site=full&v=20260828-v11.1.0#top`
-- GitHub release: `https://github.com/xsonicus/xsANESTET_site/releases/tag/2026.08.28-v11.1.0`
-- Web symlink: `/var/www/anestet/releases/20260828-v11.1.0`
-- Rollback release preserved: `/var/www/anestet/releases/20260828-v11.0.1`
-- Order API: active; `/api/health` HTTP 200
-- Controlled production QA order: `AN-20260828-154CBD`, explicitly marked not to process.
+Правило lineage: каждое новое уточнение пользователя заменяет противоречащую предыдущую формулировку. Не сохранять отменённые варианты рядом с утверждённым.
 
-## Complete
-- New customer journey is autonomous: no customer-facing links to qkcosmetic.ru; partner, delivery/payment, certificates and contacts are internal accessible tabs.
-- Hero rotates all eight current novelties every 4.6 seconds, with manual controls, proportional alpha packshots, price and direct cart action.
-- All 23 product cards use normalized genuine-alpha WebP packshots; product/button safe zones and mobile filters pass.
-- Working cart includes quantities, recipient data and five delivery choices; order API recomputes catalog prices server-side.
-- Top VK, Telegram and Support controls work; support opens internal contacts with email.
-- Two themes remain: Clinical Luxe light and Chromatic Serum navy; browser preference selects automatically.
+## Визуальная система
+- Ровно две темы: Future Beauty (тёмно-синяя, по умолчанию) и Clinical Luxury (светлая, вторая). Beauty Editorial удалена из интерфейса.
+- Hero использует только один переход «Призма». Никаких названий/переключателей анимаций на сайте. Продукт не смещается и не масштабируется; меняются только световые срезы и прозрачность.
+- Метаданные продукта анимированы: старая подпись уходит воздушным blur, новая последовательно раскрывается.
+- Одна Opaline-сфера находится за продуктом. Сцена и ореол расширяются влево за центральную ось, но полностью растворяются до края: никакой вертикальной границы iframe, обрезки или прямого шва.
+- Блок «Сразу купить или подобрать» — две строки и компактные кнопки.
+- Александр — крупный, явно видимый основатель в компактной живой оптической сцене; четыре ссылки о компании идут отдельной полосой ниже всего about-блока.
+- Footer сохраняет читаемый ANESTET, отдельный официальный монограммный знак Queen Key внутри орбиты и официальный QK Cosmetic ниже; мягкое освещение следует за курсором. Нет дублирующего тёмного логотипа и нет бегущей строки.
+- Мобильный hero использует сокращённый текст и отдельный живой оптический акцент без горизонтального переполнения.
 
-## Release evidence
-- `npm run build && npm run qa:layout` PASS: 10 widths × 2 themes × 3 views.
-- GitHub CI PASS for final release source.
-- Live Playwright: cart, support, version, console 0, failed requests 0.
-- Live Lighthouse: Performance 95, Accessibility 100, Best Practices 100, SEO 100; TBT 3.5 ms, CLS 0.023, LCP 2529.5 ms.
-- Website Design Lab: REVIEW with no blockers; sole review is LCP 29.5 ms above its strict 2500 ms threshold.
-- `npm audit --omit=dev`: 0 vulnerabilities.
+## Product assets
+- Все 23 packshot содержат только физический продукт/коробку на прозрачном фоне.
+- Растровые тени, цветные ореолы, белые подложки и detached shadow alpha запрещены.
+- Длинные стенки бутылок/корпусов и прямоугольные колпачки имеют ровную геометрию; насосы, плечики и скругления естественные.
+- Этикетки, русские надписи, логотипы и внутренние RGB-пиксели не перерисовывать. Генеративные варианты с изменённым текстом отклонены.
+- Тень создаётся только CSS и остаётся очень лёгкой нейтральной контактной тенью.
 
-## External integration boundary
-- CDEK live tariff/labels, YooKassa acquiring, 1C/Bitrix stock/order sync, VK feed API and WhatsApp Business API remain fail-closed until verified production endpoints, credentials and SKU rules are supplied.
-- Secrets must remain server-side under `/etc/anestet/*.env`; never copy or expose keys from an unrelated or inaccessible source.
+## Commerce
+- 23 подтверждённых товара и цены — база. Остаток до 1С показывается знаком ? и пояснением.
+- Queen Key id60: 890 ₽, старая цена 1190 ₽, скидка в hero и каталоге.
+- Избранное и корзина сохраняются в браузере.
+- Есть форма обратного звонка с обязательным согласием.
+- Используются официальные локальные логотипы QK Cosmetic.
 
-## Superseding navigation rule — v11.1.2
-- The top comparison switcher must contain exactly `Старый сайт / Одностраничный / Полный сайт`.
-- `Старый сайт` is the sole intentional customer-facing link to `https://qkcosmetic.ru/` and opens it in a new tab for comparison.
-- All catalogue, support, company, delivery, certificate and checkout journeys inside the new storefront remain internal; no other legacy-site handoff is allowed.
+## Admin / integrations
+- Собственная /admin удобнее MODX для текущего магазина: dashboard, брендовая навигация/фильтры, создание/редактирование/soft-hide товара, current/old price, New/Discount/Published, журнал и optimistic revision. Физическое удаление и загрузка медиа намеренно не входят в текущий безопасный MVP.
+- Каталог общий для витрины, Order API и админки.
+- Раздел интеграций: 1С, СДЭК и универсальные будущие сервисы. Ключи только server-side env/secret storage, браузер получает только маскированный статус.
+- До получения официальных API-контрактов и ключей реальные внешние запросы fail-closed. Старую MODX можно читать как источник структуры/данных, но не менять.
+
+## Проверка и выпуск
+- Перед preview/release обязательно npm run build && npm run qa:layout.
+- Матрица: 11 экранов × 2 темы × 3 представления, без overflow/clipping/collisions.
+- Визуальная QA выполняется локальным Codex Browser.
+- Production `2026.09.01-v13.1.2` опубликован на `https://anestet.139-180-214-133.sslip.io/`; `/admin/` и оба loopback API активны за TLS nginx.
+- Release gate PASS: production build; 11 экранов × 2 темы × 3 представления; admin auth/origin/CSRF/catalog/integration smoke; TypeScript; dependency audit; публичный Codex Browser без console errors.
+- Статика, Order API и Admin API находятся в независимых неизменяемых каталогах `20260901-v13.1.2`, предыдущие релизы сохранены для отката.
+- Ежедневный root-only backup включает каталог, существующие журналы/заявки/заказы и закрытую env/nginx/systemd-конфигурацию.
+- Lighthouse release measurement сохраняется как REVIEW по производительности: A11y/Best Practices/SEO = 100; синтетические performance/LCP колеблются в зависимости от прогона и не выдаются за PASS до устойчивого бюджета.

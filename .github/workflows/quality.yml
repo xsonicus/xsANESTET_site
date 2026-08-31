@@ -22,4 +22,6 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - run: npm run build
       - run: npm run qa:layout
+      - run: npm run qa:admin
+      - run: npx tsc --noEmit
       - run: npm audit --omit=dev

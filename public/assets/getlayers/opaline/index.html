@@ -1,0 +1,732 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>QK Future Beauty · Opaline</title>
+<style>
+  html, body { margin: 0; padding: 0; height: 100%; background: #000; overflow: hidden; }
+  canvas { display: block; width: 100%; height: 100%; }
+
+  /* UI PANEL — remove this block to drop the controls */
+  #ui-panel { position: fixed; top: 12px; right: 12px; background: rgba(10,10,12,.75); color: #fff;
+    font: 11px/1.4 -apple-system, system-ui, sans-serif; padding: 8px 10px; border: 1px solid rgba(255,255,255,.12);
+    border-radius: 6px; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    max-width: 240px; max-height: 80vh; overflow: auto; z-index: 1000; user-select: none; }
+  #ui-toggle { background: none; border: none; color: #fff; cursor: pointer; font-size: 14px; padding: 0; }
+  #ui-body { display: none; margin-top: 6px; }
+  #ui-panel.-open #ui-body { display: block; }
+  #ui-body label { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin: 4px 0; }
+  #ui-body input[type=color] { width: 28px; height: 20px; border: 1px solid rgba(255,255,255,.2); border-radius: 3px; padding: 0; background: none; cursor: pointer; }
+  #ui-body input[type=range] { width: 110px; }
+  #ui-buttons { display: flex; gap: 6px; margin-top: 8px; }
+  #ui-buttons button { flex: 1; cursor: pointer; background: rgba(255,255,255,.08); color: #fff;
+    border: 1px solid rgba(255,255,255,.18); border-radius: 4px; padding: 5px 6px; font: 11px/1 sans-serif; }
+  #ui-buttons button:hover { background: rgba(255,255,255,.16); }
+  #ui-snapshot { margin: 8px 0 0; padding: 6px 8px; background: rgba(255,255,255,.05);
+    border: 1px solid rgba(255,255,255,.12); border-radius: 4px;
+    font: 10px/1.45 ui-monospace, 'SF Mono', Menlo, monospace;
+    white-space: pre-wrap; word-break: break-word; color: rgba(255,255,255,.88);
+    max-height: 240px; overflow: auto; user-select: text; cursor: text; }
+  /* END UI PANEL */
+</style>
+<script type="importmap">
+{
+  "imports": {
+    "three": "/assets/getlayers/vendor/three.module.js",
+    "three/addons/": "/assets/getlayers/vendor/jsm/"
+  }
+}
+</script>
+<style>#ui-panel{display:none!important}html,body{pointer-events:none}</style>
+</head>
+<body>
+<canvas id="scene"></canvas>
+
+<!-- UI PANEL — remove this block to drop the controls -->
+<div id="ui-panel">
+  <button id="ui-toggle" type="button" aria-label="Toggle controls">⚙ controls</button>
+  <div id="ui-body"></div>
+  <pre id="ui-snapshot" title="Click to select, then copy. These are the current CONFIG values."></pre>
+</div>
+<!-- END UI PANEL -->
+
+<script type="module">
+import * as THREE from 'three'
+import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js'
+import { RenderPass } from 'three/addons/postprocessing/RenderPass.js'
+import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js'
+import { ShaderPass } from 'three/addons/postprocessing/ShaderPass.js'
+import { GammaCorrectionShader } from 'three/addons/shaders/GammaCorrectionShader.js'
+
+/* ============================================================
+   CONFIG  — Opaline: an iridescent liquid soap-film blob. A real 3D
+   sphere mesh, perlin-displaced in OBJECT space so the lumps and the
+   film pattern ride the surface as it tumbles smoothly through a full
+   360 on two axes (world-space key light sweeps across it — the depth
+   cue). Shaded as a thin oil film: a cycling amber → magenta → cyan →
+   deep-blue interference ramp, dark slick patches, a hue-shifted
+   fresnel rim and a white-cyan glint. Environment is tuned to the
+   film palette — ember/indigo duotone background, warm+electric-blue
+   corner flames, a two-tone mote drift and a soft aura behind the
+   blob. The pointer dents the surface like a finger in a bubble;
+   drag grabs and spins it with inertia.
+============================================================ */
+const CONFIG = {
+  colorA: '#ffaa2e',
+  colorB: '#ef4fd8',
+  colorC: '#3fd2ff',
+  colorD: '#2130e8',
+  brightness: 1.35,
+  fresnelPow: 1.01,
+  rimGain: 0.73,
+  filmScale: 0.24,
+  filmSpeed: 0.64,
+  oilAmount: 0.43,
+  displaceFreq: 0.71,
+  displaceStr: 0.35,
+  flowSpeed: 0.45,
+  spin: 0.1,
+  tumble: 0.3,
+  dragSpin: 1,
+  haloStrength: 0.76,
+  bloomStr: 0,
+  bloomRadius: 0,
+  bloomThresh: 1,
+  parallax: 1.75,
+  pointerRadius: 1.6,
+  pointerStrength: 0.29,
+  opacity: 1,
+  bgColor: '#12060d',
+  bgColor2: '#03040c',
+  flameColor: '#ff8a2a',
+  flameColor2: '#2f6bff',
+  flameAmt: 0.16,
+  atmoColor: '#ffb45e',
+  atmoColor2: '#4fc8ff',
+  atmoCount: 260,
+  atmoSize: 20,
+  atmoSpeed: 1,
+}
+
+/* ---------- DEFAULTS + localStorage (load BEFORE building the scene) ---------- */
+const DEFAULTS = JSON.parse(JSON.stringify(CONFIG))
+const STORAGE_KEY = 'getlayers:opaline'
+const EMBEDDED_HERO =
+  new URLSearchParams(window.location.search).get('embed') === 'hero' ||
+  new URLSearchParams(window.location.hash.slice(1)).get('embed') === 'hero'
+try { const s = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null'); if (s) for (const k in s) if (k in CONFIG) CONFIG[k] = s[k] } catch (e) {}
+function saveConfig() { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(CONFIG)) } catch (e) {} }
+
+/* ---------- LAYERS / HELPERS ---------- */
+const LAYERS = { NONE: 0, TORUS_SCENE: 1, BLOOM_SCENE: 2, ENTIRE_SCENE: 3 }
+const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v))
+
+function hexToVec3(hex) {
+  const n = parseInt(hex.slice(1), 16)
+  return new THREE.Vector3(((n >> 16) & 255) / 255, ((n >> 8) & 255) / 255, (n & 255) / 255)
+}
+
+/* ---------- RENDERER / SCENE / CAMERA ---------- */
+const canvas = document.getElementById('scene')
+const renderer = new THREE.WebGL1Renderer({ canvas, antialias: true })
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.VSMShadowMap
+const scene = new THREE.Scene()
+scene.background = new THREE.Color(0x000000); scene.fog = null
+const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 200)
+camera.position.set(0, 0, 6)
+camera.layers.enable(LAYERS.TORUS_SCENE); camera.layers.enable(LAYERS.BLOOM_SCENE); camera.layers.enable(LAYERS.ENTIRE_SCENE)
+scene.add(camera)
+
+/* ---------- ATMOSPHERE BACKGROUND (ember/indigo duotone + samudai corner flames) ----------
+   A clip-space quad drawn first, behind everything. Folded into the single scene render so
+   the one bloom pass lifts blob + atmosphere together — no separate composite = no flicker. */
+const bgMat = new THREE.ShaderMaterial({
+  uniforms: {
+    iTime: { value: 0 },
+    uBg: { value: hexToVec3(CONFIG.bgColor) },
+    uBg2: { value: hexToVec3(CONFIG.bgColor2) },
+    uFlameA: { value: hexToVec3(CONFIG.flameColor) },
+    uFlameB: { value: hexToVec3(CONFIG.flameColor2) },
+    uFlameAmt: { value: CONFIG.flameAmt }
+  },
+  depthTest: false, depthWrite: false,
+  vertexShader: `varying vec2 vUv; void main(){ vUv = uv; gl_Position = vec4(position.xy, 1.0, 1.0); }`,
+  fragmentShader: `
+    uniform float iTime; uniform vec3 uBg; uniform vec3 uBg2; uniform vec3 uFlameA; uniform vec3 uFlameB; uniform float uFlameAmt;
+    varying vec2 vUv;
+    vec3 warp3d(vec3 pos, float t){ float curv=.8,a=1.9,b=0.7; pos*=2.;
+      pos.x+=curv*sin(t+a*pos.y)+t*b; pos.y+=curv*cos(t+a*pos.x);
+      pos.y+=curv*sin(t+a*pos.z)+t*b; pos.z+=curv*cos(t+a*pos.y);
+      pos.z+=curv*sin(t+a*pos.x)+t*b; pos.x+=curv*cos(t+a*pos.z);
+      return 0.5+0.5*cos(pos.xyz+vec3(1,2,4)); }
+    void main(){
+      vec2 uv = 2.*vUv - 1.;
+      vec3 w = pow(warp3d(vec3(uv.x, sin(uv.y), uv.y), iTime*1.5), vec3(1.5));
+      vec3 flame = 1.5*uFlameA*w.x; flame*=w.y; flame += uFlameB*w.z;
+      flame *= smoothstep(0.25, 1., abs(uv.y));
+      float md = smoothstep(-0.7, 1., -uv.y*uv.x); flame *= md*md;
+      vec3 bg = mix(uBg, uBg2, smoothstep(0.15, 1.25, length(uv)));
+      gl_FragColor = vec4(bg + flame*uFlameAmt, 1.);
+    }`
+})
+const bgQuad = new THREE.Mesh(new THREE.PlaneBufferGeometry(2, 2), bgMat)
+bgQuad.frustumCulled = false
+bgQuad.renderOrder = -10
+bgQuad.layers.enable(LAYERS.ENTIRE_SCENE)
+scene.add(bgQuad)
+
+/* ---------- COMPOSER (single scene render → one bloom → gamma; à la neon-totem) ---------- */
+const composer = new EffectComposer(renderer)
+composer.addPass(new RenderPass(scene, camera))
+const bloomPass = new UnrealBloomPass(new THREE.Vector2(window.innerWidth, window.innerHeight), CONFIG.bloomStr, CONFIG.bloomRadius, CONFIG.bloomThresh)
+composer.addPass(bloomPass)
+composer.addPass(new ShaderPass(GammaCorrectionShader))
+
+/* ---------- POINTER (camera parallax + world cursor dent + press agitation) ---------- */
+const mouseTarget = { x: 0, y: 0 }, mouse = { x: 0, y: 0 }
+const POINTER = { world: new THREE.Vector3(), activity: 0, active: false, lastMove: performance.now(), pressed: false, dragX: 0, dragY: 0, lastPX: 0, lastPY: 0 }
+window.addEventListener('pointermove', e => {
+  mouseTarget.x = (e.clientX / window.innerWidth) * 2 - 1
+  mouseTarget.y = -((e.clientY / window.innerHeight) * 2 - 1)
+  POINTER.active = true; POINTER.lastMove = performance.now()
+  if (POINTER.pressed) {
+    POINTER.dragX += (e.clientX - POINTER.lastPX) / window.innerWidth
+    POINTER.dragY += (e.clientY - POINTER.lastPY) / window.innerHeight
+  }
+  POINTER.lastPX = e.clientX; POINTER.lastPY = e.clientY
+}, { passive: true })
+window.addEventListener('pointerdown', e => {
+  mouseTarget.x = (e.clientX / window.innerWidth) * 2 - 1
+  mouseTarget.y = -((e.clientY / window.innerHeight) * 2 - 1)
+  POINTER.active = true; POINTER.lastMove = performance.now()
+  POINTER.pressed = true
+  POINTER.lastPX = e.clientX; POINTER.lastPY = e.clientY
+}, { passive: true })
+window.addEventListener('pointerup', () => { POINTER.pressed = false }, { passive: true })
+window.addEventListener('pointercancel', () => { POINTER.pressed = false }, { passive: true })
+document.addEventListener('mouseleave', () => { POINTER.active = false; POINTER.pressed = false }, { passive: true })
+const _ndc = new THREE.Vector3(), _dir = new THREE.Vector3(), _tgt = new THREE.Vector3()
+function updatePointerWorld() {
+  _tgt.set(0, 0, 0)
+  if (POINTER.active) {
+    _ndc.set(mouse.x, mouse.y, 0.5).unproject(camera)
+    _dir.copy(_ndc).sub(camera.position).normalize()
+    const dn = _dir.z
+    if (Math.abs(dn) > 1e-4) { const tt = -camera.position.z / dn; if (tt > 0 && Number.isFinite(tt)) _tgt.copy(camera.position).addScaledVector(_dir, tt) }
+  }
+  POINTER.world.lerp(_tgt, 0.12)
+  const idle = (performance.now() - POINTER.lastMove) / 1000
+  POINTER.activity += (((POINTER.active && idle < 3) ? 1 : 0) - POINTER.activity) * 0.06
+}
+
+/* ============================================================
+   SCENE: Opaline — perlin-displaced sphere mesh shaded as a thin
+   oil film. Noise + film pattern are sampled in OBJECT space so the
+   lumps and colours ride the surface and the tumble reads as a real
+   3D rotation; lighting stays in world space, so light sweeps across
+   the pattern as it turns. The normal is rebuilt numerically from
+   two tangent probes of the same deform, so the cursor dent and the
+   crests light correctly.
+============================================================ */
+const PERLIN4D = `
+vec4 permute(vec4 x){return mod(((x*34.0)+1.0)*x, 289.0);}
+vec4 taylorInvSqrt(vec4 r){return 1.79284291400159 - 0.85373472095314 * r;}
+vec4 fade(vec4 t) {return t*t*t*(t*(t*6.0-15.0)+10.0);}
+float perlin4d(vec4 P){
+  vec4 Pi0 = floor(P); vec4 Pi1 = Pi0 + 1.0;
+  Pi0 = mod(Pi0, 289.0); Pi1 = mod(Pi1, 289.0);
+  vec4 Pf0 = fract(P); vec4 Pf1 = Pf0 - 1.0;
+  vec4 ix = vec4(Pi0.x, Pi1.x, Pi0.x, Pi1.x);
+  vec4 iy = vec4(Pi0.yy, Pi1.yy);
+  vec4 iz0 = vec4(Pi0.zzzz); vec4 iz1 = vec4(Pi1.zzzz);
+  vec4 iw0 = vec4(Pi0.wwww); vec4 iw1 = vec4(Pi1.wwww);
+  vec4 ixy = permute(permute(ix) + iy);
+  vec4 ixy0 = permute(ixy + iz0); vec4 ixy1 = permute(ixy + iz1);
+  vec4 ixy00 = permute(ixy0 + iw0); vec4 ixy01 = permute(ixy0 + iw1);
+  vec4 ixy10 = permute(ixy1 + iw0); vec4 ixy11 = permute(ixy1 + iw1);
+  vec4 gx00 = ixy00 / 7.0; vec4 gy00 = floor(gx00) / 7.0; vec4 gz00 = floor(gy00) / 6.0;
+  gx00 = fract(gx00) - 0.5; gy00 = fract(gy00) - 0.5; gz00 = fract(gz00) - 0.5;
+  vec4 gw00 = vec4(0.75) - abs(gx00) - abs(gy00) - abs(gz00);
+  vec4 sw00 = step(gw00, vec4(0.0));
+  gx00 -= sw00 * (step(0.0, gx00) - 0.5); gy00 -= sw00 * (step(0.0, gy00) - 0.5);
+  vec4 gx01 = ixy01 / 7.0; vec4 gy01 = floor(gx01) / 7.0; vec4 gz01 = floor(gy01) / 6.0;
+  gx01 = fract(gx01) - 0.5; gy01 = fract(gy01) - 0.5; gz01 = fract(gz01) - 0.5;
+  vec4 gw01 = vec4(0.75) - abs(gx01) - abs(gy01) - abs(gz01);
+  vec4 sw01 = step(gw01, vec4(0.0));
+  gx01 -= sw01 * (step(0.0, gx01) - 0.5); gy01 -= sw01 * (step(0.0, gy01) - 0.5);
+  vec4 gx10 = ixy10 / 7.0; vec4 gy10 = floor(gx10) / 7.0; vec4 gz10 = floor(gy10) / 6.0;
+  gx10 = fract(gx10) - 0.5; gy10 = fract(gy10) - 0.5; gz10 = fract(gz10) - 0.5;
+  vec4 gw10 = vec4(0.75) - abs(gx10) - abs(gy10) - abs(gz10);
+  vec4 sw10 = step(gw10, vec4(0.0));
+  gx10 -= sw10 * (step(0.0, gx10) - 0.5); gy10 -= sw10 * (step(0.0, gy10) - 0.5);
+  vec4 gx11 = ixy11 / 7.0; vec4 gy11 = floor(gx11) / 7.0; vec4 gz11 = floor(gy11) / 6.0;
+  gx11 = fract(gx11) - 0.5; gy11 = fract(gy11) - 0.5; gz11 = fract(gz11) - 0.5;
+  vec4 gw11 = vec4(0.75) - abs(gx11) - abs(gy11) - abs(gz11);
+  vec4 sw11 = step(gw11, vec4(0.0));
+  gx11 -= sw11 * (step(0.0, gx11) - 0.5); gy11 -= sw11 * (step(0.0, gy11) - 0.5);
+  vec4 g0000 = vec4(gx00.x,gy00.x,gz00.x,gw00.x); vec4 g1000 = vec4(gx00.y,gy00.y,gz00.y,gw00.y);
+  vec4 g0100 = vec4(gx00.z,gy00.z,gz00.z,gw00.z); vec4 g1100 = vec4(gx00.w,gy00.w,gz00.w,gw00.w);
+  vec4 g0010 = vec4(gx10.x,gy10.x,gz10.x,gw10.x); vec4 g1010 = vec4(gx10.y,gy10.y,gz10.y,gw10.y);
+  vec4 g0110 = vec4(gx10.z,gy10.z,gz10.z,gw10.z); vec4 g1110 = vec4(gx10.w,gy10.w,gz10.w,gw10.w);
+  vec4 g0001 = vec4(gx01.x,gy01.x,gz01.x,gw01.x); vec4 g1001 = vec4(gx01.y,gy01.y,gz01.y,gw01.y);
+  vec4 g0101 = vec4(gx01.z,gy01.z,gz01.z,gw01.z); vec4 g1101 = vec4(gx01.w,gy01.w,gz01.w,gw01.w);
+  vec4 g0011 = vec4(gx11.x,gy11.x,gz11.x,gw11.x); vec4 g1011 = vec4(gx11.y,gy11.y,gz11.y,gw11.y);
+  vec4 g0111 = vec4(gx11.z,gy11.z,gz11.z,gw11.z); vec4 g1111 = vec4(gx11.w,gy11.w,gz11.w,gw11.w);
+  vec4 norm00 = taylorInvSqrt(vec4(dot(g0000, g0000), dot(g0100, g0100), dot(g1000, g1000), dot(g1100, g1100)));
+  g0000 *= norm00.x; g0100 *= norm00.y; g1000 *= norm00.z; g1100 *= norm00.w;
+  vec4 norm01 = taylorInvSqrt(vec4(dot(g0001, g0001), dot(g0101, g0101), dot(g1001, g1001), dot(g1101, g1101)));
+  g0001 *= norm01.x; g0101 *= norm01.y; g1001 *= norm01.z; g1101 *= norm01.w;
+  vec4 norm10 = taylorInvSqrt(vec4(dot(g0010, g0010), dot(g0110, g0110), dot(g1010, g1010), dot(g1110, g1110)));
+  g0010 *= norm10.x; g0110 *= norm10.y; g1010 *= norm10.z; g1110 *= norm10.w;
+  vec4 norm11 = taylorInvSqrt(vec4(dot(g0011, g0011), dot(g0111, g0111), dot(g1011, g1011), dot(g1111, g1111)));
+  g0011 *= norm11.x; g0111 *= norm11.y; g1011 *= norm11.z; g1111 *= norm11.w;
+  float n0000 = dot(g0000, Pf0);
+  float n1000 = dot(g1000, vec4(Pf1.x, Pf0.yzw));
+  float n0100 = dot(g0100, vec4(Pf0.x, Pf1.y, Pf0.zw));
+  float n1100 = dot(g1100, vec4(Pf1.xy, Pf0.zw));
+  float n0010 = dot(g0010, vec4(Pf0.xy, Pf1.z, Pf0.w));
+  float n1010 = dot(g1010, vec4(Pf1.x, Pf0.y, Pf1.z, Pf0.w));
+  float n0110 = dot(g0110, vec4(Pf0.x, Pf1.yz, Pf0.w));
+  float n1110 = dot(g1110, vec4(Pf1.xyz, Pf0.w));
+  float n0001 = dot(g0001, vec4(Pf0.xyz, Pf1.w));
+  float n1001 = dot(g1001, vec4(Pf1.x, Pf0.yz, Pf1.w));
+  float n0101 = dot(g0101, vec4(Pf0.x, Pf1.y, Pf0.z, Pf1.w));
+  float n1101 = dot(g1101, vec4(Pf1.xy, Pf0.z, Pf1.w));
+  float n0011 = dot(g0011, vec4(Pf0.xy, Pf1.zw));
+  float n1011 = dot(g1011, vec4(Pf1.x, Pf0.y, Pf1.zw));
+  float n0111 = dot(g0111, vec4(Pf0.x, Pf1.yzw));
+  float n1111 = dot(g1111, Pf1);
+  vec4 fade_xyzw = fade(Pf0);
+  vec4 n_0w = mix(vec4(n0000, n1000, n0100, n1100), vec4(n0001, n1001, n0101, n1101), fade_xyzw.w);
+  vec4 n_1w = mix(vec4(n0010, n1010, n0110, n1110), vec4(n0011, n1011, n0111, n1111), fade_xyzw.w);
+  vec4 n_zw = mix(n_0w, n_1w, fade_xyzw.z);
+  vec2 n_yzw = mix(n_zw.xy, n_zw.zw, fade_xyzw.y);
+  float n_xyzw = mix(n_yzw.x, n_yzw.y, fade_xyzw.x);
+  return 2.2 * n_xyzw;
+}`
+
+class OpalineScene {
+  constructor(scene) {
+    this.geometry = new THREE.SphereBufferGeometry(1.6, 200, 200)
+
+    this.uniforms = {
+      iAlpha:       { value: 0 },
+      uFlow:        { value: 0 },
+      uFilmT:       { value: 0 },
+      uDispFreq:    { value: CONFIG.displaceFreq },
+      uDispStr:     { value: CONFIG.displaceStr },
+      uCursor:      { value: new THREE.Vector3() },
+      uRepelRadius: { value: CONFIG.pointerRadius },
+      uRepelStrength: { value: CONFIG.pointerStrength },
+      uActivity:    { value: 0 },
+      uColA:        { value: hexToVec3(CONFIG.colorA) },
+      uColB:        { value: hexToVec3(CONFIG.colorB) },
+      uColC:        { value: hexToVec3(CONFIG.colorC) },
+      uColD:        { value: hexToVec3(CONFIG.colorD) },
+      uBrightness:  { value: CONFIG.brightness },
+      uFresnelPow:  { value: CONFIG.fresnelPow },
+      uRimGain:     { value: CONFIG.rimGain },
+      uFilmScale:   { value: CONFIG.filmScale },
+      uOil:         { value: CONFIG.oilAmount }
+    }
+
+    this.material = new THREE.ShaderMaterial({
+      uniforms: this.uniforms,
+      transparent: true, depthTest: true, depthWrite: true,
+      vertexShader: `
+        uniform float uFlow; uniform float uDispFreq; uniform float uDispStr;
+        uniform vec3 uCursor; uniform float uRepelRadius; uniform float uRepelStrength; uniform float uActivity;
+        varying vec3 vNrm; varying vec3 vWorld; varying vec3 vObj; varying float vNoise;
+        ${PERLIN4D}
+        float surf(vec3 p, float t) {
+          float n = perlin4d(vec4(p * uDispFreq, t));
+          n += 0.4 * perlin4d(vec4(p * uDispFreq * 2.15 + 4.7, t * 1.55));
+          return n;
+        }
+        // displace in OBJECT space (lumps ride the rotation), dent in WORLD space (stays under the cursor)
+        vec3 deform(vec3 p, float t, out float n, out vec3 obj) {
+          vec3 dir = normalize(p);
+          n = surf(p, t);
+          float amp = uDispStr;
+          obj = p + dir * n * amp;
+          vec3 q = (modelMatrix * vec4(obj, 1.0)).xyz;
+          vec3 toP = q - uCursor;
+          float fall = smoothstep(uRepelRadius, 0.0, length(toP));
+          q += normalize(toP + vec3(0.0001, 0.0, 0.0)) * fall * uRepelStrength * uActivity;
+          return q;
+        }
+        void main() {
+          float t = uFlow;
+          float n0; float nd; vec3 obj0; vec3 objd;
+          vec3 wp = deform(position, t, n0, obj0);
+          // numeric normal: probe the same deform along the sphere tangent frame
+          vec3 sn = normalize(position);
+          vec3 up = abs(sn.y) > 0.99 ? vec3(1.0, 0.0, 0.0) : vec3(0.0, 1.0, 0.0);
+          vec3 tang = normalize(cross(up, sn));
+          vec3 bitan = normalize(cross(sn, tang));
+          float e = 0.05;
+          vec3 pT = deform(position + tang * e, t, nd, objd);
+          vec3 pB = deform(position + bitan * e, t, nd, objd);
+          vec3 nrm = normalize(cross(pT - wp, pB - wp));
+          vec3 outward = normalize((modelMatrix * vec4(sn, 0.0)).xyz);
+          vNrm = nrm * sign(dot(nrm, outward));
+          vWorld = wp;
+          vObj = obj0;
+          vNoise = n0;
+          gl_Position = projectionMatrix * viewMatrix * vec4(wp, 1.0);
+        }`,
+      fragmentShader: `
+        uniform float iAlpha; uniform float uFilmT;
+        uniform vec3 uColA; uniform vec3 uColB; uniform vec3 uColC; uniform vec3 uColD;
+        uniform float uBrightness; uniform float uFresnelPow; uniform float uRimGain;
+        uniform float uFilmScale; uniform float uOil;
+        varying vec3 vNrm; varying vec3 vWorld; varying vec3 vObj; varying float vNoise;
+        // thin-film interference ramp: amber, magenta, cyan, deep blue, back to amber
+        vec3 filmColor(float t) {
+          t = fract(t);
+          vec3 c = mix(uColA, uColB, smoothstep(0.05, 0.35, t));
+          c = mix(c, uColC, smoothstep(0.35, 0.62, t));
+          c = mix(c, uColD, smoothstep(0.62, 0.82, t));
+          return mix(c, uColA, smoothstep(0.82, 1.0, t));
+        }
+        // cheap trig domain warp for the streaming liquid streaks
+        vec3 swirl(vec3 p, float t) {
+          float c1 = 0.9, a = 1.7;
+          p.x += c1 * sin(t + a * p.y); p.y += c1 * cos(t + a * p.x);
+          p.y += c1 * sin(t + a * p.z); p.z += c1 * cos(t + a * p.y);
+          return p;
+        }
+        void main() {
+          vec3 N = normalize(vNrm);
+          vec3 V = normalize(cameraPosition - vWorld);
+          float ndv = clamp(dot(N, V), 0.0, 1.0);
+          float fres = pow(1.0 - ndv, uFresnelPow);
+          float t = uFilmT;
+          // film pattern sampled in OBJECT space so it rides the rotation
+          vec3 sp = swirl(vObj * uFilmScale, t);
+          float streak = 0.5 + 0.5 * sin(sp.x + sp.y * 1.7 + sp.z * 0.9);
+          float streak2 = 0.5 + 0.5 * sin(sp.y * 1.3 - sp.z * 1.9 + 2.0);
+          // film thickness parameter: liquid streaks + surface crests + view angle
+          float phase = streak * 0.85 + vNoise * 0.55 + (1.0 - ndv) * 0.55 + t * 0.05;
+          vec3 base = filmColor(phase);
+          // world-space key light with deep contrast — the terminator sweeping
+          // across the rotating pattern is the main 3D depth cue
+          vec3 L = normalize(vec3(-0.5, 0.75, 0.6));
+          float diff = max(dot(N, L), 0.0);
+          float shade = 0.16 + 0.84 * pow(diff, 1.25);
+          // crests catch light, valleys sink into shadow
+          float crest = 0.82 + 0.34 * clamp(vNoise, -1.0, 1.0);
+          vec3 col = base * shade * crest;
+          // complementary film glow filling the shadow side so it stays iridescent, not dead
+          float back = max(dot(N, -L), 0.0);
+          col += filmColor(phase + 0.5) * back * back * 0.22;
+          // dark oil-slick patches drifting through the film
+          float patch = smoothstep(0.55, 0.9, streak2) * uOil;
+          col *= 1.0 - patch * 0.75;
+          // hue-shifted fresnel rim, pushed toward deep blue on the underside
+          float rimPhase = phase + 0.35 + 0.22 * (0.5 - 0.5 * N.y);
+          col += filmColor(rimPhase) * fres * uRimGain;
+          // white-cyan glint
+          vec3 H = normalize(L + V);
+          float spec = pow(max(dot(N, H), 0.0), 90.0) * 1.2;
+          col += vec3(0.95, 1.0, 1.05) * spec;
+          col *= uBrightness;
+          gl_FragColor = vec4(col, iAlpha);
+        }`
+    })
+
+    this.group = new THREE.Group()
+    this.mesh = new THREE.Mesh(this.geometry, this.material)
+    this.mesh.frustumCulled = false
+    this.mesh.layers.enable(LAYERS.ENTIRE_SCENE)
+    this.mesh.layers.enable(LAYERS.BLOOM_SCENE)
+    this.group.add(this.mesh)
+    this.group.position.x = EMBEDDED_HERO ? 2.55 : 0
+    scene.add(this.group)
+
+    // soft aura billboard behind the blob — warm below, cool above, additive
+    this.haloUniforms = {
+      iAlpha: { value: 0 },
+      uWarm: { value: hexToVec3(CONFIG.colorA) },
+      uCool: { value: hexToVec3(CONFIG.colorC) },
+      uStrength: { value: CONFIG.haloStrength }
+    }
+    this.halo = new THREE.Mesh(
+      new THREE.PlaneBufferGeometry(11, 11),
+      new THREE.ShaderMaterial({
+        uniforms: this.haloUniforms,
+        transparent: true, depthTest: true, depthWrite: false, blending: THREE.AdditiveBlending,
+        vertexShader: `varying vec2 vUv; void main(){ vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`,
+        fragmentShader: `
+          uniform float iAlpha; uniform vec3 uWarm; uniform vec3 uCool; uniform float uStrength;
+          varying vec2 vUv;
+          void main() {
+            vec2 p = vUv * 2.0 - 1.0;
+            float d = length(p);
+            float a = pow(max(0.0, 1.0 - d), 3.5) * uStrength * iAlpha;
+            vec3 col = mix(uWarm, uCool, smoothstep(-0.6, 0.9, p.y));
+            gl_FragColor = vec4(col, a);
+          }`
+      })
+    )
+    this.halo.position.set(EMBEDDED_HERO ? 2.55 : 0, 0, -2.2)
+    this.halo.frustumCulled = false
+    this.halo.layers.enable(LAYERS.ENTIRE_SCENE)
+    scene.add(this.halo)
+
+    this.appearStart = performance.now()
+    this.t0 = performance.now() / 1000
+    this.spinPhase = 0
+    this.pitchPhase = 0
+    this.spinVel = 0
+    this.pitchVel = 0
+    this.flowPhase = 0
+    this.filmPhase = 0
+  }
+
+  resize() {}
+
+  render(m) {
+    const t = performance.now() / 1000
+    const dt = Math.min(0.05, t - this.t0); this.t0 = t
+
+    // camera: mouse parallax + a slow breathing drift
+    camera.position.set(
+      m.x * CONFIG.parallax + 0.12 * Math.sin(t * 0.13),
+      m.y * CONFIG.parallax + 0.1 * Math.cos(t * 0.17),
+      6
+    )
+    camera.lookAt(0, 0, 0)
+    updatePointerWorld()
+    this.halo.quaternion.copy(camera.quaternion)
+
+    // grab & spin — drag deltas feed rotation velocity with inertia
+    this.spinVel += POINTER.dragX * CONFIG.dragSpin * 0.35
+    this.pitchVel += POINTER.dragY * CONFIG.dragSpin * 0.3
+    POINTER.dragX = 0; POINTER.dragY = 0
+    this.spinVel *= 0.94; this.pitchVel *= 0.94
+
+    // accumulate phases (not speed-scaled time) so speed stays smooth;
+    // full free 360-degree tumble on two axes + a slow precession wobble
+    this.spinPhase += dt * CONFIG.spin + this.spinVel
+    this.pitchPhase += dt * CONFIG.spin * 0.37 + this.pitchVel
+    this.flowPhase += dt * CONFIG.flowSpeed
+    this.filmPhase += dt * CONFIG.filmSpeed
+    this.group.rotation.y = this.spinPhase
+    this.group.rotation.x = this.pitchPhase + CONFIG.tumble * Math.sin(t * 0.21)
+    this.group.rotation.z = CONFIG.tumble * 0.6 * Math.cos(t * 0.16)
+    this.uniforms.uFlow.value = this.flowPhase
+    this.uniforms.uFilmT.value = this.filmPhase
+
+    this.uniforms.uCursor.value.copy(POINTER.world)
+    this.uniforms.uActivity.value = POINTER.activity
+
+    const elapsed = performance.now() - this.appearStart
+    const appear = Math.max(0, Math.min(1, (elapsed - 300) / 1400))
+    this.uniforms.iAlpha.value = appear * CONFIG.opacity
+    this.haloUniforms.iAlpha.value = appear
+  }
+}
+
+const sceneObj = new OpalineScene(scene)
+
+/* ---------- ambient atmosphere particles (camera-attached two-tone motes) ---------- */
+let atmoMat = null
+;(function () {
+  const N = Math.round(CONFIG.atmoCount)
+  const positions = new Float32Array(N * 3), sizes = new Float32Array(N), seeds = new Float32Array(N)
+  for (let i = 0; i < N; i++) {
+    positions[i*3] = 2*Math.random()-1; positions[i*3+1] = 2*Math.random()-1; positions[i*3+2] = 2*Math.random()-1
+    sizes[i] = CONFIG.atmoSize * (0.4 + Math.random()); seeds[i] = Math.random()
+  }
+  const g = new THREE.BufferGeometry()
+  g.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3))
+  g.setAttribute('size', new THREE.Float32BufferAttribute(sizes, 1))
+  g.setAttribute('seed', new THREE.Float32BufferAttribute(seeds, 1))
+  atmoMat = new THREE.ShaderMaterial({
+    uniforms: { uTime: { value: 0 }, uColor: { value: hexToVec3(CONFIG.atmoColor) }, uColor2: { value: hexToVec3(CONFIG.atmoColor2) },
+      uRes: { value: new THREE.Vector2(window.innerWidth * window.devicePixelRatio, window.innerHeight * window.devicePixelRatio) } },
+    vertexShader: `
+      attribute float size; attribute float seed; uniform float uTime; uniform vec2 uRes;
+      varying float vA; varying float vSeed;
+      vec3 warp(vec3 p, float t){ float c=0.9,a=1.9,b=0.02,s=0.05; p*=2.;
+        p.x+=c*sin(s*t+a*p.y)+t*b; p.y+=c*cos(s*t+a*p.x); p.y+=c*sin(s*t+a*p.z)+t*b;
+        p.z+=c*cos(s*t+a*p.y); p.z+=c*sin(s*t+a*p.x)+t*b; p.x+=c*cos(s*t+a*p.z);
+        return cos(p+vec3(1,2,4)); }
+      void main(){
+        vec3 v = position*4.0 + warp(position, uTime)*1.2;
+        vec4 mv = modelViewMatrix * vec4(v, 1.0);
+        float r = length(v); float farF = 1.0 - smoothstep(5.0, 6.5, r); float nearF = smoothstep(0.0, 0.5, -mv.z);
+        vA = farF * nearF; vSeed = seed;
+        gl_PointSize = size * uRes.y / 900.0 / -mv.z; gl_PointSize = max(gl_PointSize, 1.0);
+        gl_Position = projectionMatrix * mv;
+      }`,
+    fragmentShader: `
+      uniform vec3 uColor; uniform vec3 uColor2; varying float vA; varying float vSeed;
+      void main(){ vec2 p = gl_PointCoord - 0.5; float l = length(p); if (l > 0.5) discard;
+        float tex = smoothstep(0.5, 0.0, l);
+        vec3 col = mix(uColor, uColor2, step(0.7, vSeed));
+        gl_FragColor = vec4(col * tex, tex * vA * 0.55); }`,
+    transparent: true, blending: THREE.AdditiveBlending, depthWrite: false, depthTest: false
+  })
+  const pts = new THREE.Points(g, atmoMat)
+  pts.frustumCulled = false
+  pts.layers.enable(LAYERS.ENTIRE_SCENE)
+  scene.add(pts)
+  pts.onBeforeRender = () => {
+    const t = performance.now() / 1000
+    atmoMat.uniforms.uTime.value = t * CONFIG.atmoSpeed * 8.0
+    pts.position.copy(camera.position)
+    bgMat.uniforms.iTime.value = t
+  }
+})()
+
+/* ---------- CONFIG → uniforms ---------- */
+function applyConfig() {
+  bgMat.uniforms.uBg.value.copy(hexToVec3(CONFIG.bgColor))
+  bgMat.uniforms.uBg2.value.copy(hexToVec3(CONFIG.bgColor2))
+  bgMat.uniforms.uFlameA.value.copy(hexToVec3(CONFIG.flameColor))
+  bgMat.uniforms.uFlameB.value.copy(hexToVec3(CONFIG.flameColor2))
+  bgMat.uniforms.uFlameAmt.value = CONFIG.flameAmt
+  bloomPass.strength = CONFIG.bloomStr
+  bloomPass.radius = CONFIG.bloomRadius
+  bloomPass.threshold = CONFIG.bloomThresh
+  if (atmoMat) {
+    atmoMat.uniforms.uColor.value.copy(hexToVec3(CONFIG.atmoColor))
+    atmoMat.uniforms.uColor2.value.copy(hexToVec3(CONFIG.atmoColor2))
+  }
+  sceneObj.uniforms.uColA.value.copy(hexToVec3(CONFIG.colorA))
+  sceneObj.uniforms.uColB.value.copy(hexToVec3(CONFIG.colorB))
+  sceneObj.uniforms.uColC.value.copy(hexToVec3(CONFIG.colorC))
+  sceneObj.uniforms.uColD.value.copy(hexToVec3(CONFIG.colorD))
+  sceneObj.uniforms.uBrightness.value = CONFIG.brightness
+  sceneObj.uniforms.uFresnelPow.value = CONFIG.fresnelPow
+  sceneObj.uniforms.uRimGain.value = CONFIG.rimGain
+  sceneObj.uniforms.uFilmScale.value = CONFIG.filmScale
+  sceneObj.uniforms.uOil.value = CONFIG.oilAmount
+  sceneObj.uniforms.uDispFreq.value = CONFIG.displaceFreq
+  sceneObj.uniforms.uDispStr.value = CONFIG.displaceStr
+  sceneObj.uniforms.uRepelRadius.value = CONFIG.pointerRadius
+  sceneObj.uniforms.uRepelStrength.value = CONFIG.pointerStrength
+  sceneObj.haloUniforms.uWarm.value.copy(hexToVec3(CONFIG.colorA))
+  sceneObj.haloUniforms.uCool.value.copy(hexToVec3(CONFIG.colorC))
+  sceneObj.haloUniforms.uStrength.value = CONFIG.haloStrength
+}
+
+/* ---------- RESIZE ---------- */
+function resize() {
+  const w = window.innerWidth, h = window.innerHeight, dpr = Math.min(window.devicePixelRatio, 2)
+  renderer.setPixelRatio(dpr); renderer.setSize(w, h, false)
+  camera.aspect = w / h; camera.updateProjectionMatrix()
+  composer.setPixelRatio(dpr); composer.setSize(w, h)
+  if (atmoMat) atmoMat.uniforms.uRes.value.set(w * dpr, h * dpr)
+  sceneObj.resize()
+}
+window.addEventListener('resize', resize); resize()
+
+/* ---------- RENDER LOOP (single scene render → bloom → gamma) ---------- */
+function render() {
+  requestAnimationFrame(render)
+  mouse.x += (mouseTarget.x - mouse.x) * 0.06
+  mouse.y += (mouseTarget.y - mouse.y) * 0.06
+  sceneObj.render(mouse)
+  composer.render()
+}
+render()
+
+/* ===== UI (remove this block to drop the panel) ===== */
+function setupColorUI(config, apply) {
+  const panel = document.getElementById('ui-panel')
+  const toggle = document.getElementById('ui-toggle')
+  const body = document.getElementById('ui-body')
+  if (!panel) return
+  toggle.addEventListener('click', () => panel.classList.toggle('-open'))
+  // Wrap apply so every change also saves + refreshes the snapshot.
+  const _apply = apply
+  apply = () => { _apply(); saveConfig(); renderSnapshot(config) }
+  // Override slider ranges for non-color numbers here (default range is 0..2×value).
+  const numericRanges = {
+    brightness: { min: 0, max: 3, step: 0.01 },
+    fresnelPow: { min: 0.5, max: 6, step: 0.01 },
+    rimGain: { min: 0, max: 4, step: 0.01 },
+    filmScale: { min: 0, max: 4, step: 0.01 },
+    filmSpeed: { min: 0, max: 1.5, step: 0.01 },
+    oilAmount: { min: 0, max: 1, step: 0.01 },
+    displaceFreq: { min: 0, max: 2, step: 0.01 },
+    displaceStr: { min: 0, max: 1, step: 0.01 },
+    flowSpeed: { min: 0, max: 2, step: 0.01 },
+    spin: { min: 0, max: 1, step: 0.01 },
+    tumble: { min: 0, max: 1, step: 0.01 },
+    dragSpin: { min: 0, max: 3, step: 0.01 },
+    haloStrength: { min: 0, max: 2, step: 0.01 },
+    bloomStr: { min: 0, max: 2, step: 0.02 },
+    bloomRadius: { min: 0, max: 1.5, step: 0.01 },
+    bloomThresh: { min: 0, max: 1, step: 0.01 },
+    parallax: { min: 0, max: 2, step: 0.01 },
+    pointerRadius: { min: 0, max: 5, step: 0.01 },
+    pointerStrength: { min: 0, max: 2, step: 0.01 },
+    opacity: { min: 0, max: 1, step: 0.01 },
+    flameAmt: { min: 0, max: 1, step: 0.01 },
+    atmoCount: { min: 0, max: 800, step: 1 },
+    atmoSize: { min: 0, max: 60, step: 0.5 },
+    atmoSpeed: { min: 0, max: 3, step: 0.01 }
+  }
+  for (const key of Object.keys(config)) {
+    const v = config[key]
+    const row = document.createElement('label')
+    row.appendChild(Object.assign(document.createElement('span'), { textContent: key }))
+    if (typeof v === 'string' && v[0] === '#') {
+      const inp = document.createElement('input')
+      inp.type = 'color'; inp.value = v
+      inp.addEventListener('input', e => { config[key] = e.target.value; apply() })
+      row.appendChild(inp)
+    } else if (typeof v === 'number') {
+      const r = numericRanges[key] || { min: 0, max: Math.max(1, v * 2), step: 0.01 }
+      const inp = document.createElement('input')
+      inp.type = 'range'; inp.min = String(r.min); inp.max = String(r.max); inp.step = String(r.step); inp.value = String(v)
+      inp.addEventListener('input', e => {
+        let val = parseFloat(e.target.value)
+        if (Number.isInteger(r.step)) val = Math.round(val / r.step) * r.step   // integer-step sliders stay integral
+        config[key] = val
+        apply()
+      })
+      row.appendChild(inp)
+    }
+    body.appendChild(row)
+  }
+  // Reload / Reset buttons
+  const btns = document.createElement('div'); btns.id = 'ui-buttons'
+  const reloadBtn = document.createElement('button'); reloadBtn.type = 'button'; reloadBtn.textContent = '⟳ reload'
+  const resetBtn  = document.createElement('button'); resetBtn.type = 'button'; resetBtn.textContent = '↺ reset'
+  reloadBtn.title = 'Reload the page — re-initialise the scene with the saved settings'
+  resetBtn.title = 'Clear saved settings and reload with defaults'
+  reloadBtn.addEventListener('click', () => location.reload())
+  resetBtn.addEventListener('click', () => { try { localStorage.removeItem(STORAGE_KEY) } catch (e) {} ; location.reload() })
+  btns.appendChild(reloadBtn); btns.appendChild(resetBtn)
+  body.appendChild(btns)
+  panel.classList.add('-open')
+  renderSnapshot(config)
+}
+function renderSnapshot(config) {
+  const snap = document.getElementById('ui-snapshot')
+  if (!snap) return
+  const lines = ['const CONFIG = {']
+  for (const key of Object.keys(config)) {
+    const v = config[key]
+    let formatted
+    if (typeof v === 'string') formatted = "'" + v + "'"
+    else if (Number.isInteger(v)) formatted = String(v)
+    else formatted = String(parseFloat(v.toFixed(4)))
+    lines.push('  ' + key + ': ' + formatted + ',')
+  }
+  lines.push('}')
+  snap.textContent = lines.join('\n')
+}
+applyConfig()
+setupColorUI(CONFIG, applyConfig)
+/* ===== END UI ===== */
+</script>
+</body>
+</html>

@@ -18,3 +18,13 @@ Implemented internal company sections, top social/support controls, all-novelty 
 ## 2026-08-28T13:36:21.206Z - Three-way comparison switcher restored
 
 Replaced the top Information shortcut with a verified qkcosmetic.ru old-site link, kept the one-page/full internal modes, and retained the internal company information section. Build and 10 × 2 × 3 layout QA pass.
+
+
+## 2026-08-31T17:01:17.641Z - Зафиксирована цепочка актуальных правок v13
+
+Canonical task state replaced with latest user-approved correction lineage. Secrets excluded. Work remains: promote all verified v2 packshots, finish MODX-like admin dashboard, build/layout gate and browser QA of Opaline edge/footer/light theme.
+
+
+## 2026-08-31T21:24:05.335Z - ANESTET v13.1.2 опубликован и проверен
+
+Production https://anestet.139-180-214-133.sslip.io/ атомарно переключён на три immutable release-каталога 20260901-v13.1.2. Build, 11×2×3 layout, admin auth/origin/CSRF/local-image contract, TypeScript и npm audit прошли. Public Browser: 23 товара, две темы, Opaline canvas, /admin и console clean. Root-only backup 0600 включает данные и конфигурацию. Lighthouse A11y/BP/SEO 100, performance оставлен REVIEW. Создан и health-аудирован user skill website-correction-lineage.

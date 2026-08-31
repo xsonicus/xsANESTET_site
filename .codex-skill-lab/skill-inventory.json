@@ -1,0 +1,25 @@
+{
+  "project": "/Users/xsonicus/CodexRuntime/xsANESTET_site",
+  "roots": [
+    "/Users/xsonicus/.codex/skills",
+    "/Users/xsonicus/CodexRuntime/xsANESTET_site/.codex-skill-lab/drafts",
+    "/Users/xsonicus/.codex/skills/.system",
+    "/Users/xsonicus/.codex/plugins/cache/openai-curated",
+    "/Users/xsonicus/.codex/plugins/cache/openai-bundled",
+    "/Users/xsonicus/.codex/plugins/cache/openai-primary-runtime"
+  ],
+  "query": "website-correction-lineage",
+  "total_found": 1,
+  "by_source": {
+    "user": 1
+  },
+  "skills": [
+    {
+      "name": "website-correction-lineage",
+      "description": "Preserve cumulative correction lineage and release evidence during long, iterative website builds or redesigns with repeated visual feedback and corrections of earlier corrections.",
+      "file": "/Users/xsonicus/.codex/skills/website-correction-lineage/SKILL.md",
+      "source_kind": "user",
+      "health": "healthy"
+    }
+  ]
+}

@@ -5,6 +5,7 @@ out/
 output/
 .playwright-cli/
 tsconfig.tsbuildinfo
+public/assets/getlayers/vendor/
 
 # Local operating-system and editor files
 .DS_Store

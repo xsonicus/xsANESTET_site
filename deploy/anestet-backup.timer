@@ -1,0 +1,10 @@
+[Unit]
+Description=Daily ANESTET data backup
+
+[Timer]
+OnCalendar=*-*-* 02:35:00 UTC
+Persistent=true
+RandomizedDelaySec=15m
+
+[Install]
+WantedBy=timers.target

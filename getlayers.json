@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "brief": {
+    "dimensionality": ["depth", "3d"],
+    "mood": ["calm", "luxe", "technical"],
+    "tone": ["light", "dark"],
+    "motionEnergy": ["subtle"],
+    "density": ["balanced"]
+  },
+  "styleId": "dantora-style",
+  "tokens": {
+    "gl-bg": "#f4f3ee",
+    "gl-ink": "#08172f",
+    "gl-accent": "#315fa8",
+    "gl-line": "rgba(8, 23, 47, .16)"
+  },
+  "activeTemplateId": null,
+  "placed": [
+    {
+      "sectionId": "qk-clinical-hero",
+      "slot": 0,
+      "sceneId": "shoal",
+      "sceneParams": {
+        "paletteId": "porcelain-cobalt",
+        "styleId": "dantora-style"
+      }
+    },
+    {
+      "sectionId": "qk-future-hero",
+      "slot": 0,
+      "sceneId": "opaline",
+      "sceneParams": {
+        "paletteId": "cobalt-strata",
+        "styleId": "ai-studio-style"
+      }
+    }
+  ],
+  "notes": "Future Beauty is the default dark storefront and Clinical Luxury is the second light theme. Beauty Editorial is retired. Shoal and Opaline are locally materialized and documented in docs/GETLAYERS_PROVENANCE.md."
+}

@@ -2,6 +2,18 @@
 
 Project: xsANESTET_site
 
+## 2026-08-31T22:20:00.000Z - Version 13.1.0
+
+- Previous version: 13.0.0
+- Bump: patch
+- Category: fix
+- Files: app/storefront.tsx, app/globals.css, app/layout.tsx, app/products.ts, app/admin, lib/admin, public/assets/getlayers/opaline.html, public/assets/img/restored, scripts/qa-layout.mjs, scripts/admin-smoke.mjs, docs
+- Verification: `npm run build && npm run qa:layout`; `npm run qa:admin`; `npx tsc --noEmit`; `git diff --check`; production Codex Browser dark/light/admin with zero console warnings/errors; Lighthouse desktop 90/100/100/100, mobile 81/100/100/100
+- Risk/Rollback: local candidate only; VPS was not changed. Roll back to the local v13.0.0 source state if required.
+- Issue/Request: cumulative visual corrections required the Opaline sphere behind the product without a layer seam, shadow-free authentic packshots, compact founder spacing, correct Queen Key footer hierarchy, mobile enrichment, new-first sorting and a MODX-class administration surface.
+
+Promoted the corrected v2 packshots, fixed production-safe Opaline positioning through a hash-bound embedded mode, completed the protected catalog administration surface, restored the approved footer brand hierarchy, shortened the mobile hero, and documented the browser-extension hydration cause.
+
 This file is maintained by Project Versioner. It tracks code fixes, verification, risks, and push history for Codex-assisted work.
 ## 2026-08-28T09:06:44.112Z - Commerce-first catalog and separate care guide
 - ID: 2026-08-28T09-06-44-112Z-commerce-first-catalog-and-separate-care-guide
@@ -171,3 +183,58 @@ Replaced the top Information shortcut with a verified external Старый са
 - Risk/Rollback: low; CSS-only responsive header change with immutable rollback to v11.1.2
 - Issue/Request: User reported that at a small/intermediate resolution the round social controls moved upward and the cart was pushed out of the viewport; requested smaller centered circles and the ANESTET mark shifted left.
 Reworked the mobile header into a shrink-safe two-column grid, aligned the ANESTET wordmark to the left, normalized VK, Telegram, support, and cart controls to accessible 44px circles, moved the cart count into a compact badge, and expanded layout QA with an exact 644px viewport plus per-control viewport/header collision assertions.
+
+## 2026-08-31T15:22:23.000Z - QK Cosmetic three-direction Design Lab
+
+- ID: 2026-08-31T15-22-23-000Z-qk-cosmetic-three-direction-design-lab
+- Version: 12.0.0
+- Category: feature
+- Branch: main
+- Files: app/storefront.tsx, app/globals.css, app/layout.tsx, scripts/qa-layout.mjs, scripts/sync-getlayers-three.mjs, public/assets/getlayers, getlayers.json, docs/GETLAYERS_PROVENANCE.md, deploy/anestet.139-180-214-133.sslip.io.conf, AGENTS.md, README.md
+- Verification: npm run build; npm run qa:layout: 11 screens x 3 designs x 3 presentations; Codex in-app Browser desktop/mobile review; live GetLayers iframe canvas; cart state retained across design changes; zero console errors; Lighthouse with production compression 99/100/100/100, LCP 1.8 s, TBT 20 ms, CLS 0; npm audit 0 vulnerabilities
+- Risk/Rollback: medium; local release candidate only, no VPS deployment was performed. Roll back to the previous immutable release if the candidate is later promoted.
+- Issue/Request: User requested a stronger storefront built from the latest GetLayers work, three switchable visual versions, truthful unknown-stock treatment, and preservation of the existing catalog and order flow.
+
+Introduced Clinical Luxury, Beauty Editorial and Future Beauty as persistent visual systems over one shared 23-product commerce core; localized Shoal and Opaline GetLayers scenes with mobile/reduced-motion fallbacks; added the availability question-mark convention; hardened the 3-design layout gate; and made the Codex local Browser the project-default visual QA surface.
+
+## 2026-08-31T19:30:00.000Z - Commerce administration, authentic packshots and prism motion
+
+- ID: 2026-08-31T19-30-00-000Z-commerce-administration-authentic-packshots-prism-motion
+- Version: 13.0.0
+- Category: feature
+- Branch: main
+- Files: app/storefront.tsx, app/globals.css, app/products.ts, app/admin, lib/admin, server/order-api.mjs, deploy, public/assets/img/restored, docs/admin, docs/releases/2026.08.31-v13.0.0.md
+- Verification: npm run build; npm run qa:layout: 11 screens x 3 designs x 3 presentations; Codex in-app Browser visual review; admin catalog/integration smoke tests; browser-bundle/API/audit fake-secret leak scan
+- Risk/Rollback: medium; local candidate only, no VPS deployment. Roll back to v12.1.0 if the candidate is not promoted.
+- Issue/Request: User requested refined Future Beauty composition, authentic transparent product edges, promotion/favourites/callback flows, a practical admin and future 1С/CDEK connector settings.
+
+Added a shared runtime catalog and protected admin, persistent favourites, callback intake, Queen Key sale pricing, official brand lockup, founder optical scene and a single position-stable prism hero transition. Rejected generative packshot variants that altered label text and promoted deterministic alpha-only restorations instead.
+
+
+## 2026-08-31T20:35:12.233Z - Version 13.1.1
+
+- Previous version: 11.1.3
+- Bump: explicit
+## 2026-08-31T20:35:22.368Z - Complete two-theme ANESTET storefront, authentic packshots and protected admin
+- ID: 2026-08-31T20-35-22-368Z-complete-two-theme-anestet-storefront-authentic-packshots-and-protected-admin
+- Version: 13.1.1
+- Category: feature
+- Branch: main
+- Head: 8165868
+- Files: app/storefront.tsx, app/globals.css, app/products.ts, app/admin, lib/admin, server/order-api.mjs, public/assets/getlayers, public/assets/img/restored/packshots-v13, public/assets/img/partners/alexander-founder-cropped-v3.webp, scripts/qa-layout.mjs, scripts/admin-smoke.mjs, scripts/sync-getlayers-three.mjs, deploy, docs, README.md, AGENTS.md, .codex-memory, .codex-archive, serve.qa.json, package.json, package-lock.json
+- Verification: npm run build && npm run qa:layout: PASS, 11 widths x 2 themes x 3 presentations; npm run qa:admin: PASS; npx tsc --noEmit: PASS; npm audit --omit=dev: 0 vulnerabilities; git diff --check: PASS; 23/23 lossless WebP masters decode to identical verified PNG RGBA; Codex local Browser/Playwright desktop and mobile review with standalone GetLayers canvas
+- Risk/Rollback: medium; deploy as immutable static, Order API and Admin API releases with atomic symlinks and preserve v11.1.3 rollback
+- Issue/Request: Cumulative user corrections from visual review, product-image authenticity, responsive layout, promotion/favourites/callback, administration, connector readiness, Comet hydration warning and VPS publication.
+Finalized Future Beauty and Clinical Luxury across desktop/mobile, locked the hero to the Prism transition, placed the local GetLayers Opaline layer beneath the product without a visible seam or recursive iframe fallback, restored readable ANESTET/Queen Key footer hierarchy, promoted 23 exact lossless WebP packshots with CSS-only shadows, and added persistent favourites, callback, promotions, shared catalog administration and fail-closed 1C/CDEK connector readiness.
+
+## 2026-08-31T21:24:03.302Z - Publish ANESTET v13.1.2 with clean admin session and durable release governance
+- ID: 2026-08-31T21-24-03-302Z-publish-anestet-v13.1.2-with-clean-admin-session-and-durable-release-governance
+- Version: 13.1.2
+- Category: release
+- Branch: main
+- Head: 8165868
+- Files: app, lib/admin, server, public/assets, deploy, scripts, docs, README.md, AGENTS.md, .github/workflows/quality.yml, .codex-memory, .codex-archive, .codex-skill-lab, package.json, package-lock.json, getlayers.json
+- Verification: npm run build && npm run qa:layout: PASS, 11 widths x 2 themes x 3 presentations; npm run qa:admin: PASS including anonymous session 200 false and protected resources 401; npx tsc --noEmit; npm audit --omit=dev; git diff --check: PASS; Public health, catalog=23, id60=890/1190, authenticated admin login/logout and connector status PASS; Codex Browser public storefront, standalone Opaline canvas and admin console warnings/errors=0; Root-only VPS backup archive 0600 contains live data plus env/nginx/systemd configuration; Lighthouse Accessibility/Best Practices/SEO=100; synthetic performance retained as REVIEW
+- Risk/Rollback: medium; active immutable release 20260901-v13.1.2 with previous 20260831-v13.1.1 and v11.1.3 releases preserved for atomic rollback
+- Issue/Request: Complete all cumulative visual, product image, admin, connector, responsive, console and VPS publication corrections; preserve the correction workflow for future websites.
+Published the complete two-theme ANESTET storefront, 23 authentic shadow-free packshots, Prism hero, shared catalog, protected admin and fail-closed connectors to immutable VPS releases. Removed the expected anonymous admin 401 from browser console without weakening protected endpoints, aligned local image validation, expanded root-only backups, updated CI and installed the reusable website-correction-lineage skill.

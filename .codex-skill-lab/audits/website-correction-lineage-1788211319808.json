@@ -1,0 +1,88 @@
+{
+  "id": "website-correction-lineage-1788211319808",
+  "project": "/Users/xsonicus/CodexRuntime/xsANESTET_site",
+  "skill": {
+    "name": "website-correction-lineage",
+    "description": "Preserve cumulative correction lineage and release evidence during long, iterative website builds or redesigns with repeated visual feedback and corrections of earlier corrections.",
+    "file": "/Users/xsonicus/.codex/skills/website-correction-lineage/SKILL.md",
+    "skill_dir": "/Users/xsonicus/.codex/skills/website-correction-lineage",
+    "source_kind": "user",
+    "has_frontmatter": true,
+    "body_lines": 29,
+    "has_agents_yaml": true,
+    "reference_count": 0,
+    "script_count": 0,
+    "mtime": "2026-08-31T21:21:24.537Z"
+  },
+  "verdict": "needs_repair",
+  "blockers": [],
+  "failed": [
+    "api_docs_refresh_guidance"
+  ],
+  "warnings": [
+    "Skill mentions mutable APIs/SDKs/protocols but does not require Context7 or official docs refresh."
+  ],
+  "checks": [
+    {
+      "name": "frontmatter_present",
+      "pass": true,
+      "applies": true
+    },
+    {
+      "name": "name_present",
+      "pass": true,
+      "applies": true
+    },
+    {
+      "name": "description_present",
+      "pass": true,
+      "applies": true
+    },
+    {
+      "name": "description_triggerable",
+      "pass": true,
+      "applies": true
+    },
+    {
+      "name": "body_present",
+      "pass": true,
+      "applies": true
+    },
+    {
+      "name": "relative_links_resolve",
+      "pass": true,
+      "applies": true
+    },
+    {
+      "name": "validation_or_test_guidance",
+      "pass": true,
+      "applies": true
+    },
+    {
+      "name": "failure_or_repair_guidance",
+      "pass": true,
+      "applies": true
+    },
+    {
+      "name": "secret_safety_guidance",
+      "pass": true,
+      "applies": true
+    },
+    {
+      "name": "api_docs_refresh_guidance",
+      "pass": false,
+      "applies": true
+    },
+    {
+      "name": "dangerous_command_review",
+      "pass": true,
+      "applies": false
+    },
+    {
+      "name": "active_skill_write_requires_governance",
+      "pass": true,
+      "applies": false
+    }
+  ],
+  "missing_links": []
+}

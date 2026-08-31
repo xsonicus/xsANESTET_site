@@ -1,6 +1,6 @@
 # ANESTET Design Lab
 
-Static Next.js storefront with coordinated light and dark art directions for the current ANESTET / Queen Key catalog. The repository also preserves the safe source snapshot of the original MODX / miniShop2 storefront.
+Static Next.js storefront with coordinated dark Future Beauty and light Clinical Luxury themes for the current ANESTET / Queen Key catalog. The repository also preserves the safe source snapshot of the original MODX / miniShop2 storefront.
 
 ## Local run
 
@@ -19,10 +19,10 @@ The deployable static bundle is written to `out/`.
 
 ## Visual directions
 
-- Clinical Luxe — precise, bright, laboratory-inspired presentation.
-- Chromatic Serum — the dark navy antipode of the light direction, with cold-blue accents and a milk-white product halo.
+- Future Beauty — the default dark-blue optical presentation with a locally materialized GetLayers Opaline scene.
+- Clinical Luxury — the bright, precise alternative with a locally materialized GetLayers Shoal field.
 
-The segmented control at the top changes composition, typography, palette and motion while preserving the same catalog and functionality. Clinical Luxe and Chromatic Serum follow the browser light/dark preference by default; a visitor can switch between them manually or return to automatic mode.
+The sticky segmented control at the top switches between the two approved themes while preserving the same catalog, cart and checkout. The choice is saved in `qk-design-lab-v1` and mirrored in the `?design=` URL parameter; Future Beauty is the default.
 
 The compact site-version control links the new site's related states:
 
@@ -30,15 +30,15 @@ The compact site-version control links the new site's related states:
 - `Одностраничный` — the complete catalogue and care guide in one continuous page (`?site=onepage`);
 - `Полный сайт` — the commerce-first view with the catalogue and thematic guide separated (`?site=full`).
 
-The full view opens directly on products. Its hero rotates all eight current novelties every 4.6 seconds, supports manual navigation and adds directly to the persistent cart. The cart supports quantity changes, five delivery options, recipient details and address selection, creates a server-side order number and keeps WhatsApp as an explicit operator fallback.
+The full view opens directly on products. Its hero rotates all eight current novelties every 4.6 seconds using one position-stable prism transition, supports pause/manual navigation and adds directly to the persistent cart. Product metadata exits with a short wind blur and the replacement is revealed progressively. The cart supports quantity changes, five delivery options, recipient details and address selection, creates a server-side order number and keeps WhatsApp as an explicit operator fallback.
 
-The first screen uses the original ANESTET wordmark in the header and as a low-contrast diagonal motion rail. A second, slower oversized ANESTET rail crosses it at the opposite angle with a restrained blur, creating one layered brand signature behind the readable content. The footer combines the original high-resolution ANESTET and Queen Key brand assets. All 23 catalog packshots use real transparency instead of white rectangular backplates.
+The first screen uses the original ANESTET wordmark and real product imagery. GetLayers scenes are decorative desktop atmosphere only; mobile and reduced-motion users receive a static fallback. The footer combines the original high-resolution ANESTET and Queen Key brand assets. All 23 catalog packshots use real transparency instead of white rectangular backplates.
 
 ## Live preview
 
 `https://anestet.139-180-214-133.sslip.io`
 
-The static export is deployed behind nginx with HTTPS. Releases are immutable directories under `/var/www/anestet/releases/`; `/var/www/anestet/current` is switched atomically. The pre-GitHub one-page release remains preserved as `20260828-v9`; the current prepared release is `20260828-v11.1.3`.
+The static export is deployed behind nginx with HTTPS. Releases are immutable directories under `/var/www/anestet/releases/`; `/var/www/anestet/current` is switched atomically. The pre-GitHub one-page release remains preserved as `20260828-v9`; the active production release is `2026.09.01-v13.1.2`.
 
 ## Versioning and public change history
 
@@ -56,15 +56,17 @@ Repository: `https://github.com/xsonicus/xsANESTET_site`
 - Commerce integration plan for 1C, CDEK, warehouse stock, promotions and administration: `docs/COMMERCE_BACKEND_ROADMAP.md`.
 - Live adapter status and secret-handling boundary: `docs/INTEGRATION_STATUS.md`.
 - No passwords, private keys, database credentials, MODX session data, cache or server logs are stored in this project.
+- The static `/admin/` client uses a separate loopback admin service. Catalog changes share one server-side catalog with the storefront and Order API. Connector credentials for 1С, CDEK and future services are server-only env/secret values; the browser receives masked readiness states only.
 
 ## Verification
 
 - Static Next.js export.
 - Desktop and mobile Playwright screenshots in `output/playwright/`.
-- Automated `npm run qa:layout` gate: 10 target screens × 2 themes × 3 site presentations; text clipping, safe-edge violations, heading collisions, product/button overlap and horizontal overflow are release blockers. The matrix includes the tall 1431 × 1728 viewport.
+- Local visual acceptance is performed in the Codex in-app Browser against the local preview; external pages are not used as rendering evidence.
+- Automated `npm run qa:layout` gate: 11 target screens × 2 themes × 3 site presentations; text clipping, safe-edge violations, heading collisions, product/button overlap and horizontal overflow are release blockers. The matrix includes the tall 1431 × 1728 viewport.
 - `prefers-reduced-motion` fallback.
 - Keyboard-visible focus, semantic theme selector, semantic filters and cart controls.
-- Transparent WebP hero/featured packshots preserve alpha; the main hero image is 38 KB and is loaded as the high-priority LCP resource.
+- All 23 transparent lossless WebP masters decode to the exact verified PNG RGBA; 600×600 card copies reduce catalogue transfer without changing labels or edges.
 - The evidence photo uses the exact Queen Key Recovery Milk hero product rather than a generic dispenser.
-- The last pre-commerce mobile Lighthouse baseline: Performance 95, Accessibility 100, Best Practices 100, SEO 100. Each release refreshes this evidence.
+- Current production Lighthouse release evidence: Accessibility 100, Best Practices 100 and SEO 100. Synthetic Performance remains `REVIEW` because repeated public runs vary with response/render timing; the JSON reports are retained locally and no unstable score is presented as a release PASS.
 - `npm audit --omit=dev`: 0 vulnerabilities.
