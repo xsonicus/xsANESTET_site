@@ -238,3 +238,20 @@ Finalized Future Beauty and Clinical Luxury across desktop/mobile, locked the he
 - Risk/Rollback: medium; active immutable release 20260901-v13.1.2 with previous 20260831-v13.1.1 and v11.1.3 releases preserved for atomic rollback
 - Issue/Request: Complete all cumulative visual, product image, admin, connector, responsive, console and VPS publication corrections; preserve the correction workflow for future websites.
 Published the complete two-theme ANESTET storefront, 23 authentic shadow-free packshots, Prism hero, shared catalog, protected admin and fail-closed connectors to immutable VPS releases. Removed the expected anonymous admin 401 from browser console without weakening protected endpoints, aligned local image validation, expanded root-only backups, updated CI and installed the reusable website-correction-lineage skill.
+
+
+## 2026-08-31T22:21:19.241Z - Version 13.1.3
+
+- Previous version: 13.1.2
+- Bump: patch
+## 2026-08-31T22:42:40.588Z - Compact ANESTET layout, source-faithful hero copy and interactive care guide
+- ID: 2026-08-31T22-42-40-588Z-compact-anestet-layout-source-faithful-hero-copy-and-interactive-care-guide
+- Version: 13.1.3
+- Category: fix
+- Branch: main
+- Head: ed2484d
+- Files: app/storefront.tsx, app/globals.css, .codex-memory/correction-register.md, docs/RELEASE_HISTORY.md, docs/releases/2026.09.01-v13.1.3.md, package.json, package-lock.json, .codex-versioning/VERSION
+- Verification: npm run build && npm run qa:layout: PASS, 11 widths x 2 themes x 3 presentations; npm run qa:admin: PASS; npx tsc --noEmit: PASS; npm audit --omit=dev: 0 vulnerabilities; git diff --check: PASS; Codex in-app Browser hero/founder visual QA with overflow=false; Local Chrome interaction smoke: stage 02 -> four products, product 39 focused and targeted, console warnings/errors=0
+- Risk/Rollback: low-to-medium; static storefront patch only. Roll back the /var/www/anestet/current symlink to immutable 20260901-v13.1.2; Order API and Admin API remain unchanged.
+- Issue/Request: Cumulative user visual corrections requested product-led hero wording from the previous storefront, animated headline replacement, a larger founder nameplate, smaller oversized sections and fully clickable care-stage product navigation.
+Replaced the abstract hero slogan with product-specific source descriptions and synchronized wind-out/type-in copy motion with the approved Prism transition; enlarged the Alexander Ermolaev founder caption while preserving the original portrait and reducing empty space; shortened evidence and footer scenes with restrained runway/silk motion; reduced the care-guide heading; and added stage-scoped catalog navigation plus focused product deep links.

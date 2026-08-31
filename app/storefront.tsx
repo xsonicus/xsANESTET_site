@@ -21,7 +21,7 @@ type OrderForm = {
 const CART_STORAGE_KEY = "anestet-cart-v1";
 const FAVORITES_STORAGE_KEY = "anestet-favorites-v1";
 const DESIGN_STORAGE_KEY = "qk-design-lab-v1";
-const SITE_RELEASE = "2026.09.01-v13.1.2";
+const SITE_RELEASE = "2026.09.01-v13.1.3";
 const LEGACY_SITE_URL = "https://qkcosmetic.ru/";
 const GITHUB_RELEASES_URL = "https://github.com/xsonicus/xsANESTET_site/releases";
 const HERO_WORDMARK_PATH = "M1784 0H1502L1341 344H457L296 0H14L734 1500H1064ZM899 1291 559 562H1239ZM3248 298V1500H3504V0H3168L2222 1216V0H1966V1500H2310ZM4147 640 4081 228H5096V0H3788L3908 750L3788 1500H5086V1272H4081L4147 860H5038V640ZM5548 488Q5560 398 5623 330Q5686 262 5790.5 225Q5895 188 6030 188Q6163 188 6262 216.5Q6361 245 6414.5 298Q6468 351 6468 422Q6468 482 6438.5 520Q6409 558 6341.5 581.5Q6274 605 6154 620L5830 662Q5647 686 5533.5 737Q5420 788 5366 871.5Q5312 955 5312 1078Q5312 1214 5395 1315.5Q5478 1417 5630.5 1472.5Q5783 1528 5986 1528Q6186 1528 6343.5 1468Q6501 1408 6593 1299.5Q6685 1191 6694 1050H6426Q6416 1129 6359 1188Q6302 1247 6204.5 1279.5Q6107 1312 5980 1312Q5858 1312 5766.5 1285Q5675 1258 5625.5 1207Q5576 1156 5576 1088Q5576 1033 5604 997.5Q5632 962 5695.5 938.5Q5759 915 5868 900L6196 854Q6401 826 6516.5 778.5Q6632 731 6682 653Q6732 575 6732 450Q6732 307 6644 198.5Q6556 90 6396 31Q6236 -28 6026 -28Q5812 -28 5645.5 36.5Q5479 101 5383.5 218Q5288 335 5280 488ZM6842 1500H8346V1268H7726V0H7462V1268H6842ZM8853 640 8787 228H9802V0H8494L8614 750L8494 1500H9792V1272H8787L8853 860H9744V640ZM9942 1500H11446V1268H10826V0H10562V1268H9942Z";
@@ -83,24 +83,32 @@ const themes = [
 
 type ThemeId = (typeof themes)[number]["id"];
 
-const themeCopy: Record<ThemeId, { eyebrow: string; title: string; accent: string; closing: string; lead: string; mobileLead: string }> = {
-  clinical: {
-    eyebrow: "Профессиональный уход · Москва",
-    title: "Точная формула,",
-    accent: "спокойная кожа,",
-    closing: "всегда и везде",
-    lead: "Уход, который говорит сам за себя. Профессиональные средства до, во время и после косметологических процедур.",
-    mobileLead: "Профессиональный уход до, во время и после процедуры.",
-  },
-  serum: {
-    eyebrow: "Future beauty · Moscow laboratory",
-    title: "Формула",
-    accent: "в фокусе света.",
-    closing: "Красота — в точности",
-    lead: "Кинематографичная витрина профессиональных формул. После первого экрана — тот же быстрый каталог, та же корзина и только подтверждённые данные.",
-    mobileLead: "Профессиональные формулы в точном свете — каталог уже на следующем экране.",
-  },
+// Тексты перенесены из сохранённых карточек прежнего qkcosmetic.ru и сокращены
+// только для первого экрана; назначение продуктов и обещания не расширялись.
+const heroSourceDescriptions: Record<number, string> = {
+  17: "Охлаждающий гель для подготовки кожи к косметологическим процедурам. Снижает чувствительность и неприятные ощущения, обеспечивая комфорт во время процедуры.",
+  33: "Охлаждающий гель для подготовки кожи к косметологическим процедурам. Снижает чувствительность и неприятные ощущения, обеспечивая комфорт во время процедуры.",
+  34: "Охлаждающий гель для подготовки кожи к косметологическим процедурам. Снижает чувствительность и неприятные ощущения, обеспечивая комфорт во время процедуры.",
+  35: "Охлаждающий гель с новой формулой для подготовки кожи к косметологическим процедурам и более глубокого действия.",
+  36: "Охлаждающий гель с новой формулой для подготовки кожи к косметологическим процедурам и более глубокого действия.",
+  37: "Гель предназначен для использования после первичного этапа. Он продлевает и усиливает эффект, обеспечивая комфорт для клиента.",
+  42: "Нежная формула для глубокого увлажнения, восстановления кожного барьера и успокоения чувствительной кожи. Масла ши, жожоба и сквален питают кожу, делают её мягкой и эластичной.",
+  60: "Д-пантенол глубоко увлажняет и способствует восстановлению кожи. Масло ши питает, повышает мягкость и эластичность, защищая кожу от потери влаги.",
 };
+
+function heroHeadline(product: Product) {
+  return product.title.replace(/,\s*\d+\s*мл\.?$/i, "");
+}
+
+function heroDescription(product: Product) {
+  return heroSourceDescriptions[product.id] ?? product.title;
+}
+
+function heroEyebrow(product: Product) {
+  if (product.brand === "QUEEN KEY") return "QUEEN KEY · Уход за кожей";
+  if (product.tag === "Второй этап") return `${product.brand} · Второй этап процедуры`;
+  return `${product.brand} · Подготовка кожи к процедуре`;
+}
 
 const deliveryOptions: Array<{ id: DeliveryId; title: string; note: string; cost: (subtotal: number) => number | null }> = [
   { id: "pickup", title: "Самовывоз", note: "Москва, ул. Иловайская, д. 20, корп. 2", cost: () => 0 },
@@ -137,7 +145,15 @@ const careStages = [
       "Усиленная формула: FION ultra, Light Dep Professional или Light Frost, когда важны более быстрое начало действия и плотная текстура.",
       "Формат: 30 мл — компактный объём; 75–150 мл — регулярная работа; 300–400 мл — профессиональный запас.",
     ],
-    lines: ["ANESTET base", "FION ultra", "Light Dep", "Light Frost", "Анестодерм", "Mildep"],
+    productIds: [17, 33, 34, 35, 36, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59],
+    lines: [
+      { label: "ANESTET base", productId: 17 },
+      { label: "FION ultra", productId: 35 },
+      { label: "Light Dep", productId: 51 },
+      { label: "Light Frost", productId: 48 },
+      { label: "Анестодерм", productId: 57 },
+      { label: "Mildep", productId: 58 },
+    ],
   },
   {
     number: "02",
@@ -151,7 +167,13 @@ const careStages = [
       "FION ultra — усиленная формула линейки второго этапа.",
       "Объёмы 5 мл подходят для точечной работы, 30 мл — для регулярного профессионального использования.",
     ],
-    lines: ["2 base · 5 мл", "2 base · 30 мл", "FION 2 ultra · 5 мл", "FION 2 ultra · 30 мл"],
+    productIds: [37, 38, 39, 40],
+    lines: [
+      { label: "2 base · 5 мл", productId: 38 },
+      { label: "2 base · 30 мл", productId: 37 },
+      { label: "FION 2 ultra · 5 мл", productId: 40 },
+      { label: "FION 2 ultra · 30 мл", productId: 39 },
+    ],
   },
   {
     number: "03",
@@ -165,9 +187,18 @@ const careStages = [
       "Recovery Milk с Д-пантенолом — для тела: увлажнение, питание и смягчение кожи.",
       "Выбирайте формат по зоне применения: средство для лица или средство для тела.",
     ],
-    lines: ["Ceramide Repair · лицо", "Recovery Milk · тело", "Д-пантенол", "масло ши", "бисаболол"],
+    productIds: [42, 60],
+    lines: [
+      { label: "Ceramide Repair · лицо", productId: 42 },
+      { label: "Recovery Milk · тело", productId: 60 },
+      { label: "Д-пантенол", productId: 60 },
+      { label: "масло ши", productId: 42 },
+      { label: "бисаболол", productId: 42 },
+    ],
   },
 ] as const;
+
+type CareStageId = (typeof careStages)[number]["id"];
 
 const proof = [
   { value: "23", label: "позиции в текущем каталоге" },
@@ -219,6 +250,8 @@ export default function Storefront() {
   const [theme, setTheme] = useState<ThemeId>("serum");
   const [ambientMotionEnabled, setAmbientMotionEnabled] = useState(false);
   const [filter, setFilter] = useState("Все");
+  const [catalogStageId, setCatalogStageId] = useState<CareStageId | null>(null);
+  const [focusedProductId, setFocusedProductId] = useState<number | null>(null);
   const [shoppingMode, setShoppingMode] = useState<ShoppingMode>("catalog");
   const [siteMode, setSiteMode] = useState<SiteMode>("full");
   const [companySection, setCompanySection] = useState<CompanySection>("partners");
@@ -286,6 +319,16 @@ export default function Storefront() {
       const cleanUrl = new URL(window.location.href);
       cleanUrl.searchParams.delete("motion");
       window.history.replaceState({}, "", `${cleanUrl.pathname}${cleanUrl.search}${cleanUrl.hash}`);
+    }
+    const requestedStage = careStages.find((stage) => stage.id === searchParams.get("stage"));
+    const requestedProductId = Number(searchParams.get("product"));
+    if (requestedStage) {
+      setShoppingMode("catalog");
+      setCatalogStageId(requestedStage.id);
+      setFilter("Все");
+      if (Number.isInteger(requestedProductId) && requestedStage.productIds.some((id) => id === requestedProductId)) {
+        setFocusedProductId(requestedProductId);
+      }
     }
   }, []);
 
@@ -462,16 +505,40 @@ export default function Storefront() {
   }, [theme, shoppingMode, siteMode]);
 
   const filters = ["Все", "ANESTET", "LIGHT DEP", "Уход"];
+  const selectedCareStage = careStages.find((stage) => stage.id === catalogStageId) ?? null;
   const visibleProducts = useMemo(() => {
+    const stageProductIds: readonly number[] = selectedCareStage?.productIds ?? [];
+    const stageProducts = selectedCareStage
+      ? catalogProducts.filter((product) => stageProductIds.includes(product.id))
+      : catalogProducts;
     const scopedProducts = filter === "Все"
-      ? catalogProducts
+      ? stageProducts
       : filter === "Уход"
-        ? catalogProducts.filter((product) => [42, 58, 60].includes(product.id))
-        : catalogProducts.filter((product) => product.brand === filter || (filter === "LIGHT DEP" && product.brand.startsWith("LIGHT DEP")));
-    return [...scopedProducts].sort((first, second) => Number(Boolean(second.isNew)) - Number(Boolean(first.isNew)));
-  }, [catalogProducts, filter]);
+        ? stageProducts.filter((product) => [42, 58, 60].includes(product.id))
+        : stageProducts.filter((product) => product.brand === filter || (filter === "LIGHT DEP" && product.brand.startsWith("LIGHT DEP")));
+    return [...scopedProducts].sort((first, second) => {
+      if (focusedProductId !== null) {
+        if (first.id === focusedProductId) return -1;
+        if (second.id === focusedProductId) return 1;
+      }
+      return Number(Boolean(second.isNew)) - Number(Boolean(first.isNew));
+    });
+  }, [catalogProducts, filter, focusedProductId, selectedCareStage]);
 
-  const copy = themeCopy[theme];
+  useEffect(() => {
+    if (shoppingMode !== "catalog" || catalogStageId === null) return;
+    const timer = window.setTimeout(() => {
+      const target = focusedProductId === null
+        ? document.querySelector<HTMLElement>("#catalog")
+        : document.querySelector<HTMLElement>(`#product-${focusedProductId}`);
+      if (!target) return;
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      target.scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth", block: focusedProductId === null ? "start" : "center" });
+      if (focusedProductId !== null) target.focus({ preventScroll: true });
+    }, 80);
+    return () => window.clearTimeout(timer);
+  }, [catalogStageId, focusedProductId, shoppingMode, visibleProducts.length]);
+
   const safeHeroProductIndex = Math.min(heroProductIndex, Math.max(0, heroProducts.length - 1));
   const heroProduct = (heroProducts[safeHeroProductIndex] ?? heroProducts[0])!;
   const departingHeroProduct = departingHeroProductIndex === null ? null : heroProducts[departingHeroProductIndex];
@@ -599,6 +666,55 @@ export default function Storefront() {
     setCompanySection(section);
     window.requestAnimationFrame(() => document.querySelector("#company-info")?.scrollIntoView({ behavior: "smooth", block: "start" }));
   };
+  const updateCatalogDeepLink = (stageId: CareStageId | null, productId: number | null, hash: string) => {
+    const url = new URL(window.location.href);
+    if (stageId) url.searchParams.set("stage", stageId);
+    else url.searchParams.delete("stage");
+    if (productId !== null) url.searchParams.set("product", String(productId));
+    else url.searchParams.delete("product");
+    url.hash = hash;
+    window.history.pushState({}, "", `${url.pathname}${url.search}${url.hash}`);
+  };
+  const scrollToSectionAfterRender = (selector: string) => {
+    window.requestAnimationFrame(() => window.requestAnimationFrame(() => {
+      const target = document.querySelector<HTMLElement>(selector);
+      if (!target) return;
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      target.scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth", block: "start" });
+    }));
+  };
+  const showStageProducts = (stageId: CareStageId, productId: number | null = null) => {
+    const stage = careStages.find((item) => item.id === stageId);
+    if (!stage) return;
+    const safeProductId = productId !== null && stage.productIds.some((id) => id === productId) ? productId : null;
+    setFilter("Все");
+    setCatalogStageId(stageId);
+    setFocusedProductId(safeProductId);
+    setShoppingMode("catalog");
+    updateCatalogDeepLink(stageId, safeProductId, safeProductId === null ? "catalog" : `product-${safeProductId}`);
+  };
+  const showAllCatalog = () => {
+    setFilter("Все");
+    setCatalogStageId(null);
+    setFocusedProductId(null);
+    setShoppingMode("catalog");
+    updateCatalogDeepLink(null, null, "catalog");
+    scrollToSectionAfterRender("#catalog");
+  };
+  const showGuide = () => {
+    setCatalogStageId(null);
+    setFocusedProductId(null);
+    setShoppingMode("guide");
+    updateCatalogDeepLink(null, null, "guide");
+    scrollToSectionAfterRender("#guide");
+  };
+  const chooseCatalogFilter = (nextFilter: string) => {
+    setFilter(nextFilter);
+    setCatalogStageId(null);
+    setFocusedProductId(null);
+    setShoppingMode("catalog");
+    updateCatalogDeepLink(null, null, "catalog");
+  };
 
   return (
     <main className="site-shell">
@@ -636,8 +752,8 @@ export default function Storefront() {
           <Image className="brand-logo" src="/assets/img/anestet-logo-2024-blue.png" alt="ANESTET" width={2709} height={1042} loading="eager" />
         </a>
         <nav className="primary-nav" aria-label="Главное меню">
-          <a href="#shopping" onClick={() => setShoppingMode("catalog")}>Каталог</a>
-          <a href="#shopping" onClick={() => setShoppingMode("guide")}>Система ухода</a>
+          <a href="#catalog" onClick={(event) => { event.preventDefault(); showAllCatalog(); }}>Каталог</a>
+          <a href="#guide" onClick={(event) => { event.preventDefault(); showGuide(); }}>Система ухода</a>
           {siteMode === "full" && <a href="#about">О бренде</a>}
           <a href="#company-info" onClick={() => openCompanySection("contacts")}>Поддержка</a>
         </nav>
@@ -815,12 +931,23 @@ export default function Storefront() {
           </div>
         </div>
         <div className="hero-copy" data-reveal data-visible="true">
-          <p className="eyebrow"><SparkIcon /> {copy.eyebrow}</p>
-          <h1 id="hero-title"><span className="hero-title-opening">{copy.title}</span><em>{copy.accent}</em><span className="hero-title-closing">{copy.closing}</span></h1>
-          <p className="hero-lead"><span className="hero-lead-desktop">{copy.lead}</span><span className="hero-lead-mobile">{copy.mobileLead}</span></p>
+          <div className="hero-copy-stage">
+            {departingHeroProduct && (
+              <div className="hero-copy-product departing" aria-hidden="true">
+                <p className="eyebrow"><SparkIcon /> {heroEyebrow(departingHeroProduct)}</p>
+                <p className="hero-product-headline hero-departing-title">{heroHeadline(departingHeroProduct)}</p>
+                <p className="hero-lead">{heroDescription(departingHeroProduct)}</p>
+              </div>
+            )}
+            <div className={heroAnimating ? "hero-copy-product arriving" : "hero-copy-product"} key={`hero-copy-${heroProduct.id}-${heroMotionCycle}`}>
+              <p className="eyebrow"><SparkIcon /> {heroEyebrow(heroProduct)}</p>
+              <h1 id="hero-title" className="hero-product-headline">{heroHeadline(heroProduct)}</h1>
+              <p className="hero-lead">{heroDescription(heroProduct)}</p>
+            </div>
+          </div>
           <div className="hero-actions">
-            <a className="primary-action" href="#shopping" onClick={() => setShoppingMode("catalog")}>Выбрать средство <ArrowIcon /></a>
-            <a className="text-action" href="#shopping" onClick={() => setShoppingMode("guide")}>Как выбрать</a>
+            <a className="primary-action" href="#catalog" onClick={(event) => { event.preventDefault(); showAllCatalog(); }}>Выбрать средство <ArrowIcon /></a>
+            <a className="text-action" href="#guide" onClick={(event) => { event.preventDefault(); showGuide(); }}>Как выбрать</a>
           </div>
           <span className="mobile-hero-optic" aria-hidden="true"><i /><b /></span>
         </div>
@@ -897,10 +1024,10 @@ export default function Storefront() {
           <h2 id="shopping-title"><span>Сразу купить</span><span>или подобрать</span></h2>
         </div>
         <div className="shopping-tabs" role="group" aria-label="Режим просмотра магазина">
-          <button id="shopping-tab-catalog" type="button" aria-pressed={shoppingMode === "catalog"} className={shoppingMode === "catalog" ? "active" : ""} onClick={() => setShoppingMode("catalog")}>
+          <button id="shopping-tab-catalog" type="button" aria-pressed={shoppingMode === "catalog"} className={shoppingMode === "catalog" ? "active" : ""} onClick={showAllCatalog}>
             <span>01</span><strong>Каталог товаров</strong><small>Для тех, кто уже знает, что нужно</small>
           </button>
-          <button id="shopping-tab-guide" type="button" aria-pressed={shoppingMode === "guide"} className={shoppingMode === "guide" ? "active" : ""} onClick={() => setShoppingMode("guide")}>
+          <button id="shopping-tab-guide" type="button" aria-pressed={shoppingMode === "guide"} className={shoppingMode === "guide" ? "active" : ""} onClick={showGuide}>
             <span>02</span><strong>Подбор по этапам</strong><small>Понятный маршрут до, во время и после процедуры</small>
           </button>
         </div>
@@ -954,12 +1081,23 @@ export default function Storefront() {
                 <ul>
                   {stage.points.map((point) => <li key={point}>{point}</li>)}
                 </ul>
-                <div className="guide-lines" aria-label={`Линейки: ${stage.lines.join(", ")}`}>
-                  {stage.lines.map((line) => <span key={line}>{line}</span>)}
+                <div className="guide-lines" aria-label={`Линейки и быстрые переходы: ${stage.lines.map((line) => line.label).join(", ")}`}>
+                  {stage.lines.map((line) => (
+                    <button
+                      type="button"
+                      key={line.label}
+                      className={focusedProductId === line.productId ? "active" : ""}
+                      aria-pressed={focusedProductId === line.productId}
+                      aria-label={`${line.label}: показать товар в каталоге`}
+                      onClick={() => showStageProducts(stage.id, line.productId)}
+                    >
+                      {line.label}<ArrowIcon />
+                    </button>
+                  ))}
                 </div>
-                <a className="guide-action" href="#shopping" onClick={() => setShoppingMode("catalog")}>
-                  Перейти к товарам <ArrowIcon />
-                </a>
+                <button type="button" className="guide-action" onClick={() => showStageProducts(stage.id)}>
+                  Показать товары этапа · {stage.productIds.length} <ArrowIcon />
+                </button>
               </div>
             </article>
           ))}
@@ -983,14 +1121,33 @@ export default function Storefront() {
         </div>
         <div className="filters" role="group" aria-label="Фильтр каталога" data-reveal>
           {filters.map((item) => (
-            <button type="button" key={item} className={filter === item ? "active" : ""} aria-pressed={filter === item} onClick={() => setFilter(item)}>{item}</button>
+            <button type="button" key={item} className={filter === item ? "active" : ""} aria-pressed={filter === item} onClick={() => chooseCatalogFilter(item)}>{item}</button>
           ))}
         </div>
+        {selectedCareStage && (
+          <div className="catalog-scope-status" role="status" aria-live="polite">
+            <span>{selectedCareStage.number}</span>
+            <div>
+              <small>Товары этапа</small>
+              <strong>{selectedCareStage.title}</strong>
+              <p>{visibleProducts.length} {visibleProducts.length === 1 ? "товар" : visibleProducts.length < 5 ? "товара" : "товаров"}</p>
+            </div>
+            <button type="button" onClick={showAllCatalog}>Показать весь каталог <ArrowIcon /></button>
+          </div>
+        )}
         <div className="product-grid" aria-live="polite">
           {visibleProducts.map((product, index) => {
             const cartQuantity = cart.find((line) => line.id === product.id)?.quantity ?? 0;
             return (
-              <article className="product-card" key={product.id} data-reveal style={{ "--card-index": index } as React.CSSProperties}>
+              <article
+                id={`product-${product.id}`}
+                className={focusedProductId === product.id ? "product-card targeted" : "product-card"}
+                key={product.id}
+                tabIndex={-1}
+                aria-current={focusedProductId === product.id ? "true" : undefined}
+                data-reveal
+                style={{ "--card-index": index } as React.CSSProperties}
+              >
                 <div className="product-media">
                   <span className="product-tag">{product.tag}</span>
                   <div className="product-badges">{product.isNew && <span className="product-new">Новинка</span>}{product.compareAtPrice && <span className="product-discount">Скидка</span>}</div>
@@ -1035,8 +1192,8 @@ export default function Storefront() {
             <span className="about-optical-core" aria-hidden="true" />
             <span className="about-orbit about-orbit-a" aria-hidden="true" />
             <span className="about-orbit about-orbit-b" aria-hidden="true" />
-            <Image src="/assets/img/partners/alexander-founder-cropped-v3.webp" alt="Александр, основатель компании" width={551} height={1128} loading="lazy" />
-            <span className="about-founder-caption"><strong>Александр</strong><small>Основатель компании</small></span>
+            <Image src="/assets/img/partners/alexander-founder-cropped-v3.webp" alt="Александр Ермолаев, основатель компании" width={551} height={1128} loading="lazy" />
+            <span className="about-founder-caption"><strong>Александр Ермолаев</strong><small>Основатель компании</small></span>
           </div>
           <div className="about-copy" data-reveal>
             <p className="section-index">О бренде / собственная лаборатория</p>
@@ -1205,6 +1362,9 @@ export default function Storefront() {
           event.currentTarget.style.setProperty("--footer-light-y", "18%");
         }}
       >
+        <div className="footer-fashion-motion" aria-hidden="true">
+          <span className="footer-fashion-thread" />
+        </div>
         <div className="footer-brand-stage">
           <div className="footer-brand-primary" data-reveal>
             <p className="footer-brand-kicker"><span>ANESTET / PROFESSIONAL CARE</span><span>МОСКВА · 2026</span></p>
