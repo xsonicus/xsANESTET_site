@@ -314,4 +314,14 @@ Published the final optimized static bundle to a new immutable VPS directory, at
 - Verification: Visual A/B confirms approved brightness and color preserved with gamma pass; npm run build; npm run qa:layout: 11 widths x 2 themes x 3 presentations; Local desktop Lighthouse 95/96/96, LCP 1.4s, TBT 0, 46 requests; Console errors 0 and WebGL canvas present
 - Risk/Rollback: medium
 - Issue/Request: Independent post-deploy audit found occasional desktop cold-start long tasks even after DPR, mesh, visibility, and asset optimizations; bloom was configured to zero but still allocated and executed.
-Preserved the approved gamma-corrected Opaline appearance while removing the zero-strength bloom pass, its shader import, and extra render targets to reduce cold desktop WebGL work.
+Preserved the approved gamma-corrected Opaline appearance while removing the zero-strength bloom pass, its shader import, and extra render targets to reduce cold desktop WebGL work.## 2026-08-31T23:47:02.283Z - Record r3 public performance evidence
+- ID: 2026-08-31T23-47-02-283Z-record-r3-public-performance-evidence
+- Version: 13.1.3
+- Category: release
+- Branch: main
+- Head: a737486
+- Files: docs/releases/2026.09.01-v13.1.3.md, .codex-memory/task-state.md
+- Verification: Public r3 Lighthouse desktop 93/88/68; Accessibility 100 all runs; TBT 0 all runs; Public Playwright console/page/request errors 0
+- Risk/Rollback: low
+- Issue/Request: Production evidence needed to distinguish resolved WebGL main-thread work from remaining public network variability.
+Recorded final public cold/warm desktop measurements after the zero-bloom release, including stable zero TBT and remaining network/Speed Index variance.
