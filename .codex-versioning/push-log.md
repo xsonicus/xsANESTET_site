@@ -55,3 +55,10 @@
 - Version: 13.1.2
 - Fixes marked: 2
 - Notes: ANESTET v13.1.2 pushed to main and tagged 2026.09.01-v13.1.2
+## 2026-08-31T22:43:36.114Z - Push
+- Remote: origin
+- Branch: main
+- Commit: fc4de3ba1baf8afa5f27d55c99a2e56bf062c2da
+- Version: 13.1.3
+- Fixes marked: 1
+- Notes: GitHub source commit, annotated tag and release 2026.09.01-v13.1.3 published after all local gates passed.
