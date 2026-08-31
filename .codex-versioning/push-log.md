@@ -67,4 +67,10 @@
 - Commit: c90fc2b
 - Version: 13.1.3
 - Fixes marked: 1
-- Notes: Production status documentation and deployment lineage pushed after public smoke.
+- Notes: Production status documentation and deployment lineage pushed after public smoke.## 2026-08-31T23:22:12.789Z - Push
+- Remote: origin
+- Branch: main
+- Commit: 8f91751
+- Version: 13.1.3
+- Fixes marked: 3
+- Notes: Final v13.1.3-r2 storefront corrections and performance optimization.
