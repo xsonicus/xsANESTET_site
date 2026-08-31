@@ -278,6 +278,9 @@ export default function Storefront() {
   const heroProductIndexRef = useRef(0);
   const heroProductIdRef = useRef<number | null>(null);
   const heroTransitionTimerRef = useRef<number | null>(null);
+  const footerLightFrameRef = useRef<number | null>(null);
+  const footerLightBoundsRef = useRef<DOMRect | null>(null);
+  const footerLightPointRef = useRef({ x: 0, y: 0 });
   const heroProducts = useMemo(() => {
     const newProducts = catalogProducts.filter((product) => product.isNew);
     return newProducts.length ? newProducts : catalogProducts.slice(0, 1);
@@ -427,7 +430,7 @@ export default function Storefront() {
       if (heroCarouselPaused || heroCarouselUserPaused || heroProducts.length < 2 || reducedMotion.matches || compactViewport.matches) return;
       interval = window.setInterval(() => {
         if (!document.hidden) changeHeroProduct(1);
-      }, 4600);
+      }, 7000);
     };
     syncCarousel();
     reducedMotion.addEventListener("change", syncCarousel);
@@ -441,6 +444,7 @@ export default function Storefront() {
 
   useEffect(() => () => {
     if (heroTransitionTimerRef.current) window.clearTimeout(heroTransitionTimerRef.current);
+    if (footerLightFrameRef.current) window.cancelAnimationFrame(footerLightFrameRef.current);
   }, []);
 
   useEffect(() => {
@@ -484,9 +488,17 @@ export default function Storefront() {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduced) return;
 
-    const refresh = () => nodes.forEach((node) => {
-      node.dataset.active = String(node.dataset.inView === "true" && !document.hidden);
-    });
+    const refresh = () => {
+      nodes.forEach((node) => {
+        node.dataset.active = String(node.dataset.inView === "true" && !document.hidden);
+      });
+      const hero = document.querySelector<HTMLElement>(".hero");
+      const opalineFrame = document.querySelector<HTMLIFrameElement>(".getlayers-opaline");
+      opalineFrame?.contentWindow?.postMessage({
+        type: "anestet-motion",
+        active: hero?.dataset.inView === "true" && !document.hidden,
+      }, window.location.origin);
+    };
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -497,12 +509,15 @@ export default function Storefront() {
       { threshold: 0.08 },
     );
     nodes.forEach((node) => observer.observe(node));
+    const opalineFrame = document.querySelector<HTMLIFrameElement>(".getlayers-opaline");
+    opalineFrame?.addEventListener("load", refresh);
     document.addEventListener("visibilitychange", refresh);
     return () => {
       observer.disconnect();
+      opalineFrame?.removeEventListener("load", refresh);
       document.removeEventListener("visibilitychange", refresh);
     };
-  }, [theme, shoppingMode, siteMode]);
+  }, [ambientMotionEnabled, theme, shoppingMode, siteMode]);
 
   const filters = ["Все", "ANESTET", "LIGHT DEP", "Уход"];
   const selectedCareStage = careStages.find((stage) => stage.id === catalogStageId) ?? null;
@@ -749,7 +764,7 @@ export default function Storefront() {
 
       <header className="site-header">
         <a className="wordmark" href="#top">
-          <Image className="brand-logo" src="/assets/img/anestet-logo-2024-blue.png" alt="ANESTET" width={2709} height={1042} loading="eager" />
+          <Image className="brand-logo" src="/assets/img/optimized/anestet-logo-blue-990-lossless.webp" alt="ANESTET" width={990} height={381} loading="eager" />
         </a>
         <nav className="primary-nav" aria-label="Главное меню">
           <a href="#catalog" onClick={(event) => { event.preventDefault(); showAllCatalog(); }}>Каталог</a>
@@ -1352,12 +1367,23 @@ export default function Storefront() {
       <footer
         className="footer"
         data-motion
+        onPointerEnter={(event) => {
+          footerLightBoundsRef.current = event.currentTarget.getBoundingClientRect();
+        }}
         onPointerMove={(event) => {
-          const bounds = event.currentTarget.getBoundingClientRect();
-          event.currentTarget.style.setProperty("--footer-light-x", `${event.clientX - bounds.left}px`);
-          event.currentTarget.style.setProperty("--footer-light-y", `${event.clientY - bounds.top}px`);
+          const footer = event.currentTarget;
+          const bounds = footerLightBoundsRef.current ?? footer.getBoundingClientRect();
+          footerLightPointRef.current = { x: event.clientX - bounds.left, y: event.clientY - bounds.top };
+          if (footerLightFrameRef.current) return;
+          footerLightFrameRef.current = window.requestAnimationFrame(() => {
+            const point = footerLightPointRef.current;
+            footer.style.setProperty("--footer-light-x", `${point.x}px`);
+            footer.style.setProperty("--footer-light-y", `${point.y}px`);
+            footerLightFrameRef.current = null;
+          });
         }}
         onPointerLeave={(event) => {
+          footerLightBoundsRef.current = null;
           event.currentTarget.style.setProperty("--footer-light-x", "78%");
           event.currentTarget.style.setProperty("--footer-light-y", "18%");
         }}
@@ -1368,13 +1394,13 @@ export default function Storefront() {
         <div className="footer-brand-stage">
           <div className="footer-brand-primary" data-reveal>
             <p className="footer-brand-kicker"><span>ANESTET / PROFESSIONAL CARE</span><span>МОСКВА · 2026</span></p>
-            <Image className="footer-anestet-logo" src="/assets/img/anestet-logo-2024-blue.png" alt="ANESTET" width={2709} height={1042} />
+            <Image className="footer-anestet-logo" src="/assets/img/optimized/anestet-logo-blue-990-lossless.webp" alt="ANESTET" width={990} height={381} />
             <p className="footer-brand-statement">Профессиональный уход<br />{" "}до процедуры, во время и после.</p>
           </div>
           <div className="footer-brand-secondary" data-reveal>
             <div className="footer-brand-orbit">
               <span className="footer-orbit-ring" aria-hidden="true" />
-              <span className="footer-qk-mark-window"><Image className="footer-qk-mark" src="/assets/img/queen-key-logo-original.png" alt="Queen Key" width={3188} height={3677} /></span>
+              <span className="footer-qk-mark-window"><Image className="footer-qk-mark" src="/assets/img/optimized/queen-key-mark-512-lossless.webp" alt="Queen Key" width={512} height={591} /></span>
             </div>
             <Image className="footer-qk-lockup" src="/assets/img/logo-footer.svg" alt="QK Cosmetic" width={193} height={43} />
             <p><span>PREMIUM CARE</span></p>

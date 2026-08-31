@@ -130,8 +130,10 @@ function hexToVec3(hex) {
 /* ---------- RENDERER / SCENE / CAMERA ---------- */
 const canvas = document.getElementById('scene')
 const renderer = new THREE.WebGL1Renderer({ canvas, antialias: true })
-renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.VSMShadowMap
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, EMBEDDED_HERO ? 1.5 : 2))
+// The scene uses shader-authored lighting and has no shadow-casting lights.
+// Keeping a shadow map allocated only wastes GPU memory and frame time.
+renderer.shadowMap.enabled = false
 const scene = new THREE.Scene()
 scene.background = new THREE.Color(0x000000); scene.fog = null
 const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 200)
@@ -309,7 +311,9 @@ float perlin4d(vec4 P){
 
 class OpalineScene {
   constructor(scene) {
-    this.geometry = new THREE.SphereBufferGeometry(1.6, 200, 200)
+    // 160² retains the smooth silhouette at the embedded DPR cap while
+    // reducing vertex work by roughly 36% versus the original 200² mesh.
+    this.geometry = new THREE.SphereBufferGeometry(1.6, 160, 160)
 
     this.uniforms = {
       iAlpha:       { value: 0 },
@@ -617,7 +621,7 @@ function applyConfig() {
 
 /* ---------- RESIZE ---------- */
 function resize() {
-  const w = window.innerWidth, h = window.innerHeight, dpr = Math.min(window.devicePixelRatio, 2)
+  const w = window.innerWidth, h = window.innerHeight, dpr = Math.min(window.devicePixelRatio, EMBEDDED_HERO ? 1.5 : 2)
   renderer.setPixelRatio(dpr); renderer.setSize(w, h, false)
   camera.aspect = w / h; camera.updateProjectionMatrix()
   composer.setPixelRatio(dpr); composer.setSize(w, h)
@@ -627,14 +631,28 @@ function resize() {
 window.addEventListener('resize', resize); resize()
 
 /* ---------- RENDER LOOP (single scene render → bloom → gamma) ---------- */
+let motionActive = true
+let renderHandle = 0
 function render() {
-  requestAnimationFrame(render)
+  renderHandle = 0
+  if (!motionActive || document.hidden) return
   mouse.x += (mouseTarget.x - mouse.x) * 0.06
   mouse.y += (mouseTarget.y - mouse.y) * 0.06
   sceneObj.render(mouse)
   composer.render()
+  renderHandle = requestAnimationFrame(render)
 }
-render()
+function syncRenderLoop() {
+  document.documentElement.dataset.motionActive = String(motionActive && !document.hidden)
+  if (motionActive && !document.hidden && !renderHandle) renderHandle = requestAnimationFrame(render)
+}
+window.addEventListener('message', event => {
+  if (event.origin !== window.location.origin || event.data?.type !== 'anestet-motion') return
+  motionActive = Boolean(event.data.active)
+  syncRenderLoop()
+})
+document.addEventListener('visibilitychange', syncRenderLoop)
+syncRenderLoop()
 
 /* ===== UI (remove this block to drop the panel) ===== */
 function setupColorUI(config, apply) {

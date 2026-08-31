@@ -264,4 +264,34 @@ Replaced the abstract hero slogan with product-specific source descriptions and 
 - Verification: Public storefront and /admin returned 200; Order API and Admin API health returned ok; Anonymous admin session returned 200 authenticated false; Public catalog returned 23 products and id60 price 890 compareAtPrice 1190; Public Codex Browser showed release 13.1.3, full founder name, product-led hero and overflow=false; Public Chrome interaction smoke selected product 39 with no console warnings/errors or request failures
 - Risk/Rollback: documentation-only follow-up; no runtime code change
 - Issue/Request: Deployment status documentation must reflect the exact active immutable static release while distinguishing unchanged Order/Admin API releases.
-Updated the durable task state, correction lineage and README after atomic VPS promotion and successful public storefront, API, catalog, responsive and interaction smoke checks.
+Updated the durable task state, correction lineage and README after atomic VPS promotion and successful public storefront, API, catalog, responsive and interaction smoke checks.## 2026-08-31T22:52:49.539Z - Stabilize Future Beauty hero packshot safe zone
+- ID: 2026-08-31T22-52-49-539Z-stabilize-future-beauty-hero-packshot-safe-zone
+- Version: 13.1.3
+- Category: responsive-layout
+- Branch: main
+- Head: 9c3f949
+- Files: app/globals.css, .codex-memory/correction-register.md
+- Verification: npm run build; npm run qa:layout; npm run qa:admin; npx tsc --noEmit; npm audit --omit=dev; git diff --check
+- Risk/Rollback: low
+- Issue/Request: GitHub Actions layout QA detected hero image to product label collisions at 1687x1000 and 1912x1858 although the local visual matrix passed.
+Increase the Future Beauty hero packshot bottom inset from 18% to 23% so Linux Chromium CI keeps the product image clear of the product label at all control widths without changing the Prism transition, image, scale, or center.## 2026-08-31T23:20:41.279Z - Refine hero transition timing and label fit
+- ID: 2026-08-31T23-20-41-279Z-refine-hero-transition-timing-and-label-fit
+- Version: 13.1.3
+- Category: ui
+- Branch: main
+- Head: 9c3f949
+- Files: app/storefront.tsx, app/globals.css, scripts/qa-layout.mjs
+- Verification: npm run build; npm run qa:layout (3 consecutive passes); Computed-style transition smoke at 40ms/290ms; All 8 hero labels fit at 900px
+- Risk/Rollback: low
+- Issue/Request: Hero copy briefly changed typography during product transitions, long labels were clipped, and the carousel advanced before users could comfortably read the copy.
+Replaced the unstable intermediate hero typography with a consistent blur transition, extended product dwell time to seven seconds, and allowed all hero product labels to wrap without truncation.## 2026-08-31T23:20:41.397Z - Compact founder composition and optimize motion graphics
+- ID: 2026-08-31T23-20-41-397Z-compact-founder-composition-and-optimize-motion-graphics
+- Version: 13.1.3
+- Category: performance
+- Branch: main
+- Head: 9c3f949
+- Files: app/globals.css, app/storefront.tsx, public/assets/getlayers/opaline.html, public/assets/getlayers/opaline/index.html, public/assets/img/optimized/anestet-logo-blue-990-lossless.webp, public/assets/img/optimized/queen-key-mark-512-lossless.webp
+- Verification: Founder image reaches the lower navigation underlay at desktop width; Opaline data-motion-active becomes false after scrolling off hero; Desktop Lighthouse 95-96 performance x3, accessibility 100, LCP 1.40s, TBT 0; npm audit --omit=dev reports 0 vulnerabilities
+- Risk/Rollback: medium
+- Issue/Request: The founder section retained excessive empty space below the portrait, while oversized logo textures and an always-running high-density WebGL scene added unnecessary rendering cost.
+Removed the empty floor beneath Alexander Ermolaev, anchored the portrait into the navigation underlay, optimized logo assets, and paused/reduced the Opaline renderer outside the visible hero.

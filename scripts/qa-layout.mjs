@@ -78,10 +78,15 @@ try {
     await page.emulateMedia({ colorScheme: "light", reducedMotion: "reduce" });
     await page.goto(`${baseUrl}/?qa=${width}`, { waitUntil: "networkidle" });
     await page.addStyleTag({ content: "*,*::before,*::after{animation:none!important;transition:none!important}[data-reveal]{opacity:1!important;transform:none!important}" });
+    await page.evaluate(() => document.fonts.ready);
+    await page.evaluate(() => {
+      const toggle = document.querySelector(".hero-carousel-toggle");
+      if (toggle?.getAttribute("aria-pressed") === "false") toggle.click();
+    });
 
     for (let themeIndex = 0; themeIndex < themes.length; themeIndex += 1) {
       await page.locator(".theme-button").nth(themeIndex).click();
-      await page.waitForTimeout(30);
+      await page.waitForTimeout(100);
       const theme = themes[themeIndex];
       for (const view of views) {
         if (view === "onepage") {
@@ -90,7 +95,7 @@ try {
           await page.locator(".site-mode-switcher button").nth(1).click();
           await page.locator(".shopping-tabs button").nth(view === "full-catalog" ? 0 : 1).click();
         }
-        await page.waitForTimeout(30);
+        await page.waitForTimeout(100);
         const result = await page.evaluate(async () => {
         const visible = (element) => {
           const style = getComputedStyle(element);
@@ -311,6 +316,15 @@ try {
           overflowElements,
           textOverflow,
           collisions: [...new Set(collisions)],
+          heroDiagnostics: collisions.some((item) => item.startsWith("hero image")) && heroImage && heroLabel
+            ? {
+                source: heroImage.currentSrc || heroImage.src,
+                classes: heroImage.className,
+                image: await opaqueImageRect(heroImage),
+                label: heroLabel.getBoundingClientRect().toJSON(),
+                title: document.querySelector(".hero-label-panel:not(.departing) strong")?.textContent?.trim() ?? "",
+              }
+            : undefined,
         };
         });
 

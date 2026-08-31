@@ -30,7 +30,7 @@ The compact site-version control links the new site's related states:
 - `Одностраничный` — the complete catalogue and care guide in one continuous page (`?site=onepage`);
 - `Полный сайт` — the commerce-first view with the catalogue and thematic guide separated (`?site=full`).
 
-The full view opens directly on products. Its hero rotates all eight current novelties every 4.6 seconds using one position-stable prism transition, supports pause/manual navigation and adds directly to the persistent cart. The product-led heading and source-derived description change with the packshot: old copy exits with a short wind blur and the replacement is revealed progressively. The cart supports quantity changes, five delivery options, recipient details and address selection, creates a server-side order number and keeps WhatsApp as an explicit operator fallback.
+The full view opens directly on products. Its hero rotates all eight current novelties every 7 seconds using one position-stable prism transition, supports pause/manual navigation and adds directly to the persistent cart. The product-led heading and source-derived description change with the packshot through one consistent blur transition that preserves the final typeface from the first frame. The cart supports quantity changes, five delivery options, recipient details and address selection, creates a server-side order number and keeps WhatsApp as an explicit operator fallback.
 
 The first screen uses the original ANESTET wordmark and real product imagery. GetLayers scenes are decorative desktop atmosphere only; mobile and reduced-motion users receive a static fallback. The footer combines the original high-resolution ANESTET and Queen Key brand assets. All 23 catalog packshots use real transparency instead of white rectangular backplates.
 
@@ -38,7 +38,7 @@ The first screen uses the original ANESTET wordmark and real product imagery. Ge
 
 <https://anestet.139-180-214-133.sslip.io/>
 
-The static export is deployed behind nginx with HTTPS. Releases are immutable directories under `/var/www/anestet/releases/`; `/var/www/anestet/current` is switched atomically. The pre-GitHub one-page release remains preserved as `20260828-v9`; the active storefront release is `2026.09.01-v13.1.3`. Order API and Admin API remain on the compatible immutable `2026.09.01-v13.1.2` release because this patch changes only static storefront code.
+The static export is deployed behind nginx with HTTPS. Releases are immutable directories under `/var/www/anestet/releases/`; `/var/www/anestet/current` is switched atomically. The pre-GitHub one-page release remains preserved as `20260828-v9`; the active storefront build is `2026.09.01-v13.1.3-r2`. Order API and Admin API remain on the compatible immutable `2026.09.01-v13.1.2` release because this patch changes only static storefront code.
 
 ## Versioning and public change history
 
