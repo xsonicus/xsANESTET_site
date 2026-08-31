@@ -61,4 +61,10 @@
 - Commit: fc4de3ba1baf8afa5f27d55c99a2e56bf062c2da
 - Version: 13.1.3
 - Fixes marked: 1
-- Notes: GitHub source commit, annotated tag and release 2026.09.01-v13.1.3 published after all local gates passed.
+- Notes: GitHub source commit, annotated tag and release 2026.09.01-v13.1.3 published after all local gates passed.## 2026-08-31T22:49:46.855Z - Push
+- Remote: origin
+- Branch: main
+- Commit: c90fc2b
+- Version: 13.1.3
+- Fixes marked: 1
+- Notes: Production status documentation and deployment lineage pushed after public smoke.
