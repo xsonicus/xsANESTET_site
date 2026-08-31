@@ -41,4 +41,4 @@
 - Release gate PASS: production build; 11 экранов × 2 темы × 3 представления; admin auth/origin/CSRF/catalog/integration smoke; TypeScript; dependency audit; публичный Codex Browser без console errors.
 - Статика находится в неизменяемом каталоге `20260901-v13.1.3-r2`; Order API и Admin API — в независимых каталогах `20260901-v13.1.2`; предыдущая статика `20260901-v13.1.3` сохранена для атомарного отката.
 - Ежедневный root-only backup включает каталог, существующие журналы/заявки/заказы и закрытую env/nginx/systemd-конфигурацию.
-- Локальная оптимизационная серия Lighthouse: desktop Performance 95–96 (три прогона), Accessibility 100, LCP 1.40 s, TBT 0; публичный VPS замеряется отдельно после атомарного переключения.
+- Локальная оптимизационная серия Lighthouse: desktop Performance 95–96 (три прогона), Accessibility 100, LCP 1.40 s, TBT 0. Публичный VPS: mobile Performance 97, LCP 2.0 s; desktop Performance 87–91 в трёх сетевых прогонах, LCP 0.9–1.3 s и TBT 0; A11y/Best Practices/SEO 100.

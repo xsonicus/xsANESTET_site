@@ -294,4 +294,14 @@ Replaced the unstable intermediate hero typography with a consistent blur transi
 - Verification: Founder image reaches the lower navigation underlay at desktop width; Opaline data-motion-active becomes false after scrolling off hero; Desktop Lighthouse 95-96 performance x3, accessibility 100, LCP 1.40s, TBT 0; npm audit --omit=dev reports 0 vulnerabilities
 - Risk/Rollback: medium
 - Issue/Request: The founder section retained excessive empty space below the portrait, while oversized logo textures and an always-running high-density WebGL scene added unnecessary rendering cost.
-Removed the empty floor beneath Alexander Ermolaev, anchored the portrait into the navigation underlay, optimized logo assets, and paused/reduced the Opaline renderer outside the visible hero.
+Removed the empty floor beneath Alexander Ermolaev, anchored the portrait into the navigation underlay, optimized logo assets, and paused/reduced the Opaline renderer outside the visible hero.## 2026-08-31T23:29:24.400Z - Publish and verify immutable v13.1.3-r2 storefront
+- ID: 2026-08-31T23-29-24-400Z-publish-and-verify-immutable-v13.1.3-r2-storefront
+- Version: 13.1.3
+- Category: release
+- Branch: main
+- Head: bd38475
+- Files: README.md, docs/releases/2026.09.01-v13.1.3.md, .codex-memory/task-state.md, .codex-memory/correction-register.md
+- Verification: Active symlink /var/www/anestet/releases/20260901-v13.1.3-r2; nginx and both API services active; Public storefront/admin/Opaline/API HTTP 200 and 23 products; Public Browser console/page/request errors 0; Public Lighthouse mobile 97 and desktop 87-91; Accessibility 100
+- Risk/Rollback: low
+- Issue/Request: The final local corrections required a verifiable production artifact and exact rollback-safe deployment evidence.
+Published the final optimized static bundle to a new immutable VPS directory, atomically switched nginx, and recorded public storefront, API, browser, and Lighthouse evidence.
