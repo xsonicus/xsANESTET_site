@@ -47,3 +47,11 @@
 - Version: 11.1.3
 - Fixes marked: 1
 - Notes: ANESTET v11.1.3 mobile header safe-zone fix pushed; release and VPS deployment follow.
+
+## 2026-08-31T21:28:49.200Z - Push
+- Remote: origin
+- Branch: main
+- Commit: 77dbfe5bc19de52585d007b0ab78ef9660e38d91
+- Version: 13.1.2
+- Fixes marked: 2
+- Notes: ANESTET v13.1.2 pushed to main and tagged 2026.09.01-v13.1.2
