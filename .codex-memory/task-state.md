@@ -37,8 +37,8 @@
 - Перед preview/release обязательно npm run build && npm run qa:layout.
 - Матрица: 11 экранов × 2 темы × 3 представления, без overflow/clipping/collisions.
 - Визуальная QA выполняется локальным Codex Browser.
-- Production storefront build `2026.09.01-v13.1.3-r2` опубликован на `https://anestet.139-180-214-133.sslip.io/`; совместимые Order API, Admin API и `/admin/` остаются на неизменяемой версии `2026.09.01-v13.1.2` за TLS nginx.
+- Production storefront build `2026.09.01-v13.1.3-r3` опубликован на `https://anestet.139-180-214-133.sslip.io/`; совместимые Order API, Admin API и `/admin/` остаются на неизменяемой версии `2026.09.01-v13.1.2` за TLS nginx.
 - Release gate PASS: production build; 11 экранов × 2 темы × 3 представления; admin auth/origin/CSRF/catalog/integration smoke; TypeScript; dependency audit; публичный Codex Browser без console errors.
-- Статика находится в неизменяемом каталоге `20260901-v13.1.3-r2`; Order API и Admin API — в независимых каталогах `20260901-v13.1.2`; предыдущая статика `20260901-v13.1.3` сохранена для атомарного отката.
+- Статика находится в неизменяемом каталоге `20260901-v13.1.3-r3`; Order API и Admin API — в независимых каталогах `20260901-v13.1.2`; предыдущие статики `20260901-v13.1.3` и `20260901-v13.1.3-r2` сохранены для атомарного отката.
 - Ежедневный root-only backup включает каталог, существующие журналы/заявки/заказы и закрытую env/nginx/systemd-конфигурацию.
-- Локальная оптимизационная серия Lighthouse: desktop Performance 95–96 (три прогона), Accessibility 100, LCP 1.40 s, TBT 0. Публичный VPS: mobile Performance 97, LCP 2.0 s; desktop Performance 87–91 в трёх сетевых прогонах, LCP 0.9–1.3 s и TBT 0; A11y/Best Practices/SEO 100.
+- Финальная локальная серия без нулевого bloom-прохода: desktop Performance 95/96/96, Accessibility 100, LCP 1.40 s, TBT 0, 46 запросов. Публичный r2 до последней оптимизации: mobile Performance 97, LCP 2.0 s; desktop cold-start варьировался, что и стало причиной удаления ненужного bloom-прохода.

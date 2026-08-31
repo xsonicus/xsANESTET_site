@@ -55,7 +55,6 @@
 import * as THREE from 'three'
 import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js'
 import { RenderPass } from 'three/addons/postprocessing/RenderPass.js'
-import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js'
 import { ShaderPass } from 'three/addons/postprocessing/ShaderPass.js'
 import { GammaCorrectionShader } from 'three/addons/shaders/GammaCorrectionShader.js'
 
@@ -179,11 +178,11 @@ bgQuad.renderOrder = -10
 bgQuad.layers.enable(LAYERS.ENTIRE_SCENE)
 scene.add(bgQuad)
 
-/* ---------- COMPOSER (single scene render → one bloom → gamma; à la neon-totem) ---------- */
+/* ---------- COMPOSER (single scene render → gamma) ---------- */
+// Bloom is intentionally omitted: its approved strength is zero, so allocating
+// its extra render targets and compiling its shader only adds cold-start work.
 const composer = new EffectComposer(renderer)
 composer.addPass(new RenderPass(scene, camera))
-const bloomPass = new UnrealBloomPass(new THREE.Vector2(window.innerWidth, window.innerHeight), CONFIG.bloomStr, CONFIG.bloomRadius, CONFIG.bloomThresh)
-composer.addPass(bloomPass)
 composer.addPass(new ShaderPass(GammaCorrectionShader))
 
 /* ---------- POINTER (camera parallax + world cursor dent + press agitation) ---------- */
@@ -594,9 +593,6 @@ function applyConfig() {
   bgMat.uniforms.uFlameA.value.copy(hexToVec3(CONFIG.flameColor))
   bgMat.uniforms.uFlameB.value.copy(hexToVec3(CONFIG.flameColor2))
   bgMat.uniforms.uFlameAmt.value = CONFIG.flameAmt
-  bloomPass.strength = CONFIG.bloomStr
-  bloomPass.radius = CONFIG.bloomRadius
-  bloomPass.threshold = CONFIG.bloomThresh
   if (atmoMat) {
     atmoMat.uniforms.uColor.value.copy(hexToVec3(CONFIG.atmoColor))
     atmoMat.uniforms.uColor2.value.copy(hexToVec3(CONFIG.atmoColor2))
@@ -630,7 +626,7 @@ function resize() {
 }
 window.addEventListener('resize', resize); resize()
 
-/* ---------- RENDER LOOP (single scene render → bloom → gamma) ---------- */
+/* ---------- RENDER LOOP (single scene render → gamma) ---------- */
 let motionActive = true
 let renderHandle = 0
 function render() {

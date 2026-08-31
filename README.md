@@ -38,7 +38,7 @@ The first screen uses the original ANESTET wordmark and real product imagery. Ge
 
 <https://anestet.139-180-214-133.sslip.io/>
 
-The static export is deployed behind nginx with HTTPS. Releases are immutable directories under `/var/www/anestet/releases/`; `/var/www/anestet/current` is switched atomically. The pre-GitHub one-page release remains preserved as `20260828-v9`; the active storefront build is `2026.09.01-v13.1.3-r2`. Order API and Admin API remain on the compatible immutable `2026.09.01-v13.1.2` release because this patch changes only static storefront code.
+The static export is deployed behind nginx with HTTPS. Releases are immutable directories under `/var/www/anestet/releases/`; `/var/www/anestet/current` is switched atomically. The pre-GitHub one-page release remains preserved as `20260828-v9`; the active storefront build is `2026.09.01-v13.1.3-r3`. Order API and Admin API remain on the compatible immutable `2026.09.01-v13.1.2` release because this patch changes only static storefront code.
 
 ## Versioning and public change history
 

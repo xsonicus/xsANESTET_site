@@ -304,4 +304,14 @@ Removed the empty floor beneath Alexander Ermolaev, anchored the portrait into t
 - Verification: Active symlink /var/www/anestet/releases/20260901-v13.1.3-r2; nginx and both API services active; Public storefront/admin/Opaline/API HTTP 200 and 23 products; Public Browser console/page/request errors 0; Public Lighthouse mobile 97 and desktop 87-91; Accessibility 100
 - Risk/Rollback: low
 - Issue/Request: The final local corrections required a verifiable production artifact and exact rollback-safe deployment evidence.
-Published the final optimized static bundle to a new immutable VPS directory, atomically switched nginx, and recorded public storefront, API, browser, and Lighthouse evidence.
+Published the final optimized static bundle to a new immutable VPS directory, atomically switched nginx, and recorded public storefront, API, browser, and Lighthouse evidence.## 2026-08-31T23:43:35.010Z - Remove zero-strength Opaline bloom pass
+- ID: 2026-08-31T23-43-35-010Z-remove-zero-strength-opaline-bloom-pass
+- Version: 13.1.3
+- Category: performance
+- Branch: main
+- Head: 2970812
+- Files: public/assets/getlayers/opaline.html, public/assets/getlayers/opaline/index.html, README.md, docs/releases/2026.09.01-v13.1.3.md, .codex-memory/task-state.md, .codex-memory/correction-register.md
+- Verification: Visual A/B confirms approved brightness and color preserved with gamma pass; npm run build; npm run qa:layout: 11 widths x 2 themes x 3 presentations; Local desktop Lighthouse 95/96/96, LCP 1.4s, TBT 0, 46 requests; Console errors 0 and WebGL canvas present
+- Risk/Rollback: medium
+- Issue/Request: Independent post-deploy audit found occasional desktop cold-start long tasks even after DPR, mesh, visibility, and asset optimizations; bloom was configured to zero but still allocated and executed.
+Preserved the approved gamma-corrected Opaline appearance while removing the zero-strength bloom pass, its shader import, and extra render targets to reduce cold desktop WebGL work.
