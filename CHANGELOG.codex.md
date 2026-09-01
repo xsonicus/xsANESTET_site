@@ -340,4 +340,14 @@ Recorded final public cold/warm desktop measurements after the zero-bloom releas
 - Verification: npm run build; npm run qa:layout (11 control widths x 2 themes x 2 views); npm run qa:admin; npx tsc --noEmit; npm audit --omit=dev (0 vulnerabilities); git diff --check; Codex Browser desktop/mobile visual and console review; Production TLS/API/nginx/systemd smoke tests
 - Risk/Rollback: Medium: broad storefront motion/layout and admin API changes; mitigated by eleven-width geometry QA across both themes/views, browser visual review, protected API smoke tests, TypeScript/build checks, immutable VPS releases and rollback preservation.
 - Issue/Request: Complete the accumulated design, motion, responsive, product-media, admin connector, VK publishing, performance, correction-lineage and VPS release corrections without regressing either approved theme.
-Finalized the two-theme ANESTET storefront and admin release: approved Prism hero motion, responsive product/about/footer refinements, mutually exclusive Opaline and lightweight fallback graphics, authentic transparent product media, encrypted VK connector with public moving news rail for queenkeyanestet, cumulative correction lineage and Graphify logic graph. Deployed immutable storefront 20260901-v13.2.0-r2 and Admin API 20260901-v13.2.0 to production.
+Finalized the two-theme ANESTET storefront and admin release: approved Prism hero motion, responsive product/about/footer refinements, mutually exclusive Opaline and lightweight fallback graphics, authentic transparent product media, encrypted VK connector with public moving news rail for queenkeyanestet, cumulative correction lineage and Graphify logic graph. Deployed immutable storefront 20260901-v13.2.0-r2 and Admin API 20260901-v13.2.0 to production.## 2026-09-01T08:01:16.927Z - Publish v13.2.0 release notes
+- ID: 2026-09-01T08-01-16-927Z-publish-v13.2.0-release-notes
+- Version: 13.2.0
+- Category: documentation
+- Branch: main
+- Head: 811af5f
+- Files: .codex-versioning/releases/13.2.0.md
+- Verification: release notes generated from pushed v13.2.0 fix ledger; git diff --check
+- Risk/Rollback: Low: documentation-only versioning metadata.
+- Issue/Request: Keep the published release evidence inside the repository.
+Added the generated v13.2.0 release notes to the durable versioning archive after the production and GitHub release checks passed.
