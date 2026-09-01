@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { ArrowIcon, BagIcon, CloseIcon, HeartIcon, MinusIcon, PlusIcon, SparkIcon } from "./icons";
+import { ArrowIcon, BagIcon, CloseIcon, HeartIcon, MinusIcon, MoonIcon, PlusIcon, SparkIcon, SunIcon } from "./icons";
+import { getProductDetails } from "./product-details";
 import { formatPrice, products, type Product } from "./products";
 
 type CartLine = { id: number; quantity: number };
@@ -21,7 +22,7 @@ type OrderForm = {
 const CART_STORAGE_KEY = "anestet-cart-v1";
 const FAVORITES_STORAGE_KEY = "anestet-favorites-v1";
 const DESIGN_STORAGE_KEY = "qk-design-lab-v1";
-const SITE_RELEASE = "2026.09.01-v13.2.0";
+const SITE_RELEASE = "2026.09.01-v13.3.0";
 const GITHUB_RELEASES_URL = "https://github.com/xsonicus/xsANESTET_site/releases";
 const HERO_WORDMARK_PATH = "M1784 0H1502L1341 344H457L296 0H14L734 1500H1064ZM899 1291 559 562H1239ZM3248 298V1500H3504V0H3168L2222 1216V0H1966V1500H2310ZM4147 640 4081 228H5096V0H3788L3908 750L3788 1500H5086V1272H4081L4147 860H5038V640ZM5548 488Q5560 398 5623 330Q5686 262 5790.5 225Q5895 188 6030 188Q6163 188 6262 216.5Q6361 245 6414.5 298Q6468 351 6468 422Q6468 482 6438.5 520Q6409 558 6341.5 581.5Q6274 605 6154 620L5830 662Q5647 686 5533.5 737Q5420 788 5366 871.5Q5312 955 5312 1078Q5312 1214 5395 1315.5Q5478 1417 5630.5 1472.5Q5783 1528 5986 1528Q6186 1528 6343.5 1468Q6501 1408 6593 1299.5Q6685 1191 6694 1050H6426Q6416 1129 6359 1188Q6302 1247 6204.5 1279.5Q6107 1312 5980 1312Q5858 1312 5766.5 1285Q5675 1258 5625.5 1207Q5576 1156 5576 1088Q5576 1033 5604 997.5Q5632 962 5695.5 938.5Q5759 915 5868 900L6196 854Q6401 826 6516.5 778.5Q6632 731 6682 653Q6732 575 6732 450Q6732 307 6644 198.5Q6556 90 6396 31Q6236 -28 6026 -28Q5812 -28 5645.5 36.5Q5479 101 5383.5 218Q5288 335 5280 488ZM6842 1500H8346V1268H7726V0H7462V1268H6842ZM8853 640 8787 228H9802V0H8494L8614 750L8494 1500H9792V1272H8787L8853 860H9744V640ZM9942 1500H11446V1268H10826V0H10562V1268H9942Z";
 const SUPPORT_EMAIL = "support@anestet.com";
@@ -76,11 +77,12 @@ function isCatalogProduct(value: unknown): value is Product & { active?: boolean
 }
 
 const themes = [
-  { id: "serum", slug: "cinematic", number: "01", title: "Future Beauty", note: "тёмно-синий / оптика / глубина" },
-  { id: "clinical", slug: "clinical", number: "02", title: "Clinical Luxury", note: "свет / точность / доверие" },
+  { id: "serum", slug: "cinematic", title: "Ночь", longTitle: "Future Beauty" },
+  { id: "clinical", slug: "clinical", title: "День", longTitle: "Clinical Luxury" },
 ] as const;
 
 type ThemeId = (typeof themes)[number]["id"];
+type ThemePreference = "system" | "manual";
 
 // Тексты перенесены из сохранённых карточек прежнего qkcosmetic.ru и сокращены
 // только для первого экрана; назначение продуктов и обещания не расширялись.
@@ -105,8 +107,9 @@ function heroDescription(product: Product) {
 
 function heroEyebrow(product: Product) {
   if (product.brand === "QUEEN KEY") return "QUEEN KEY · Уход за кожей";
-  if (product.tag === "Второй этап") return `${product.brand} · Второй этап процедуры`;
-  return `${product.brand} · Подготовка кожи к процедуре`;
+  const brand = product.brand === "ANESTET" ? "ANESTET®" : product.brand;
+  if (product.tag === "Второй этап") return `${brand} · Второй этап процедуры`;
+  return `${brand} · Подготовка кожи к процедуре`;
 }
 
 const deliveryOptions: Array<{ id: DeliveryId; title: string; note: string; cost: (subtotal: number) => number | null }> = [
@@ -146,6 +149,13 @@ function HeroBrandLockup({ product }: { product: Product }) {
   return <span className="hero-context-brand anestet" aria-label="Anestet, зарегистрированный товарный знак">Anestet<sup>®</sup></span>;
 }
 
+function BrandLabel({ brand, className = "" }: { brand: string; className?: string }) {
+  if (brand === "ANESTET") {
+    return <span className={`brand-label anestet-brand-label ${className}`.trim()} aria-label="Anestet, зарегистрированный товарный знак">Anestet<sup>®</sup></span>;
+  }
+  return <span className={`brand-label ${className}`.trim()}>{brand}</span>;
+}
+
 function isVkFeedItem(value: unknown): value is VkFeedItem {
   if (!value || typeof value !== "object") return false;
   const item = value as Partial<VkFeedItem>;
@@ -179,16 +189,16 @@ const careStages = [
     id: "guide-preparation",
     title: "Подготовка",
     description: "Средства до процедуры",
-    brands: "ANESTET · FION · LIGHT DEP · LIGHT FROST",
+    brands: "ANESTET® · FION · LIGHT DEP · LIGHT FROST",
     purpose: "Первичные охлаждающие гели и кремы используют для подготовки кожи перед косметологическими и эстетическими процедурами.",
     points: [
-      "Базовая формула: ANESTET base или Light Dep для стандартного сценария подготовки.",
+      "Базовая формула: ANESTET® base или Light Dep для стандартного сценария подготовки.",
       "Усиленная формула: FION ultra, Light Dep Professional или Light Frost, когда важны более быстрое начало действия и плотная текстура.",
       "Формат: 30 мл — компактный объём; 75–150 мл — регулярная работа; 300–400 мл — профессиональный запас.",
     ],
     productIds: [17, 33, 34, 35, 36, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59],
     lines: [
-      { label: "ANESTET base", productId: 17 },
+      { label: "ANESTET® base", productId: 17 },
       { label: "FION ultra", productId: 35 },
       { label: "Light Dep", productId: 51 },
       { label: "Light Frost", productId: 48 },
@@ -201,10 +211,10 @@ const careStages = [
     id: "guide-secondary",
     title: "Второй этап",
     description: "Продолжение процедуры",
-    brands: "ANESTET BASE · FION ULTRA",
+    brands: "ANESTET® BASE · FION ULTRA",
     purpose: "Средства второго этапа в исходном каталоге предназначены для использования после первичного средства во время процедуры.",
     points: [
-      "ANESTET base — базовый вариант второго этапа.",
+      "ANESTET® base — базовый вариант второго этапа.",
       "FION ultra — усиленная формула линейки второго этапа.",
       "Объёмы 5 мл подходят для точечной работы, 30 мл — для регулярного профессионального использования.",
     ],
@@ -276,9 +286,9 @@ const partnerLogos = [
 ] as const;
 
 const certificateDocuments = [
-  ["ds-geli-dlya-pervichnogo-ohlazhdeniya.png", "Гели для первичного охлаждения ANESTET"],
+  ["ds-geli-dlya-pervichnogo-ohlazhdeniya.png", "Гели для первичного охлаждения ANESTET®"],
   ["ds-geli-dlya-pervichnogo-ohlazhdeniya-fion.png", "Гели для первичного охлаждения FION"],
-  ["ds-geli-dlya-vtorichnogo-ohlazhdeniya.png", "Гели для второго этапа ANESTET"],
+  ["ds-geli-dlya-vtorichnogo-ohlazhdeniya.png", "Гели для второго этапа ANESTET®"],
   ["ds-geli-dlya-vtorichnogo-ohlazhdeniya-fion.png", "Гели для второго этапа FION"],
   ["ds-krem-queen-key.png", "Крем Queen Key"],
   ["ds-vosstanavlivayushhie-slivki-s-d-pantenolom-queen-key.png", "Восстанавливающие сливки Queen Key"],
@@ -288,6 +298,8 @@ const certificateDocuments = [
 export default function Storefront() {
   const [catalogProducts, setCatalogProducts] = useState<Product[]>(products);
   const [theme, setTheme] = useState<ThemeId>("serum");
+  const [themePreference, setThemePreference] = useState<ThemePreference>("system");
+  const [themeResolved, setThemeResolved] = useState(false);
   const [ambientMotionEnabled, setAmbientMotionEnabled] = useState(false);
   const [heroGraphicsReady, setHeroGraphicsReady] = useState(false);
   const [filter, setFilter] = useState("Все");
@@ -316,8 +328,10 @@ export default function Storefront() {
   const [callbackState, setCallbackState] = useState<{ submitting?: boolean; success?: string; error?: string }>({});
   const [vkPublications, setVkPublications] = useState<VkFeedItem[]>([]);
   const [openVkVideo, setOpenVkVideo] = useState<VkFeedItem | null>(null);
+  const [openProductId, setOpenProductId] = useState<number | null>(null);
   const cartDialogRef = useRef<HTMLDialogElement>(null);
   const vkVideoDialogRef = useRef<HTMLDialogElement>(null);
+  const productDialogRef = useRef<HTMLDialogElement>(null);
   const heroProductIndexRef = useRef(0);
   const heroProductIdRef = useRef<number | null>(null);
   const heroTransitionTimerRef = useRef<number | null>(null);
@@ -328,6 +342,8 @@ export default function Storefront() {
     const newProducts = catalogProducts.filter((product) => product.isNew);
     return newProducts.length ? newProducts : catalogProducts.slice(0, 1);
   }, [catalogProducts]);
+  const openProduct = openProductId === null ? null : catalogProducts.find((product) => product.id === openProductId) ?? products.find((product) => product.id === openProductId) ?? null;
+  const openProductDetails = openProduct ? getProductDetails(openProduct.id) : null;
 
   const changeHeroProduct = (direction: number) => {
     if (heroProducts.length < 2) return;
@@ -358,7 +374,10 @@ export default function Storefront() {
     }
     const queryDesign = themes.find((item) => item.slug === requestedDesign);
     const savedDesign = themes.find((item) => item.slug === storedDesign);
-    setTheme(queryDesign?.id ?? savedDesign?.id ?? "serum");
+    const systemTheme: ThemeId = window.matchMedia("(prefers-color-scheme: dark)").matches ? "serum" : "clinical";
+    setTheme(queryDesign?.id ?? savedDesign?.id ?? systemTheme);
+    setThemePreference(queryDesign || savedDesign ? "manual" : "system");
+    setThemeResolved(true);
     if (searchParams.has("motion") || searchParams.has("site")) {
       const cleanUrl = new URL(window.location.href);
       cleanUrl.searchParams.delete("motion");
@@ -378,6 +397,14 @@ export default function Storefront() {
   }, []);
 
   useEffect(() => {
+    if (!themeResolved || themePreference !== "system") return;
+    const systemScheme = window.matchMedia("(prefers-color-scheme: dark)");
+    const syncSystemTheme = () => setTheme(systemScheme.matches ? "serum" : "clinical");
+    systemScheme.addEventListener("change", syncSystemTheme);
+    return () => systemScheme.removeEventListener("change", syncSystemTheme);
+  }, [themePreference, themeResolved]);
+
+  useEffect(() => {
     setHeroGraphicsReady(false);
     if (theme !== "serum" || !ambientMotionEnabled) return;
     const receiveGraphicsStatus = (event: MessageEvent) => {
@@ -387,6 +414,53 @@ export default function Storefront() {
     };
     window.addEventListener("message", receiveGraphicsStatus);
     return () => window.removeEventListener("message", receiveGraphicsStatus);
+  }, [ambientMotionEnabled, theme]);
+
+  useEffect(() => {
+    if (theme !== "serum" || !ambientMotionEnabled) return;
+    const frame = document.querySelector<HTMLIFrameElement>(".getlayers-opaline");
+    const anchor = document.querySelector<HTMLElement>(".hero-packshot-frame");
+    if (!frame || !anchor) return;
+    // The alpha-weighted vertical centre of all 23 official product packshots is
+    // 497.174 px in their shared 1000 px canvas. Keeping this fixed prevents the
+    // graphic from jumping when products with different heights are exchanged.
+    const productOpticalCenterY = 0.497174;
+    let frameId = 0;
+    const syncHeroGraphicAnchor = () => {
+      window.cancelAnimationFrame(frameId);
+      frameId = window.requestAnimationFrame(() => {
+        const frameRect = frame.getBoundingClientRect();
+        const anchorRect = anchor.getBoundingClientRect();
+        if (!frameRect.width || !frameRect.height || !anchorRect.width || !anchorRect.height) return;
+        const x = (anchorRect.left + anchorRect.width / 2 - frameRect.left) / frameRect.width;
+        const y = (anchorRect.top + anchorRect.height * productOpticalCenterY - frameRect.top) / frameRect.height;
+        frame.dataset.anchorX = x.toFixed(6);
+        frame.dataset.anchorY = y.toFixed(6);
+        frame.contentWindow?.postMessage({
+          type: "anestet-hero-anchor",
+          x,
+          y,
+        }, window.location.origin);
+      });
+    };
+    const resizeObserver = new ResizeObserver(syncHeroGraphicAnchor);
+    const syncWhenGraphicsReady = (event: MessageEvent) => {
+      if (event.origin !== window.location.origin || event.source !== frame.contentWindow || event.data?.type !== "anestet-graphic-status" || event.data.status !== "ready") return;
+      syncHeroGraphicAnchor();
+    };
+    resizeObserver.observe(frame);
+    resizeObserver.observe(anchor);
+    frame.addEventListener("load", syncHeroGraphicAnchor);
+    window.addEventListener("resize", syncHeroGraphicAnchor);
+    window.addEventListener("message", syncWhenGraphicsReady);
+    syncHeroGraphicAnchor();
+    return () => {
+      window.cancelAnimationFrame(frameId);
+      resizeObserver.disconnect();
+      frame.removeEventListener("load", syncHeroGraphicAnchor);
+      window.removeEventListener("resize", syncHeroGraphicAnchor);
+      window.removeEventListener("message", syncWhenGraphicsReady);
+    };
   }, [ambientMotionEnabled, theme]);
 
   useEffect(() => {
@@ -501,6 +575,16 @@ export default function Storefront() {
   }, [openVkVideo]);
 
   useEffect(() => {
+    const dialog = productDialogRef.current;
+    if (!dialog) return;
+    if (openProduct && !dialog.open) dialog.showModal();
+    if (!openProduct && dialog.open) dialog.close();
+    const previousOverflow = document.body.style.overflow;
+    if (openProduct) document.body.style.overflow = "hidden";
+    return () => { document.body.style.overflow = previousOverflow; };
+  }, [openProduct]);
+
+  useEffect(() => {
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     const compactViewport = window.matchMedia("(max-width: 760px)");
     let interval: number | undefined;
@@ -528,8 +612,9 @@ export default function Storefront() {
   }, []);
 
   useEffect(() => {
+    if (!themeResolved) return;
     document.documentElement.dataset.theme = theme;
-  }, [theme]);
+  }, [theme, themeResolved]);
 
   useEffect(() => {
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -649,7 +734,7 @@ export default function Storefront() {
   const checkoutHref = useMemo(() => {
     const lines = cartEntries.map(({ product, quantity }) => `• ${product.compactTitle} — ${quantity} × ${formatPrice(product.price)}`);
     const message = [
-      "Здравствуйте! Хочу оформить заказ ANESTET:",
+      "Здравствуйте! Хочу оформить заказ ANESTET®:",
       "",
       ...lines,
       "",
@@ -742,6 +827,7 @@ export default function Storefront() {
   const chooseDesign = (id: ThemeId) => {
     const design = themes.find((item) => item.id === id) ?? themes[0];
     setTheme(design.id);
+    setThemePreference("manual");
     try {
       window.localStorage.setItem(DESIGN_STORAGE_KEY, design.slug);
     } catch {
@@ -751,6 +837,7 @@ export default function Storefront() {
     url.searchParams.set("design", design.slug);
     window.history.replaceState({}, "", `${url.pathname}${url.search}${url.hash}`);
   };
+  const toggleDesign = () => chooseDesign(theme === "serum" ? "clinical" : "serum");
   const openCompanySection = (section: CompanySection) => {
     setCompanySection(section);
     window.requestAnimationFrame(() => document.querySelector("#company-info")?.scrollIntoView({ behavior: "smooth", block: "start" }));
@@ -799,6 +886,14 @@ export default function Storefront() {
     updateCatalogDeepLink(null, productId, `product-${productId}`);
     window.setTimeout(() => scrollToSectionAfterRender(`#product-${productId}`), 80);
   };
+  const showProductDetails = (productId: number) => {
+    setHeroCarouselPaused(true);
+    setOpenProductId(productId);
+  };
+  const closeProductDetails = () => {
+    setOpenProductId(null);
+    setHeroCarouselPaused(false);
+  };
   const showGuide = () => {
     setCatalogStageId(null);
     setFocusedProductId(null);
@@ -818,29 +913,12 @@ export default function Storefront() {
     <main className="site-shell">
       <a className="skip-link" href="#shopping">К выбору товаров</a>
 
-      <div className="design-switcher" aria-label="Выбор визуальной версии">
-        <div className="switcher-kicker" aria-hidden="true"><span>QK Design Lab</span><strong>2 темы · 1 магазин</strong></div>
-        <div className="switcher-options" role="radiogroup" aria-label="Визуальная версия сайта">
-          {themes.map((item) => (
-            <button
-              type="button"
-              key={item.id}
-              role="radio"
-              aria-checked={theme === item.id}
-              className={theme === item.id ? "theme-button active" : "theme-button"}
-              onClick={() => chooseDesign(item.id)}
-            >
-              <span>{item.number}</span>
-              <strong>{item.title}</strong>
-              <small>{item.note}</small>
-            </button>
-          ))}
-        </div>
-      </div>
-
       <header className="site-header">
         <a className="wordmark" href="#top">
-          <Image className="brand-logo" src="/assets/img/optimized/anestet-logo-blue-990-lossless.webp" alt="ANESTET" width={990} height={381} loading="eager" />
+          <span className="header-wordmark-lockup">
+            <Image className="brand-logo" src="/assets/img/optimized/anestet-logo-blue-990-lossless.webp" alt="Anestet" width={990} height={381} loading="eager" />
+            <sup aria-label="зарегистрированный товарный знак">®</sup>
+          </span>
         </a>
         <nav className="primary-nav" aria-label="Главное меню">
           <a href="#catalog" onClick={(event) => { event.preventDefault(); showAllCatalog(); }}>Каталог</a>
@@ -850,19 +928,35 @@ export default function Storefront() {
         </nav>
         <div className="header-actions">
           <nav className="header-socials" aria-label="Социальные сети и поддержка">
-            <a href="https://vk.ru/queenkeyanestet" target="_blank" rel="noreferrer" aria-label="ANESTET во ВКонтакте">
+            <a href="https://vk.ru/queenkeyanestet" target="_blank" rel="noreferrer" aria-label="ANESTET, зарегистрированный товарный знак, во ВКонтакте">
               <Image src="/assets/icons/social/vk.svg" alt="" width={24} height={24} aria-hidden="true" />
             </a>
-            <a href="https://t.me/Anestetprofessional" target="_blank" rel="noreferrer" aria-label="ANESTET в Telegram">
+            <a href="https://t.me/Anestetprofessional" target="_blank" rel="noreferrer" aria-label="ANESTET, зарегистрированный товарный знак, в Telegram">
               <Image src="/assets/icons/social/telegram.svg" alt="" width={24} height={24} aria-hidden="true" />
             </a>
-            <a href="https://taplink.cc/anestet" target="_blank" rel="noreferrer" aria-label="Все официальные ссылки ANESTET в Taplink">
+            <a href="https://taplink.cc/anestet" target="_blank" rel="noreferrer" aria-label="Все официальные ссылки ANESTET, зарегистрированный товарный знак, в Taplink">
               <Image src="/assets/icons/social/taplink.svg" alt="" width={24} height={24} aria-hidden="true" />
             </a>
           </nav>
           <a className="header-support-button" href="#company-info" onClick={() => openCompanySection("contacts")} aria-label={`Поддержка — открыть контакты: ${SUPPORT_EMAIL}`}>
             <span>Поддержка</span><small>{SUPPORT_EMAIL}</small>
           </a>
+          <div className="design-switcher" aria-label="Тема оформления">
+            <span className="theme-switcher-caption">Тема сайта</span>
+            <button
+              type="button"
+              className="theme-toggle"
+              role="switch"
+              aria-checked={theme === "serum"}
+              aria-label={`Сейчас ${theme === "serum" ? "тёмная тема Future Beauty" : "светлая тема Clinical Luxury"}. Переключить на ${theme === "serum" ? "день" : "ночь"}`}
+              title={`Переключить на ${theme === "serum" ? "светлую" : "тёмную"} тему`}
+              data-theme-state={theme}
+              onClick={toggleDesign}
+            >
+              <span className="theme-toggle-option theme-toggle-day"><SunIcon /><span>День</span></span>
+              <span className="theme-toggle-option theme-toggle-night"><MoonIcon /><span>Ночь</span></span>
+            </button>
+          </div>
           <button
             className="cart-button"
             type="button"
@@ -922,7 +1016,7 @@ export default function Storefront() {
                       <Image src={productCardPackshot(product)} alt="" width={180} height={180} />
                     </div>
                     <div className="cart-line-copy">
-                      <p>{product.brand}</p>
+                      <BrandLabel brand={product.brand} className="cart-brand-label" />
                       <h3>{product.compactTitle}</h3>
                       <strong>{formatPrice(product.price * quantity)}</strong>
                       <div className="cart-line-actions">
@@ -1024,6 +1118,48 @@ export default function Storefront() {
         )}
       </dialog>
 
+      <dialog
+        className="product-detail-dialog"
+        ref={productDialogRef}
+        aria-labelledby="product-detail-title"
+        onCancel={(event) => { event.preventDefault(); closeProductDetails(); }}
+        onClose={() => setOpenProductId(null)}
+        onClick={(event) => { if (event.target === event.currentTarget) closeProductDetails(); }}
+      >
+        {openProduct && openProductDetails && (
+          <article className="product-detail-panel">
+            <button type="button" className="product-detail-close" onClick={closeProductDetails} aria-label="Закрыть карточку товара"><CloseIcon size={22} /></button>
+            <div className="product-detail-visual">
+              <span className="product-detail-tag">{openProduct.tag}</span>
+              <div className="product-detail-packshot">
+                <Image src={productPackshot(openProduct)} alt={openProduct.title} fill sizes="(max-width: 760px) 88vw, 42vw" priority />
+              </div>
+              <span className="product-detail-orbit" aria-hidden="true" />
+            </div>
+            <div className="product-detail-copy">
+              <BrandLabel brand={openProduct.brand} className="product-detail-brand" />
+              <h2 id="product-detail-title">{openProduct.title}</h2>
+              <p className="product-detail-description">{openProductDetails.description}</p>
+              <div className="product-detail-accordions">
+                {openProductDetails.purpose && <details open><summary>Назначение <span>+</span></summary><p>{openProductDetails.purpose}</p></details>}
+                <details><summary>Как использовать <span>+</span></summary><p>{openProductDetails.usage}</p></details>
+                <details><summary>Состав <span>+</span></summary><p>{openProductDetails.composition}</p></details>
+                {openProductDetails.advantages && <details><summary>Преимущества <span>+</span></summary><p>{openProductDetails.advantages}</p></details>}
+              </div>
+              <p className="product-detail-disclaimer">Перед применением сверяйте способ использования, ограничения и актуальный состав с маркировкой на упаковке.</p>
+              <footer className="product-detail-footer">
+                <span className="product-detail-price"><strong>{formatPrice(openProduct.price)}</strong>{openProduct.compareAtPrice && <del>{formatPrice(openProduct.compareAtPrice)}</del>}</span>
+                <button type="button" onClick={() => addToCart(openProduct.id)}>
+                  {(cart.find((line) => line.id === openProduct.id)?.quantity ?? 0) > 0 ? `В корзине · ${cart.find((line) => line.id === openProduct.id)?.quantity}` : "В корзину"}
+                  <BagIcon size={18} title="" />
+                </button>
+                <a href={openProductDetails.sourceUrl} target="_blank" rel="noreferrer">Официальная карточка <ArrowIcon /></a>
+              </footer>
+            </div>
+          </article>
+        )}
+      </dialog>
+
       <section
         className="hero"
         id="top"
@@ -1038,7 +1174,7 @@ export default function Storefront() {
           <span className="shoal-field" />
         </div>
         {ambientMotionEnabled && theme === "clinical" && <iframe className="getlayers-frame getlayers-shoal" src="/assets/getlayers/shoal/index.html" title="" aria-hidden="true" tabIndex={-1} />}
-        {ambientMotionEnabled && theme === "serum" && <iframe className="getlayers-frame getlayers-opaline" src="/assets/getlayers/opaline/index.html#embed=hero" title="" aria-hidden="true" tabIndex={-1} onError={() => setHeroGraphicsReady(false)} />}
+        {ambientMotionEnabled && theme === "serum" && <iframe className="getlayers-frame getlayers-opaline" src={`/assets/getlayers/opaline/index.html?v=${SITE_RELEASE}#embed=hero`} title="" aria-hidden="true" tabIndex={-1} onError={() => setHeroGraphicsReady(false)} />}
         <div className="hero-brand-rail" aria-hidden="true">
           <div className="hero-brand-track">
             {[0, 1].map((group) => (
@@ -1097,7 +1233,7 @@ export default function Storefront() {
         >
           <div className="product-halo" aria-hidden="true" />
           <p className="hero-product-code">{heroProduct.brand} / NEW / {heroProduct.id} / ? НАЛИЧИЕ</p>
-          <div className="hero-packshot-frame">
+          <button type="button" className="hero-packshot-frame hero-product-detail-trigger" onClick={() => showProductDetails(heroProduct.id)} aria-label={`Открыть карточку товара: ${heroProduct.title}`}>
             {departingHeroProduct && (
               <Image
                 className="hero-product-image departing transition-prism"
@@ -1121,8 +1257,8 @@ export default function Storefront() {
               fetchPriority="high"
               style={{ "--hero-product-scale": heroProduct.heroScale ?? 1 } as React.CSSProperties}
             />
-          </div>
-          <div className="hero-product-controls" role="group" aria-label="Все новинки ANESTET">
+          </button>
+          <div className="hero-product-controls" role="group" aria-label="Все новинки ANESTET, зарегистрированный товарный знак">
             <button type="button" className="previous" onClick={() => showHeroProduct(-1)} aria-label="Предыдущий продукт"><ArrowIcon /></button>
             <span>{String(safeHeroProductIndex + 1).padStart(2, "0")} / {String(heroProducts.length).padStart(2, "0")}</span>
             <button type="button" onClick={() => showHeroProduct(1)} aria-label="Следующий продукт"><ArrowIcon /></button>
@@ -1151,20 +1287,19 @@ export default function Storefront() {
         </div>
         <p className="hero-side-note">Профессиональные формулы<br />{" "}для ежедневной практики</p>
         <div className="scroll-cue" aria-hidden="true"><span /> Листайте</div>
-      </section>
-
-      <section className="shopping-navigation" id="shopping" aria-labelledby="shopping-title">
-        <div>
-          <p className="section-index">Быстрый маршрут</p>
-          <h2 id="shopping-title"><span>Сразу купить</span><span>или подобрать</span></h2>
-        </div>
-        <div className="shopping-tabs" role="group" aria-label="Режим просмотра магазина">
-          <button id="shopping-tab-catalog" type="button" aria-pressed={shoppingMode === "catalog"} className={shoppingMode === "catalog" ? "active" : ""} onClick={showAllCatalog}>
-            <span>01</span><strong>Каталог товаров</strong><small>Для тех, кто уже знает, что нужно</small>
-          </button>
-          <button id="shopping-tab-guide" type="button" aria-pressed={shoppingMode === "guide"} className={shoppingMode === "guide" ? "active" : ""} onClick={showGuide}>
-            <span>02</span><strong>Подбор по этапам</strong><small>Понятный маршрут до, во время и после процедуры</small>
-          </button>
+        <div className="shopping-navigation hero-quick-route" id="shopping" aria-labelledby="shopping-title">
+          <div>
+            <p className="section-index">Быстрый маршрут</p>
+            <h2 id="shopping-title"><span>Купить сразу</span><span>или подобрать</span></h2>
+          </div>
+          <div className="shopping-tabs" role="group" aria-label="Режим просмотра магазина">
+            <button id="shopping-tab-catalog" type="button" aria-pressed={shoppingMode === "catalog"} className={shoppingMode === "catalog" ? "active" : ""} onClick={showAllCatalog}>
+              <span>01</span><strong>Купить сразу</strong><small>Открыть каталог и выбрать нужное средство</small>
+            </button>
+            <button id="shopping-tab-guide" type="button" aria-pressed={shoppingMode === "guide"} className={shoppingMode === "guide" ? "active" : ""} onClick={showGuide}>
+              <span>02</span><strong>Подобрать средство</strong><small>Понятный маршрут до, во время и после процедуры</small>
+            </button>
+          </div>
         </div>
       </section>
 
@@ -1194,7 +1329,7 @@ export default function Storefront() {
         <div className="guide-heading" data-reveal>
           <p className="section-index">Как выбрать / полный маршрут</p>
           <h2 id="guide-title">Сначала задача.<br />{" "}Затем формула.</h2>
-          <p>Выберите момент применения, формат работы и зону ухода. Ниже — подробная навигация по данным и описаниям текущего каталога ANESTET.</p>
+          <p>Выберите момент применения, формат работы и зону ухода. Ниже — подробная навигация по данным и описаниям текущего каталога ANESTET®.</p>
         </div>
 
         <div className="guide-route" aria-hidden="true" data-motion>
@@ -1256,7 +1391,7 @@ export default function Storefront() {
         </div>
         <div className="filters" role="group" aria-label="Фильтр каталога" data-reveal>
           {filters.map((item) => (
-            <button type="button" key={item} className={filter === item ? "active" : ""} aria-pressed={filter === item} onClick={() => chooseCatalogFilter(item)}>{item}</button>
+            <button type="button" key={item} className={filter === item ? "active" : ""} aria-pressed={filter === item} onClick={() => chooseCatalogFilter(item)}>{item === "ANESTET" ? <BrandLabel brand={item} className="filter-brand-label" /> : item}</button>
           ))}
         </div>
         {selectedCareStage && (
@@ -1287,17 +1422,18 @@ export default function Storefront() {
                   <span className="product-tag">{product.tag}</span>
                   <div className="product-badges">{product.isNew && <span className="product-new">Новинка</span>}{product.compareAtPrice && <span className="product-discount">Скидка</span>}</div>
                   <button type="button" className={favorites.includes(product.id) ? "product-favorite active" : "product-favorite"} aria-pressed={favorites.includes(product.id)} aria-label={favorites.includes(product.id) ? `Убрать из избранного: ${product.title}` : `Добавить в избранное: ${product.title}`} onClick={() => toggleFavorite(product.id)}><HeartIcon size={22} /></button>
-                  <div className="product-packshot-frame">
+                  <button type="button" className="product-packshot-frame product-detail-trigger" onClick={() => showProductDetails(product.id)} aria-label={`Открыть карточку товара: ${product.title}`}>
                     <Image src={productCardPackshot(product)} alt={product.title} fill sizes="(max-width: 390px) 100vw, (max-width: 760px) 50vw, (max-width: 1100px) 33vw, 25vw" loading="lazy" />
-                  </div>
+                    <span>Подробнее</span>
+                  </button>
                 </div>
                 <button type="button" className={cartQuantity ? "quick-add selected" : "quick-add"} onClick={() => addToCart(product.id)} aria-label={cartQuantity ? `Добавить ещё: ${product.title}. В корзине ${cartQuantity}` : `Добавить ${product.title} в корзину`}>
                   {cartQuantity ? `В корзине · ${cartQuantity}` : "В корзину"}
                   <BagIcon size={18} title="" />
                 </button>
                 <div className="product-info">
-                  <p>{product.brand}</p>
-                  <h3>{product.compactTitle}</h3>
+                  <BrandLabel brand={product.brand} className="product-brand-label" />
+                  <h3><button type="button" className="product-title-trigger" onClick={() => showProductDetails(product.id)}>{product.compactTitle}</button></h3>
                   <span className="product-price"><strong>{formatPrice(product.price)}</strong>{product.compareAtPrice && <del>{formatPrice(product.compareAtPrice)}</del>}</span>
                   <span className="availability-inline" title="Наличие уточняется менеджером перед подтверждением заказа"><b aria-hidden="true">?</b><span>Наличие уточняется</span></span>
                 </div>
@@ -1331,7 +1467,7 @@ export default function Storefront() {
           <div className="about-copy" data-reveal>
             <p className="section-index">О бренде / собственная лаборатория</p>
             <h2 id="about-title">Создаём то, что нужно вашей работе</h2>
-            <p className="about-intro">Мы начали путь в 2016 году с профессиональных средств для мастеров перманента и косметологов. В 2024 году появились FION — развитие формул ANESTET — и Queen Key, премиальная уходовая косметика для лица. Продукты разрабатываются и производятся в собственной лаборатории в Москве с контролем качества на каждом этапе.</p>
+            <p className="about-intro">Мы начали путь в 2016 году с профессиональных средств для мастеров перманента и косметологов. В 2024 году появились FION — развитие формул ANESTET® — и Queen Key, премиальная уходовая косметика для лица. Продукты разрабатываются и производятся в собственной лаборатории в Москве с контролем качества на каждом этапе.</p>
             <div className="about-principles">
               {brandPrinciples.map(([title, text], index) => (
                 <article key={title}><span>{String(index + 1).padStart(2, "0")}</span><div><h3>{title}</h3><p>{text}</p></div></article>
@@ -1388,7 +1524,7 @@ export default function Storefront() {
         <div className="company-panel" role="tabpanel" id="company-panel" aria-labelledby={`company-tab-${companySection}`} data-reveal>
           {companySection === "partners" && (
             <div className="partners-panel">
-              <div className="company-panel-copy"><p>Партнёрская сеть</p><h3>ANESTET рядом с мастерами</h3><p>Продукцию представляют профессиональные магазины и профильные площадки. По вопросам сотрудничества напишите команде бренда.</p><a href={`mailto:${SUPPORT_EMAIL}?subject=${encodeURIComponent("Партнёрство с ANESTET")}`}>Стать партнёром <ArrowIcon /></a></div>
+              <div className="company-panel-copy"><p>Партнёрская сеть</p><h3>ANESTET® рядом с мастерами</h3><p>Продукцию представляют профессиональные магазины и профильные площадки. По вопросам сотрудничества напишите команде бренда.</p><a href={`mailto:${SUPPORT_EMAIL}?subject=${encodeURIComponent("Партнёрство с ANESTET®")}`}>Стать партнёром <ArrowIcon /></a></div>
               <div className="partner-logo-grid">
                 {partnerLogos.map(([file, name]) => <div key={file}><Image src={`/assets/img/partners/${file}`} alt={name} width={190} height={92} loading="lazy" /></div>)}
               </div>
@@ -1418,7 +1554,7 @@ export default function Storefront() {
           )}
           {companySection === "contacts" && (
             <div className="contacts-panel">
-              <div className="company-panel-copy"><p>Связаться с нами</p><h3>Контакты ANESTET</h3><p>Поддержка по продуктам, заказам, доставке и партнёрству.</p></div>
+              <div className="company-panel-copy"><p>Связаться с нами</p><h3>Контакты ANESTET®</h3><p>Поддержка по продуктам, заказам, доставке и партнёрству.</p></div>
               <div className="contact-cards">
                 <a href={`mailto:${SUPPORT_EMAIL}`}><span>E-mail</span><strong>{SUPPORT_EMAIL}</strong><ArrowIcon /></a>
                 <a href="tel:+79101774142"><span>Телефон</span><strong>{SUPPORT_PHONE}</strong><ArrowIcon /></a>
@@ -1444,7 +1580,7 @@ export default function Storefront() {
 
       <section className="social-feed" id="social" aria-labelledby="social-title" data-motion>
         <header data-reveal>
-          <div><p className="section-index">ANESTET в эфире</p><h2 id="social-title">Продукты в движении</h2></div>
+          <div><p className="section-index">ANESTET® в эфире</p><h2 id="social-title">Продукты в движении</h2></div>
           <p>{vkPublications.length ? "Живая лента официального VK: обложка, краткое описание и заголовок каждой новости; видео запускаются прямо на сайте, фотопубликации открываются в сообществе." : "Единая официальная лента VK. После подключения токена здесь появятся все доступные новости и ролики с реальными превью публикаций."}</p>
         </header>
         {vkPublications.length ? (
@@ -1462,7 +1598,7 @@ export default function Storefront() {
                 <span className="vk-video-copy">
                   <span><Image src="/assets/icons/social/vk.svg" alt="" width={22} height={22} aria-hidden="true" /> Официальный VK</span>
                   <strong>{publication.title}</strong>
-                  <p>{publication.excerpt || "Официальная публикация сообщества ANESTET × Queen Key."}</p>
+                  <p>{publication.excerpt || "Официальная публикация сообщества ANESTET® × Queen Key."}</p>
                   <small>{product ? `К товару · ${product.compactTitle}` : publication.kind === "video" ? "Смотреть ролик" : "Читать публикацию"}</small>
                 </span>
               </>;
@@ -1477,17 +1613,17 @@ export default function Storefront() {
         ) : (
           <a className="vk-feed-empty-state" href="https://vk.ru/queenkeyanestet" target="_blank" rel="noreferrer">
             <span className="vk-feed-empty-visual" aria-hidden="true"><i /><b /><Image src="/assets/icons/social/vk.svg" alt="" width={54} height={54} /></span>
-            <span><small>Официальное сообщество</small><strong>Новости и видео Queen Key × ANESTET</strong><em>Открыть публикации VK <ArrowIcon /></em></span>
+            <span><small>Официальное сообщество</small><strong>Новости и видео Queen Key × ANESTET®</strong><em>Открыть публикации VK <ArrowIcon /></em></span>
           </a>
         )}
-        <p className="social-feed-note">Источник: официальное сообщество Queen Key × ANESTET. API-токен хранится только на сервере; синхронизированные публикации можно скрыть или связать с товаром в админке.</p>
+        <p className="social-feed-note">Источник: официальное сообщество Queen Key × ANESTET®. API-токен хранится только на сервере; синхронизированные публикации можно скрыть или связать с товаром в админке.</p>
       </section>
 
       <section className="callback-section" id="callback" aria-labelledby="callback-title" data-motion>
         <div className="callback-heading" data-reveal>
           <p className="section-index">Связаться / без ожидания на линии</p>
           <h2 id="callback-title">Обратный звонок</h2>
-          <p>Оставьте номер — команда ANESTET свяжется с вами в рабочее время и поможет с продуктом, заказом или партнёрством.</p>
+          <p>Оставьте номер — команда ANESTET® свяжется с вами в рабочее время и поможет с продуктом, заказом или партнёрством.</p>
         </div>
         <form className="callback-form" onSubmit={submitCallback} data-reveal>
           <label className="callback-phone"><span>Телефон</span><input type="tel" name="phone" autoComplete="tel" inputMode="tel" required minLength={10} placeholder="+7 999 000-00-00" value={callbackPhone} onChange={(event) => { setCallbackPhone(event.target.value); setCallbackState({}); }} /></label>
@@ -1527,13 +1663,13 @@ export default function Storefront() {
           <span className="footer-fashion-thread" />
         </div>
         <div className="footer-brand-line" aria-hidden="true">
-          <span>ANESTET</span><span>CLINICAL CARE</span><span>QUEEN KEY</span><i />
+          <span>ANESTET®</span><span>CLINICAL CARE</span><span>QUEEN KEY</span><i />
         </div>
         <div className="footer-grid">
           <div><p>Связаться</p><a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a><a href="tel:+79101774142">{SUPPORT_PHONE}</a></div>
           <div><p>Адрес</p><span>Москва, ул. Иловайская,<br />{" "}д. 20, корп. 2</span></div>
           <div><p>Режим работы</p><span>Пн—Пт / 09:00—18:00<br />{" "}Сб—Вс / выходной</span></div>
-          <div><p>Дизайн</p><span>{themes.find((item) => item.id === theme)?.number} / {themes.find((item) => item.id === theme)?.title}</span></div>
+          <div><p>Тема</p><span>{themes.find((item) => item.id === theme)?.title} / {themes.find((item) => item.id === theme)?.longTitle}</span></div>
         </div>
         <nav className="footer-socials" aria-label="Социальные сети ANESTET">
           <a href="https://vk.ru/queenkeyanestet" target="_blank" rel="noreferrer">VK</a>
@@ -1543,7 +1679,7 @@ export default function Storefront() {
         </nav>
         <div className="footer-bottom">
           <div>
-            <p className="footer-note">ANESTET · профессиональные средства для косметологического ухода</p>
+            <p className="footer-note">ANESTET® · профессиональные средства для косметологического ухода</p>
             <a className="site-release-link" href={GITHUB_RELEASES_URL} target="_blank" rel="noreferrer">Модификация {SITE_RELEASE}</a>
           </div>
           <a href="#top">Наверх <span aria-hidden="true">↑</span></a>

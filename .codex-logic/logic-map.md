@@ -144,3 +144,19 @@ The verified official community domain is queenkeyanestet at vk.ru. The storefro
 Files: app/storefront.tsx, app/globals.css, app/admin/admin-vk-feed.tsx, lib/admin/vk-connector.mjs, lib/admin/vk-feed-store.mjs, scripts/admin-smoke.mjs, deploy/anestet-admin-api.env.example, docs/releases/2026.09.01-v13.2.0.md
 Validation: npm run build PASS; npm run qa:layout PASS 11x2x2; npm run qa:admin PASS; npx tsc --noEmit PASS; npm audit --omit=dev 0 vulnerabilities; Public vk.ru page returned VK anti-bot challenge without API authorization; scraping rejected.
 Risks: Real populated feed remains unverified until the company supplies a VK access token.; VK API rate limits can constrain large historical imports; VK_POST_LIMIT defaults to 1000 and caps at 5000.
+
+## 2026-09-01T09:42:25.300Z - System-aware Day Night themes and registered brand lockups
+
+The two approved themes remain Future Beauty and Clinical Luxury. The large top selector and its extra layout strip are superseded by one compact accessible Day/Night control integrated into the header. Before hydration, URL or persisted manual choice wins; otherwise the browser/OS color preference selects the theme. Raw catalog keys remain unchanged for API compatibility, while visible ANESTET brand labels receive the registered mark. Queen Key Cosmetic is dark on Clinical Luxury and light on Future Beauty.
+
+Files: app/layout.tsx, app/storefront.tsx, app/icons.tsx, app/globals.css, scripts/qa-layout.mjs
+Validation: TypeScript; production build; 11 widths x 2 themes x 2 views; visual desktop/mobile QA; Queen Key computed filter.
+Risks: Manual theme selection intentionally persists and overrides later OS changes until the saved choice is cleared.
+
+## 2026-09-01 — Stable product-centred hero composition and details
+
+The Future Beauty WebGL scene does not derive its centre from the active product. All 23 normalized packshots were measured once; their alpha-weighted mean vertical centre is 49.7174%. The stable `.hero-packshot-frame` maps that point into iframe-normalized coordinates, and the Opaline group plus halo share the resulting Three.js world position. Product changes therefore cannot move the sphere, while responsive layout changes move packshot and sphere together. Product packshots/titles open official-source detail dialogs; cart controls remain separate. Hero price layers are temporally exclusive and use real Open Sans bold tabular numerals.
+
+Files: app/product-details.ts, app/storefront.tsx, app/globals.css, public/assets/getlayers/opaline/index.html, scripts/qa-layout.mjs
+Validation: measured 23-packshot alpha centre; TypeScript; 11 widths x 2 themes x 2 views; anchor stability; price transition; detail/cart independence.
+Risk: If the normalized packshot asset pipeline changes from the shared 1000px canvas, recompute the mean centre before release.

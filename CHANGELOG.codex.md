@@ -2,6 +2,15 @@
 
 Project: xsANESTET_site
 
+## 2026-09-01 - Version 13.3.0
+
+- Added official product detail cards for all 23 products; clicking a packshot or title opens the card, while cart buttons remain independent.
+- Moved the quick shopping route into a compact white strip inside the first hero screen.
+- Anchored the Future Beauty Opaline sphere to the fixed alpha-weighted centre of the shared product frame (49.7174% vertically), so product changes cannot move the graphic.
+- Removed old/new price overlap during Prism transitions and supplied real Open Sans semibold/bold faces with tabular numerals.
+- Extended the release gate with first-screen route containment, stable graphic-anchor, price-transition and product-detail/cart checks.
+- Verification: `npx tsc --noEmit`; `npm run build && npm run qa:layout`; desktop/mobile visual review; production smoke after atomic release.
+
 ## 2026-08-31T22:20:00.000Z - Version 13.1.0
 
 - Previous version: 13.0.0
@@ -351,3 +360,8 @@ Finalized the two-theme ANESTET storefront and admin release: approved Prism her
 - Risk/Rollback: Low: documentation-only versioning metadata.
 - Issue/Request: Keep the published release evidence inside the repository.
 Added the generated v13.2.0 release notes to the durable versioning archive after the production and GitHub release checks passed.
+## 2026-09-01 - Version 13.2.1
+
+- Replaced the oversized theme strip with a compact accessible Day / Night control that follows the system theme before hydration and persists manual selection.
+- Standardized ANESTET® brand labels across the header, hero, catalog, cart and footer.
+- Corrected Queen Key Cosmetic contrast on Clinical Luxury and extended the 11-width release gate for the new switch.

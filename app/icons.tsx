@@ -27,3 +27,11 @@ export function MinusIcon({ size = 16, title = "" }: IconProps) {
 export function PlusIcon({ size = 16, title = "" }: IconProps) {
   return <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden={title ? undefined : true}><path d="M12 6v12M6 12h12" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/></svg>;
 }
+
+export function SunIcon({ size = 18, title = "" }: IconProps) {
+  return <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden={title ? undefined : true} role={title ? "img" : undefined}><title>{title}</title><circle cx="12" cy="12" r="3.7" stroke="currentColor" strokeWidth="1.5"/><path d="M12 2.7v2M12 19.3v2M2.7 12h2M19.3 12h2M5.42 5.42l1.42 1.42M17.16 17.16l1.42 1.42M18.58 5.42l-1.42 1.42M6.84 17.16l-1.42 1.42" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>;
+}
+
+export function MoonIcon({ size = 18, title = "" }: IconProps) {
+  return <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden={title ? undefined : true} role={title ? "img" : undefined}><title>{title}</title><path d="M20.1 15.2A8.4 8.4 0 0 1 8.8 3.9 8.5 8.5 0 1 0 20.1 15.2Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>;
+}

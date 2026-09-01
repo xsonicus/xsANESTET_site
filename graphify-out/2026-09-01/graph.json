@@ -29971,7 +29971,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/storefront.tsx",
-      "source_location": "L1016",
+      "source_location": "L1010",
       "weight": 1.0
     },
     {
@@ -29983,7 +29983,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/storefront.tsx",
-      "source_location": "L1135",
+      "source_location": "L1129",
       "weight": 1.0
     },
     {
@@ -29995,7 +29995,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/storefront.tsx",
-      "source_location": "L1207",
+      "source_location": "L1201",
       "weight": 1.0
     },
     {
@@ -30007,7 +30007,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/storefront.tsx",
-      "source_location": "L1208",
+      "source_location": "L1202",
       "weight": 1.0
     },
     {
@@ -30019,7 +30019,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/storefront.tsx",
-      "source_location": "L1209",
+      "source_location": "L1203",
       "weight": 1.0
     },
     {
@@ -30031,7 +30031,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/storefront.tsx",
-      "source_location": "L1596",
+      "source_location": "L1590",
       "weight": 1.0
     },
     {
@@ -30055,7 +30055,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/storefront.tsx",
-      "source_location": "L519",
+      "source_location": "L513",
       "weight": 1.0
     },
     {
@@ -30067,7 +30067,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/storefront.tsx",
-      "source_location": "L735",
+      "source_location": "L729",
       "weight": 1.0
     },
     {
@@ -73486,7 +73486,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "app/storefront.tsx",
-      "source_location": "L476",
+      "source_location": "L470",
       "weight": 1.0
     },
     {
@@ -73498,7 +73498,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "app/storefront.tsx",
-      "source_location": "L493",
+      "source_location": "L487",
       "weight": 1.0
     },
     {

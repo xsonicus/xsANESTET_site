@@ -84,10 +84,15 @@ try {
       if (toggle?.getAttribute("aria-pressed") === "false") toggle.click();
     });
 
-    for (let themeIndex = 0; themeIndex < themes.length; themeIndex += 1) {
-      await page.locator(".theme-button").nth(themeIndex).click();
+    for (const theme of themes) {
+      const currentTheme = await page.evaluate(() => document.documentElement.dataset.theme);
+      if (currentTheme !== theme) await page.locator(".theme-toggle").click();
       await page.waitForTimeout(100);
-      const theme = themes[themeIndex];
+      const resolvedTheme = await page.evaluate(() => document.documentElement.dataset.theme);
+      if (resolvedTheme !== theme) {
+        failures.push({ width, height, theme, view: "theme-toggle", resolvedTheme, collisions: ["theme toggle did not resolve requested theme"], horizontalOverflow: 0, overflowElements: [], textOverflow: [] });
+        continue;
+      }
       for (const view of views) {
         await page.locator(".shopping-tabs button").nth(view === "catalog" ? 0 : 1).click();
         await page.waitForTimeout(100);
@@ -216,15 +221,22 @@ try {
           }
           return false;
         };
-        const textOverflow = [...document.querySelectorAll("h1,h2,h3,.theme-button strong,.theme-button small,.filters button,.product-info h3,.guide-stage header p")]
+        const textOverflow = [...document.querySelectorAll("h1,h2,h3,.theme-toggle-option,.filters button,.product-info h3,.guide-stage header p")]
           .filter(visible)
           .filter(paintsOutside)
           .map((element) => `${element.tagName.toLowerCase()}.${element.className || "-"}: ${element.textContent?.trim()}`);
         const collisions = [];
+        const themeToggle = document.querySelector(".theme-toggle");
+        if (themeToggle && visible(themeToggle)) {
+          const toggleRect = themeToggle.getBoundingClientRect();
+          if (toggleRect.width < 44 || toggleRect.height < 44) collisions.push("theme toggle touch target is smaller than 44px");
+        }
         const header = document.querySelector(".site-header");
         const wordmark = document.querySelector(".wordmark");
+        const primaryNav = document.querySelector(".primary-nav");
         const headerActions = document.querySelector(".header-actions");
         collision(collisions, "header wordmark ↔ actions", wordmark, headerActions);
+        collision(collisions, "header navigation ↔ actions", primaryNav, headerActions);
         if (header && visible(header)) {
           const headerRect = header.getBoundingClientRect();
           for (const element of [wordmark, ...document.querySelectorAll(".header-socials a,.header-support-button,.cart-button")]) {
@@ -245,9 +257,21 @@ try {
         const heroImage = document.querySelector(".hero-product-image");
         const heroLabel = document.querySelector(".hero-product-label");
         const heroControls = document.querySelector(".hero-product-controls");
+        const hero = document.querySelector(".hero");
+        const quickRoute = document.querySelector(".hero-quick-route");
         await collisionWithImage(collisions, "hero image ↔ product label", heroImage, heroLabel);
         await collisionWithImage(collisions, "hero image ↔ carousel controls", heroImage, heroControls);
         collision(collisions, "hero label ↔ carousel controls", heroLabel, heroControls);
+        if (hero && quickRoute && visible(hero) && visible(quickRoute)) {
+          const heroRect = hero.getBoundingClientRect();
+          const routeRect = quickRoute.getBoundingClientRect();
+          if (routeRect.left < heroRect.left - 1 || routeRect.right > heroRect.right + 1 || routeRect.bottom > heroRect.bottom + 1) {
+            collisions.push("quick route is not contained by the first hero section");
+          }
+          if (innerWidth <= 760 && innerHeight >= 680 && routeRect.bottom > innerHeight + 1) {
+            collisions.push("mobile quick route is not fully visible in the first viewport");
+          }
+        }
 
         document.querySelectorAll(".guide-stage").forEach((stage, index) => {
           const header = stage.querySelector("header");
@@ -328,6 +352,94 @@ try {
         }
       }
     }
+  }
+
+  const interactionPage = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
+  try {
+    await interactionPage.emulateMedia({ colorScheme: "dark", reducedMotion: "no-preference" });
+    await interactionPage.goto(`${baseUrl}/?design=cinematic&qa=motion`, { waitUntil: "networkidle" });
+    await interactionPage.evaluate(() => document.fonts.ready);
+    await interactionPage.waitForFunction(() => Boolean(document.querySelector(".getlayers-opaline")?.dataset.anchorY));
+
+    const initialAnchor = await interactionPage.evaluate(() => {
+      const frame = document.querySelector(".getlayers-opaline");
+      const packshotFrame = document.querySelector(".hero-packshot-frame");
+      if (!(frame instanceof HTMLIFrameElement) || !(packshotFrame instanceof HTMLElement)) return null;
+      const frameRect = frame.getBoundingClientRect();
+      const packshotRect = packshotFrame.getBoundingClientRect();
+      return {
+        x: Number(frame.dataset.anchorX),
+        y: Number(frame.dataset.anchorY),
+        sceneX: Number(frame.contentWindow?.__anestetHeroAnchor?.x),
+        sceneY: Number(frame.contentWindow?.__anestetHeroAnchor?.y),
+        expectedX: (packshotRect.left + packshotRect.width / 2 - frameRect.left) / frameRect.width,
+        expectedY: (packshotRect.top + packshotRect.height * 0.497174 - frameRect.top) / frameRect.height,
+      };
+    });
+    if (!initialAnchor || Math.abs(initialAnchor.x - initialAnchor.expectedX) > 0.00001 || Math.abs(initialAnchor.y - initialAnchor.expectedY) > 0.00001 || Math.abs(initialAnchor.sceneX - initialAnchor.x) > 0.00001 || Math.abs(initialAnchor.sceneY - initialAnchor.y) > 0.00001) {
+      failures.push({ width: 1440, height: 1000, theme: "serum", view: "graphic-anchor", collisions: ["opaline graphic is not aligned with the fixed weighted product centre"], horizontalOverflow: 0, overflowElements: [], textOverflow: [] });
+    }
+
+    await interactionPage.locator(".hero-product-controls button:not(.previous):not(.hero-carousel-toggle)").click();
+    const priceFrames = [];
+    for (let sample = 0; sample < 8; sample += 1) {
+      await interactionPage.waitForTimeout(90);
+      priceFrames.push(await interactionPage.evaluate(() => {
+        const departing = document.querySelector(".hero-label-panel.departing");
+        const arriving = document.querySelector(".hero-label-panel.arriving");
+        const activePrice = document.querySelector(".hero-label-panel:not(.departing) .hero-product-price b");
+        const style = activePrice ? getComputedStyle(activePrice) : null;
+        return {
+          departing: departing ? Number(getComputedStyle(departing).opacity) : 0,
+          arriving: arriving ? Number(getComputedStyle(arriving).opacity) : 0,
+          fontFamily: style?.fontFamily ?? "",
+          fontWeight: style?.fontWeight ?? "",
+          numericVariant: style?.fontVariantNumeric ?? "",
+        };
+      }));
+    }
+    if (priceFrames.some((sample) => sample.departing > 0.035 && sample.arriving > 0.035)) {
+      failures.push({ width: 1440, height: 1000, theme: "serum", view: "price-transition", collisions: ["old and new prices are visibly superimposed during transition"], horizontalOverflow: 0, overflowElements: [], textOverflow: [] });
+    }
+    const typography = priceFrames.at(-1);
+    if (!typography?.fontFamily.includes("Open Sans") || typography.fontWeight !== "700" || !typography.numericVariant.includes("tabular-nums")) {
+      failures.push({ width: 1440, height: 1000, theme: "serum", view: "price-typography", collisions: [`price typography is inconsistent (${JSON.stringify(typography)})`], horizontalOverflow: 0, overflowElements: [], textOverflow: [] });
+    }
+
+    const changedAnchor = await interactionPage.evaluate(() => {
+      const frame = document.querySelector(".getlayers-opaline");
+      return frame instanceof HTMLIFrameElement ? {
+        x: Number(frame.dataset.anchorX),
+        y: Number(frame.dataset.anchorY),
+        sceneX: Number(frame.contentWindow?.__anestetHeroAnchor?.x),
+        sceneY: Number(frame.contentWindow?.__anestetHeroAnchor?.y),
+      } : null;
+    });
+    if (!initialAnchor || !changedAnchor || Math.abs(initialAnchor.x - changedAnchor.x) > 0.000001 || Math.abs(initialAnchor.y - changedAnchor.y) > 0.000001 || Math.abs(changedAnchor.sceneX - changedAnchor.x) > 0.00001 || Math.abs(changedAnchor.sceneY - changedAnchor.y) > 0.00001) {
+      failures.push({ width: 1440, height: 1000, theme: "serum", view: "graphic-anchor", collisions: ["opaline graphic anchor moved when the product changed"], horizontalOverflow: 0, overflowElements: [], textOverflow: [] });
+    }
+
+    await interactionPage.locator(".hero-packshot-frame").click();
+    await interactionPage.locator(".product-detail-dialog[open]").waitFor();
+    const detailResult = await interactionPage.evaluate(() => {
+      const dialog = document.querySelector(".product-detail-dialog[open]");
+      const cart = document.querySelector(".cart-button span");
+      if (!(dialog instanceof HTMLDialogElement)) return null;
+      const rect = dialog.getBoundingClientRect();
+      return { left: rect.left, top: rect.top, right: rect.right, bottom: rect.bottom, cart: cart?.textContent ?? "" };
+    });
+    if (!detailResult || detailResult.left < -1 || detailResult.top < -1 || detailResult.right > 1441 || detailResult.bottom > 1001) {
+      failures.push({ width: 1440, height: 1000, theme: "serum", view: "product-detail", collisions: ["product detail dialog is outside the viewport"], horizontalOverflow: 0, overflowElements: [], textOverflow: [] });
+    }
+    const cartBefore = detailResult?.cart;
+    await interactionPage.locator(".product-detail-footer button").click();
+    const detailStayedOpen = await interactionPage.locator(".product-detail-dialog[open]").count();
+    const cartAfter = await interactionPage.locator(".cart-button span").textContent();
+    if (!detailStayedOpen || cartBefore === cartAfter) {
+      failures.push({ width: 1440, height: 1000, theme: "serum", view: "product-detail", collisions: ["detail card and cart action are not independent"], horizontalOverflow: 0, overflowElements: [], textOverflow: [] });
+    }
+  } finally {
+    await interactionPage.close();
   }
 } finally {
   await browser.close();

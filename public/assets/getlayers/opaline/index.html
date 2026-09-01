@@ -128,6 +128,17 @@ const STORAGE_KEY = 'getlayers:opaline'
 const EMBEDDED_HERO =
   new URLSearchParams(window.location.search).get('embed') === 'hero' ||
   new URLSearchParams(window.location.hash.slice(1)).get('embed') === 'hero'
+const HERO_ANCHOR = { x: 0.75, y: 0.5 }
+window.__anestetHeroAnchor = { ...HERO_ANCHOR }
+function heroAnchorWorld() {
+  if (!EMBEDDED_HERO) return { x: 0, y: 0 }
+  const visibleHeight = 2 * camera.position.z * Math.tan(camera.fov * Math.PI / 360)
+  const visibleWidth = visibleHeight * camera.aspect
+  return {
+    x: (HERO_ANCHOR.x - 0.5) * visibleWidth,
+    y: (0.5 - HERO_ANCHOR.y) * visibleHeight,
+  }
+}
 try { const s = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null'); if (s) for (const k in s) if (k in CONFIG) CONFIG[k] = s[k] } catch (e) {}
 function saveConfig() { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(CONFIG)) } catch (e) {} }
 
@@ -460,7 +471,8 @@ class OpalineScene {
     this.mesh.layers.enable(LAYERS.ENTIRE_SCENE)
     this.mesh.layers.enable(LAYERS.BLOOM_SCENE)
     this.group.add(this.mesh)
-    this.group.position.x = EMBEDDED_HERO ? 2.55 : 0
+    const anchor = heroAnchorWorld()
+    this.group.position.set(anchor.x, anchor.y, 0)
     scene.add(this.group)
 
     // soft aura billboard behind the blob — warm below, cool above, additive
@@ -488,7 +500,7 @@ class OpalineScene {
           }`
       })
     )
-    this.halo.position.set(EMBEDDED_HERO ? 2.55 : 0, 0, -2.2)
+    this.halo.position.set(anchor.x, anchor.y, -2.2)
     this.halo.frustumCulled = false
     this.halo.layers.enable(LAYERS.ENTIRE_SCENE)
     scene.add(this.halo)
@@ -637,6 +649,11 @@ function resize() {
   composer.setPixelRatio(dpr); composer.setSize(w, h)
   if (atmoMat) atmoMat.uniforms.uRes.value.set(w * dpr, h * dpr)
   sceneObj.resize()
+  const anchor = heroAnchorWorld()
+  sceneObj.group.position.x = anchor.x; sceneObj.group.position.y = anchor.y
+  sceneObj.halo.position.x = anchor.x; sceneObj.halo.position.y = anchor.y
+  window.__anestetHeroAnchor = { ...HERO_ANCHOR }
+  window.__anestetHeroWorld = { x: anchor.x, y: anchor.y }
 }
 window.addEventListener('resize', resize); resize()
 
@@ -663,9 +680,21 @@ function syncRenderLoop() {
   if (motionActive && !document.hidden && !renderHandle) renderHandle = requestAnimationFrame(render)
 }
 window.addEventListener('message', event => {
-  if (event.origin !== window.location.origin || event.data?.type !== 'anestet-motion') return
-  motionActive = Boolean(event.data.active)
-  syncRenderLoop()
+  if (event.origin !== window.location.origin) return
+  if (event.data?.type === 'anestet-motion') {
+    motionActive = Boolean(event.data.active)
+    syncRenderLoop()
+    return
+  }
+  if (event.data?.type === 'anestet-hero-anchor') {
+    HERO_ANCHOR.x = clamp(Number(event.data.x) || 0.5, 0, 1)
+    HERO_ANCHOR.y = clamp(Number(event.data.y) || 0.5, 0, 1)
+    const anchor = heroAnchorWorld()
+    sceneObj.group.position.x = anchor.x; sceneObj.group.position.y = anchor.y
+    sceneObj.halo.position.x = anchor.x; sceneObj.halo.position.y = anchor.y
+    window.__anestetHeroAnchor = { ...HERO_ANCHOR }
+    window.__anestetHeroWorld = { x: anchor.x, y: anchor.y }
+  }
 })
 document.addEventListener('visibilitychange', syncRenderLoop)
 canvas.addEventListener('webglcontextlost', () => {
