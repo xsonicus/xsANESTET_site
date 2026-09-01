@@ -40,14 +40,15 @@
 - До получения официальных API-контрактов и ключей реальные внешние запросы fail-closed. Старую MODX можно читать как источник структуры/данных, но не менять.
 
 ## Проверка и выпуск
+- `2026.09.02-v13.4.1`: отклонённый scan-блик удалён; numbered section safe inset равен 18 px desktop / 16 px mobile; build, 11×2×2 layout gate, dark/light/mobile Browser и CI прошли; storefront атомарно опубликован в `/var/www/anestet/releases/20260902-v13.4.1`, публичная карточка показывает версию 13.4.1, scan отсутствует, console clean; v13.4.0 сохранён для отката.
 - `2026.09.02-v13.4.0`: build, 11×2×2 layout/interaction gate, Future Beauty и Clinical Luxury desktop, Future Beauty 390×844 и console QA прошли; storefront атомарно опубликован в `/var/www/anestet/releases/20260902-v13.4.0`, публичная карточка/API smoke и GitHub Storefront quality CI прошли; tag и GitHub Release опубликованы.
 - Перед preview/release обязательно npm run build && npm run qa:layout.
 - Матрица: 11 экранов × 2 темы × 2 представления, без overflow/clipping/collisions.
 - Визуальная QA выполняется локальным Codex Browser.
-- Production storefront `20260902-v13.4.0` и Admin API `20260901-v13.2.0` опубликованы на `https://anestet.139-180-214-133.sslip.io/`; совместимый Order API остаётся на неизменяемой версии `20260901-v13.1.2` за TLS nginx.
+- Production storefront `20260902-v13.4.1` и Admin API `20260901-v13.2.0` опубликованы на `https://anestet.139-180-214-133.sslip.io/`; совместимый Order API остаётся на неизменяемой версии `20260901-v13.1.2` за TLS nginx.
 - Release gate PASS: production build; 11 экранов × 2 темы × 2 представления; admin auth/origin/CSRF/catalog/VK/encrypted-secret smoke; TypeScript; dependency audit; публичный Codex Browser dark/light desktop и dark mobile без overflow.
-- VPS атомарно переключён на storefront `20260902-v13.4.0`; Admin API `20260901-v13.2.0` и Order API `20260901-v13.1.2` не менялись. Публичные storefront обеих тем, `/admin/`, health и `/api/content/vk` отвечают 200, защищённые integrations без сессии отвечают 401; публичная v13.4.0 product-detail карточка и console QA прошли. Реальная наполненная VK-лента остаётся REVIEW до установки официального токена компании.
+- VPS атомарно переключён на storefront `20260902-v13.4.1`; Admin API `20260901-v13.2.0` и Order API `20260901-v13.1.2` не менялись. Публичные storefront обеих тем, `/admin/`, health и `/api/content/vk` отвечают 200, защищённые integrations без сессии отвечают 401; публичная v13.4.1 product-detail карточка подтверждает отсутствие scan, 18 px safe inset и чистую console. Реальная наполненная VK-лента остаётся REVIEW до установки официального токена компании.
 - Project Logic Graph активен: `.codex-logic` ретроспективно описывает v10→v13.3.1; актуальный code graph содержит 2 552 узла и 4 504 связи, интерактивный HTML и отчёт перегенерированы.
-- Статика и Admin API находятся в независимых неизменяемых каталогах `20260902-v13.4.0` и `20260901-v13.2.0`; Order API — `20260901-v13.1.2`; предыдущий `20260901-v13.3.1` и более ранние версии сохранены для атомарного отката.
+- Статика и Admin API находятся в независимых неизменяемых каталогах `20260902-v13.4.1` и `20260901-v13.2.0`; Order API — `20260901-v13.1.2`; предыдущий `20260902-v13.4.0` и более ранние версии сохранены для атомарного отката.
 - Ежедневный root-only backup включает каталог, существующие журналы/заявки/заказы и закрытую env/nginx/systemd-конфигурацию.
 - Локальный Lighthouse v13.3.1: повторный desktop Performance 94, Accessibility / Best Practices / SEO 100, LCP 1,5 s, TBT 0, CLS 0,035, 49 запросов и 3 324 KiB; первый cold-run 75 зафиксирован как вариативность старта WebGL, а не скрыт. Deploy-export уменьшен на 35,34 МиБ до 28 МиБ.
