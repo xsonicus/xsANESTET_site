@@ -427,15 +427,19 @@ try {
       if (!(dialog instanceof HTMLDialogElement)) return null;
       const rect = dialog.getBoundingClientRect();
       const facts = [...dialog.querySelectorAll(".product-detail-facts > span")].map((item) => item.textContent?.trim() ?? "");
-      const scan = dialog.querySelector(".product-detail-scan");
-      const scanStyle = scan ? getComputedStyle(scan) : null;
-      return { left: rect.left, top: rect.top, right: rect.right, bottom: rect.bottom, cart: cart?.textContent ?? "", facts, scanAnimation: scanStyle?.animationName ?? "", scrollable: dialog.scrollHeight >= dialog.clientHeight };
+      const accordions = dialog.querySelector(".product-detail-accordions");
+      const accordionRect = accordions?.getBoundingClientRect();
+      const sectionInsets = [...dialog.querySelectorAll(".product-detail-section-name small")].map((item) => {
+        const itemRect = item.getBoundingClientRect();
+        return accordionRect ? itemRect.left - accordionRect.left : -1;
+      });
+      return { left: rect.left, top: rect.top, right: rect.right, bottom: rect.bottom, cart: cart?.textContent ?? "", facts, sectionInsets, hasScan: Boolean(dialog.querySelector(".product-detail-scan")), scrollable: dialog.scrollHeight >= dialog.clientHeight };
     });
     if (!detailResult || detailResult.left < -1 || detailResult.top < -1 || detailResult.right > 1441 || detailResult.bottom > 1001) {
       failures.push({ width: 1440, height: 1000, theme: "serum", view: "product-detail", collisions: ["product detail dialog is outside the viewport"], horizontalOverflow: 0, overflowElements: [], textOverflow: [] });
     }
-    if (detailResult?.facts.length !== 3 || !detailResult.facts.every(Boolean) || detailResult.scanAnimation !== "product-detail-scan" || !detailResult.scrollable) {
-      failures.push({ width: 1440, height: 1000, theme: "serum", view: "product-detail", collisions: [`product detail hierarchy or entrance motion is incomplete (${JSON.stringify(detailResult)})`], horizontalOverflow: 0, overflowElements: [], textOverflow: [] });
+    if (detailResult?.facts.length !== 3 || !detailResult.facts.every(Boolean) || detailResult.hasScan || !detailResult.scrollable || detailResult.sectionInsets.length < 3 || detailResult.sectionInsets.some((inset) => inset < 16)) {
+      failures.push({ width: 1440, height: 1000, theme: "serum", view: "product-detail", collisions: [`product detail hierarchy, glare removal or safe section inset is incomplete (${JSON.stringify(detailResult)})`], horizontalOverflow: 0, overflowElements: [], textOverflow: [] });
     }
     const cartBefore = detailResult?.cart;
     await interactionPage.locator(".product-detail-footer button").click();

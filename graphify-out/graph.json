@@ -3933,126 +3933,6 @@
       "source_location": "L1"
     },
     {
-      "id": "original_site_assets_components_ace_ace_worker_javascript_g",
-      "label": "G()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 107,
-      "community_name": "o",
-      "file_type": "code",
-      "norm_label": "g()",
-      "source_file": "original_site/assets/components/ace/ace/worker-javascript.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_i",
-      "label": "I()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 107,
-      "community_name": "o",
-      "file_type": "code",
-      "norm_label": "i()",
-      "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
-      "source_location": "L2"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_l",
-      "label": "l()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 107,
-      "community_name": "o",
-      "file_type": "code",
-      "norm_label": "l()",
-      "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
-      "source_location": "L2"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_n",
-      "label": "N()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 107,
-      "community_name": "o",
-      "file_type": "code",
-      "norm_label": "n()",
-      "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
-      "source_location": "L2"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_o",
-      "label": "o()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 107,
-      "community_name": "o",
-      "file_type": "code",
-      "norm_label": "o()",
-      "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
-      "source_location": "L2"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_qt",
-      "label": "qt()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 107,
-      "community_name": "o",
-      "file_type": "code",
-      "norm_label": "qt()",
-      "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
-      "source_location": "L2"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_w",
-      "label": "w()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 107,
-      "community_name": "o",
-      "file_type": "code",
-      "norm_label": "w()",
-      "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
-      "source_location": "L2"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_z",
-      "label": "z()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 107,
-      "community_name": "o",
-      "file_type": "code",
-      "norm_label": "z()",
-      "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
-      "source_location": "L2"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_ot",
-      "label": "ot()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 107,
-      "community_name": "o",
-      "file_type": "code",
-      "norm_label": "ot()",
-      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
-      "source_location": "L5"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_qt",
-      "label": "qt()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 107,
-      "community_name": "o",
-      "file_type": "code",
-      "norm_label": "qt()",
-      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
-      "source_location": "L5"
-    },
-    {
       "id": "original_site_assets_js_script_closemodal",
       "label": "closeModal()",
       "_callable": true,
@@ -4113,6 +3993,18 @@
       "source_location": "L6"
     },
     {
+      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_at",
+      "label": "at()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "jquery.min.js",
+      "file_type": "code",
+      "norm_label": "at()",
+      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
+      "source_location": "L4"
+    },
+    {
       "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_bt",
       "label": "bt()",
       "_callable": true,
@@ -4159,6 +4051,18 @@
       "norm_label": "er()",
       "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
       "source_location": "L6"
+    },
+    {
+      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_ft",
+      "label": "ft()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "jquery.min.js",
+      "file_type": "code",
+      "norm_label": "ft()",
+      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
+      "source_location": "L4"
     },
     {
       "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_gn",
@@ -4245,6 +4149,18 @@
       "source_location": "L6"
     },
     {
+      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_it",
+      "label": "it()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "jquery.min.js",
+      "file_type": "code",
+      "norm_label": "it()",
+      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
+      "source_location": "L5"
+    },
+    {
       "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_kn",
       "label": "Kn()",
       "_callable": true,
@@ -4257,16 +4173,16 @@
       "source_location": "L6"
     },
     {
-      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_ln",
-      "label": "ln()",
+      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_kt",
+      "label": "kt()",
       "_callable": true,
       "_origin": "ast",
       "community": 11,
       "community_name": "jquery.min.js",
       "file_type": "code",
-      "norm_label": "ln()",
+      "norm_label": "kt()",
       "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
-      "source_location": "L6"
+      "source_location": "L4"
     },
     {
       "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_lt",
@@ -4293,6 +4209,18 @@
       "source_location": "L4"
     },
     {
+      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_mt",
+      "label": "mt()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "jquery.min.js",
+      "file_type": "code",
+      "norm_label": "mt()",
+      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
+      "source_location": "L4"
+    },
+    {
       "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_n",
       "label": "_n()",
       "_callable": true,
@@ -4301,30 +4229,6 @@
       "community_name": "jquery.min.js",
       "file_type": "code",
       "norm_label": "_n()",
-      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
-      "source_location": "L6"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_nn",
-      "label": "nn()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "jquery.min.js",
-      "file_type": "code",
-      "norm_label": "nn()",
-      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
-      "source_location": "L6"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_nr",
-      "label": "nr()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "jquery.min.js",
-      "file_type": "code",
-      "norm_label": "nr()",
       "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
       "source_location": "L6"
     },
@@ -4389,18 +4293,6 @@
       "source_location": "L5"
     },
     {
-      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_rn",
-      "label": "rn()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "jquery.min.js",
-      "file_type": "code",
-      "norm_label": "rn()",
-      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
-      "source_location": "L6"
-    },
-    {
       "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_rr",
       "label": "rr()",
       "_callable": true,
@@ -4423,6 +4315,30 @@
       "norm_label": "sn()",
       "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
       "source_location": "L6"
+    },
+    {
+      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_st",
+      "label": "st()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "jquery.min.js",
+      "file_type": "code",
+      "norm_label": "st()",
+      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
+      "source_location": "L4"
+    },
+    {
+      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_st_t",
+      "label": "t()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "jquery.min.js",
+      "file_type": "code",
+      "norm_label": "t()",
+      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
+      "source_location": "L4"
     },
     {
       "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_t",
@@ -4471,18 +4387,6 @@
       "norm_label": "tt()",
       "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
       "source_location": "L4"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_un",
-      "label": "un()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "jquery.min.js",
-      "file_type": "code",
-      "norm_label": "un()",
-      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
-      "source_location": "L6"
     },
     {
       "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_ut",
@@ -4541,6 +4445,18 @@
       "community_name": "jquery.min.js",
       "file_type": "code",
       "norm_label": "xt()",
+      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
+      "source_location": "L4"
+    },
+    {
+      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_yt",
+      "label": "yt()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "jquery.min.js",
+      "file_type": "code",
+      "norm_label": "yt()",
       "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
       "source_location": "L4"
     },
@@ -6849,6 +6765,18 @@
       "source_location": "L434"
     },
     {
+      "id": "original_site_assets_components_ace_ace_worker_javascript_g",
+      "label": "G()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "sortable.min.js",
+      "file_type": "code",
+      "norm_label": "g()",
+      "source_file": "original_site/assets/components/ace/ace/worker-javascript.js",
+      "source_location": "L1"
+    },
+    {
       "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_a",
       "label": "a()",
       "_callable": true,
@@ -6957,6 +6885,18 @@
       "source_location": "L2"
     },
     {
+      "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_i",
+      "label": "I()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "sortable.min.js",
+      "file_type": "code",
+      "norm_label": "i()",
+      "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
+      "source_location": "L2"
+    },
+    {
       "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_it",
       "label": "It()",
       "_callable": true,
@@ -6993,6 +6933,18 @@
       "source_location": "L2"
     },
     {
+      "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_l",
+      "label": "l()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "sortable.min.js",
+      "file_type": "code",
+      "norm_label": "l()",
+      "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
+      "source_location": "L2"
+    },
+    {
       "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_m",
       "label": "m()",
       "_callable": true,
@@ -7017,6 +6969,18 @@
       "source_location": "L2"
     },
     {
+      "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_n",
+      "label": "N()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "sortable.min.js",
+      "file_type": "code",
+      "norm_label": "n()",
+      "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
+      "source_location": "L2"
+    },
+    {
       "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_nt",
       "label": "Nt()",
       "_callable": true,
@@ -7029,6 +6993,18 @@
       "source_location": "L2"
     },
     {
+      "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_o",
+      "label": "o()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "sortable.min.js",
+      "file_type": "code",
+      "norm_label": "o()",
+      "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
+      "source_location": "L2"
+    },
+    {
       "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_pt",
       "label": "Pt()",
       "_callable": true,
@@ -7037,6 +7013,18 @@
       "community_name": "sortable.min.js",
       "file_type": "code",
       "norm_label": "pt()",
+      "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
+      "source_location": "L2"
+    },
+    {
+      "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_qt",
+      "label": "qt()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "sortable.min.js",
+      "file_type": "code",
+      "norm_label": "qt()",
       "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
       "source_location": "L2"
     },
@@ -7061,6 +7049,18 @@
       "community_name": "sortable.min.js",
       "file_type": "code",
       "norm_label": "rt()",
+      "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
+      "source_location": "L2"
+    },
+    {
+      "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_s",
+      "label": "S()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "sortable.min.js",
+      "file_type": "code",
+      "norm_label": "s()",
       "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
       "source_location": "L2"
     },
@@ -7113,6 +7113,18 @@
       "source_location": "L2"
     },
     {
+      "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_w",
+      "label": "w()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "sortable.min.js",
+      "file_type": "code",
+      "norm_label": "w()",
+      "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
+      "source_location": "L2"
+    },
+    {
       "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_x",
       "label": "X()",
       "_callable": true,
@@ -7159,6 +7171,42 @@
       "norm_label": "yt()",
       "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
       "source_location": "L2"
+    },
+    {
+      "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_z",
+      "label": "z()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "sortable.min.js",
+      "file_type": "code",
+      "norm_label": "z()",
+      "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
+      "source_location": "L2"
+    },
+    {
+      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_ot",
+      "label": "ot()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "sortable.min.js",
+      "file_type": "code",
+      "norm_label": "ot()",
+      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
+      "source_location": "L5"
+    },
+    {
+      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_qt",
+      "label": "qt()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "sortable.min.js",
+      "file_type": "code",
+      "norm_label": "qt()",
+      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
+      "source_location": "L5"
     },
     {
       "id": "original_site_assets_components_msfavorites_js_default_module",
@@ -10891,18 +10939,6 @@
       "norm_label": "y()",
       "source_file": "original_site/assets/components/minishop2/js/mgr/misc/plupload/plupload.full.min.js",
       "source_location": "L13"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_s",
-      "label": "S()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "plupload.full.min.js",
-      "file_type": "code",
-      "norm_label": "s()",
-      "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
-      "source_location": "L2"
     },
     {
       "id": "original_site_assets_components_fetchit_js_fetchit_fetchit_clearerror",
@@ -15007,6 +15043,66 @@
       "norm_label": "f()",
       "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
       "source_location": "L4"
+    },
+    {
+      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_ln",
+      "label": "ln()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 467,
+      "community_name": "ln",
+      "file_type": "code",
+      "norm_label": "ln()",
+      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
+      "source_location": "L6"
+    },
+    {
+      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_nn",
+      "label": "nn()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 467,
+      "community_name": "ln",
+      "file_type": "code",
+      "norm_label": "nn()",
+      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
+      "source_location": "L6"
+    },
+    {
+      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_nr",
+      "label": "nr()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 467,
+      "community_name": "ln",
+      "file_type": "code",
+      "norm_label": "nr()",
+      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
+      "source_location": "L6"
+    },
+    {
+      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_rn",
+      "label": "rn()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 467,
+      "community_name": "ln",
+      "file_type": "code",
+      "norm_label": "rn()",
+      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
+      "source_location": "L6"
+    },
+    {
+      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_un",
+      "label": "un()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 467,
+      "community_name": "ln",
+      "file_type": "code",
+      "norm_label": "un()",
+      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
+      "source_location": "L6"
     },
     {
       "id": "server_order_api_clean",
@@ -19730,47 +19826,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 89,
-      "community_name": "at",
+      "community_name": "k",
       "file_type": "code",
       "norm_label": "c()",
       "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
       "source_location": "L2"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_at",
-      "label": "at()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 89,
-      "community_name": "at",
-      "file_type": "code",
-      "norm_label": "at()",
-      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
-      "source_location": "L4"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_ft",
-      "label": "ft()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 89,
-      "community_name": "at",
-      "file_type": "code",
-      "norm_label": "ft()",
-      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
-      "source_location": "L4"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_it",
-      "label": "it()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 89,
-      "community_name": "at",
-      "file_type": "code",
-      "norm_label": "it()",
-      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
-      "source_location": "L5"
     },
     {
       "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_k",
@@ -19778,23 +19838,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 89,
-      "community_name": "at",
+      "community_name": "k",
       "file_type": "code",
       "norm_label": "k()",
       "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
       "source_location": "L6"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_kt",
-      "label": "kt()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 89,
-      "community_name": "at",
-      "file_type": "code",
-      "norm_label": "kt()",
-      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
-      "source_location": "L4"
     },
     {
       "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_mn",
@@ -19802,23 +19850,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 89,
-      "community_name": "at",
+      "community_name": "k",
       "file_type": "code",
       "norm_label": "mn()",
       "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
       "source_location": "L6"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_mt",
-      "label": "mt()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 89,
-      "community_name": "at",
-      "file_type": "code",
-      "norm_label": "mt()",
-      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
-      "source_location": "L4"
     },
     {
       "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_qn",
@@ -19826,7 +19862,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 89,
-      "community_name": "at",
+      "community_name": "k",
       "file_type": "code",
       "norm_label": "qn()",
       "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
@@ -19838,47 +19874,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 89,
-      "community_name": "at",
+      "community_name": "k",
       "file_type": "code",
       "norm_label": "s()",
       "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
       "source_location": "L6"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_st",
-      "label": "st()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 89,
-      "community_name": "at",
-      "file_type": "code",
-      "norm_label": "st()",
-      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
-      "source_location": "L4"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_st_t",
-      "label": "t()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 89,
-      "community_name": "at",
-      "file_type": "code",
-      "norm_label": "t()",
-      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
-      "source_location": "L4"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_yt",
-      "label": "yt()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 89,
-      "community_name": "at",
-      "file_type": "code",
-      "norm_label": "yt()",
-      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
-      "source_location": "L4"
     },
     {
       "id": "original_site_assets_js_jquery_inputmask_a",
@@ -21215,6 +21215,66 @@
       "norm_label": "notyf.min.js",
       "source_file": "original_site/assets/components/fetchit/lib/notyf.min.js",
       "source_location": "L1"
+    },
+    {
+      "id": "docs_releases_2026_09_02_v13_4_1",
+      "label": "2026.09.02-v13.4.1.md",
+      "_origin": "ast",
+      "community": 107,
+      "community_name": "ANESTET 2026.09.02-v13.4.1",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "2026.09.02-v13.4.1.md",
+      "source_file": "docs/releases/2026.09.02-v13.4.1.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_releases_2026_09_02_v13_4_1_anestet_2026_09_02_v13_4_1",
+      "label": "ANESTET 2026.09.02-v13.4.1",
+      "_origin": "ast",
+      "community": 107,
+      "community_name": "ANESTET 2026.09.02-v13.4.1",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "anestet 2026.09.02-v13.4.1",
+      "source_file": "docs/releases/2026.09.02-v13.4.1.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_releases_2026_09_02_v13_4_1_current_approved_implementation",
+      "label": "Current approved implementation",
+      "_origin": "ast",
+      "community": 107,
+      "community_name": "ANESTET 2026.09.02-v13.4.1",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "current approved implementation",
+      "source_file": "docs/releases/2026.09.02-v13.4.1.md",
+      "source_location": "L5"
+    },
+    {
+      "id": "docs_releases_2026_09_02_v13_4_1_release_gate",
+      "label": "Release gate",
+      "_origin": "ast",
+      "community": 107,
+      "community_name": "ANESTET 2026.09.02-v13.4.1",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "release gate",
+      "source_file": "docs/releases/2026.09.02-v13.4.1.md",
+      "source_location": "L13"
+    },
+    {
+      "id": "docs_releases_2026_09_02_v13_4_1_rollback",
+      "label": "Rollback",
+      "_origin": "ast",
+      "community": 107,
+      "community_name": "ANESTET 2026.09.02-v13.4.1",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "rollback",
+      "source_file": "docs/releases/2026.09.02-v13.4.1.md",
+      "source_location": "L21"
     },
     {
       "id": "original_site_assets_js_script",
@@ -23811,7 +23871,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-28t09:06:44.112z - commerce-first catalog and separate care guide",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L37"
+      "source_location": "L44"
     },
     {
       "id": "changelog_codex_2026_08_28t12_34_37_388z_version_11_1_0",
@@ -23823,7 +23883,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-28t12:34:37.388z - version 11.1.0",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L132"
+      "source_location": "L139"
     },
     {
       "id": "changelog_codex_2026_08_28t12_34_37_393z_autonomous_storefront_content_and_complete_novelty_experience",
@@ -23835,7 +23895,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-28t12:34:37.393z - autonomous storefront content and complete novelty experience",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L136"
+      "source_location": "L143"
     },
     {
       "id": "changelog_codex_2026_08_28t13_25_24_258z_version_11_1_1",
@@ -23847,7 +23907,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-28t13:25:24.258z - version 11.1.1",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L158"
+      "source_location": "L165"
     },
     {
       "id": "changelog_codex_2026_08_28t13_26_27_148z_extend_the_hero_promise_to_always_and_everywhere",
@@ -23859,7 +23919,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-28t13:26:27.148z - extend the hero promise to always and everywhere",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L162"
+      "source_location": "L169"
     },
     {
       "id": "changelog_codex_2026_08_28t13_35_23_555z_version_11_1_2",
@@ -23871,7 +23931,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-28t13:35:23.555z - version 11.1.2",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L174"
+      "source_location": "L181"
     },
     {
       "id": "changelog_codex_2026_08_28t13_36_46_879z_restore_the_three_way_site_comparison_switcher",
@@ -23883,7 +23943,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-28t13:36:46.879z - restore the three-way site comparison switcher",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L178"
+      "source_location": "L185"
     },
     {
       "id": "changelog_codex_2026_08_28t13_52_04_516z_version_11_1_3",
@@ -23895,7 +23955,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-28t13:52:04.516z - version 11.1.3",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L190"
+      "source_location": "L197"
     },
     {
       "id": "changelog_codex_2026_08_28t13_53_57_960z_stabilize_the_mobile_header_action_row",
@@ -23907,7 +23967,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-28t13:53:57.960z - stabilize the mobile header action row",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L194"
+      "source_location": "L201"
     },
     {
       "id": "changelog_codex_2026_08_31t15_22_23_000z_qk_cosmetic_three_direction_design_lab",
@@ -23919,7 +23979,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-31t15:22:23.000z - qk cosmetic three-direction design lab",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L206"
+      "source_location": "L213"
     },
     {
       "id": "changelog_codex_2026_08_31t19_30_00_000z_commerce_administration_authentic_packshots_and_prism_motion",
@@ -23931,7 +23991,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-31t19:30:00.000z - commerce administration, authentic packshots and prism motion",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L219"
+      "source_location": "L226"
     },
     {
       "id": "changelog_codex_2026_08_31t20_35_12_233z_version_13_1_1",
@@ -23943,7 +24003,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-31t20:35:12.233z - version 13.1.1",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L233"
+      "source_location": "L240"
     },
     {
       "id": "changelog_codex_2026_08_31t20_35_22_368z_complete_two_theme_anestet_storefront_authentic_packshots_and_protected_admin",
@@ -23955,7 +24015,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-31t20:35:22.368z - complete two-theme anestet storefront, authentic packshots and protected admin",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L237"
+      "source_location": "L244"
     },
     {
       "id": "changelog_codex_2026_08_31t21_24_03_302z_publish_anestet_v13_1_2_with_clean_admin_session_and_durable_release_governance",
@@ -23967,7 +24027,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-31t21:24:03.302z - publish anestet v13.1.2 with clean admin session and durable release governance",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L249"
+      "source_location": "L256"
     },
     {
       "id": "changelog_codex_2026_08_31t22_20_00_000z_version_13_1_0",
@@ -23979,7 +24039,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-31t22:20:00.000z - version 13.1.0",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L24"
+      "source_location": "L31"
     },
     {
       "id": "changelog_codex_2026_08_31t22_21_19_241z_version_13_1_3",
@@ -23991,7 +24051,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-31t22:21:19.241z - version 13.1.3",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L262"
+      "source_location": "L269"
     },
     {
       "id": "changelog_codex_2026_08_31t22_42_40_588z_compact_anestet_layout_source_faithful_hero_copy_and_interactive_care_guide",
@@ -24003,7 +24063,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-31t22:42:40.588z - compact anestet layout, source-faithful hero copy and interactive care guide",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L266"
+      "source_location": "L273"
     },
     {
       "id": "changelog_codex_2026_09_01_version_13_2_1",
@@ -24015,7 +24075,7 @@
       "node_kind": "heading",
       "norm_label": "2026-09-01 - version 13.2.1",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L373"
+      "source_location": "L380"
     },
     {
       "id": "changelog_codex_2026_09_01_version_13_3_0",
@@ -24027,7 +24087,7 @@
       "node_kind": "heading",
       "norm_label": "2026-09-01 - version 13.3.0",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L15"
+      "source_location": "L22"
     },
     {
       "id": "changelog_codex_2026_09_01_version_13_3_1",
@@ -24039,7 +24099,7 @@
       "node_kind": "heading",
       "norm_label": "2026-09-01 - version 13.3.1",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L5"
+      "source_location": "L12"
     },
     {
       "id": "changelog_codex_2026_09_01t04_32_51_526z_version_13_2_0",
@@ -24051,7 +24111,7 @@
       "node_kind": "heading",
       "norm_label": "2026-09-01t04:32:51.526z - version 13.2.0",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L348"
+      "source_location": "L355"
     },
     {
       "id": "changelog_codex_2026_09_01t07_49_34_133z_release_v13_2_0_approved_storefront_vk_feed_and_durable_logic_graph",
@@ -24063,7 +24123,7 @@
       "node_kind": "heading",
       "norm_label": "2026-09-01t07:49:34.133z - release v13.2.0: approved storefront, vk feed and durable logic graph",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L352"
+      "source_location": "L359"
     },
     {
       "id": "changelog_codex_2026_09_02_version_13_4_0",
@@ -24075,7 +24135,19 @@
       "node_kind": "heading",
       "norm_label": "2026-09-02 - version 13.4.0",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L379"
+      "source_location": "L386"
+    },
+    {
+      "id": "changelog_codex_2026_09_02_version_13_4_1",
+      "label": "2026-09-02 - Version 13.4.1",
+      "_origin": "ast",
+      "community": 22,
+      "community_name": "Codex Changelog",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "2026-09-02 - version 13.4.1",
+      "source_file": "CHANGELOG.codex.md",
+      "source_location": "L5"
     },
     {
       "id": "changelog_codex_codex_changelog",
@@ -24221,7 +24293,7 @@
       "node_kind": "heading",
       "norm_label": "2026.08.28-v10",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L15"
+      "source_location": "L21"
     },
     {
       "id": "docs_release_history_2026_08_28_v10_1",
@@ -24233,7 +24305,7 @@
       "node_kind": "heading",
       "norm_label": "2026.08.28-v10.1",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L35"
+      "source_location": "L41"
     },
     {
       "id": "docs_release_history_2026_08_28_v10_2",
@@ -24245,7 +24317,7 @@
       "node_kind": "heading",
       "norm_label": "2026.08.28-v10.2",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L40"
+      "source_location": "L46"
     },
     {
       "id": "docs_release_history_2026_08_28_v11",
@@ -24257,7 +24329,7 @@
       "node_kind": "heading",
       "norm_label": "2026.08.28-v11",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L46"
+      "source_location": "L52"
     },
     {
       "id": "docs_release_history_2026_08_28_v11_0_1",
@@ -24269,7 +24341,7 @@
       "node_kind": "heading",
       "norm_label": "2026.08.28-v11.0.1",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L56"
+      "source_location": "L62"
     },
     {
       "id": "docs_release_history_2026_08_28_v11_1_0",
@@ -24281,7 +24353,7 @@
       "node_kind": "heading",
       "norm_label": "2026.08.28-v11.1.0",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L77"
+      "source_location": "L83"
     },
     {
       "id": "docs_release_history_2026_08_28_v11_1_1",
@@ -24293,7 +24365,7 @@
       "node_kind": "heading",
       "norm_label": "2026.08.28-v11.1.1",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L72"
+      "source_location": "L78"
     },
     {
       "id": "docs_release_history_2026_08_28_v11_1_2",
@@ -24305,7 +24377,7 @@
       "node_kind": "heading",
       "norm_label": "2026.08.28-v11.1.2",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L61"
+      "source_location": "L67"
     },
     {
       "id": "docs_release_history_2026_08_28_v11_1_3",
@@ -24317,7 +24389,7 @@
       "node_kind": "heading",
       "norm_label": "2026.08.28-v11.1.3",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L66"
+      "source_location": "L72"
     },
     {
       "id": "docs_release_history_2026_08_31_v12_0_0",
@@ -24329,7 +24401,7 @@
       "node_kind": "heading",
       "norm_label": "2026.08.31-v12.0.0",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L88"
+      "source_location": "L94"
     },
     {
       "id": "docs_release_history_2026_08_31_v12_1_0",
@@ -24341,7 +24413,7 @@
       "node_kind": "heading",
       "norm_label": "2026.08.31-v12.1.0",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L97"
+      "source_location": "L103"
     },
     {
       "id": "docs_release_history_2026_08_31_v13_0_0",
@@ -24353,7 +24425,7 @@
       "node_kind": "heading",
       "norm_label": "2026.08.31-v13.0.0",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L105"
+      "source_location": "L111"
     },
     {
       "id": "docs_release_history_2026_08_31_v13_1_0",
@@ -24365,7 +24437,7 @@
       "node_kind": "heading",
       "norm_label": "2026.08.31-v13.1.0",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L116"
+      "source_location": "L122"
     },
     {
       "id": "docs_release_history_2026_08_31_v13_1_1",
@@ -24377,7 +24449,7 @@
       "node_kind": "heading",
       "norm_label": "2026.08.31-v13.1.1",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L125"
+      "source_location": "L131"
     },
     {
       "id": "docs_release_history_2026_09_01_v13_1_2",
@@ -24389,7 +24461,7 @@
       "node_kind": "heading",
       "norm_label": "2026.09.01-v13.1.2",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L133"
+      "source_location": "L139"
     },
     {
       "id": "docs_release_history_2026_09_01_v13_1_3",
@@ -24401,7 +24473,7 @@
       "node_kind": "heading",
       "norm_label": "2026.09.01-v13.1.3",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L140"
+      "source_location": "L146"
     },
     {
       "id": "docs_release_history_2026_09_01_v13_2_0",
@@ -24413,7 +24485,7 @@
       "node_kind": "heading",
       "norm_label": "2026.09.01-v13.2.0",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L149"
+      "source_location": "L155"
     },
     {
       "id": "docs_release_history_2026_09_01_v13_3_1",
@@ -24425,7 +24497,7 @@
       "node_kind": "heading",
       "norm_label": "2026.09.01-v13.3.1",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L160"
+      "source_location": "L166"
     },
     {
       "id": "docs_release_history_2026_09_02_v13_4_0",
@@ -24437,7 +24509,19 @@
       "node_kind": "heading",
       "norm_label": "2026.09.02-v13.4.0",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L29"
+      "source_location": "L35"
+    },
+    {
+      "id": "docs_release_history_2026_09_02_v13_4_1",
+      "label": "2026.09.02-v13.4.1",
+      "_origin": "ast",
+      "community": 23,
+      "community_name": "GitHub-\u0440\u0435\u043b\u0438\u0437\u044b",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "2026.09.02-v13.4.1",
+      "source_file": "docs/RELEASE_HISTORY.md",
+      "source_location": "L15"
     },
     {
       "id": "docs_release_history_github_\u0440\u0435\u043b\u0438\u0437\u044b",
@@ -24960,14 +25044,14 @@
       "source_location": "L17"
     },
     {
-      "id": "codex_logic_logic_map_v13_4_0_product_detail_presentation",
-      "label": "v13.4.0 product detail presentation",
+      "id": "codex_logic_logic_map_v13_4_1_product_detail_presentation",
+      "label": "v13.4.1 product detail presentation",
       "_origin": "ast",
       "community": 25,
       "community_name": "Logic Graph - xsANESTET_site",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "v13.4.0 product detail presentation",
+      "norm_label": "v13.4.1 product detail presentation",
       "source_file": ".codex-logic/logic-map.md",
       "source_location": "L162"
     },
@@ -27950,6 +28034,18 @@
       "source_location": "L11"
     },
     {
+      "id": "docs_releases_2026_09_02_v13_4_0_deployment",
+      "label": "Deployment",
+      "_origin": "ast",
+      "community": 464,
+      "community_name": "ANESTET 2026.09.02-v13.4.0",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "deployment",
+      "source_file": "docs/releases/2026.09.02-v13.4.0.md",
+      "source_location": "L24"
+    },
+    {
       "id": "docs_releases_2026_09_02_v13_4_0_product_detail_experience",
       "label": "Product detail experience",
       "_origin": "ast",
@@ -30549,7 +30645,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/storefront.tsx",
-      "source_location": "L1145",
+      "source_location": "L1144",
       "weight": 1.0
     },
     {
@@ -30561,7 +30657,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/storefront.tsx",
-      "source_location": "L1157",
+      "source_location": "L1156",
       "weight": 1.0
     },
     {
@@ -30573,7 +30669,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/storefront.tsx",
-      "source_location": "L1225",
+      "source_location": "L1224",
       "weight": 1.0
     },
     {
@@ -30585,7 +30681,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/storefront.tsx",
-      "source_location": "L1226",
+      "source_location": "L1225",
       "weight": 1.0
     },
     {
@@ -30597,7 +30693,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/storefront.tsx",
-      "source_location": "L1227",
+      "source_location": "L1226",
       "weight": 1.0
     },
     {
@@ -30609,7 +30705,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/storefront.tsx",
-      "source_location": "L1614",
+      "source_location": "L1613",
       "weight": 1.0
     },
     {
@@ -54187,13 +54283,24 @@
     },
     {
       "source": "changelog_codex_codex_changelog",
+      "target": "changelog_codex_2026_09_01_version_13_3_1",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CHANGELOG.codex.md",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "changelog_codex_codex_changelog",
       "target": "changelog_codex_2026_08_28t12_34_37_388z_version_11_1_0",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L132",
+      "source_location": "L139",
       "weight": 1.0
     },
     {
@@ -54204,18 +54311,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L136",
-      "weight": 1.0
-    },
-    {
-      "source": "changelog_codex_codex_changelog",
-      "target": "changelog_codex_2026_09_01_version_13_3_0",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CHANGELOG.codex.md",
-      "source_location": "L15",
+      "source_location": "L143",
       "weight": 1.0
     },
     {
@@ -54226,7 +54322,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L158",
+      "source_location": "L165",
       "weight": 1.0
     },
     {
@@ -54237,7 +54333,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L162",
+      "source_location": "L169",
       "weight": 1.0
     },
     {
@@ -54248,7 +54344,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L174",
+      "source_location": "L181",
       "weight": 1.0
     },
     {
@@ -54259,7 +54355,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L178",
+      "source_location": "L185",
       "weight": 1.0
     },
     {
@@ -54270,7 +54366,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L190",
+      "source_location": "L197",
       "weight": 1.0
     },
     {
@@ -54281,7 +54377,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L194",
+      "source_location": "L201",
       "weight": 1.0
     },
     {
@@ -54292,7 +54388,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L206",
+      "source_location": "L213",
+      "weight": 1.0
+    },
+    {
+      "source": "changelog_codex_codex_changelog",
+      "target": "changelog_codex_2026_09_01_version_13_3_0",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CHANGELOG.codex.md",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -54303,7 +54410,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L219",
+      "source_location": "L226",
       "weight": 1.0
     },
     {
@@ -54314,7 +54421,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L233",
+      "source_location": "L240",
       "weight": 1.0
     },
     {
@@ -54325,18 +54432,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L237",
-      "weight": 1.0
-    },
-    {
-      "source": "changelog_codex_codex_changelog",
-      "target": "changelog_codex_2026_08_31t22_20_00_000z_version_13_1_0",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CHANGELOG.codex.md",
-      "source_location": "L24",
+      "source_location": "L244",
       "weight": 1.0
     },
     {
@@ -54347,7 +54443,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L249",
+      "source_location": "L256",
       "weight": 1.0
     },
     {
@@ -54358,7 +54454,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L262",
+      "source_location": "L269",
       "weight": 1.0
     },
     {
@@ -54369,7 +54465,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L266",
+      "source_location": "L273",
+      "weight": 1.0
+    },
+    {
+      "source": "changelog_codex_codex_changelog",
+      "target": "changelog_codex_2026_08_31t22_20_00_000z_version_13_1_0",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CHANGELOG.codex.md",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -54380,7 +54487,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L348",
+      "source_location": "L355",
       "weight": 1.0
     },
     {
@@ -54391,18 +54498,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L352",
-      "weight": 1.0
-    },
-    {
-      "source": "changelog_codex_codex_changelog",
-      "target": "changelog_codex_2026_08_28t09_06_44_112z_commerce_first_catalog_and_separate_care_guide",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CHANGELOG.codex.md",
-      "source_location": "L37",
+      "source_location": "L359",
       "weight": 1.0
     },
     {
@@ -54413,7 +54509,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L373",
+      "source_location": "L380",
       "weight": 1.0
     },
     {
@@ -54424,12 +54520,23 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L379",
+      "source_location": "L386",
       "weight": 1.0
     },
     {
       "source": "changelog_codex_codex_changelog",
-      "target": "changelog_codex_2026_09_01_version_13_3_1",
+      "target": "changelog_codex_2026_08_28t09_06_44_112z_commerce_first_catalog_and_separate_care_guide",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CHANGELOG.codex.md",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "changelog_codex_codex_changelog",
+      "target": "changelog_codex_2026_09_02_version_13_4_1",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -54539,7 +54646,7 @@
     },
     {
       "source": "codex_logic_logic_map_logic_graph_xsanestet_site",
-      "target": "codex_logic_logic_map_v13_4_0_product_detail_presentation",
+      "target": "codex_logic_logic_map_v13_4_1_product_detail_presentation",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -55177,13 +55284,24 @@
     },
     {
       "source": "docs_release_history_github_\u0440\u0435\u043b\u0438\u0437\u044b",
+      "target": "docs_release_history_2026_08_31_v12_1_0",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/RELEASE_HISTORY.md",
+      "source_location": "L103",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_release_history_github_\u0440\u0435\u043b\u0438\u0437\u044b",
       "target": "docs_release_history_2026_08_31_v13_0_0",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L105",
+      "source_location": "L111",
       "weight": 1.0
     },
     {
@@ -55194,7 +55312,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L116",
+      "source_location": "L122",
       "weight": 1.0
     },
     {
@@ -55205,7 +55323,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L125",
+      "source_location": "L131",
       "weight": 1.0
     },
     {
@@ -55216,7 +55334,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L133",
+      "source_location": "L139",
       "weight": 1.0
     },
     {
@@ -55227,23 +55345,12 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L140",
+      "source_location": "L146",
       "weight": 1.0
     },
     {
       "source": "docs_release_history_github_\u0440\u0435\u043b\u0438\u0437\u044b",
-      "target": "docs_release_history_2026_09_01_v13_2_0",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L149",
-      "weight": 1.0
-    },
-    {
-      "source": "docs_release_history_github_\u0440\u0435\u043b\u0438\u0437\u044b",
-      "target": "docs_release_history_2026_08_28_v10",
+      "target": "docs_release_history_2026_09_02_v13_4_1",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -55254,13 +55361,35 @@
     },
     {
       "source": "docs_release_history_github_\u0440\u0435\u043b\u0438\u0437\u044b",
+      "target": "docs_release_history_2026_09_01_v13_2_0",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/RELEASE_HISTORY.md",
+      "source_location": "L155",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_release_history_github_\u0440\u0435\u043b\u0438\u0437\u044b",
       "target": "docs_release_history_2026_09_01_v13_3_1",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L160",
+      "source_location": "L166",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_release_history_github_\u0440\u0435\u043b\u0438\u0437\u044b",
+      "target": "docs_release_history_2026_08_28_v10",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/RELEASE_HISTORY.md",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -55271,7 +55400,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L29",
+      "source_location": "L35",
       "weight": 1.0
     },
     {
@@ -55282,7 +55411,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L35",
+      "source_location": "L41",
       "weight": 1.0
     },
     {
@@ -55293,7 +55422,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L40",
+      "source_location": "L46",
       "weight": 1.0
     },
     {
@@ -55304,7 +55433,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L46",
+      "source_location": "L52",
       "weight": 1.0
     },
     {
@@ -55315,7 +55444,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L56",
+      "source_location": "L62",
       "weight": 1.0
     },
     {
@@ -55326,7 +55455,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L61",
+      "source_location": "L67",
       "weight": 1.0
     },
     {
@@ -55337,7 +55466,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L66",
+      "source_location": "L72",
       "weight": 1.0
     },
     {
@@ -55348,7 +55477,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L72",
+      "source_location": "L78",
       "weight": 1.0
     },
     {
@@ -55359,7 +55488,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L77",
+      "source_location": "L83",
       "weight": 1.0
     },
     {
@@ -55370,18 +55499,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L88",
-      "weight": 1.0
-    },
-    {
-      "source": "docs_release_history_github_\u0440\u0435\u043b\u0438\u0437\u044b",
-      "target": "docs_release_history_2026_08_31_v12_1_0",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L97",
+      "source_location": "L94",
       "weight": 1.0
     },
     {
@@ -56178,6 +56296,17 @@
     },
     {
       "source": "docs_releases_2026_09_02_v13_4_0_anestet_2026_09_02_v13_4_0",
+      "target": "docs_releases_2026_09_02_v13_4_0_deployment",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/releases/2026.09.02-v13.4.0.md",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_releases_2026_09_02_v13_4_0_anestet_2026_09_02_v13_4_0",
       "target": "docs_releases_2026_09_02_v13_4_0_product_detail_experience",
       "relation": "contains",
       "_origin": "ast",
@@ -56185,6 +56314,50 @@
       "confidence_score": 1.0,
       "source_file": "docs/releases/2026.09.02-v13.4.0.md",
       "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_releases_2026_09_02_v13_4_1",
+      "target": "docs_releases_2026_09_02_v13_4_1_anestet_2026_09_02_v13_4_1",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/releases/2026.09.02-v13.4.1.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_releases_2026_09_02_v13_4_1_anestet_2026_09_02_v13_4_1",
+      "target": "docs_releases_2026_09_02_v13_4_1_release_gate",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/releases/2026.09.02-v13.4.1.md",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_releases_2026_09_02_v13_4_1_anestet_2026_09_02_v13_4_1",
+      "target": "docs_releases_2026_09_02_v13_4_1_rollback",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/releases/2026.09.02-v13.4.1.md",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_releases_2026_09_02_v13_4_1_anestet_2026_09_02_v13_4_1",
+      "target": "docs_releases_2026_09_02_v13_4_1_current_approved_implementation",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/releases/2026.09.02-v13.4.1.md",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -82437,5 +82610,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "5a33d81eb2e954017533485690ae71d75b5faf73"
+  "built_at_commit": "fa3fd9fa5849f6e4c044f322f071f2c2c8f056b6"
 }

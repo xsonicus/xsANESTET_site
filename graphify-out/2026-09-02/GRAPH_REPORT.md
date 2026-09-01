@@ -1,16 +1,16 @@
-# Graph Report - xsANESTET_site  (2026-09-01)
+# Graph Report - xsANESTET_site  (2026-09-02)
 
 ## Corpus Check
-- 474 files · ~3,770,294 words
+- 475 files · ~3,770,900 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 2552 nodes · 4504 edges · 458 communities (92 shown, 62 thin omitted)
+- 2561 nodes · 4513 edges · 467 communities (94 shown, 69 thin omitted)
 - Extraction: 85% EXTRACTED · 15% INFERRED · 0% AMBIGUOUS · INFERRED: 655 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `d6830280`
+- Built from commit: `5a33d81e`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -51,7 +51,7 @@
 - QuizForm
 - integrations.mjs
 - Map
-- Base
+- PaginationHandler
 - InputScanner
 - TemplatablePattern
 - MiniShop
@@ -79,7 +79,7 @@
 - MsOrder
 - jquery-ui.js
 - vk-connector.mjs
-- ln
+- Base
 - parseAbbreviation
 - findItem
 - modx.texteditor.js
@@ -104,10 +104,13 @@
 - 2026.08.31-v13.0.0
 - 2026.09.01-v13.1.2
 - validation.mjs
+- at
 - mode-markdown.js
 - paragraph
 - genericCommentToggle
 - default.min.js
+- Notify
+- Sending
 - AGENTS.md
 - Model Training Protocol - xsANESTET_site
 - Website Quality Gates
@@ -118,6 +121,7 @@
 - mode-handlebars.js
 - mode-livescript.js
 - mode-luapage.js
+- o
 - script.js
 - normalize-product-packshots.mjs
 - sync-getlayers-three.mjs
@@ -169,6 +173,11 @@
 - icons.tsx
 - ANESTET 2026.09.01-v13.3.0
 - products.ts
+- BehaviorSign
+- SaveFormData
+- ANESTET 2026.09.02-v13.4.0
+- ProofOfWork
+- z
 
 ## God Nodes (most connected - your core abstractions)
 1. `z()` - 47 edges
@@ -180,7 +189,7 @@
 7. `s()` - 25 edges
 8. `ne` - 25 edges
 9. `Base` - 24 edges
-10. `route()` - 23 edges
+10. `Codex Changelog` - 24 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `Z()` --indirect_call--> `K()`  [INFERRED]
@@ -197,7 +206,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (458 total, 62 thin omitted)
+## Communities (467 total, 69 thin omitted)
 
 ### Community 0 - "swiper-bundle.min.js"
 Cohesion: 0.08
@@ -213,7 +222,7 @@ Nodes (67): A(), at(), B(), bn(), e(), t(), bt(), c() (+59 more)
 
 ### Community 3 - "plupload.full.min.js"
 Cohesion: 0.09
-Nodes (56): a(), a(), c(), d(), l(), m(), i(), u() (+48 more)
+Nodes (57): a(), a(), c(), d(), l(), m(), i(), u() (+49 more)
 
 ### Community 4 - "emmet.js"
 Cohesion: 0.04
@@ -244,8 +253,8 @@ Cohesion: 0.08
 Nodes (18): a(), B(), clone(), u(), e(), H(), i(), isIdentStart() (+10 more)
 
 ### Community 11 - "jquery.min.js"
-Cohesion: 0.07
-Nodes (31): z(), an(), at(), bt(), ct(), er(), F(), ft() (+23 more)
+Cohesion: 0.08
+Nodes (22): an(), bt(), ct(), er(), ht(), I(), Kn(), ln() (+14 more)
 
 ### Community 12 - "ace.min.js"
 Cohesion: 0.18
@@ -260,8 +269,8 @@ Cohesion: 0.17
 Nodes (26): clearLoginFailures(), createSession(), destroySession(), expiredSessionCookie(), isLoginRateLimited(), loginAttempts, parsePasswordHash(), readSession() (+18 more)
 
 ### Community 17 - "sortable.min.js"
-Cohesion: 0.12
-Nodes (29): G(), a(), b(), C(), d(), e(), f(), h() (+21 more)
+Cohesion: 0.13
+Nodes (16): a(), b(), d(), e(), f(), h(), It(), k() (+8 more)
 
 ### Community 18 - "compilerOptions"
 Cohesion: 0.07
@@ -273,15 +282,15 @@ Nodes (3): AppConfig, DIContainer, Mscdek
 
 ### Community 22 - "Codex Changelog"
 Cohesion: 0.08
-Nodes (23): 2026-08-28T09:06:44.112Z - Commerce-first catalog and separate care guide, 2026-08-28T12:34:37.388Z - Version 11.1.0, 2026-08-28T12:34:37.393Z - Autonomous storefront content and complete novelty experience, 2026-08-28T13:25:24.258Z - Version 11.1.1, 2026-08-28T13:26:27.148Z - Extend the hero promise to always and everywhere, 2026-08-28T13:35:23.555Z - Version 11.1.2, 2026-08-28T13:36:46.879Z - Restore the three-way site comparison switcher, 2026-08-28T13:52:04.516Z - Version 11.1.3 (+15 more)
+Nodes (24): 2026-08-28T09:06:44.112Z - Commerce-first catalog and separate care guide, 2026-08-28T12:34:37.388Z - Version 11.1.0, 2026-08-28T12:34:37.393Z - Autonomous storefront content and complete novelty experience, 2026-08-28T13:25:24.258Z - Version 11.1.1, 2026-08-28T13:26:27.148Z - Extend the hero promise to always and everywhere, 2026-08-28T13:35:23.555Z - Version 11.1.2, 2026-08-28T13:36:46.879Z - Restore the three-way site comparison switcher, 2026-08-28T13:52:04.516Z - Version 11.1.3 (+16 more)
 
 ### Community 23 - "GitHub-релизы"
 Cohesion: 0.09
-Nodes (21): 2026.08.28-v10, 2026.08.28-v10.1, 2026.08.28-v10.2, 2026.08.28-v11, 2026.08.28-v11.0.1, 2026.08.28-v11.1.0, 2026.08.28-v11.1.1, 2026.08.28-v11.1.2 (+13 more)
+Nodes (22): 2026.08.28-v10, 2026.08.28-v10.1, 2026.08.28-v10.2, 2026.08.28-v11, 2026.08.28-v11.0.1, 2026.08.28-v11.1.0, 2026.08.28-v11.1.1, 2026.08.28-v11.1.2 (+14 more)
 
 ### Community 25 - "Logic Graph - xsANESTET_site"
 Cohesion: 0.09
-Nodes (21): 2026-09-01 — Stable product-centred hero composition and details, 2026-09-01 — Vector packshot edge reconstruction, 2026-09-01T05:11:33.523Z - G1 Storefront structure lineage, 2026-09-01T05:11:33.657Z - G2 Approved visual themes, 2026-09-01T05:11:33.772Z - G3 Hero motion and copy lineage, 2026-09-01T05:11:33.886Z - G4 GetLayers Opaline and exclusive fallback, 2026-09-01T05:11:34.005Z - G5 Product assets and shadows, 2026-09-01T05:11:34.121Z - G6 Founder About composition (+13 more)
+Nodes (22): 2026-09-01 — Stable product-centred hero composition and details, 2026-09-01 — Vector packshot edge reconstruction, 2026-09-01T05:11:33.523Z - G1 Storefront structure lineage, 2026-09-01T05:11:33.657Z - G2 Approved visual themes, 2026-09-01T05:11:33.772Z - G3 Hero motion and copy lineage, 2026-09-01T05:11:33.886Z - G4 GetLayers Opaline and exclusive fallback, 2026-09-01T05:11:34.005Z - G5 Product assets and shadows, 2026-09-01T05:11:34.121Z - G6 Founder About composition (+14 more)
 
 ### Community 27 - "beautifier.js"
 Cohesion: 0.15
@@ -294,10 +303,6 @@ Nodes (17): bemParse(), classNameRanges(), findGradient(), findParts(), getImage
 ### Community 34 - "integrations.mjs"
 Cohesion: 0.24
 Nodes (15): connectorSecretStoreReady(), encryptionKey(), readConnectorSecrets(), readEnvelope(), saveVkSettings(), writeConnectorSecrets(), auditCheck(), buildStatus() (+7 more)
-
-### Community 36 - "Base"
-Cohesion: 0.05
-Nodes (8): Base, BehaviorSign, Notify, PaginationFactory, PaginationHandler, ProofOfWork, SaveFormData, Sending
 
 ### Community 38 - "TemplatablePattern"
 Cohesion: 0.17
@@ -374,10 +379,6 @@ Nodes (4): TODO: remove support for widgetEventPrefix, TODO: It should never be 
 ### Community 63 - "vk-connector.mjs"
 Cohesion: 0.38
 Nodes (10): bestImage(), cleanText(), env(), fetchWall(), normalizeVkWallResponse(), postCandidates(), safeHttpsUrl(), safePlayerUrl() (+2 more)
-
-### Community 64 - "ln"
-Cohesion: 0.50
-Nodes (5): ln(), nn(), nr(), rn(), un()
 
 ### Community 65 - "parseAbbreviation"
 Cohesion: 0.18
@@ -463,6 +464,10 @@ Nodes (5): 2026.09.01-v13.1.2, Исправлено, Откат, Проверк�
 Cohesion: 0.47
 Nodes (5): money(), text(), TEXT_LIMITS, validateExpectedRevision(), validateProduct()
 
+### Community 89 - "at"
+Cohesion: 0.19
+Nodes (13): C(), at(), ft(), it(), k(), kt(), Mn(), mt() (+5 more)
+
 ### Community 90 - "mode-markdown.js"
 Cohesion: 0.47
 Nodes (3): c(), f(), l()
@@ -502,6 +507,10 @@ Nodes (4): 2026.08.31-v13.1.1, Откат, Проверка, Что заверш
 ### Community 101 - "ANESTET 2026.09.01-v13.2.1"
 Cohesion: 0.40
 Nodes (4): ANESTET 2026.09.01-v13.2.1, Approved changes, Deployment, Verification
+
+### Community 107 - "o"
+Cohesion: 0.42
+Nodes (10): G(), I(), l(), N(), o(), qt(), w(), z() (+2 more)
 
 ### Community 109 - "normalize-product-packshots.mjs"
 Cohesion: 0.40
@@ -552,8 +561,8 @@ Cohesion: 0.15
 Nodes (11): details, getProductDetails(), lightDep, lightDepPro, lightFrost, mildep, primaryBase, primaryFion (+3 more)
 
 ### Community 458 - "Storefront"
-Cohesion: 0.17
-Nodes (10): heroDescription(), heroEyebrow(), heroHeadline(), isCatalogProduct(), isVkFeedItem(), parseStoredCart(), productCardPackshot(), productPackshot() (+2 more)
+Cohesion: 0.15
+Nodes (11): heroDescription(), heroEyebrow(), heroHeadline(), isCatalogProduct(), isVkFeedItem(), parseStoredCart(), productCardPackshot(), productPackshot() (+3 more)
 
 ### Community 459 - "icons.tsx"
 Cohesion: 0.18
@@ -567,25 +576,33 @@ Nodes (4): ANESTET 2026.09.01-v13.3.0, Approved changes, Deployment, Verificatio
 Cohesion: 0.50
 Nodes (3): formatPrice(), Product, products
 
+### Community 464 - "ANESTET 2026.09.02-v13.4.0"
+Cohesion: 0.40
+Nodes (4): ANESTET 2026.09.02-v13.4.0, Compatibility, Product detail experience, Release gate
+
+### Community 466 - "z"
+Cohesion: 0.67
+Nodes (3): z(), P(), F()
+
 ## Knowledge Gaps
-- **311 isolated node(s):** `BrandGroup`, `ProductDraft`, `ApiResult`, `emptyProduct`, `Props` (+306 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1049 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **62 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **317 isolated node(s):** `BrandGroup`, `ProductDraft`, `ApiResult`, `emptyProduct`, `Props` (+312 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1056 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **69 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `K()` connect `worker-html.js` to `worker-javascript.js`, `jquery-3.6.0.min.js`?**
-  _High betweenness centrality (0.017) - this node is a cross-community bridge._
-- **Why does `Z()` connect `jquery-3.6.0.min.js` to `worker-html.js`?**
+  _High betweenness centrality (0.018) - this node is a cross-community bridge._
+- **Why does `D()` connect `worker-javascript.js` to `z`, `plupload.full.min.js`?**
   _High betweenness centrality (0.015) - this node is a cross-community bridge._
-- **Why does `D()` connect `worker-javascript.js` to `jquery.min.js`, `plupload.full.min.js`?**
+- **Why does `Z()` connect `jquery-3.6.0.min.js` to `worker-html.js`?**
   _High betweenness centrality (0.015) - this node is a cross-community bridge._
 - **Are the 5 inferred relationships involving `z()` (e.g. with `n()` and `r()`) actually correct?**
   _`z()` has 5 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 44 inferred relationships involving `n()` (e.g. with `a()` and `at()`) actually correct?**
   _`n()` has 44 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `BrandGroup`, `ProductDraft`, `ApiResult` to the rest of the system?**
-  _311 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _317 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `swiper-bundle.min.js` be split into smaller, more focused modules?**
   _Cohesion score 0.07859531772575251 - nodes in this community are weakly interconnected._

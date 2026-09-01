@@ -159,12 +159,12 @@ The Future Beauty WebGL scene does not derive its centre from the active product
 
 Files: app/product-details.ts, app/storefront.tsx, app/globals.css, public/assets/getlayers/opaline/index.html, scripts/qa-layout.mjs
 
-## v13.4.0 product detail presentation
+## v13.4.1 product detail presentation
 
-The existing `openProductId -> getProductDetails() -> dialog` flow remains the single source of product-detail truth. The presentation layer adds a three-fact summary, numbered native details and a purchase rail while preserving the independent `addToCart(product.id)` action. Entrance motion is local CSS only: panel, packshot, copy and one scan line run once per keyed product dialog; the global reduced-motion contract collapses every animation to one negligible iteration.
+The existing `openProductId -> getProductDetails() -> dialog` flow remains the single source of product-detail truth. The presentation layer adds a three-fact summary, numbered native details and a purchase rail while preserving the independent `addToCart(product.id)` action. The v13.4.0 scan glare is explicitly superseded and absent from markup/CSS. Entrance motion is limited to the panel, packshot and copy; the global reduced-motion contract collapses every animation to one negligible iteration. Every numbered row reserves a 24px index column inside an 18px desktop / 16px mobile safe inset.
 
 Files: app/storefront.tsx, app/globals.css, scripts/qa-layout.mjs
-Validation: measured 23-packshot alpha centre; TypeScript; 11 widths x 2 themes x 2 views; anchor stability; price transition; detail/cart independence.
+Validation: measured 23-packshot alpha centre; TypeScript; 11 widths x 2 themes x 2 views; no scan node; numbered inset >=16px; anchor stability; price transition; detail/cart independence.
 Risk: If the normalized packshot asset pipeline changes from the shared 1000px canvas, recompute the mean centre before release.
 
 ## 2026-09-01 — Vector packshot edge reconstruction

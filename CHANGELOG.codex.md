@@ -2,6 +2,13 @@
 
 Project: xsANESTET_site
 
+## 2026-09-02 - Version 13.4.1
+
+- Removed the product-detail scan glare from markup and CSS while preserving the quiet panel, packshot and copy reveal.
+- Added an 18px desktop / 16px mobile safe inset to every numbered product-detail section, with a stable 24px index column.
+- Extended layout QA to fail if the removed glare returns or any numbered index sits closer than 16px to the accordion boundary.
+- Verification: `npm run build && npm run qa:layout`; dark/light desktop and mobile visual review; console check; public smoke after atomic release.
+
 ## 2026-09-01 - Version 13.3.1
 
 - Rebuilt nine visibly quantized product silhouettes with product-specific SVG geometry: straight walls, fitted cap/bottom arcs, pump outlines and dropper curves.

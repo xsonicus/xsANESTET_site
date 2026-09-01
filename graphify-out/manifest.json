@@ -114,9 +114,9 @@
     "semantic_hash": ""
   },
   "app/storefront.tsx": {
-    "mtime": 1788296749.4339435,
-    "seen": 1788297487.4715772,
-    "ast_hash": "c4082445b84ec685ebd50fedd28607bd",
+    "mtime": 1788298460.09177,
+    "seen": 1788298743.450441,
+    "ast_hash": "04fb89fc5801262e6d78e5a1bc6b7e63",
     "semantic_hash": ""
   },
   "deploy/anestet-backup.sh": {
@@ -2550,9 +2550,9 @@
     "semantic_hash": ""
   },
   "package.json": {
-    "mtime": 1788296923.0201275,
-    "seen": 1788297487.4717839,
-    "ast_hash": "0d333b9ffbeddc87ff304b1e13cfb307",
+    "mtime": 1788298460.0933309,
+    "seen": 1788298743.45063,
+    "ast_hash": "bb4d07126979f256ab7d297d110c051e",
     "semantic_hash": ""
   },
   "scripts/admin-smoke.mjs": {
@@ -2568,9 +2568,9 @@
     "semantic_hash": ""
   },
   "scripts/qa-layout.mjs": {
-    "mtime": 1788297351.22614,
-    "seen": 1788297487.471787,
-    "ast_hash": "03cd6c3cf9940c962918e982e8d3c2b5",
+    "mtime": 1788298460.0926359,
+    "seen": 1788298743.450633,
+    "ast_hash": "901a47119c52ed0251b92b78a6957e14",
     "semantic_hash": ""
   },
   "scripts/sync-getlayers-three.mjs": {
@@ -2592,9 +2592,9 @@
     "semantic_hash": ""
   },
   ".codex-logic/logic-map.md": {
-    "mtime": 1788297370.258565,
-    "seen": 1788297487.47179,
-    "ast_hash": "325a07bc1b965761e44b051af5ee476c",
+    "mtime": 1788298531.614559,
+    "seen": 1788298743.4506361,
+    "ast_hash": "76ac6eb0e10d6f34a981b4a776eecbaf",
     "semantic_hash": ""
   },
   ".codex-logic/model-training-protocol.md": {
@@ -2628,9 +2628,9 @@
     "semantic_hash": ""
   },
   "CHANGELOG.codex.md": {
-    "mtime": 1788296923.021122,
-    "seen": 1788297487.471793,
-    "ast_hash": "745b710254ad28d7ff3fb6298e4a1ab7",
+    "mtime": 1788298531.6128545,
+    "seen": 1788298743.450639,
+    "ast_hash": "2f1323e09de6f113749ad5b7f2b009f1",
     "semantic_hash": ""
   },
   "README.md": {
@@ -2670,9 +2670,9 @@
     "semantic_hash": ""
   },
   "docs/RELEASE_HISTORY.md": {
-    "mtime": 1788297370.258921,
-    "seen": 1788297487.471796,
-    "ast_hash": "97fbd3d969f75c137efdcc0caca3199d",
+    "mtime": 1788298531.6131654,
+    "seen": 1788298743.4506419,
+    "ast_hash": "1bbcee17183cf1f42a4cf72d6ee854af",
     "semantic_hash": ""
   },
   "docs/admin/ARCHITECTURE.md": {
@@ -2850,8 +2850,8 @@
     "semantic_hash": ""
   },
   "public/assets/getlayers/opaline/index.html": {
-    "mtime": 1788297433.0925896,
-    "seen": 1788297487.471814,
+    "mtime": 1788298542.5092742,
+    "seen": 1788298743.45066,
     "ast_hash": "95e013984c943cb363d30a9c8b945d05",
     "semantic_hash": ""
   },
@@ -2862,8 +2862,8 @@
     "semantic_hash": ""
   },
   "public/assets/getlayers/shoal/index.html": {
-    "mtime": 1788297433.093668,
-    "seen": 1788297487.4718149,
+    "mtime": 1788298542.5099413,
+    "seen": 1788298743.4506612,
     "ast_hash": "d1ab81578a480f77ce3c1dd8e27616b3",
     "semantic_hash": ""
   },
@@ -6534,9 +6534,15 @@
     "semantic_hash": ""
   },
   "docs/releases/2026.09.02-v13.4.0.md": {
-    "mtime": 1788296923.0212955,
-    "seen": 1788297487.471807,
-    "ast_hash": "7c3d4b8ab7fb282eaf2f087b77b7cb8b",
+    "mtime": 1788297840.910771,
+    "seen": 1788298743.4506528,
+    "ast_hash": "873bbf802ad388e6ad83b397eaf4762d",
+    "semantic_hash": ""
+  },
+  "docs/releases/2026.09.02-v13.4.1.md": {
+    "mtime": 1788298531.6149766,
+    "seen": 1788298743.450654,
+    "ast_hash": "86f8aac87d8f2441af0ddfcda53a624c",
     "semantic_hash": ""
   }
 }
