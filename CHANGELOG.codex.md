@@ -375,3 +375,9 @@ Added the generated v13.2.0 release notes to the durable versioning archive afte
 - Replaced the oversized theme strip with a compact accessible Day / Night control that follows the system theme before hydration and persists manual selection.
 - Standardized ANESTET® brand labels across the header, hero, catalog, cart and footer.
 - Corrected Queen Key Cosmetic contrast on Clinical Luxury and extended the 11-width release gate for the new switch.
+
+## 2026-09-02 - Version 13.4.0
+
+- Rebuilt product detail cards as compact formula dossiers with faster fact scanning, clearer accordions and a stronger purchase rail.
+- Added a one-shot packshot scan and staggered reveal using compositor-friendly CSS only; reduced-motion receives an immediate static presentation.
+- Preserved the independent product-click and add-to-cart actions across both themes and mobile layouts.

@@ -158,6 +158,12 @@ Risks: Manual theme selection intentionally persists and overrides later OS chan
 The Future Beauty WebGL scene does not derive its centre from the active product. All 23 normalized packshots were measured once; their alpha-weighted mean vertical centre is 49.7174%. The stable `.hero-packshot-frame` maps that point into iframe-normalized coordinates, and the Opaline group plus halo share the resulting Three.js world position. Product changes therefore cannot move the sphere, while responsive layout changes move packshot and sphere together. Product packshots/titles open official-source detail dialogs; cart controls remain separate. Hero price layers are temporally exclusive and use real Open Sans bold tabular numerals.
 
 Files: app/product-details.ts, app/storefront.tsx, app/globals.css, public/assets/getlayers/opaline/index.html, scripts/qa-layout.mjs
+
+## v13.4.0 product detail presentation
+
+The existing `openProductId -> getProductDetails() -> dialog` flow remains the single source of product-detail truth. The presentation layer adds a three-fact summary, numbered native details and a purchase rail while preserving the independent `addToCart(product.id)` action. Entrance motion is local CSS only: panel, packshot, copy and one scan line run once per keyed product dialog; the global reduced-motion contract collapses every animation to one negligible iteration.
+
+Files: app/storefront.tsx, app/globals.css, scripts/qa-layout.mjs
 Validation: measured 23-packshot alpha centre; TypeScript; 11 widths x 2 themes x 2 views; anchor stability; price transition; detail/cart independence.
 Risk: If the normalized packshot asset pipeline changes from the shared 1000px canvas, recompute the mean centre before release.
 

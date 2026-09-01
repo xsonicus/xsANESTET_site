@@ -30,6 +30,8 @@ The site opens directly on products. Its hero rotates all eight current noveltie
 
 The first screen uses real product imagery and a product-aware brand lockup: `Anestet®` for professional lines and the official Queen Key Cosmetic wordmark without a second circular emblem for Queen Key. GetLayers scenes are decorative desktop atmosphere only; mobile, reduced-motion and WebGL-failure states receive the lightweight optical-halo fallback. The oversized footer brand stage was removed; the compact animated ANESTET / Clinical Care / Queen Key line remains. All 23 catalog packshots use real transparency instead of white rectangular backplates. Nine formerly quantized alpha edges are reconstructed with fitted SVG lines and curves, never with blur; automated QA proves that their approved RGB and labels remain unchanged.
 
+Product clicks open a compact formula-dossier card in either theme. A single staged scan reveals the packshot and content, while quick facts, numbered information sections and a dedicated purchase rail reduce the path from inspection to cart. The effect is CSS-only, runs once per opening and is removed by the reduced-motion preference.
+
 ## Live preview
 
 <https://anestet.139-180-214-133.sslip.io/>

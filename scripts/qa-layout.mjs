@@ -426,10 +426,16 @@ try {
       const cart = document.querySelector(".cart-button span");
       if (!(dialog instanceof HTMLDialogElement)) return null;
       const rect = dialog.getBoundingClientRect();
-      return { left: rect.left, top: rect.top, right: rect.right, bottom: rect.bottom, cart: cart?.textContent ?? "" };
+      const facts = [...dialog.querySelectorAll(".product-detail-facts > span")].map((item) => item.textContent?.trim() ?? "");
+      const scan = dialog.querySelector(".product-detail-scan");
+      const scanStyle = scan ? getComputedStyle(scan) : null;
+      return { left: rect.left, top: rect.top, right: rect.right, bottom: rect.bottom, cart: cart?.textContent ?? "", facts, scanAnimation: scanStyle?.animationName ?? "", scrollable: dialog.scrollHeight >= dialog.clientHeight };
     });
     if (!detailResult || detailResult.left < -1 || detailResult.top < -1 || detailResult.right > 1441 || detailResult.bottom > 1001) {
       failures.push({ width: 1440, height: 1000, theme: "serum", view: "product-detail", collisions: ["product detail dialog is outside the viewport"], horizontalOverflow: 0, overflowElements: [], textOverflow: [] });
+    }
+    if (detailResult?.facts.length !== 3 || !detailResult.facts.every(Boolean) || detailResult.scanAnimation !== "product-detail-scan" || !detailResult.scrollable) {
+      failures.push({ width: 1440, height: 1000, theme: "serum", view: "product-detail", collisions: [`product detail hierarchy or entrance motion is incomplete (${JSON.stringify(detailResult)})`], horizontalOverflow: 0, overflowElements: [], textOverflow: [] });
     }
     const cartBefore = detailResult?.cart;
     await interactionPage.locator(".product-detail-footer button").click();

@@ -114,9 +114,9 @@
     "semantic_hash": ""
   },
   "app/storefront.tsx": {
-    "mtime": 1788296749.4339435,
-    "seen": 1788297487.4715772,
-    "ast_hash": "c4082445b84ec685ebd50fedd28607bd",
+    "mtime": 1788294151.134526,
+    "seen": 1788295719.878102,
+    "ast_hash": "d6d88e1e8653ff00542ea12ffdfca5a7",
     "semantic_hash": ""
   },
   "deploy/anestet-backup.sh": {
@@ -2550,9 +2550,9 @@
     "semantic_hash": ""
   },
   "package.json": {
-    "mtime": 1788296923.0201275,
-    "seen": 1788297487.4717839,
-    "ast_hash": "0d333b9ffbeddc87ff304b1e13cfb307",
+    "mtime": 1788294151.1341453,
+    "seen": 1788295719.8783722,
+    "ast_hash": "ad4bbecf146f3ebe73b20fcec797f757",
     "semantic_hash": ""
   },
   "scripts/admin-smoke.mjs": {
@@ -2568,9 +2568,9 @@
     "semantic_hash": ""
   },
   "scripts/qa-layout.mjs": {
-    "mtime": 1788297351.22614,
-    "seen": 1788297487.471787,
-    "ast_hash": "03cd6c3cf9940c962918e982e8d3c2b5",
+    "mtime": 1788287158.6008542,
+    "seen": 1788292939.786099,
+    "ast_hash": "ac91513b80b1e73181a76b972eb687a8",
     "semantic_hash": ""
   },
   "scripts/sync-getlayers-three.mjs": {
@@ -2592,9 +2592,9 @@
     "semantic_hash": ""
   },
   ".codex-logic/logic-map.md": {
-    "mtime": 1788297370.258565,
-    "seen": 1788297487.47179,
-    "ast_hash": "325a07bc1b965761e44b051af5ee476c",
+    "mtime": 1788295378.8325527,
+    "seen": 1788295719.87838,
+    "ast_hash": "39da3dd9c75b5c0c21b7024f5ceae293",
     "semantic_hash": ""
   },
   ".codex-logic/model-training-protocol.md": {
@@ -2628,15 +2628,15 @@
     "semantic_hash": ""
   },
   "CHANGELOG.codex.md": {
-    "mtime": 1788296923.021122,
-    "seen": 1788297487.471793,
-    "ast_hash": "745b710254ad28d7ff3fb6298e4a1ab7",
+    "mtime": 1788295378.8349266,
+    "seen": 1788295719.878384,
+    "ast_hash": "6b29ff350dfcb7211e737e9e319b3897",
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1788296923.020701,
-    "seen": 1788297487.471794,
-    "ast_hash": "162f57a13a9fe3f7d065c5dd49c28a59",
+    "mtime": 1788295378.8552878,
+    "seen": 1788295719.8783848,
+    "ast_hash": "a6bbf24697ad92dc161bc529c1173b45",
     "semantic_hash": ""
   },
   "docs/COMMERCE_BACKEND_ROADMAP.md": {
@@ -2670,9 +2670,9 @@
     "semantic_hash": ""
   },
   "docs/RELEASE_HISTORY.md": {
-    "mtime": 1788297370.258921,
-    "seen": 1788297487.471796,
-    "ast_hash": "97fbd3d969f75c137efdcc0caca3199d",
+    "mtime": 1788295378.8539665,
+    "seen": 1788295719.878389,
+    "ast_hash": "3823dfe08739b4cb1cfd11a1527e25fd",
     "semantic_hash": ""
   },
   "docs/admin/ARCHITECTURE.md": {
@@ -2850,8 +2850,8 @@
     "semantic_hash": ""
   },
   "public/assets/getlayers/opaline/index.html": {
-    "mtime": 1788297433.0925896,
-    "seen": 1788297487.471814,
+    "mtime": 1788295104.4941993,
+    "seen": 1788295719.878412,
     "ast_hash": "95e013984c943cb363d30a9c8b945d05",
     "semantic_hash": ""
   },
@@ -2862,8 +2862,8 @@
     "semantic_hash": ""
   },
   "public/assets/getlayers/shoal/index.html": {
-    "mtime": 1788297433.093668,
-    "seen": 1788297487.4718149,
+    "mtime": 1788295104.4949522,
+    "seen": 1788295719.878413,
     "ast_hash": "d1ab81578a480f77ce3c1dd8e27616b3",
     "semantic_hash": ""
   },
@@ -6252,9 +6252,9 @@
     "semantic_hash": ""
   },
   "docs/releases/2026.09.01-v13.3.1.md": {
-    "mtime": 1788295998.190451,
-    "seen": 1788297487.471807,
-    "ast_hash": "83cd0dd337c1ee610afcd34fc40f6f3b",
+    "mtime": 1788295378.855758,
+    "seen": 1788295719.8784041,
+    "ast_hash": "de29167fb394ed6e28623d633b3eaa61",
     "semantic_hash": ""
   },
   ".codex-web-design/packshot-edge-audit/fion-35-edge-before-after-v3.png": {
@@ -6531,12 +6531,6 @@
     "mtime": 1788295613.6362412,
     "seen": 1788295719.8788311,
     "ast_hash": "221fd956a761121778d66e790dbcfe42",
-    "semantic_hash": ""
-  },
-  "docs/releases/2026.09.02-v13.4.0.md": {
-    "mtime": 1788296923.0212955,
-    "seen": 1788297487.471807,
-    "ast_hash": "7c3d4b8ab7fb282eaf2f087b77b7cb8b",
     "semantic_hash": ""
   }
 }

@@ -22,7 +22,7 @@ type OrderForm = {
 const CART_STORAGE_KEY = "anestet-cart-v1";
 const FAVORITES_STORAGE_KEY = "anestet-favorites-v1";
 const DESIGN_STORAGE_KEY = "qk-design-lab-v1";
-const SITE_RELEASE = "2026.09.01-v13.3.1";
+const SITE_RELEASE = "2026.09.02-v13.4.0";
 const GITHUB_RELEASES_URL = "https://github.com/xsonicus/xsANESTET_site/releases";
 const HERO_WORDMARK_PATH = "M1784 0H1502L1341 344H457L296 0H14L734 1500H1064ZM899 1291 559 562H1239ZM3248 298V1500H3504V0H3168L2222 1216V0H1966V1500H2310ZM4147 640 4081 228H5096V0H3788L3908 750L3788 1500H5086V1272H4081L4147 860H5038V640ZM5548 488Q5560 398 5623 330Q5686 262 5790.5 225Q5895 188 6030 188Q6163 188 6262 216.5Q6361 245 6414.5 298Q6468 351 6468 422Q6468 482 6438.5 520Q6409 558 6341.5 581.5Q6274 605 6154 620L5830 662Q5647 686 5533.5 737Q5420 788 5366 871.5Q5312 955 5312 1078Q5312 1214 5395 1315.5Q5478 1417 5630.5 1472.5Q5783 1528 5986 1528Q6186 1528 6343.5 1468Q6501 1408 6593 1299.5Q6685 1191 6694 1050H6426Q6416 1129 6359 1188Q6302 1247 6204.5 1279.5Q6107 1312 5980 1312Q5858 1312 5766.5 1285Q5675 1258 5625.5 1207Q5576 1156 5576 1088Q5576 1033 5604 997.5Q5632 962 5695.5 938.5Q5759 915 5868 900L6196 854Q6401 826 6516.5 778.5Q6632 731 6682 653Q6732 575 6732 450Q6732 307 6644 198.5Q6556 90 6396 31Q6236 -28 6026 -28Q5812 -28 5645.5 36.5Q5479 101 5383.5 218Q5288 335 5280 488ZM6842 1500H8346V1268H7726V0H7462V1268H6842ZM8853 640 8787 228H9802V0H8494L8614 750L8494 1500H9792V1272H8787L8853 860H9744V640ZM9942 1500H11446V1268H10826V0H10562V1268H9942Z";
 const SUPPORT_EMAIL = "support@anestet.com";
@@ -110,6 +110,10 @@ function heroEyebrow(product: Product) {
   const brand = product.brand === "ANESTET" ? "ANESTET®" : product.brand;
   if (product.tag === "Второй этап") return `${brand} · Второй этап процедуры`;
   return `${brand} · Подготовка кожи к процедуре`;
+}
+
+function productVolume(product: Product) {
+  return product.compactTitle.split("·").pop()?.trim() ?? "";
 }
 
 const deliveryOptions: Array<{ id: DeliveryId; title: string; note: string; cost: (subtotal: number) => number | null }> = [
@@ -1129,28 +1133,40 @@ export default function Storefront() {
         onClick={(event) => { if (event.target === event.currentTarget) closeProductDetails(); }}
       >
         {openProduct && openProductDetails && (
-          <article className="product-detail-panel">
+          <article className="product-detail-panel" key={openProduct.id}>
             <button type="button" className="product-detail-close" onClick={closeProductDetails} aria-label="Закрыть карточку товара"><CloseIcon size={22} /></button>
             <div className="product-detail-visual">
               <span className="product-detail-tag">{openProduct.tag}</span>
+              <span className="product-detail-coordinate product-detail-coordinate-top" aria-hidden="true">FORMULA / {String(openProduct.id).padStart(2, "0")}</span>
+              <span className="product-detail-coordinate product-detail-coordinate-side" aria-hidden="true">ANESTET LAB · MOSCOW</span>
+              <span className="product-detail-grid" aria-hidden="true" />
+              <span className="product-detail-scan" aria-hidden="true" />
               <div className="product-detail-packshot">
                 <Image src={productPackshot(openProduct)} alt={openProduct.title} fill sizes="(max-width: 760px) 88vw, 42vw" loading="eager" />
               </div>
               <span className="product-detail-orbit" aria-hidden="true" />
             </div>
             <div className="product-detail-copy">
-              <BrandLabel brand={openProduct.brand} className="product-detail-brand" />
+              <header className="product-detail-heading">
+                <BrandLabel brand={openProduct.brand} className="product-detail-brand" />
+                <span>Карточка продукта · {String(openProduct.id).padStart(2, "0")}</span>
+              </header>
               <h2 id="product-detail-title">{openProduct.title}</h2>
               <p className="product-detail-description">{openProductDetails.description}</p>
+              <div className="product-detail-facts" aria-label="Краткие параметры товара">
+                <span><small>Формат</small><strong>{productVolume(openProduct)}</strong></span>
+                <span><small>Сценарий</small><strong>{openProduct.tag}</strong></span>
+                <span><small>Статус</small><strong>Наличие уточняется</strong></span>
+              </div>
               <div className="product-detail-accordions">
-                {openProductDetails.purpose && <details open><summary>Назначение <span>+</span></summary><p>{openProductDetails.purpose}</p></details>}
-                <details><summary>Как использовать <span>+</span></summary><p>{openProductDetails.usage}</p></details>
-                <details><summary>Состав <span>+</span></summary><p>{openProductDetails.composition}</p></details>
-                {openProductDetails.advantages && <details><summary>Преимущества <span>+</span></summary><p>{openProductDetails.advantages}</p></details>}
+                {openProductDetails.purpose && <details open><summary><span className="product-detail-section-name"><small>01</small>Назначение</span><span className="product-detail-toggle">+</span></summary><p>{openProductDetails.purpose}</p></details>}
+                <details><summary><span className="product-detail-section-name"><small>02</small>Как использовать</span><span className="product-detail-toggle">+</span></summary><p>{openProductDetails.usage}</p></details>
+                <details><summary><span className="product-detail-section-name"><small>03</small>Состав</span><span className="product-detail-toggle">+</span></summary><p>{openProductDetails.composition}</p></details>
+                {openProductDetails.advantages && <details><summary><span className="product-detail-section-name"><small>04</small>Преимущества</span><span className="product-detail-toggle">+</span></summary><p>{openProductDetails.advantages}</p></details>}
               </div>
               <p className="product-detail-disclaimer">Перед применением сверяйте способ использования, ограничения и актуальный состав с маркировкой на упаковке.</p>
               <footer className="product-detail-footer">
-                <span className="product-detail-price"><strong>{formatPrice(openProduct.price)}</strong>{openProduct.compareAtPrice && <del>{formatPrice(openProduct.compareAtPrice)}</del>}</span>
+                <span className="product-detail-price"><small>Цена</small><span><strong>{formatPrice(openProduct.price)}</strong>{openProduct.compareAtPrice && <del>{formatPrice(openProduct.compareAtPrice)}</del>}</span></span>
                 <button type="button" onClick={() => addToCart(openProduct.id)}>
                   {(cart.find((line) => line.id === openProduct.id)?.quantity ?? 0) > 0 ? `В корзине · ${cart.find((line) => line.id === openProduct.id)?.quantity}` : "В корзину"}
                   <BagIcon size={18} title="" />
