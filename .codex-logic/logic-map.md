@@ -160,3 +160,11 @@ The Future Beauty WebGL scene does not derive its centre from the active product
 Files: app/product-details.ts, app/storefront.tsx, app/globals.css, public/assets/getlayers/opaline/index.html, scripts/qa-layout.mjs
 Validation: measured 23-packshot alpha centre; TypeScript; 11 widths x 2 themes x 2 views; anchor stability; price transition; detail/cart independence.
 Risk: If the normalized packshot asset pipeline changes from the shared 1000px canvas, recompute the mean centre before release.
+
+## 2026-09-01 — Vector packshot edge reconstruction
+
+The first shadow-free v2 cutouts preserved official RGB but nine products retained 12-level, visibly stair-stepped alpha edges. A Gaussian alpha experiment was rejected by the user before release. Those nine silhouettes are now product-specific SVG paths built from straight side walls, semicircular cap/bottom arcs, shoulder curves, pump paths and dropper curves. They are rasterized at 4x only for vector antialiasing, then downsampled; blur is never applied. CopyOpacity changes alpha only, and QA requires zero changed RGB pixels against v2. The fourteen already continuous v2 packshots remain untouched.
+
+Files: scripts/polish-product-packshot-edges.mjs, scripts/qa-packshots.mjs, app/products.ts, public/assets/img/restored/packshots-v13
+Validation: 9/9 vector silhouettes; zero RGB delta; 23/23 transparent masters/cards; 11 widths x 2 themes x 2 views; local dark/light/mobile browser review.
+Risk: A future source crop or canvas normalization change requires refitting that product's SVG geometry rather than applying a generic smoothing filter.

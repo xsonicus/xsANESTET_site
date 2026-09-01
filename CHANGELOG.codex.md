@@ -2,6 +2,16 @@
 
 Project: xsANESTET_site
 
+## 2026-09-01 - Version 13.3.1
+
+- Rebuilt nine visibly quantized product silhouettes with product-specific SVG geometry: straight walls, fitted cap/bottom arcs, pump outlines and dropper curves.
+- Explicitly rejected blur-based edge repair; 4× vector rasterization supplies antialiasing without softening the product contour.
+- Preserved every approved label and product pixel: automated comparison requires zero RGB changes against the v2 source.
+- Added a 23-product packshot release gate and lossless 600×600 catalogue variants.
+- Pruned 35.34 MiB of unused source assets from the deployable export while retaining provenance masters in the repository.
+- Verification: `npm run qa:packshots`; `npx tsc --noEmit`; `npm run build && npm run qa:layout`; dark/light/mobile Codex Browser review; `npm run qa:admin`; dependency audit.
+- Published atomically as immutable storefront `20260901-v13.3.1`; public asset checksum and service/API smoke passed. Rollback remains `20260901-v13.3.0-r2`.
+
 ## 2026-09-01 - Version 13.3.0
 
 - Added official product detail cards for all 23 products; clicking a packshot or title opens the card, while cart buttons remain independent.

@@ -1,0 +1,105 @@
+{
+  "generatedAt": "2026-09-01T20:46:54.390Z",
+  "correction": "Vector geometry replaces the rejected Gaussian alpha approach.",
+  "products": [
+    {
+      "id": 17,
+      "officialRgbSource": "17-alpha-restored-v2.png",
+      "vectorMask": "17-silhouette.svg",
+      "master": "17-alpha-restored-v3.webp",
+      "card": "17-card-v3.webp",
+      "alphaLevels": 245,
+      "changedRgbPixels": 0,
+      "fullCanvasSilhouetteDelta": 0.003941,
+      "method": "product-specific SVG silhouette; 4x vector rasterization; Lanczos downsample; lossless WebP"
+    },
+    {
+      "id": 33,
+      "officialRgbSource": "33-alpha-restored-v2.png",
+      "vectorMask": "33-silhouette.svg",
+      "master": "33-alpha-restored-v3.webp",
+      "card": "33-card-v3.webp",
+      "alphaLevels": 229,
+      "changedRgbPixels": 0,
+      "fullCanvasSilhouetteDelta": 0.005986,
+      "method": "product-specific SVG silhouette; 4x vector rasterization; Lanczos downsample; lossless WebP"
+    },
+    {
+      "id": 34,
+      "officialRgbSource": "34-alpha-restored-v2.png",
+      "vectorMask": "34-silhouette.svg",
+      "master": "34-alpha-restored-v3.webp",
+      "card": "34-card-v3.webp",
+      "alphaLevels": 245,
+      "changedRgbPixels": 0,
+      "fullCanvasSilhouetteDelta": 0.002967,
+      "method": "product-specific SVG silhouette; 4x vector rasterization; Lanczos downsample; lossless WebP"
+    },
+    {
+      "id": 35,
+      "officialRgbSource": "35-alpha-restored-v2.png",
+      "vectorMask": "35-silhouette.svg",
+      "master": "35-alpha-restored-v3.webp",
+      "card": "35-card-v3.webp",
+      "alphaLevels": 239,
+      "changedRgbPixels": 0,
+      "fullCanvasSilhouetteDelta": 0.003908,
+      "method": "product-specific SVG silhouette; 4x vector rasterization; Lanczos downsample; lossless WebP"
+    },
+    {
+      "id": 36,
+      "officialRgbSource": "36-alpha-restored-v2.png",
+      "vectorMask": "36-silhouette.svg",
+      "master": "36-alpha-restored-v3.webp",
+      "card": "36-card-v3.webp",
+      "alphaLevels": 238,
+      "changedRgbPixels": 0,
+      "fullCanvasSilhouetteDelta": 0.006251,
+      "method": "product-specific SVG silhouette; 4x vector rasterization; Lanczos downsample; lossless WebP"
+    },
+    {
+      "id": 37,
+      "officialRgbSource": "37-alpha-restored-v2.png",
+      "vectorMask": "37-silhouette.svg",
+      "master": "37-alpha-restored-v3.webp",
+      "card": "37-card-v3.webp",
+      "alphaLevels": 245,
+      "changedRgbPixels": 0,
+      "fullCanvasSilhouetteDelta": 0.0034,
+      "method": "product-specific SVG silhouette; 4x vector rasterization; Lanczos downsample; lossless WebP"
+    },
+    {
+      "id": 38,
+      "officialRgbSource": "38-alpha-restored-v2.png",
+      "vectorMask": "38-silhouette.svg",
+      "master": "38-alpha-restored-v3.webp",
+      "card": "38-card-v3.webp",
+      "alphaLevels": 251,
+      "changedRgbPixels": 0,
+      "fullCanvasSilhouetteDelta": 0.005933,
+      "method": "product-specific SVG silhouette; 4x vector rasterization; Lanczos downsample; lossless WebP"
+    },
+    {
+      "id": 39,
+      "officialRgbSource": "39-alpha-restored-v2.png",
+      "vectorMask": "39-silhouette.svg",
+      "master": "39-alpha-restored-v3.webp",
+      "card": "39-card-v3.webp",
+      "alphaLevels": 245,
+      "changedRgbPixels": 0,
+      "fullCanvasSilhouetteDelta": 0.00383,
+      "method": "product-specific SVG silhouette; 4x vector rasterization; Lanczos downsample; lossless WebP"
+    },
+    {
+      "id": 40,
+      "officialRgbSource": "40-alpha-restored-v2.png",
+      "vectorMask": "40-silhouette.svg",
+      "master": "40-alpha-restored-v3.webp",
+      "card": "40-card-v3.webp",
+      "alphaLevels": 248,
+      "changedRgbPixels": 0,
+      "fullCanvasSilhouetteDelta": 0.005694,
+      "method": "product-specific SVG silhouette; 4x vector rasterization; Lanczos downsample; lossless WebP"
+    }
+  ]
+}

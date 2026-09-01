@@ -17,19 +17,6 @@
       "source_location": "L13"
     },
     {
-      "id": "original_site_assets_components_sendit_js_web_modules_proofofwork_proofofwork",
-      "label": "ProofOfWork",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 107,
-      "community_name": "ProofOfWork",
-      "file_type": "code",
-      "norm_label": "proofofwork",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/proofofwork.js",
-      "source_location": "L3"
-    },
-    {
       "id": "original_site_assets_components_ms_cdek2_js_web_modules_helpers_helpers",
       "label": "Helpers",
       "_callable": true,
@@ -212,17 +199,108 @@
       "source_location": "L4"
     },
     {
+      "id": "original_site_assets_components_sendit_js_web_modules_base_base",
+      "label": "Base",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": "base",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/base.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_behaviorsign_behaviorsign",
+      "label": "BehaviorSign",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": "behaviorsign",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/behaviorsign.js",
+      "source_location": "L3"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_notify_notify",
+      "label": "Notify",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": "notify",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/notify.js",
+      "source_location": "L3"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_paginationhandler_paginationfactory",
+      "label": "PaginationFactory",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": "paginationfactory",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/paginationhandler.js",
+      "source_location": "L3"
+    },
+    {
       "id": "original_site_assets_components_sendit_js_web_modules_paginationhandler_paginationhandler",
       "label": "PaginationHandler",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 36,
-      "community_name": "PaginationHandler",
+      "community_name": "Base",
       "file_type": "code",
       "norm_label": "paginationhandler",
       "source_file": "original_site/assets/components/sendit/js/web/modules/paginationhandler.js",
       "source_location": "L57"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_proofofwork_proofofwork",
+      "label": "ProofOfWork",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": "proofofwork",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/proofofwork.js",
+      "source_location": "L3"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_saveformdata_saveformdata",
+      "label": "SaveFormData",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": "saveformdata",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/saveformdata.js",
+      "source_location": "L3"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_sending_sending",
+      "label": "Sending",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": "sending",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/sending.js",
+      "source_location": "L3"
     },
     {
       "id": "original_site_assets_components_minishop2_js_web_vanilajs_modules_minishop_class_minishop",
@@ -261,32 +339,6 @@
       "file_type": "code",
       "norm_label": "main",
       "source_file": "original_site/assets/components/sendit/js/web/core/main.js",
-      "source_location": "L3"
-    },
-    {
-      "id": "original_site_assets_components_sendit_js_web_modules_base_base",
-      "label": "Base",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 41,
-      "community_name": "Base",
-      "file_type": "code",
-      "norm_label": "base",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/base.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "original_site_assets_components_sendit_js_web_modules_paginationhandler_paginationfactory",
-      "label": "PaginationFactory",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 41,
-      "community_name": "Base",
-      "file_type": "code",
-      "norm_label": "paginationfactory",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/paginationhandler.js",
       "source_location": "L3"
     },
     {
@@ -641,32 +693,6 @@
       "source_location": "L71"
     },
     {
-      "id": "original_site_assets_components_sendit_js_web_modules_notify_notify",
-      "label": "Notify",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 56,
-      "community_name": "Notify",
-      "file_type": "code",
-      "norm_label": "notify",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/notify.js",
-      "source_location": "L3"
-    },
-    {
-      "id": "original_site_assets_components_sendit_js_web_modules_sending_sending",
-      "label": "Sending",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 57,
-      "community_name": "Sending",
-      "file_type": "code",
-      "norm_label": "sending",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/sending.js",
-      "source_location": "L3"
-    },
-    {
       "id": "original_site_assets_components_minishop2_js_web_vanilajs_modules_msorder_class_msorder",
       "label": "MsOrder",
       "_callable": true,
@@ -742,7 +768,7 @@
       "file_type": "code",
       "norm_label": "companysection",
       "source_file": "app/storefront.tsx",
-      "source_location": "L264"
+      "source_location": "L266"
     },
     {
       "id": "app_storefront_deliveryid",
@@ -781,7 +807,7 @@
       "file_type": "code",
       "norm_label": "shoppingmode",
       "source_file": "app/storefront.tsx",
-      "source_location": "L263"
+      "source_location": "L265"
     },
     {
       "id": "app_storefront_themeid",
@@ -821,32 +847,6 @@
       "norm_label": "vkfeeditem",
       "source_file": "app/storefront.tsx",
       "source_location": "L130"
-    },
-    {
-      "id": "original_site_assets_components_sendit_js_web_modules_behaviorsign_behaviorsign",
-      "label": "BehaviorSign",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 94,
-      "community_name": "BehaviorSign",
-      "file_type": "code",
-      "norm_label": "behaviorsign",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/behaviorsign.js",
-      "source_location": "L3"
-    },
-    {
-      "id": "original_site_assets_components_sendit_js_web_modules_saveformdata_saveformdata",
-      "label": "SaveFormData",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 95,
-      "community_name": "SaveFormData",
-      "file_type": "code",
-      "norm_label": "saveformdata",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/saveformdata.js",
-      "source_location": "L3"
     },
     {
       "id": "original_site_assets_components_pdotools_js_jquery_pdopage_plugin",
@@ -3518,7 +3518,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 102,
-      "community_name": "IndentStringCache",
+      "community_name": "Output",
       "file_type": "code",
       "norm_label": "indentstringcache()",
       "source_file": "original_site/assets/components/ace/ace/beautifier.js",
@@ -3530,7 +3530,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 102,
-      "community_name": "IndentStringCache",
+      "community_name": "Output",
       "file_type": "code",
       "norm_label": ".__add_column()",
       "source_file": "original_site/assets/components/ace/ace/beautifier.js",
@@ -3542,7 +3542,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 102,
-      "community_name": "IndentStringCache",
+      "community_name": "Output",
       "file_type": "code",
       "norm_label": ".__ensure_cache()",
       "source_file": "original_site/assets/components/ace/ace/beautifier.js",
@@ -3554,7 +3554,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 102,
-      "community_name": "IndentStringCache",
+      "community_name": "Output",
       "file_type": "code",
       "norm_label": ".get_indent_size()",
       "source_file": "original_site/assets/components/ace/ace/beautifier.js",
@@ -3566,11 +3566,179 @@
       "_callable": true,
       "_origin": "ast",
       "community": 102,
-      "community_name": "IndentStringCache",
+      "community_name": "Output",
       "file_type": "code",
       "norm_label": ".get_indent_string()",
       "source_file": "original_site/assets/components/ace/ace/beautifier.js",
       "source_location": "L289"
+    },
+    {
+      "id": "original_site_assets_components_ace_ace_beautifier_output",
+      "label": "Output()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 102,
+      "community_name": "Output",
+      "file_type": "code",
+      "norm_label": "output()",
+      "source_file": "original_site/assets/components/ace/ace/beautifier.js",
+      "source_location": "L324"
+    },
+    {
+      "id": "original_site_assets_components_ace_ace_beautifier_output_add_new_line",
+      "label": ".add_new_line()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 102,
+      "community_name": "Output",
+      "file_type": "code",
+      "norm_label": ".add_new_line()",
+      "source_file": "original_site/assets/components/ace/ace/beautifier.js",
+      "source_location": "L364"
+    },
+    {
+      "id": "original_site_assets_components_ace_ace_beautifier_output_add_outputline",
+      "label": ".__add_outputline()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 102,
+      "community_name": "Output",
+      "file_type": "code",
+      "norm_label": ".__add_outputline()",
+      "source_file": "original_site/assets/components/ace/ace/beautifier.js",
+      "source_location": "L342"
+    },
+    {
+      "id": "original_site_assets_components_ace_ace_beautifier_output_add_raw_token",
+      "label": ".add_raw_token()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 102,
+      "community_name": "Output",
+      "file_type": "code",
+      "norm_label": ".add_raw_token()",
+      "source_file": "original_site/assets/components/ace/ace/beautifier.js",
+      "source_location": "L426"
+    },
+    {
+      "id": "original_site_assets_components_ace_ace_beautifier_output_add_space_before_token",
+      "label": ".__add_space_before_token()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 102,
+      "community_name": "Output",
+      "file_type": "code",
+      "norm_label": ".__add_space_before_token()",
+      "source_file": "original_site/assets/components/ace/ace/beautifier.js",
+      "source_location": "L446"
+    },
+    {
+      "id": "original_site_assets_components_ace_ace_beautifier_output_add_token",
+      "label": ".add_token()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 102,
+      "community_name": "Output",
+      "file_type": "code",
+      "norm_label": ".add_token()",
+      "source_file": "original_site/assets/components/ace/ace/beautifier.js",
+      "source_location": "L438"
+    },
+    {
+      "id": "original_site_assets_components_ace_ace_beautifier_output_get_code",
+      "label": ".get_code()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 102,
+      "community_name": "Output",
+      "file_type": "code",
+      "norm_label": ".get_code()",
+      "source_file": "original_site/assets/components/ace/ace/beautifier.js",
+      "source_location": "L380"
+    },
+    {
+      "id": "original_site_assets_components_ace_ace_beautifier_output_get_indent_size",
+      "label": ".get_indent_size()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 102,
+      "community_name": "Output",
+      "file_type": "code",
+      "norm_label": ".get_indent_size()",
+      "source_file": "original_site/assets/components/ace/ace/beautifier.js",
+      "source_location": "L356"
+    },
+    {
+      "id": "original_site_assets_components_ace_ace_beautifier_output_get_indent_string",
+      "label": ".get_indent_string()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 102,
+      "community_name": "Output",
+      "file_type": "code",
+      "norm_label": ".get_indent_string()",
+      "source_file": "original_site/assets/components/ace/ace/beautifier.js",
+      "source_location": "L352"
+    },
+    {
+      "id": "original_site_assets_components_ace_ace_beautifier_output_get_line_number",
+      "label": ".get_line_number()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 102,
+      "community_name": "Output",
+      "file_type": "code",
+      "norm_label": ".get_line_number()",
+      "source_file": "original_site/assets/components/ace/ace/beautifier.js",
+      "source_location": "L348"
+    },
+    {
+      "id": "original_site_assets_components_ace_ace_beautifier_output_just_added_newline",
+      "label": ".just_added_newline()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 102,
+      "community_name": "Output",
+      "file_type": "code",
+      "norm_label": ".just_added_newline()",
+      "source_file": "original_site/assets/components/ace/ace/beautifier.js",
+      "source_location": "L480"
+    },
+    {
+      "id": "original_site_assets_components_ace_ace_beautifier_output_set_wrap_point",
+      "label": ".set_wrap_point()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 102,
+      "community_name": "Output",
+      "file_type": "code",
+      "norm_label": ".set_wrap_point()",
+      "source_file": "original_site/assets/components/ace/ace/beautifier.js",
+      "source_location": "L405"
+    },
+    {
+      "id": "original_site_assets_components_ace_ace_beautifier_output_trim",
+      "label": ".trim()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 102,
+      "community_name": "Output",
+      "file_type": "code",
+      "norm_label": ".trim()",
+      "source_file": "original_site/assets/components/ace/ace/beautifier.js",
+      "source_location": "L464"
+    },
+    {
+      "id": "original_site_assets_components_ace_ace_beautifier_printer_set_wrap_point",
+      "label": ".set_wrap_point()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 102,
+      "community_name": "Output",
+      "file_type": "code",
+      "norm_label": ".set_wrap_point()",
+      "source_file": "original_site/assets/components/ace/ace/beautifier.js",
+      "source_location": "L1807"
     },
     {
       "id": "original_site_assets_components_ace_ace_mode_handlebars_f",
@@ -3765,54 +3933,6 @@
       "source_location": "L1"
     },
     {
-      "id": "original_site_assets_components_sendit_js_web_modules_proofofwork_proofofwork_hasleadingzerobits",
-      "label": ".hasLeadingZeroBits()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 107,
-      "community_name": "ProofOfWork",
-      "file_type": "code",
-      "norm_label": ".hasleadingzerobits()",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/proofofwork.js",
-      "source_location": "L47"
-    },
-    {
-      "id": "original_site_assets_components_sendit_js_web_modules_proofofwork_proofofwork_hextobytes",
-      "label": ".hexToBytes()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 107,
-      "community_name": "ProofOfWork",
-      "file_type": "code",
-      "norm_label": ".hextobytes()",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/proofofwork.js",
-      "source_location": "L61"
-    },
-    {
-      "id": "original_site_assets_components_sendit_js_web_modules_proofofwork_proofofwork_initialize",
-      "label": ".initialize()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 107,
-      "community_name": "ProofOfWork",
-      "file_type": "code",
-      "norm_label": ".initialize()",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/proofofwork.js",
-      "source_location": "L4"
-    },
-    {
-      "id": "original_site_assets_components_sendit_js_web_modules_proofofwork_proofofwork_solve",
-      "label": ".solve()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 107,
-      "community_name": "ProofOfWork",
-      "file_type": "code",
-      "norm_label": ".solve()",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/proofofwork.js",
-      "source_location": "L16"
-    },
-    {
       "id": "original_site_assets_js_script_closemodal",
       "label": "closeModal()",
       "_callable": true,
@@ -3861,6 +3981,18 @@
       "source_location": "L518"
     },
     {
+      "id": "original_site_assets_components_minishop2_js_mgr_misc_plupload_plupload_full_min_z",
+      "label": "z()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "jquery.min.js",
+      "file_type": "code",
+      "norm_label": "z()",
+      "source_file": "original_site/assets/components/minishop2/js/mgr/misc/plupload/plupload.full.min.js",
+      "source_location": "L29"
+    },
+    {
       "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_an",
       "label": "an()",
       "_callable": true,
@@ -3871,6 +4003,18 @@
       "norm_label": "an()",
       "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
       "source_location": "L6"
+    },
+    {
+      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_at",
+      "label": "at()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "jquery.min.js",
+      "file_type": "code",
+      "norm_label": "at()",
+      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
+      "source_location": "L4"
     },
     {
       "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_bt",
@@ -3919,6 +4063,30 @@
       "norm_label": "er()",
       "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
       "source_location": "L6"
+    },
+    {
+      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_f",
+      "label": "F()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "jquery.min.js",
+      "file_type": "code",
+      "norm_label": "f()",
+      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
+      "source_location": "L4"
+    },
+    {
+      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_ft",
+      "label": "ft()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "jquery.min.js",
+      "file_type": "code",
+      "norm_label": "ft()",
+      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
+      "source_location": "L4"
     },
     {
       "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_gn",
@@ -4005,6 +4173,30 @@
       "source_location": "L6"
     },
     {
+      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_it",
+      "label": "it()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "jquery.min.js",
+      "file_type": "code",
+      "norm_label": "it()",
+      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
+      "source_location": "L5"
+    },
+    {
+      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_k",
+      "label": "k()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "jquery.min.js",
+      "file_type": "code",
+      "norm_label": "k()",
+      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
+      "source_location": "L6"
+    },
+    {
       "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_kn",
       "label": "Kn()",
       "_callable": true,
@@ -4017,16 +4209,16 @@
       "source_location": "L6"
     },
     {
-      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_ln",
-      "label": "ln()",
+      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_kt",
+      "label": "kt()",
       "_callable": true,
       "_origin": "ast",
       "community": 11,
       "community_name": "jquery.min.js",
       "file_type": "code",
-      "norm_label": "ln()",
+      "norm_label": "kt()",
       "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
-      "source_location": "L6"
+      "source_location": "L4"
     },
     {
       "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_lt",
@@ -4053,6 +4245,30 @@
       "source_location": "L4"
     },
     {
+      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_mn",
+      "label": "Mn()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "jquery.min.js",
+      "file_type": "code",
+      "norm_label": "mn()",
+      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
+      "source_location": "L6"
+    },
+    {
+      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_mt",
+      "label": "mt()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "jquery.min.js",
+      "file_type": "code",
+      "norm_label": "mt()",
+      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
+      "source_location": "L4"
+    },
+    {
       "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_n",
       "label": "_n()",
       "_callable": true,
@@ -4061,30 +4277,6 @@
       "community_name": "jquery.min.js",
       "file_type": "code",
       "norm_label": "_n()",
-      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
-      "source_location": "L6"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_nn",
-      "label": "nn()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "jquery.min.js",
-      "file_type": "code",
-      "norm_label": "nn()",
-      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
-      "source_location": "L6"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_nr",
-      "label": "nr()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "jquery.min.js",
-      "file_type": "code",
-      "norm_label": "nr()",
       "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
       "source_location": "L6"
     },
@@ -4137,6 +4329,30 @@
       "source_location": "L4"
     },
     {
+      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_qn",
+      "label": "qn()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "jquery.min.js",
+      "file_type": "code",
+      "norm_label": "qn()",
+      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
+      "source_location": "L6"
+    },
+    {
+      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_qn_s",
+      "label": "s()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "jquery.min.js",
+      "file_type": "code",
+      "norm_label": "s()",
+      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
+      "source_location": "L6"
+    },
+    {
       "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_r",
       "label": "R()",
       "_callable": true,
@@ -4147,18 +4363,6 @@
       "norm_label": "r()",
       "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
       "source_location": "L5"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_rn",
-      "label": "rn()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "jquery.min.js",
-      "file_type": "code",
-      "norm_label": "rn()",
-      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
-      "source_location": "L6"
     },
     {
       "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_rr",
@@ -4183,6 +4387,30 @@
       "norm_label": "sn()",
       "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
       "source_location": "L6"
+    },
+    {
+      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_st",
+      "label": "st()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "jquery.min.js",
+      "file_type": "code",
+      "norm_label": "st()",
+      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
+      "source_location": "L4"
+    },
+    {
+      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_st_t",
+      "label": "t()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "jquery.min.js",
+      "file_type": "code",
+      "norm_label": "t()",
+      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
+      "source_location": "L4"
     },
     {
       "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_t",
@@ -4231,18 +4459,6 @@
       "norm_label": "tt()",
       "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
       "source_location": "L4"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_un",
-      "label": "un()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "jquery.min.js",
-      "file_type": "code",
-      "norm_label": "un()",
-      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
-      "source_location": "L6"
     },
     {
       "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_ut",
@@ -4301,6 +4517,18 @@
       "community_name": "jquery.min.js",
       "file_type": "code",
       "norm_label": "xt()",
+      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
+      "source_location": "L4"
+    },
+    {
+      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_yt",
+      "label": "yt()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "jquery.min.js",
+      "file_type": "code",
+      "norm_label": "yt()",
       "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
       "source_location": "L4"
     },
@@ -5193,136 +5421,16 @@
       "source_location": "L1"
     },
     {
-      "id": "original_site_assets_components_ace_ace_beautifier_output",
-      "label": "Output()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "Output",
-      "file_type": "code",
-      "norm_label": "output()",
-      "source_file": "original_site/assets/components/ace/ace/beautifier.js",
-      "source_location": "L324"
-    },
-    {
-      "id": "original_site_assets_components_ace_ace_beautifier_output_add_new_line",
-      "label": ".add_new_line()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "Output",
-      "file_type": "code",
-      "norm_label": ".add_new_line()",
-      "source_file": "original_site/assets/components/ace/ace/beautifier.js",
-      "source_location": "L364"
-    },
-    {
-      "id": "original_site_assets_components_ace_ace_beautifier_output_add_outputline",
-      "label": ".__add_outputline()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "Output",
-      "file_type": "code",
-      "norm_label": ".__add_outputline()",
-      "source_file": "original_site/assets/components/ace/ace/beautifier.js",
-      "source_location": "L342"
-    },
-    {
-      "id": "original_site_assets_components_ace_ace_beautifier_output_add_raw_token",
-      "label": ".add_raw_token()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "Output",
-      "file_type": "code",
-      "norm_label": ".add_raw_token()",
-      "source_file": "original_site/assets/components/ace/ace/beautifier.js",
-      "source_location": "L426"
-    },
-    {
-      "id": "original_site_assets_components_ace_ace_beautifier_output_add_space_before_token",
-      "label": ".__add_space_before_token()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "Output",
-      "file_type": "code",
-      "norm_label": ".__add_space_before_token()",
-      "source_file": "original_site/assets/components/ace/ace/beautifier.js",
-      "source_location": "L446"
-    },
-    {
-      "id": "original_site_assets_components_ace_ace_beautifier_output_add_token",
-      "label": ".add_token()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "Output",
-      "file_type": "code",
-      "norm_label": ".add_token()",
-      "source_file": "original_site/assets/components/ace/ace/beautifier.js",
-      "source_location": "L438"
-    },
-    {
       "id": "original_site_assets_components_ace_ace_beautifier_output_ensure_empty_line_above",
       "label": ".ensure_empty_line_above()",
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "Output",
+      "community_name": "OutputLine",
       "file_type": "code",
       "norm_label": ".ensure_empty_line_above()",
       "source_file": "original_site/assets/components/ace/ace/beautifier.js",
       "source_location": "L489"
-    },
-    {
-      "id": "original_site_assets_components_ace_ace_beautifier_output_get_code",
-      "label": ".get_code()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "Output",
-      "file_type": "code",
-      "norm_label": ".get_code()",
-      "source_file": "original_site/assets/components/ace/ace/beautifier.js",
-      "source_location": "L380"
-    },
-    {
-      "id": "original_site_assets_components_ace_ace_beautifier_output_get_indent_size",
-      "label": ".get_indent_size()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "Output",
-      "file_type": "code",
-      "norm_label": ".get_indent_size()",
-      "source_file": "original_site/assets/components/ace/ace/beautifier.js",
-      "source_location": "L356"
-    },
-    {
-      "id": "original_site_assets_components_ace_ace_beautifier_output_get_indent_string",
-      "label": ".get_indent_string()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "Output",
-      "file_type": "code",
-      "norm_label": ".get_indent_string()",
-      "source_file": "original_site/assets/components/ace/ace/beautifier.js",
-      "source_location": "L352"
-    },
-    {
-      "id": "original_site_assets_components_ace_ace_beautifier_output_get_line_number",
-      "label": ".get_line_number()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "Output",
-      "file_type": "code",
-      "norm_label": ".get_line_number()",
-      "source_file": "original_site/assets/components/ace/ace/beautifier.js",
-      "source_location": "L348"
     },
     {
       "id": "original_site_assets_components_ace_ace_beautifier_output_is_empty",
@@ -5330,35 +5438,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "Output",
+      "community_name": "OutputLine",
       "file_type": "code",
       "norm_label": ".is_empty()",
       "source_file": "original_site/assets/components/ace/ace/beautifier.js",
       "source_location": "L360"
-    },
-    {
-      "id": "original_site_assets_components_ace_ace_beautifier_output_just_added_blankline",
-      "label": ".just_added_blankline()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "Output",
-      "file_type": "code",
-      "norm_label": ".just_added_blankline()",
-      "source_file": "original_site/assets/components/ace/ace/beautifier.js",
-      "source_location": "L484"
-    },
-    {
-      "id": "original_site_assets_components_ace_ace_beautifier_output_just_added_newline",
-      "label": ".just_added_newline()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "Output",
-      "file_type": "code",
-      "norm_label": ".just_added_newline()",
-      "source_file": "original_site/assets/components/ace/ace/beautifier.js",
-      "source_location": "L480"
     },
     {
       "id": "original_site_assets_components_ace_ace_beautifier_output_remove_indent",
@@ -5366,7 +5450,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "Output",
+      "community_name": "OutputLine",
       "file_type": "code",
       "norm_label": ".remove_indent()",
       "source_file": "original_site/assets/components/ace/ace/beautifier.js",
@@ -5378,35 +5462,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "Output",
+      "community_name": "OutputLine",
       "file_type": "code",
       "norm_label": ".set_indent()",
       "source_file": "original_site/assets/components/ace/ace/beautifier.js",
       "source_location": "L409"
-    },
-    {
-      "id": "original_site_assets_components_ace_ace_beautifier_output_set_wrap_point",
-      "label": ".set_wrap_point()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "Output",
-      "file_type": "code",
-      "norm_label": ".set_wrap_point()",
-      "source_file": "original_site/assets/components/ace/ace/beautifier.js",
-      "source_location": "L405"
-    },
-    {
-      "id": "original_site_assets_components_ace_ace_beautifier_output_trim",
-      "label": ".trim()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "Output",
-      "file_type": "code",
-      "norm_label": ".trim()",
-      "source_file": "original_site/assets/components/ace/ace/beautifier.js",
-      "source_location": "L464"
     },
     {
       "id": "original_site_assets_components_ace_ace_beautifier_outputline",
@@ -5414,7 +5474,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "Output",
+      "community_name": "OutputLine",
       "file_type": "code",
       "norm_label": "outputline()",
       "source_file": "original_site/assets/components/ace/ace/beautifier.js",
@@ -5426,7 +5486,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "Output",
+      "community_name": "OutputLine",
       "file_type": "code",
       "norm_label": "._allow_wrap()",
       "source_file": "original_site/assets/components/ace/ace/beautifier.js",
@@ -5438,7 +5498,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "Output",
+      "community_name": "OutputLine",
       "file_type": "code",
       "norm_label": ".clone_empty()",
       "source_file": "original_site/assets/components/ace/ace/beautifier.js",
@@ -5450,7 +5510,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "Output",
+      "community_name": "OutputLine",
       "file_type": "code",
       "norm_label": ".has_match()",
       "source_file": "original_site/assets/components/ace/ace/beautifier.js",
@@ -5462,7 +5522,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "Output",
+      "community_name": "OutputLine",
       "file_type": "code",
       "norm_label": ".is_empty()",
       "source_file": "original_site/assets/components/ace/ace/beautifier.js",
@@ -5474,7 +5534,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "Output",
+      "community_name": "OutputLine",
       "file_type": "code",
       "norm_label": ".item()",
       "source_file": "original_site/assets/components/ace/ace/beautifier.js",
@@ -5486,7 +5546,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "Output",
+      "community_name": "OutputLine",
       "file_type": "code",
       "norm_label": ".last()",
       "source_file": "original_site/assets/components/ace/ace/beautifier.js",
@@ -5498,7 +5558,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "Output",
+      "community_name": "OutputLine",
       "file_type": "code",
       "norm_label": ".pop()",
       "source_file": "original_site/assets/components/ace/ace/beautifier.js",
@@ -5510,7 +5570,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "Output",
+      "community_name": "OutputLine",
       "file_type": "code",
       "norm_label": "._remove_indent()",
       "source_file": "original_site/assets/components/ace/ace/beautifier.js",
@@ -5522,7 +5582,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "Output",
+      "community_name": "OutputLine",
       "file_type": "code",
       "norm_label": "._remove_wrap_indent()",
       "source_file": "original_site/assets/components/ace/ace/beautifier.js",
@@ -5534,7 +5594,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "Output",
+      "community_name": "OutputLine",
       "file_type": "code",
       "norm_label": ".set_indent()",
       "source_file": "original_site/assets/components/ace/ace/beautifier.js",
@@ -5546,7 +5606,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "Output",
+      "community_name": "OutputLine",
       "file_type": "code",
       "norm_label": "._set_wrap_point()",
       "source_file": "original_site/assets/components/ace/ace/beautifier.js",
@@ -5558,7 +5618,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "Output",
+      "community_name": "OutputLine",
       "file_type": "code",
       "norm_label": "._should_wrap()",
       "source_file": "original_site/assets/components/ace/ace/beautifier.js",
@@ -5570,7 +5630,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "Output",
+      "community_name": "OutputLine",
       "file_type": "code",
       "norm_label": ".tostring()",
       "source_file": "original_site/assets/components/ace/ace/beautifier.js",
@@ -5582,7 +5642,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "Output",
+      "community_name": "OutputLine",
       "file_type": "code",
       "norm_label": ".trim()",
       "source_file": "original_site/assets/components/ace/ace/beautifier.js",
@@ -5594,23 +5654,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "Output",
+      "community_name": "OutputLine",
       "file_type": "code",
       "norm_label": ".current_line_has_match()",
       "source_file": "original_site/assets/components/ace/ace/beautifier.js",
       "source_location": "L1798"
-    },
-    {
-      "id": "original_site_assets_components_ace_ace_beautifier_printer_set_wrap_point",
-      "label": ".set_wrap_point()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "Output",
-      "file_type": "code",
-      "norm_label": ".set_wrap_point()",
-      "source_file": "original_site/assets/components/ace/ace/beautifier.js",
-      "source_location": "L1807"
     },
     {
       "id": "original_site_assets_components_ace_ace_mode_twig_f",
@@ -6789,6 +6837,18 @@
       "source_location": "L434"
     },
     {
+      "id": "original_site_assets_components_ace_ace_worker_javascript_g",
+      "label": "G()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "sortable.min.js",
+      "file_type": "code",
+      "norm_label": "g()",
+      "source_file": "original_site/assets/components/ace/ace/worker-javascript.js",
+      "source_location": "L1"
+    },
+    {
       "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_a",
       "label": "a()",
       "_callable": true,
@@ -6821,6 +6881,18 @@
       "community_name": "sortable.min.js",
       "file_type": "code",
       "norm_label": "b()",
+      "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
+      "source_location": "L2"
+    },
+    {
+      "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_c",
+      "label": "C()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "sortable.min.js",
+      "file_type": "code",
+      "norm_label": "c()",
       "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
       "source_location": "L2"
     },
@@ -6897,6 +6969,18 @@
       "source_location": "L2"
     },
     {
+      "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_i",
+      "label": "I()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "sortable.min.js",
+      "file_type": "code",
+      "norm_label": "i()",
+      "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
+      "source_location": "L2"
+    },
+    {
       "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_it",
       "label": "It()",
       "_callable": true,
@@ -6933,6 +7017,18 @@
       "source_location": "L2"
     },
     {
+      "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_l",
+      "label": "l()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "sortable.min.js",
+      "file_type": "code",
+      "norm_label": "l()",
+      "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
+      "source_location": "L2"
+    },
+    {
       "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_m",
       "label": "m()",
       "_callable": true,
@@ -6957,6 +7053,18 @@
       "source_location": "L2"
     },
     {
+      "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_n",
+      "label": "N()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "sortable.min.js",
+      "file_type": "code",
+      "norm_label": "n()",
+      "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
+      "source_location": "L2"
+    },
+    {
       "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_nt",
       "label": "Nt()",
       "_callable": true,
@@ -6969,6 +7077,30 @@
       "source_location": "L2"
     },
     {
+      "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_o",
+      "label": "o()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "sortable.min.js",
+      "file_type": "code",
+      "norm_label": "o()",
+      "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
+      "source_location": "L2"
+    },
+    {
+      "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_p",
+      "label": "P()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "sortable.min.js",
+      "file_type": "code",
+      "norm_label": "p()",
+      "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
+      "source_location": "L2"
+    },
+    {
       "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_pt",
       "label": "Pt()",
       "_callable": true,
@@ -6977,6 +7109,18 @@
       "community_name": "sortable.min.js",
       "file_type": "code",
       "norm_label": "pt()",
+      "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
+      "source_location": "L2"
+    },
+    {
+      "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_qt",
+      "label": "qt()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "sortable.min.js",
+      "file_type": "code",
+      "norm_label": "qt()",
       "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
       "source_location": "L2"
     },
@@ -7001,6 +7145,18 @@
       "community_name": "sortable.min.js",
       "file_type": "code",
       "norm_label": "rt()",
+      "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
+      "source_location": "L2"
+    },
+    {
+      "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_s",
+      "label": "S()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "sortable.min.js",
+      "file_type": "code",
+      "norm_label": "s()",
       "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
       "source_location": "L2"
     },
@@ -7053,6 +7209,18 @@
       "source_location": "L2"
     },
     {
+      "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_w",
+      "label": "w()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "sortable.min.js",
+      "file_type": "code",
+      "norm_label": "w()",
+      "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
+      "source_location": "L2"
+    },
+    {
       "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_x",
       "label": "X()",
       "_callable": true,
@@ -7099,6 +7267,42 @@
       "norm_label": "yt()",
       "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
       "source_location": "L2"
+    },
+    {
+      "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_z",
+      "label": "z()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "sortable.min.js",
+      "file_type": "code",
+      "norm_label": "z()",
+      "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
+      "source_location": "L2"
+    },
+    {
+      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_ot",
+      "label": "ot()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "sortable.min.js",
+      "file_type": "code",
+      "norm_label": "ot()",
+      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
+      "source_location": "L5"
+    },
+    {
+      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_qt",
+      "label": "qt()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 17,
+      "community_name": "sortable.min.js",
+      "file_type": "code",
+      "norm_label": "qt()",
+      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
+      "source_location": "L5"
     },
     {
       "id": "original_site_assets_components_msfavorites_js_default_module",
@@ -9045,6 +9249,18 @@
       "source_location": "L1922"
     },
     {
+      "id": "original_site_assets_components_ace_ace_beautifier_output_just_added_blankline",
+      "label": ".just_added_blankline()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 24,
+      "community_name": "Beautifier",
+      "file_type": "code",
+      "norm_label": ".just_added_blankline()",
+      "source_file": "original_site/assets/components/ace/ace/beautifier.js",
+      "source_location": "L484"
+    },
+    {
       "id": "original_site_assets_components_ace_ace_beautifier_printer_add_raw_token",
       "label": ".add_raw_token()",
       "_callable": true,
@@ -9595,18 +9811,6 @@
       "norm_label": "._read_template()",
       "source_file": "original_site/assets/components/ace/ace/beautifier.js",
       "source_location": "L1637"
-    },
-    {
-      "id": "original_site_assets_components_ace_ace_beautifier_token",
-      "label": "Token()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 28,
-      "community_name": "._get_next_token",
-      "file_type": "code",
-      "norm_label": "token()",
-      "source_file": "original_site/assets/components/ace/ace/beautifier.js",
-      "source_location": "L542"
     },
     {
       "id": "original_site_assets_components_ace_ace_beautifier_tokenizer_create_token",
@@ -10833,18 +11037,6 @@
       "source_location": "L13"
     },
     {
-      "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_s",
-      "label": "S()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "plupload.full.min.js",
-      "file_type": "code",
-      "norm_label": "s()",
-      "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
-      "source_location": "L2"
-    },
-    {
       "id": "original_site_assets_components_fetchit_js_fetchit_fetchit_clearerror",
       "label": ".clearError()",
       "_callable": true,
@@ -11937,12 +12129,252 @@
       "source_location": "L69"
     },
     {
+      "id": "original_site_assets_components_sendit_js_web_modules_base_base_checkpropertyload",
+      "label": ".checkPropertyLoad()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": ".checkpropertyload()",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/base.js",
+      "source_location": "L14"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_base_base_constructor",
+      "label": ".constructor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": ".constructor()",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/base.js",
+      "source_location": "L2"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_base_base_initialize",
+      "label": ".initialize()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": ".initialize()",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/base.js",
+      "source_location": "L12"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_behaviorsign_behaviorsign_bytestohex",
+      "label": ".bytesToHex()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": ".bytestohex()",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/behaviorsign.js",
+      "source_location": "L70"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_behaviorsign_behaviorsign_createsignature",
+      "label": ".createSignature()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": ".createsignature()",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/behaviorsign.js",
+      "source_location": "L30"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_behaviorsign_behaviorsign_hextobytes",
+      "label": ".hexToBytes()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": ".hextobytes()",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/behaviorsign.js",
+      "source_location": "L62"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_behaviorsign_behaviorsign_importkey",
+      "label": ".importKey()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": ".importkey()",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/behaviorsign.js",
+      "source_location": "L18"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_behaviorsign_behaviorsign_initialize",
+      "label": ".initialize()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": ".initialize()",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/behaviorsign.js",
+      "source_location": "L4"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_notify_notify_close",
+      "label": ".close()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": ".close()",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/notify.js",
+      "source_location": "L60"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_notify_notify_closeall",
+      "label": ".closeAll()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": ".closeall()",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/notify.js",
+      "source_location": "L68"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_notify_notify_constructor",
+      "label": ".constructor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": ".constructor()",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/notify.js",
+      "source_location": "L4"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_notify_notify_error",
+      "label": ".error()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": ".error()",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/notify.js",
+      "source_location": "L48"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_notify_notify_info",
+      "label": ".info()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": ".info()",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/notify.js",
+      "source_location": "L52"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_notify_notify_initialize",
+      "label": ".initialize()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": ".initialize()",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/notify.js",
+      "source_location": "L11"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_notify_notify_progresscontrol",
+      "label": ".progressControl()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": ".progresscontrol()",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/notify.js",
+      "source_location": "L85"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_notify_notify_setoptions",
+      "label": ".setOptions()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": ".setoptions()",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/notify.js",
+      "source_location": "L81"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_notify_notify_show",
+      "label": ".show()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": ".show()",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/notify.js",
+      "source_location": "L16"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_notify_notify_success",
+      "label": ".success()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": ".success()",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/notify.js",
+      "source_location": "L44"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_notify_notify_updatetext",
+      "label": ".updateText()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": ".updatetext()",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/notify.js",
+      "source_location": "L74"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_notify_notify_warning",
+      "label": ".warning()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": ".warning()",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/notify.js",
+      "source_location": "L56"
+    },
+    {
       "id": "original_site_assets_components_sendit_js_web_modules_paginationhandler_paginationfactory_addinstances",
       "label": ".addInstances()",
       "_callable": true,
       "_origin": "ast",
       "community": 36,
-      "community_name": "PaginationHandler",
+      "community_name": "Base",
       "file_type": "code",
       "norm_label": ".addinstances()",
       "source_file": "original_site/assets/components/sendit/js/web/modules/paginationhandler.js",
@@ -11954,7 +12386,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 36,
-      "community_name": "PaginationHandler",
+      "community_name": "Base",
       "file_type": "code",
       "norm_label": ".initialize()",
       "source_file": "original_site/assets/components/sendit/js/web/modules/paginationhandler.js",
@@ -11966,7 +12398,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 36,
-      "community_name": "PaginationHandler",
+      "community_name": "Base",
       "file_type": "code",
       "norm_label": ".buttonshandler()",
       "source_file": "original_site/assets/components/sendit/js/web/modules/paginationhandler.js",
@@ -11978,7 +12410,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 36,
-      "community_name": "PaginationHandler",
+      "community_name": "Base",
       "file_type": "code",
       "norm_label": ".changeeventhandler()",
       "source_file": "original_site/assets/components/sendit/js/web/modules/paginationhandler.js",
@@ -11990,7 +12422,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 36,
-      "community_name": "PaginationHandler",
+      "community_name": "Base",
       "file_type": "code",
       "norm_label": ".clickeventhandler()",
       "source_file": "original_site/assets/components/sendit/js/web/modules/paginationhandler.js",
@@ -12002,7 +12434,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 36,
-      "community_name": "PaginationHandler",
+      "community_name": "Base",
       "file_type": "code",
       "norm_label": ".constructor()",
       "source_file": "original_site/assets/components/sendit/js/web/modules/paginationhandler.js",
@@ -12014,7 +12446,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 36,
-      "community_name": "PaginationHandler",
+      "community_name": "Base",
       "file_type": "code",
       "norm_label": ".disabled()",
       "source_file": "original_site/assets/components/sendit/js/web/modules/paginationhandler.js",
@@ -12026,7 +12458,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 36,
-      "community_name": "PaginationHandler",
+      "community_name": "Base",
       "file_type": "code",
       "norm_label": ".enabled()",
       "source_file": "original_site/assets/components/sendit/js/web/modules/paginationhandler.js",
@@ -12038,7 +12470,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 36,
-      "community_name": "PaginationHandler",
+      "community_name": "Base",
       "file_type": "code",
       "norm_label": ".goto()",
       "source_file": "original_site/assets/components/sendit/js/web/modules/paginationhandler.js",
@@ -12050,7 +12482,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 36,
-      "community_name": "PaginationHandler",
+      "community_name": "Base",
       "file_type": "code",
       "norm_label": ".initialize()",
       "source_file": "original_site/assets/components/sendit/js/web/modules/paginationhandler.js",
@@ -12062,7 +12494,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 36,
-      "community_name": "PaginationHandler",
+      "community_name": "Base",
       "file_type": "code",
       "norm_label": ".initobserve()",
       "source_file": "original_site/assets/components/sendit/js/web/modules/paginationhandler.js",
@@ -12074,7 +12506,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 36,
-      "community_name": "PaginationHandler",
+      "community_name": "Base",
       "file_type": "code",
       "norm_label": ".responsehandler()",
       "source_file": "original_site/assets/components/sendit/js/web/modules/paginationhandler.js",
@@ -12086,7 +12518,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 36,
-      "community_name": "PaginationHandler",
+      "community_name": "Base",
       "file_type": "code",
       "norm_label": ".scrollhandler()",
       "source_file": "original_site/assets/components/sendit/js/web/modules/paginationhandler.js",
@@ -12098,7 +12530,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 36,
-      "community_name": "PaginationHandler",
+      "community_name": "Base",
       "file_type": "code",
       "norm_label": ".sendresponse()",
       "source_file": "original_site/assets/components/sendit/js/web/modules/paginationhandler.js",
@@ -12110,7 +12542,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 36,
-      "community_name": "PaginationHandler",
+      "community_name": "Base",
       "file_type": "code",
       "norm_label": ".setresultshowmethod()",
       "source_file": "original_site/assets/components/sendit/js/web/modules/paginationhandler.js",
@@ -12122,11 +12554,263 @@
       "_callable": true,
       "_origin": "ast",
       "community": 36,
-      "community_name": "PaginationHandler",
+      "community_name": "Base",
       "file_type": "code",
       "norm_label": ".setsearchparams()",
       "source_file": "original_site/assets/components/sendit/js/web/modules/paginationhandler.js",
       "source_location": "L287"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_proofofwork_proofofwork_hasleadingzerobits",
+      "label": ".hasLeadingZeroBits()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": ".hasleadingzerobits()",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/proofofwork.js",
+      "source_location": "L47"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_proofofwork_proofofwork_hextobytes",
+      "label": ".hexToBytes()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": ".hextobytes()",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/proofofwork.js",
+      "source_location": "L61"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_proofofwork_proofofwork_initialize",
+      "label": ".initialize()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": ".initialize()",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/proofofwork.js",
+      "source_location": "L4"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_proofofwork_proofofwork_solve",
+      "label": ".solve()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": ".solve()",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/proofofwork.js",
+      "source_location": "L16"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_saveformdata_saveformdata_initialize",
+      "label": ".initialize()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": ".initialize()",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/saveformdata.js",
+      "source_location": "L4"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_saveformdata_saveformdata_removevalues",
+      "label": ".removeValues()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": ".removevalues()",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/saveformdata.js",
+      "source_location": "L174"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_saveformdata_saveformdata_savedata",
+      "label": ".saveData()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": ".savedata()",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/saveformdata.js",
+      "source_location": "L33"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_saveformdata_saveformdata_savefieldgroupvalues",
+      "label": ".saveFieldGroupValues()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": ".savefieldgroupvalues()",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/saveformdata.js",
+      "source_location": "L82"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_saveformdata_saveformdata_setvalues",
+      "label": ".setValues()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": ".setvalues()",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/saveformdata.js",
+      "source_location": "L91"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_sending_sending_error",
+      "label": ".error()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": ".error()",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/sending.js",
+      "source_location": "L288"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_sending_sending_fetch",
+      "label": ".fetch()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": ".fetch()",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/sending.js",
+      "source_location": "L111"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_sending_sending_getroot",
+      "label": ".getRoot()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": ".getroot()",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/sending.js",
+      "source_location": "L47"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_sending_sending_initialize",
+      "label": ".initialize()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": ".initialize()",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/sending.js",
+      "source_location": "L4"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_sending_sending_preparesendparams",
+      "label": ".prepareSendParams()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": ".preparesendparams()",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/sending.js",
+      "source_location": "L74"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_sending_sending_resetallerrors",
+      "label": ".resetAllErrors()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": ".resetallerrors()",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/sending.js",
+      "source_location": "L342"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_sending_sending_reseterror",
+      "label": ".resetError()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": ".reseterror()",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/sending.js",
+      "source_location": "L355"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_sending_sending_resetform",
+      "label": ".resetForm()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": ".resetform()",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/sending.js",
+      "source_location": "L314"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_sending_sending_send",
+      "label": ".send()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": ".send()",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/sending.js",
+      "source_location": "L81"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_sending_sending_sendfield",
+      "label": ".sendField()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": ".sendfield()",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/sending.js",
+      "source_location": "L52"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_sending_sending_sendrequest",
+      "label": ".sendRequest()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": ".sendrequest()",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/sending.js",
+      "source_location": "L85"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_sending_sending_success",
+      "label": ".success()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": ".success()",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/sending.js",
+      "source_location": "L263"
     },
     {
       "id": "original_site_assets_components_minishop2_js_mgr_misc_strftime_min_1_3_date_strftime",
@@ -12333,6 +13017,18 @@
       "source_location": "L1177"
     },
     {
+      "id": "original_site_assets_components_ace_ace_beautifier_outputline_push",
+      "label": ".push()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 38,
+      "community_name": "TemplatablePattern",
+      "file_type": "code",
+      "norm_label": ".push()",
+      "source_file": "original_site/assets/components/ace/ace/beautifier.js",
+      "source_location": "L208"
+    },
+    {
       "id": "original_site_assets_components_ace_ace_beautifier_pattern",
       "label": "Pattern()",
       "_callable": true,
@@ -12523,6 +13219,78 @@
       "norm_label": "._update()",
       "source_file": "original_site/assets/components/ace/ace/beautifier.js",
       "source_location": "L1557"
+    },
+    {
+      "id": "original_site_assets_components_ace_ace_beautifier_whitespacepattern",
+      "label": "WhitespacePattern()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 38,
+      "community_name": "TemplatablePattern",
+      "file_type": "code",
+      "norm_label": "whitespacepattern()",
+      "source_file": "original_site/assets/components/ace/ace/beautifier.js",
+      "source_location": "L1234"
+    },
+    {
+      "id": "original_site_assets_components_ace_ace_beautifier_whitespacepattern_create",
+      "label": "._create()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 38,
+      "community_name": "TemplatablePattern",
+      "file_type": "code",
+      "norm_label": "._create()",
+      "source_file": "original_site/assets/components/ace/ace/beautifier.js",
+      "source_location": "L1280"
+    },
+    {
+      "id": "original_site_assets_components_ace_ace_beautifier_whitespacepattern_matching",
+      "label": ".matching()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 38,
+      "community_name": "TemplatablePattern",
+      "file_type": "code",
+      "norm_label": ".matching()",
+      "source_file": "original_site/assets/components/ace/ace/beautifier.js",
+      "source_location": "L1273"
+    },
+    {
+      "id": "original_site_assets_components_ace_ace_beautifier_whitespacepattern_read",
+      "label": ".read()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 38,
+      "community_name": "TemplatablePattern",
+      "file_type": "code",
+      "norm_label": ".read()",
+      "source_file": "original_site/assets/components/ace/ace/beautifier.js",
+      "source_location": "L1257"
+    },
+    {
+      "id": "original_site_assets_components_ace_ace_beautifier_whitespacepattern_set_whitespace_patterns",
+      "label": ".__set_whitespace_patterns()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 38,
+      "community_name": "TemplatablePattern",
+      "file_type": "code",
+      "norm_label": ".__set_whitespace_patterns()",
+      "source_file": "original_site/assets/components/ace/ace/beautifier.js",
+      "source_location": "L1247"
+    },
+    {
+      "id": "original_site_assets_components_ace_ace_beautifier_whitespacepattern_split",
+      "label": ".__split()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 38,
+      "community_name": "TemplatablePattern",
+      "file_type": "code",
+      "norm_label": ".__split()",
+      "source_file": "original_site/assets/components/ace/ace/beautifier.js",
+      "source_location": "L1284"
     },
     {
       "id": "original_site_assets_components_minishop2_js_web_vanilajs_modules_minishop_class_minishop_addcallback",
@@ -13605,40 +14373,76 @@
       "source_location": "L121"
     },
     {
-      "id": "original_site_assets_components_sendit_js_web_modules_base_base_checkpropertyload",
-      "label": ".checkPropertyLoad()",
+      "id": "scripts_polish_product_packshot_edges_airlesspath",
+      "label": "airlessPath()",
       "_callable": true,
       "_origin": "ast",
       "community": 41,
-      "community_name": "Base",
+      "community_name": "polish-product-packshot-edges.mjs",
       "file_type": "code",
-      "norm_label": ".checkpropertyload()",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/base.js",
-      "source_location": "L14"
+      "norm_label": "airlesspath()",
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L11"
     },
     {
-      "id": "original_site_assets_components_sendit_js_web_modules_base_base_constructor",
-      "label": ".constructor()",
+      "id": "scripts_polish_product_packshot_edges_alphalevels",
+      "label": "alphaLevels()",
       "_callable": true,
       "_origin": "ast",
       "community": 41,
-      "community_name": "Base",
+      "community_name": "polish-product-packshot-edges.mjs",
       "file_type": "code",
-      "norm_label": ".constructor()",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/base.js",
-      "source_location": "L2"
+      "norm_label": "alphalevels()",
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L92"
     },
     {
-      "id": "original_site_assets_components_sendit_js_web_modules_base_base_initialize",
-      "label": ".initialize()",
+      "id": "scripts_polish_product_packshot_edges_dropperpath",
+      "label": "dropperPath()",
       "_callable": true,
       "_origin": "ast",
       "community": 41,
-      "community_name": "Base",
+      "community_name": "polish-product-packshot-edges.mjs",
       "file_type": "code",
-      "norm_label": ".initialize()",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/base.js",
-      "source_location": "L12"
+      "norm_label": "dropperpath()",
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L50"
+    },
+    {
+      "id": "scripts_polish_product_packshot_edges_identify",
+      "label": "identify()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 41,
+      "community_name": "polish-product-packshot-edges.mjs",
+      "file_type": "code",
+      "norm_label": "identify()",
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L91"
+    },
+    {
+      "id": "scripts_polish_product_packshot_edges_pumppaths",
+      "label": "pumpPaths()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 41,
+      "community_name": "polish-product-packshot-edges.mjs",
+      "file_type": "code",
+      "norm_label": "pumppaths()",
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L27"
+    },
+    {
+      "id": "scripts_polish_product_packshot_edges_run",
+      "label": "run()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 41,
+      "community_name": "polish-product-packshot-edges.mjs",
+      "file_type": "code",
+      "norm_label": "run()",
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L85"
     },
     {
       "id": "original_site_assets_components_ace_emmet_emmet_addcomments",
@@ -14442,7 +15246,7 @@
       "file_type": "code",
       "norm_label": "storefront()",
       "source_file": "app/storefront.tsx",
-      "source_location": "L298"
+      "source_location": "L300"
     },
     {
       "id": "app_storefront_videoduration",
@@ -14611,42 +15415,6 @@
       "norm_label": "formatprice()",
       "source_file": "app/products.ts",
       "source_location": "L40"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_mgr_misc_plupload_plupload_full_min_z",
-      "label": "z()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 462,
-      "community_name": "z",
-      "file_type": "code",
-      "norm_label": "z()",
-      "source_file": "original_site/assets/components/minishop2/js/mgr/misc/plupload/plupload.full.min.js",
-      "source_location": "L29"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_p",
-      "label": "P()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 462,
-      "community_name": "z",
-      "file_type": "code",
-      "norm_label": "p()",
-      "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
-      "source_location": "L2"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_f",
-      "label": "F()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 462,
-      "community_name": "z",
-      "file_type": "code",
-      "norm_label": "f()",
-      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
-      "source_location": "L4"
     },
     {
       "id": "server_order_api_clean",
@@ -15465,16 +16233,16 @@
       "source_location": "L826"
     },
     {
-      "id": "original_site_assets_components_ace_ace_beautifier_outputline_push",
-      "label": ".push()",
+      "id": "original_site_assets_components_ace_ace_beautifier_token",
+      "label": "Token()",
       "_callable": true,
       "_origin": "ast",
       "community": 52,
       "community_name": ".tokenize",
       "file_type": "code",
-      "norm_label": ".push()",
+      "norm_label": "token()",
       "source_file": "original_site/assets/components/ace/ace/beautifier.js",
-      "source_location": "L208"
+      "source_location": "L542"
     },
     {
       "id": "original_site_assets_components_ace_ace_beautifier_tokenizer_is_closing",
@@ -15909,448 +16677,40 @@
       "source_location": "L9300"
     },
     {
-      "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_c",
-      "label": "C()",
+      "id": "scripts_prune_export_assets_bytes",
+      "label": "bytes()",
       "_callable": true,
       "_origin": "ast",
       "community": 55,
-      "community_name": "at",
+      "community_name": "prune-export-assets.mjs",
       "file_type": "code",
-      "norm_label": "c()",
-      "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
-      "source_location": "L2"
+      "norm_label": "bytes()",
+      "source_file": "scripts/prune-export-assets.mjs",
+      "source_location": "L9"
     },
     {
-      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_at",
-      "label": "at()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 55,
-      "community_name": "at",
-      "file_type": "code",
-      "norm_label": "at()",
-      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
-      "source_location": "L4"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_ft",
-      "label": "ft()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 55,
-      "community_name": "at",
-      "file_type": "code",
-      "norm_label": "ft()",
-      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
-      "source_location": "L4"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_it",
-      "label": "it()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 55,
-      "community_name": "at",
-      "file_type": "code",
-      "norm_label": "it()",
-      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
-      "source_location": "L5"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_k",
-      "label": "k()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 55,
-      "community_name": "at",
-      "file_type": "code",
-      "norm_label": "k()",
-      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
-      "source_location": "L6"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_kt",
-      "label": "kt()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 55,
-      "community_name": "at",
-      "file_type": "code",
-      "norm_label": "kt()",
-      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
-      "source_location": "L4"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_mn",
-      "label": "Mn()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 55,
-      "community_name": "at",
-      "file_type": "code",
-      "norm_label": "mn()",
-      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
-      "source_location": "L6"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_mt",
-      "label": "mt()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 55,
-      "community_name": "at",
-      "file_type": "code",
-      "norm_label": "mt()",
-      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
-      "source_location": "L4"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_qn",
-      "label": "qn()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 55,
-      "community_name": "at",
-      "file_type": "code",
-      "norm_label": "qn()",
-      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
-      "source_location": "L6"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_qn_s",
-      "label": "s()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 55,
-      "community_name": "at",
-      "file_type": "code",
-      "norm_label": "s()",
-      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
-      "source_location": "L6"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_st",
-      "label": "st()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 55,
-      "community_name": "at",
-      "file_type": "code",
-      "norm_label": "st()",
-      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
-      "source_location": "L4"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_st_t",
-      "label": "t()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 55,
-      "community_name": "at",
-      "file_type": "code",
-      "norm_label": "t()",
-      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
-      "source_location": "L4"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_yt",
-      "label": "yt()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 55,
-      "community_name": "at",
-      "file_type": "code",
-      "norm_label": "yt()",
-      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
-      "source_location": "L4"
-    },
-    {
-      "id": "original_site_assets_components_sendit_js_web_modules_notify_notify_close",
-      "label": ".close()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 56,
-      "community_name": "Notify",
-      "file_type": "code",
-      "norm_label": ".close()",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/notify.js",
-      "source_location": "L60"
-    },
-    {
-      "id": "original_site_assets_components_sendit_js_web_modules_notify_notify_closeall",
-      "label": ".closeAll()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 56,
-      "community_name": "Notify",
-      "file_type": "code",
-      "norm_label": ".closeall()",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/notify.js",
-      "source_location": "L68"
-    },
-    {
-      "id": "original_site_assets_components_sendit_js_web_modules_notify_notify_constructor",
-      "label": ".constructor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 56,
-      "community_name": "Notify",
-      "file_type": "code",
-      "norm_label": ".constructor()",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/notify.js",
-      "source_location": "L4"
-    },
-    {
-      "id": "original_site_assets_components_sendit_js_web_modules_notify_notify_error",
-      "label": ".error()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 56,
-      "community_name": "Notify",
-      "file_type": "code",
-      "norm_label": ".error()",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/notify.js",
-      "source_location": "L48"
-    },
-    {
-      "id": "original_site_assets_components_sendit_js_web_modules_notify_notify_info",
-      "label": ".info()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 56,
-      "community_name": "Notify",
-      "file_type": "code",
-      "norm_label": ".info()",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/notify.js",
-      "source_location": "L52"
-    },
-    {
-      "id": "original_site_assets_components_sendit_js_web_modules_notify_notify_initialize",
-      "label": ".initialize()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 56,
-      "community_name": "Notify",
-      "file_type": "code",
-      "norm_label": ".initialize()",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/notify.js",
-      "source_location": "L11"
-    },
-    {
-      "id": "original_site_assets_components_sendit_js_web_modules_notify_notify_progresscontrol",
-      "label": ".progressControl()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 56,
-      "community_name": "Notify",
-      "file_type": "code",
-      "norm_label": ".progresscontrol()",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/notify.js",
-      "source_location": "L85"
-    },
-    {
-      "id": "original_site_assets_components_sendit_js_web_modules_notify_notify_setoptions",
-      "label": ".setOptions()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 56,
-      "community_name": "Notify",
-      "file_type": "code",
-      "norm_label": ".setoptions()",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/notify.js",
-      "source_location": "L81"
-    },
-    {
-      "id": "original_site_assets_components_sendit_js_web_modules_notify_notify_show",
-      "label": ".show()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 56,
-      "community_name": "Notify",
-      "file_type": "code",
-      "norm_label": ".show()",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/notify.js",
-      "source_location": "L16"
-    },
-    {
-      "id": "original_site_assets_components_sendit_js_web_modules_notify_notify_success",
-      "label": ".success()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 56,
-      "community_name": "Notify",
-      "file_type": "code",
-      "norm_label": ".success()",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/notify.js",
-      "source_location": "L44"
-    },
-    {
-      "id": "original_site_assets_components_sendit_js_web_modules_notify_notify_updatetext",
-      "label": ".updateText()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 56,
-      "community_name": "Notify",
-      "file_type": "code",
-      "norm_label": ".updatetext()",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/notify.js",
-      "source_location": "L74"
-    },
-    {
-      "id": "original_site_assets_components_sendit_js_web_modules_notify_notify_warning",
-      "label": ".warning()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 56,
-      "community_name": "Notify",
-      "file_type": "code",
-      "norm_label": ".warning()",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/notify.js",
-      "source_location": "L56"
-    },
-    {
-      "id": "original_site_assets_components_sendit_js_web_modules_sending_sending_error",
-      "label": ".error()",
+      "id": "scripts_qa_packshots_alphalevels",
+      "label": "alphaLevels()",
       "_callable": true,
       "_origin": "ast",
       "community": 57,
-      "community_name": "Sending",
+      "community_name": "qa-packshots.mjs",
       "file_type": "code",
-      "norm_label": ".error()",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/sending.js",
-      "source_location": "L288"
+      "norm_label": "alphalevels()",
+      "source_file": "scripts/qa-packshots.mjs",
+      "source_location": "L21"
     },
     {
-      "id": "original_site_assets_components_sendit_js_web_modules_sending_sending_fetch",
-      "label": ".fetch()",
+      "id": "scripts_qa_packshots_run",
+      "label": "run()",
       "_callable": true,
       "_origin": "ast",
       "community": 57,
-      "community_name": "Sending",
+      "community_name": "qa-packshots.mjs",
       "file_type": "code",
-      "norm_label": ".fetch()",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/sending.js",
-      "source_location": "L111"
-    },
-    {
-      "id": "original_site_assets_components_sendit_js_web_modules_sending_sending_getroot",
-      "label": ".getRoot()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 57,
-      "community_name": "Sending",
-      "file_type": "code",
-      "norm_label": ".getroot()",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/sending.js",
-      "source_location": "L47"
-    },
-    {
-      "id": "original_site_assets_components_sendit_js_web_modules_sending_sending_initialize",
-      "label": ".initialize()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 57,
-      "community_name": "Sending",
-      "file_type": "code",
-      "norm_label": ".initialize()",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/sending.js",
-      "source_location": "L4"
-    },
-    {
-      "id": "original_site_assets_components_sendit_js_web_modules_sending_sending_preparesendparams",
-      "label": ".prepareSendParams()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 57,
-      "community_name": "Sending",
-      "file_type": "code",
-      "norm_label": ".preparesendparams()",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/sending.js",
-      "source_location": "L74"
-    },
-    {
-      "id": "original_site_assets_components_sendit_js_web_modules_sending_sending_resetallerrors",
-      "label": ".resetAllErrors()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 57,
-      "community_name": "Sending",
-      "file_type": "code",
-      "norm_label": ".resetallerrors()",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/sending.js",
-      "source_location": "L342"
-    },
-    {
-      "id": "original_site_assets_components_sendit_js_web_modules_sending_sending_reseterror",
-      "label": ".resetError()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 57,
-      "community_name": "Sending",
-      "file_type": "code",
-      "norm_label": ".reseterror()",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/sending.js",
-      "source_location": "L355"
-    },
-    {
-      "id": "original_site_assets_components_sendit_js_web_modules_sending_sending_resetform",
-      "label": ".resetForm()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 57,
-      "community_name": "Sending",
-      "file_type": "code",
-      "norm_label": ".resetform()",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/sending.js",
-      "source_location": "L314"
-    },
-    {
-      "id": "original_site_assets_components_sendit_js_web_modules_sending_sending_send",
-      "label": ".send()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 57,
-      "community_name": "Sending",
-      "file_type": "code",
-      "norm_label": ".send()",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/sending.js",
-      "source_location": "L81"
-    },
-    {
-      "id": "original_site_assets_components_sendit_js_web_modules_sending_sending_sendfield",
-      "label": ".sendField()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 57,
-      "community_name": "Sending",
-      "file_type": "code",
-      "norm_label": ".sendfield()",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/sending.js",
-      "source_location": "L52"
-    },
-    {
-      "id": "original_site_assets_components_sendit_js_web_modules_sending_sending_sendrequest",
-      "label": ".sendRequest()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 57,
-      "community_name": "Sending",
-      "file_type": "code",
-      "norm_label": ".sendrequest()",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/sending.js",
-      "source_location": "L85"
-    },
-    {
-      "id": "original_site_assets_components_sendit_js_web_modules_sending_sending_success",
-      "label": ".success()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 57,
-      "community_name": "Sending",
-      "file_type": "code",
-      "norm_label": ".success()",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/sending.js",
-      "source_location": "L263"
+      "norm_label": "run()",
+      "source_file": "scripts/qa-packshots.mjs",
+      "source_location": "L15"
     },
     {
       "id": "lib_admin_catalog_store_audit",
@@ -17673,124 +18033,64 @@
       "source_location": "L11"
     },
     {
-      "id": "original_site_assets_components_ace_ace_worker_javascript_g",
-      "label": "G()",
+      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_ln",
+      "label": "ln()",
       "_callable": true,
       "_origin": "ast",
       "community": 64,
-      "community_name": "o",
+      "community_name": "ln",
       "file_type": "code",
-      "norm_label": "g()",
-      "source_file": "original_site/assets/components/ace/ace/worker-javascript.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_i",
-      "label": "I()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 64,
-      "community_name": "o",
-      "file_type": "code",
-      "norm_label": "i()",
-      "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
-      "source_location": "L2"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_l",
-      "label": "l()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 64,
-      "community_name": "o",
-      "file_type": "code",
-      "norm_label": "l()",
-      "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
-      "source_location": "L2"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_n",
-      "label": "N()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 64,
-      "community_name": "o",
-      "file_type": "code",
-      "norm_label": "n()",
-      "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
-      "source_location": "L2"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_o",
-      "label": "o()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 64,
-      "community_name": "o",
-      "file_type": "code",
-      "norm_label": "o()",
-      "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
-      "source_location": "L2"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_qt",
-      "label": "qt()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 64,
-      "community_name": "o",
-      "file_type": "code",
-      "norm_label": "qt()",
-      "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
-      "source_location": "L2"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_w",
-      "label": "w()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 64,
-      "community_name": "o",
-      "file_type": "code",
-      "norm_label": "w()",
-      "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
-      "source_location": "L2"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_z",
-      "label": "z()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 64,
-      "community_name": "o",
-      "file_type": "code",
-      "norm_label": "z()",
-      "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
-      "source_location": "L2"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_ot",
-      "label": "ot()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 64,
-      "community_name": "o",
-      "file_type": "code",
-      "norm_label": "ot()",
+      "norm_label": "ln()",
       "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
-      "source_location": "L5"
+      "source_location": "L6"
     },
     {
-      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_qt",
-      "label": "qt()",
+      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_nn",
+      "label": "nn()",
       "_callable": true,
       "_origin": "ast",
       "community": 64,
-      "community_name": "o",
+      "community_name": "ln",
       "file_type": "code",
-      "norm_label": "qt()",
+      "norm_label": "nn()",
       "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
-      "source_location": "L5"
+      "source_location": "L6"
+    },
+    {
+      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_nr",
+      "label": "nr()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 64,
+      "community_name": "ln",
+      "file_type": "code",
+      "norm_label": "nr()",
+      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
+      "source_location": "L6"
+    },
+    {
+      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_rn",
+      "label": "rn()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 64,
+      "community_name": "ln",
+      "file_type": "code",
+      "norm_label": "rn()",
+      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
+      "source_location": "L6"
+    },
+    {
+      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_un",
+      "label": "un()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 64,
+      "community_name": "ln",
+      "file_type": "code",
+      "norm_label": "un()",
+      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
+      "source_location": "L6"
     },
     {
       "id": "original_site_assets_components_ace_emmet_emmet_abbreviationnode",
@@ -19857,78 +20157,6 @@
       "source_location": "L27"
     },
     {
-      "id": "original_site_assets_components_ace_ace_beautifier_whitespacepattern",
-      "label": "WhitespacePattern()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 89,
-      "community_name": "WhitespacePattern",
-      "file_type": "code",
-      "norm_label": "whitespacepattern()",
-      "source_file": "original_site/assets/components/ace/ace/beautifier.js",
-      "source_location": "L1234"
-    },
-    {
-      "id": "original_site_assets_components_ace_ace_beautifier_whitespacepattern_create",
-      "label": "._create()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 89,
-      "community_name": "WhitespacePattern",
-      "file_type": "code",
-      "norm_label": "._create()",
-      "source_file": "original_site/assets/components/ace/ace/beautifier.js",
-      "source_location": "L1280"
-    },
-    {
-      "id": "original_site_assets_components_ace_ace_beautifier_whitespacepattern_matching",
-      "label": ".matching()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 89,
-      "community_name": "WhitespacePattern",
-      "file_type": "code",
-      "norm_label": ".matching()",
-      "source_file": "original_site/assets/components/ace/ace/beautifier.js",
-      "source_location": "L1273"
-    },
-    {
-      "id": "original_site_assets_components_ace_ace_beautifier_whitespacepattern_read",
-      "label": ".read()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 89,
-      "community_name": "WhitespacePattern",
-      "file_type": "code",
-      "norm_label": ".read()",
-      "source_file": "original_site/assets/components/ace/ace/beautifier.js",
-      "source_location": "L1257"
-    },
-    {
-      "id": "original_site_assets_components_ace_ace_beautifier_whitespacepattern_set_whitespace_patterns",
-      "label": ".__set_whitespace_patterns()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 89,
-      "community_name": "WhitespacePattern",
-      "file_type": "code",
-      "norm_label": ".__set_whitespace_patterns()",
-      "source_file": "original_site/assets/components/ace/ace/beautifier.js",
-      "source_location": "L1247"
-    },
-    {
-      "id": "original_site_assets_components_ace_ace_beautifier_whitespacepattern_split",
-      "label": ".__split()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 89,
-      "community_name": "WhitespacePattern",
-      "file_type": "code",
-      "norm_label": ".__split()",
-      "source_file": "original_site/assets/components/ace/ace/beautifier.js",
-      "source_location": "L1284"
-    },
-    {
       "id": "original_site_assets_js_jquery_inputmask_a",
       "label": "a()",
       "_callable": true,
@@ -20767,126 +20995,6 @@
       "norm_label": "t()",
       "source_file": "original_site/assets/components/msfavorites/js/default.min.js",
       "source_location": "L1"
-    },
-    {
-      "id": "original_site_assets_components_sendit_js_web_modules_behaviorsign_behaviorsign_bytestohex",
-      "label": ".bytesToHex()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 94,
-      "community_name": "BehaviorSign",
-      "file_type": "code",
-      "norm_label": ".bytestohex()",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/behaviorsign.js",
-      "source_location": "L70"
-    },
-    {
-      "id": "original_site_assets_components_sendit_js_web_modules_behaviorsign_behaviorsign_createsignature",
-      "label": ".createSignature()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 94,
-      "community_name": "BehaviorSign",
-      "file_type": "code",
-      "norm_label": ".createsignature()",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/behaviorsign.js",
-      "source_location": "L30"
-    },
-    {
-      "id": "original_site_assets_components_sendit_js_web_modules_behaviorsign_behaviorsign_hextobytes",
-      "label": ".hexToBytes()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 94,
-      "community_name": "BehaviorSign",
-      "file_type": "code",
-      "norm_label": ".hextobytes()",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/behaviorsign.js",
-      "source_location": "L62"
-    },
-    {
-      "id": "original_site_assets_components_sendit_js_web_modules_behaviorsign_behaviorsign_importkey",
-      "label": ".importKey()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 94,
-      "community_name": "BehaviorSign",
-      "file_type": "code",
-      "norm_label": ".importkey()",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/behaviorsign.js",
-      "source_location": "L18"
-    },
-    {
-      "id": "original_site_assets_components_sendit_js_web_modules_behaviorsign_behaviorsign_initialize",
-      "label": ".initialize()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 94,
-      "community_name": "BehaviorSign",
-      "file_type": "code",
-      "norm_label": ".initialize()",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/behaviorsign.js",
-      "source_location": "L4"
-    },
-    {
-      "id": "original_site_assets_components_sendit_js_web_modules_saveformdata_saveformdata_initialize",
-      "label": ".initialize()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 95,
-      "community_name": "SaveFormData",
-      "file_type": "code",
-      "norm_label": ".initialize()",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/saveformdata.js",
-      "source_location": "L4"
-    },
-    {
-      "id": "original_site_assets_components_sendit_js_web_modules_saveformdata_saveformdata_removevalues",
-      "label": ".removeValues()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 95,
-      "community_name": "SaveFormData",
-      "file_type": "code",
-      "norm_label": ".removevalues()",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/saveformdata.js",
-      "source_location": "L174"
-    },
-    {
-      "id": "original_site_assets_components_sendit_js_web_modules_saveformdata_saveformdata_savedata",
-      "label": ".saveData()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 95,
-      "community_name": "SaveFormData",
-      "file_type": "code",
-      "norm_label": ".savedata()",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/saveformdata.js",
-      "source_location": "L33"
-    },
-    {
-      "id": "original_site_assets_components_sendit_js_web_modules_saveformdata_saveformdata_savefieldgroupvalues",
-      "label": ".saveFieldGroupValues()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 95,
-      "community_name": "SaveFormData",
-      "file_type": "code",
-      "norm_label": ".savefieldgroupvalues()",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/saveformdata.js",
-      "source_location": "L82"
-    },
-    {
-      "id": "original_site_assets_components_sendit_js_web_modules_saveformdata_saveformdata_setvalues",
-      "label": ".setValues()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 95,
-      "community_name": "SaveFormData",
-      "file_type": "code",
-      "norm_label": ".setvalues()",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/saveformdata.js",
-      "source_location": "L91"
     },
     {
       "id": "original_site_assets_components_pdotools_js_jquery_pdopage",
@@ -21800,7 +21908,7 @@
       "file_type": "code",
       "norm_label": "dependencies",
       "source_file": "package.json",
-      "source_location": "L15"
+      "source_location": "L18"
     },
     {
       "id": "package_dependencies_next",
@@ -21811,7 +21919,7 @@
       "file_type": "code",
       "norm_label": "next",
       "source_file": "package.json",
-      "source_location": "L16"
+      "source_location": "L19"
     },
     {
       "id": "package_dependencies_react",
@@ -21822,7 +21930,7 @@
       "file_type": "code",
       "norm_label": "react",
       "source_file": "package.json",
-      "source_location": "L17"
+      "source_location": "L20"
     },
     {
       "id": "package_dependencies_react_dom",
@@ -21833,7 +21941,7 @@
       "file_type": "code",
       "norm_label": "react-dom",
       "source_file": "package.json",
-      "source_location": "L18"
+      "source_location": "L21"
     },
     {
       "id": "package_dependencies_three",
@@ -21844,7 +21952,7 @@
       "file_type": "code",
       "norm_label": "three",
       "source_file": "package.json",
-      "source_location": "L19"
+      "source_location": "L22"
     },
     {
       "id": "package_devdependencies",
@@ -21855,7 +21963,7 @@
       "file_type": "code",
       "norm_label": "devdependencies",
       "source_file": "package.json",
-      "source_location": "L21"
+      "source_location": "L24"
     },
     {
       "id": "package_devdependencies_playwright_core",
@@ -21866,7 +21974,7 @@
       "file_type": "code",
       "norm_label": "playwright-core",
       "source_file": "package.json",
-      "source_location": "L25"
+      "source_location": "L28"
     },
     {
       "id": "package_devdependencies_types_node",
@@ -21877,7 +21985,7 @@
       "file_type": "code",
       "norm_label": "@types/node",
       "source_file": "package.json",
-      "source_location": "L22"
+      "source_location": "L25"
     },
     {
       "id": "package_devdependencies_types_react",
@@ -21888,7 +21996,7 @@
       "file_type": "code",
       "norm_label": "@types/react",
       "source_file": "package.json",
-      "source_location": "L23"
+      "source_location": "L26"
     },
     {
       "id": "package_devdependencies_types_react_dom",
@@ -21899,7 +22007,7 @@
       "file_type": "code",
       "norm_label": "@types/react-dom",
       "source_file": "package.json",
-      "source_location": "L24"
+      "source_location": "L27"
     },
     {
       "id": "package_devdependencies_typescript",
@@ -21910,7 +22018,7 @@
       "file_type": "code",
       "norm_label": "typescript",
       "source_file": "package.json",
-      "source_location": "L26"
+      "source_location": "L29"
     },
     {
       "id": "package_name",
@@ -21954,7 +22062,18 @@
       "file_type": "code",
       "norm_label": "assets:normalize",
       "source_file": "package.json",
-      "source_location": "L11"
+      "source_location": "L12"
+    },
+    {
+      "id": "package_scripts_assets_polish_edges",
+      "label": "assets:polish-edges",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "scripts",
+      "file_type": "code",
+      "norm_label": "assets:polish-edges",
+      "source_file": "package.json",
+      "source_location": "L13"
     },
     {
       "id": "package_scripts_build",
@@ -21987,7 +22106,18 @@
       "file_type": "code",
       "norm_label": "lint",
       "source_file": "package.json",
-      "source_location": "L10"
+      "source_location": "L11"
+    },
+    {
+      "id": "package_scripts_postbuild",
+      "label": "postbuild",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "scripts",
+      "file_type": "code",
+      "norm_label": "postbuild",
+      "source_file": "package.json",
+      "source_location": "L9"
     },
     {
       "id": "package_scripts_prebuild",
@@ -22009,7 +22139,7 @@
       "file_type": "code",
       "norm_label": "qa:admin",
       "source_file": "package.json",
-      "source_location": "L12"
+      "source_location": "L15"
     },
     {
       "id": "package_scripts_qa_layout",
@@ -22020,7 +22150,18 @@
       "file_type": "code",
       "norm_label": "qa:layout",
       "source_file": "package.json",
-      "source_location": "L13"
+      "source_location": "L16"
+    },
+    {
+      "id": "package_scripts_qa_packshots",
+      "label": "qa:packshots",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "scripts",
+      "file_type": "code",
+      "norm_label": "qa:packshots",
+      "source_file": "package.json",
+      "source_location": "L14"
     },
     {
       "id": "package_scripts_start",
@@ -22031,7 +22172,7 @@
       "file_type": "code",
       "norm_label": "start",
       "source_file": "package.json",
-      "source_location": "L9"
+      "source_location": "L10"
     },
     {
       "id": "package_version",
@@ -22053,7 +22194,7 @@
       "file_type": "concept",
       "norm_label": "next",
       "source_file": "package.json",
-      "source_location": "L16"
+      "source_location": "L19"
     },
     {
       "id": "playwright_core",
@@ -22064,7 +22205,7 @@
       "file_type": "concept",
       "norm_label": "playwright-core",
       "source_file": "package.json",
-      "source_location": "L25"
+      "source_location": "L28"
     },
     {
       "id": "react",
@@ -22075,7 +22216,7 @@
       "file_type": "concept",
       "norm_label": "react",
       "source_file": "package.json",
-      "source_location": "L17"
+      "source_location": "L20"
     },
     {
       "id": "react_dom",
@@ -22086,7 +22227,7 @@
       "file_type": "concept",
       "norm_label": "react-dom",
       "source_file": "package.json",
-      "source_location": "L18"
+      "source_location": "L21"
     },
     {
       "id": "three",
@@ -22097,7 +22238,7 @@
       "file_type": "concept",
       "norm_label": "three",
       "source_file": "package.json",
-      "source_location": "L19"
+      "source_location": "L22"
     },
     {
       "id": "types_node",
@@ -22108,7 +22249,7 @@
       "file_type": "concept",
       "norm_label": "@types/node",
       "source_file": "package.json",
-      "source_location": "L22"
+      "source_location": "L25"
     },
     {
       "id": "types_react",
@@ -22119,7 +22260,7 @@
       "file_type": "concept",
       "norm_label": "@types/react",
       "source_file": "package.json",
-      "source_location": "L23"
+      "source_location": "L26"
     },
     {
       "id": "types_react_dom",
@@ -22130,7 +22271,7 @@
       "file_type": "concept",
       "norm_label": "@types/react-dom",
       "source_file": "package.json",
-      "source_location": "L24"
+      "source_location": "L27"
     },
     {
       "id": "typescript",
@@ -22141,7 +22282,7 @@
       "file_type": "concept",
       "norm_label": "typescript",
       "source_file": "package.json",
-      "source_location": "L26"
+      "source_location": "L29"
     },
     {
       "id": "original_site_assets_components_ace_ace_mode_svg",
@@ -23658,7 +23799,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-28t09:06:44.112z - commerce-first catalog and separate care guide",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L27"
+      "source_location": "L36"
     },
     {
       "id": "changelog_codex_2026_08_28t12_34_37_388z_version_11_1_0",
@@ -23670,7 +23811,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-28t12:34:37.388z - version 11.1.0",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L122"
+      "source_location": "L131"
     },
     {
       "id": "changelog_codex_2026_08_28t12_34_37_393z_autonomous_storefront_content_and_complete_novelty_experience",
@@ -23682,7 +23823,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-28t12:34:37.393z - autonomous storefront content and complete novelty experience",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L126"
+      "source_location": "L135"
     },
     {
       "id": "changelog_codex_2026_08_28t13_25_24_258z_version_11_1_1",
@@ -23694,7 +23835,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-28t13:25:24.258z - version 11.1.1",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L148"
+      "source_location": "L157"
     },
     {
       "id": "changelog_codex_2026_08_28t13_26_27_148z_extend_the_hero_promise_to_always_and_everywhere",
@@ -23706,7 +23847,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-28t13:26:27.148z - extend the hero promise to always and everywhere",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L152"
+      "source_location": "L161"
     },
     {
       "id": "changelog_codex_2026_08_28t13_35_23_555z_version_11_1_2",
@@ -23718,7 +23859,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-28t13:35:23.555z - version 11.1.2",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L164"
+      "source_location": "L173"
     },
     {
       "id": "changelog_codex_2026_08_28t13_36_46_879z_restore_the_three_way_site_comparison_switcher",
@@ -23730,7 +23871,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-28t13:36:46.879z - restore the three-way site comparison switcher",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L168"
+      "source_location": "L177"
     },
     {
       "id": "changelog_codex_2026_08_28t13_52_04_516z_version_11_1_3",
@@ -23742,7 +23883,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-28t13:52:04.516z - version 11.1.3",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L180"
+      "source_location": "L189"
     },
     {
       "id": "changelog_codex_2026_08_28t13_53_57_960z_stabilize_the_mobile_header_action_row",
@@ -23754,7 +23895,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-28t13:53:57.960z - stabilize the mobile header action row",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L184"
+      "source_location": "L193"
     },
     {
       "id": "changelog_codex_2026_08_31t15_22_23_000z_qk_cosmetic_three_direction_design_lab",
@@ -23766,7 +23907,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-31t15:22:23.000z - qk cosmetic three-direction design lab",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L196"
+      "source_location": "L205"
     },
     {
       "id": "changelog_codex_2026_08_31t19_30_00_000z_commerce_administration_authentic_packshots_and_prism_motion",
@@ -23778,7 +23919,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-31t19:30:00.000z - commerce administration, authentic packshots and prism motion",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L209"
+      "source_location": "L218"
     },
     {
       "id": "changelog_codex_2026_08_31t20_35_12_233z_version_13_1_1",
@@ -23790,7 +23931,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-31t20:35:12.233z - version 13.1.1",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L223"
+      "source_location": "L232"
     },
     {
       "id": "changelog_codex_2026_08_31t20_35_22_368z_complete_two_theme_anestet_storefront_authentic_packshots_and_protected_admin",
@@ -23802,7 +23943,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-31t20:35:22.368z - complete two-theme anestet storefront, authentic packshots and protected admin",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L227"
+      "source_location": "L236"
     },
     {
       "id": "changelog_codex_2026_08_31t21_24_03_302z_publish_anestet_v13_1_2_with_clean_admin_session_and_durable_release_governance",
@@ -23814,7 +23955,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-31t21:24:03.302z - publish anestet v13.1.2 with clean admin session and durable release governance",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L239"
+      "source_location": "L248"
     },
     {
       "id": "changelog_codex_2026_08_31t22_20_00_000z_version_13_1_0",
@@ -23826,7 +23967,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-31t22:20:00.000z - version 13.1.0",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L14"
+      "source_location": "L23"
     },
     {
       "id": "changelog_codex_2026_08_31t22_21_19_241z_version_13_1_3",
@@ -23838,7 +23979,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-31t22:21:19.241z - version 13.1.3",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L252"
+      "source_location": "L261"
     },
     {
       "id": "changelog_codex_2026_08_31t22_42_40_588z_compact_anestet_layout_source_faithful_hero_copy_and_interactive_care_guide",
@@ -23850,7 +23991,7 @@
       "node_kind": "heading",
       "norm_label": "2026-08-31t22:42:40.588z - compact anestet layout, source-faithful hero copy and interactive care guide",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L256"
+      "source_location": "L265"
     },
     {
       "id": "changelog_codex_2026_09_01_version_13_2_1",
@@ -23862,7 +24003,7 @@
       "node_kind": "heading",
       "norm_label": "2026-09-01 - version 13.2.1",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L363"
+      "source_location": "L372"
     },
     {
       "id": "changelog_codex_2026_09_01_version_13_3_0",
@@ -23873,6 +24014,18 @@
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "2026-09-01 - version 13.3.0",
+      "source_file": "CHANGELOG.codex.md",
+      "source_location": "L14"
+    },
+    {
+      "id": "changelog_codex_2026_09_01_version_13_3_1",
+      "label": "2026-09-01 - Version 13.3.1",
+      "_origin": "ast",
+      "community": 22,
+      "community_name": "Codex Changelog",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "2026-09-01 - version 13.3.1",
       "source_file": "CHANGELOG.codex.md",
       "source_location": "L5"
     },
@@ -23886,7 +24039,7 @@
       "node_kind": "heading",
       "norm_label": "2026-09-01t04:32:51.526z - version 13.2.0",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L338"
+      "source_location": "L347"
     },
     {
       "id": "changelog_codex_2026_09_01t07_49_34_133z_release_v13_2_0_approved_storefront_vk_feed_and_durable_logic_graph",
@@ -23898,7 +24051,7 @@
       "node_kind": "heading",
       "norm_label": "2026-09-01t07:49:34.133z - release v13.2.0: approved storefront, vk feed and durable logic graph",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L342"
+      "source_location": "L351"
     },
     {
       "id": "changelog_codex_codex_changelog",
@@ -24239,6 +24392,18 @@
       "source_location": "L143"
     },
     {
+      "id": "docs_release_history_2026_09_01_v13_3_1",
+      "label": "2026.09.01-v13.3.1",
+      "_origin": "ast",
+      "community": 23,
+      "community_name": "GitHub-\u0440\u0435\u043b\u0438\u0437\u044b",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "2026.09.01-v13.3.1",
+      "source_file": "docs/RELEASE_HISTORY.md",
+      "source_location": "L154"
+    },
+    {
       "id": "docs_release_history_github_\u0440\u0435\u043b\u0438\u0437\u044b",
       "label": "GitHub-\u0440\u0435\u043b\u0438\u0437\u044b",
       "_origin": "ast",
@@ -24517,6 +24682,18 @@
       "norm_label": "2026-09-01 \u2014 stable product-centred hero composition and details",
       "source_file": ".codex-logic/logic-map.md",
       "source_location": "L156"
+    },
+    {
+      "id": "codex_logic_logic_map_2026_09_01_vector_packshot_edge_reconstruction",
+      "label": "2026-09-01 \u2014 Vector packshot edge reconstruction",
+      "_origin": "ast",
+      "community": 25,
+      "community_name": "Logic Graph - xsANESTET_site",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "2026-09-01 \u2014 vector packshot edge reconstruction",
+      "source_file": ".codex-logic/logic-map.md",
+      "source_location": "L164"
     },
     {
       "id": "codex_logic_logic_map_2026_09_01t05_11_33_523z_g1_storefront_structure_lineage",
@@ -26133,6 +26310,127 @@
       "source_location": "L1"
     },
     {
+      "id": "original_site_assets_components_sendit_js_web_modules_base",
+      "label": "sendit/js/web/modules/base.js",
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": "sendit/js/web/modules/base.js",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/base.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_behaviorsign",
+      "label": "behaviorsign.js",
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": "behaviorsign.js",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/behaviorsign.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_fileuploader",
+      "label": "modules/fileuploader.js",
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": "modules/fileuploader.js",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/fileuploader.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_notify",
+      "label": "notify.js",
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": "notify.js",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/notify.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_paginationhandler",
+      "label": "paginationhandler.js",
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": "paginationhandler.js",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/paginationhandler.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_proofofwork",
+      "label": "proofofwork.js",
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": "proofofwork.js",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/proofofwork.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_quizform",
+      "label": "quizform.js",
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": "quizform.js",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/quizform.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_saveformdata",
+      "label": "saveformdata.js",
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": "saveformdata.js",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/saveformdata.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_sending",
+      "label": "sending.js",
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": "sending.js",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/sending.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_sessionlogger",
+      "label": "sessionlogger.js",
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": "sessionlogger.js",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/sessionlogger.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "original_site_assets_components_sendit_js_web_modules_userbehaviortracker",
+      "label": "userbehaviortracker.js",
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "Base",
+      "file_type": "code",
+      "norm_label": "userbehaviortracker.js",
+      "source_file": "original_site/assets/components/sendit/js/web/modules/userbehaviortracker.js",
+      "source_location": "L1"
+    },
+    {
       "id": "original_site_assets_components_minishop2_js_mgr_orders_orders",
       "label": "orders.js",
       "_origin": "ast",
@@ -26716,125 +27014,81 @@
       "source_location": "L1"
     },
     {
-      "id": "original_site_assets_components_sendit_js_web_modules_base",
-      "label": "sendit/js/web/modules/base.js",
+      "id": "scripts_polish_product_packshot_edges",
+      "label": "polish-product-packshot-edges.mjs",
       "_origin": "ast",
       "community": 41,
-      "community_name": "Base",
+      "community_name": "polish-product-packshot-edges.mjs",
       "file_type": "code",
-      "norm_label": "sendit/js/web/modules/base.js",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/base.js",
+      "norm_label": "polish-product-packshot-edges.mjs",
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
       "source_location": "L1"
     },
     {
-      "id": "original_site_assets_components_sendit_js_web_modules_behaviorsign",
-      "label": "behaviorsign.js",
+      "id": "scripts_polish_product_packshot_edges_geometries",
+      "label": "geometries",
       "_origin": "ast",
       "community": 41,
-      "community_name": "Base",
+      "community_name": "polish-product-packshot-edges.mjs",
       "file_type": "code",
-      "norm_label": "behaviorsign.js",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/behaviorsign.js",
-      "source_location": "L1"
+      "norm_label": "geometries",
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L73"
     },
     {
-      "id": "original_site_assets_components_sendit_js_web_modules_fileuploader",
-      "label": "modules/fileuploader.js",
+      "id": "scripts_polish_product_packshot_edges_maskdir",
+      "label": "maskDir",
       "_origin": "ast",
       "community": 41,
-      "community_name": "Base",
+      "community_name": "polish-product-packshot-edges.mjs",
       "file_type": "code",
-      "norm_label": "modules/fileuploader.js",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/fileuploader.js",
-      "source_location": "L1"
+      "norm_label": "maskdir",
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L9"
     },
     {
-      "id": "original_site_assets_components_sendit_js_web_modules_notify",
-      "label": "notify.js",
+      "id": "scripts_polish_product_packshot_edges_reportdir",
+      "label": "reportDir",
       "_origin": "ast",
       "community": 41,
-      "community_name": "Base",
+      "community_name": "polish-product-packshot-edges.mjs",
       "file_type": "code",
-      "norm_label": "notify.js",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/notify.js",
-      "source_location": "L1"
+      "norm_label": "reportdir",
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L8"
     },
     {
-      "id": "original_site_assets_components_sendit_js_web_modules_paginationhandler",
-      "label": "paginationhandler.js",
+      "id": "scripts_polish_product_packshot_edges_restoreddir",
+      "label": "restoredDir",
       "_origin": "ast",
       "community": 41,
-      "community_name": "Base",
+      "community_name": "polish-product-packshot-edges.mjs",
       "file_type": "code",
-      "norm_label": "paginationhandler.js",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/paginationhandler.js",
-      "source_location": "L1"
+      "norm_label": "restoreddir",
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L7"
     },
     {
-      "id": "original_site_assets_components_sendit_js_web_modules_proofofwork",
-      "label": "proofofwork.js",
+      "id": "scripts_polish_product_packshot_edges_results",
+      "label": "results",
       "_origin": "ast",
       "community": 41,
-      "community_name": "Base",
+      "community_name": "polish-product-packshot-edges.mjs",
       "file_type": "code",
-      "norm_label": "proofofwork.js",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/proofofwork.js",
-      "source_location": "L1"
+      "norm_label": "results",
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L96"
     },
     {
-      "id": "original_site_assets_components_sendit_js_web_modules_quizform",
-      "label": "quizform.js",
+      "id": "scripts_polish_product_packshot_edges_root",
+      "label": "root",
       "_origin": "ast",
       "community": 41,
-      "community_name": "Base",
+      "community_name": "polish-product-packshot-edges.mjs",
       "file_type": "code",
-      "norm_label": "quizform.js",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/quizform.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "original_site_assets_components_sendit_js_web_modules_saveformdata",
-      "label": "saveformdata.js",
-      "_origin": "ast",
-      "community": 41,
-      "community_name": "Base",
-      "file_type": "code",
-      "norm_label": "saveformdata.js",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/saveformdata.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "original_site_assets_components_sendit_js_web_modules_sending",
-      "label": "sending.js",
-      "_origin": "ast",
-      "community": 41,
-      "community_name": "Base",
-      "file_type": "code",
-      "norm_label": "sending.js",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/sending.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "original_site_assets_components_sendit_js_web_modules_sessionlogger",
-      "label": "sessionlogger.js",
-      "_origin": "ast",
-      "community": 41,
-      "community_name": "Base",
-      "file_type": "code",
-      "norm_label": "sessionlogger.js",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/sessionlogger.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "original_site_assets_components_sendit_js_web_modules_userbehaviortracker",
-      "label": "userbehaviortracker.js",
-      "_origin": "ast",
-      "community": 41,
-      "community_name": "Base",
-      "file_type": "code",
-      "norm_label": "userbehaviortracker.js",
-      "source_file": "original_site/assets/components/sendit/js/web/modules/userbehaviortracker.js",
-      "source_location": "L1"
+      "norm_label": "root",
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L6"
     },
     {
       "id": "original_site_assets_components_msearch2_connector",
@@ -28142,6 +28396,210 @@
       "source_location": "L1"
     },
     {
+      "id": "scripts_prune_export_assets",
+      "label": "prune-export-assets.mjs",
+      "_origin": "ast",
+      "community": 55,
+      "community_name": "prune-export-assets.mjs",
+      "file_type": "code",
+      "norm_label": "prune-export-assets.mjs",
+      "source_file": "scripts/prune-export-assets.mjs",
+      "source_location": "L1"
+    },
+    {
+      "id": "scripts_prune_export_assets_fontzip",
+      "label": "fontZip",
+      "_origin": "ast",
+      "community": 55,
+      "community_name": "prune-export-assets.mjs",
+      "file_type": "code",
+      "norm_label": "fontzip",
+      "source_file": "scripts/prune-export-assets.mjs",
+      "source_location": "L53"
+    },
+    {
+      "id": "scripts_prune_export_assets_legacydirectories",
+      "label": "legacyDirectories",
+      "_origin": "ast",
+      "community": 55,
+      "community_name": "prune-export-assets.mjs",
+      "file_type": "code",
+      "norm_label": "legacydirectories",
+      "source_file": "scripts/prune-export-assets.mjs",
+      "source_location": "L19"
+    },
+    {
+      "id": "scripts_prune_export_assets_out",
+      "label": "out",
+      "_origin": "ast",
+      "community": 55,
+      "community_name": "prune-export-assets.mjs",
+      "file_type": "code",
+      "norm_label": "out",
+      "source_file": "scripts/prune-export-assets.mjs",
+      "source_location": "L6"
+    },
+    {
+      "id": "scripts_prune_export_assets_packshotdir",
+      "label": "packshotDir",
+      "_origin": "ast",
+      "community": 55,
+      "community_name": "prune-export-assets.mjs",
+      "file_type": "code",
+      "norm_label": "packshotdir",
+      "source_file": "scripts/prune-export-assets.mjs",
+      "source_location": "L40"
+    },
+    {
+      "id": "scripts_prune_export_assets_removed",
+      "label": "removed",
+      "_origin": "ast",
+      "community": 55,
+      "community_name": "prune-export-assets.mjs",
+      "file_type": "code",
+      "norm_label": "removed",
+      "source_file": "scripts/prune-export-assets.mjs",
+      "source_location": "L26"
+    },
+    {
+      "id": "scripts_prune_export_assets_root",
+      "label": "root",
+      "_origin": "ast",
+      "community": 55,
+      "community_name": "prune-export-assets.mjs",
+      "file_type": "code",
+      "norm_label": "root",
+      "source_file": "scripts/prune-export-assets.mjs",
+      "source_location": "L5"
+    },
+    {
+      "id": "scripts_prune_export_assets_saved",
+      "label": "saved",
+      "_origin": "ast",
+      "community": 55,
+      "community_name": "prune-export-assets.mjs",
+      "file_type": "code",
+      "norm_label": "saved",
+      "source_file": "scripts/prune-export-assets.mjs",
+      "source_location": "L62"
+    },
+    {
+      "id": "docs_releases_2026_09_01_v13_3_1",
+      "label": "2026.09.01-v13.3.1.md",
+      "_origin": "ast",
+      "community": 56,
+      "community_name": "ANESTET 2026.09.01-v13.3.1",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "2026.09.01-v13.3.1.md",
+      "source_file": "docs/releases/2026.09.01-v13.3.1.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_releases_2026_09_01_v13_3_1_anestet_2026_09_01_v13_3_1",
+      "label": "ANESTET 2026.09.01-v13.3.1",
+      "_origin": "ast",
+      "community": 56,
+      "community_name": "ANESTET 2026.09.01-v13.3.1",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "anestet 2026.09.01-v13.3.1",
+      "source_file": "docs/releases/2026.09.01-v13.3.1.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_releases_2026_09_01_v13_3_1_approved_change",
+      "label": "Approved change",
+      "_origin": "ast",
+      "community": 56,
+      "community_name": "ANESTET 2026.09.01-v13.3.1",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "approved change",
+      "source_file": "docs/releases/2026.09.01-v13.3.1.md",
+      "source_location": "L5"
+    },
+    {
+      "id": "docs_releases_2026_09_01_v13_3_1_deployment",
+      "label": "Deployment",
+      "_origin": "ast",
+      "community": 56,
+      "community_name": "ANESTET 2026.09.01-v13.3.1",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "deployment",
+      "source_file": "docs/releases/2026.09.01-v13.3.1.md",
+      "source_location": "L27"
+    },
+    {
+      "id": "docs_releases_2026_09_01_v13_3_1_performance_work",
+      "label": "Performance work",
+      "_origin": "ast",
+      "community": 56,
+      "community_name": "ANESTET 2026.09.01-v13.3.1",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "performance work",
+      "source_file": "docs/releases/2026.09.01-v13.3.1.md",
+      "source_location": "L13"
+    },
+    {
+      "id": "docs_releases_2026_09_01_v13_3_1_verification_gate",
+      "label": "Verification gate",
+      "_origin": "ast",
+      "community": 56,
+      "community_name": "ANESTET 2026.09.01-v13.3.1",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "verification gate",
+      "source_file": "docs/releases/2026.09.01-v13.3.1.md",
+      "source_location": "L19"
+    },
+    {
+      "id": "scripts_qa_packshots",
+      "label": "qa-packshots.mjs",
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "qa-packshots.mjs",
+      "file_type": "code",
+      "norm_label": "qa-packshots.mjs",
+      "source_file": "scripts/qa-packshots.mjs",
+      "source_location": "L1"
+    },
+    {
+      "id": "scripts_qa_packshots_failures",
+      "label": "failures",
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "qa-packshots.mjs",
+      "file_type": "code",
+      "norm_label": "failures",
+      "source_file": "scripts/qa-packshots.mjs",
+      "source_location": "L24"
+    },
+    {
+      "id": "scripts_qa_packshots_root",
+      "label": "root",
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "qa-packshots.mjs",
+      "file_type": "code",
+      "norm_label": "root",
+      "source_file": "scripts/qa-packshots.mjs",
+      "source_location": "L6"
+    },
+    {
+      "id": "scripts_qa_packshots_rows",
+      "label": "rows",
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "qa-packshots.mjs",
+      "file_type": "code",
+      "norm_label": "rows",
+      "source_file": "scripts/qa-packshots.mjs",
+      "source_location": "L8"
+    },
+    {
       "id": "lib_admin_catalog_store",
       "label": "catalog-store.mjs",
       "_origin": "ast",
@@ -28953,7 +29411,7 @@
       "file_type": "code",
       "norm_label": "certificatedocuments",
       "source_file": "app/storefront.tsx",
-      "source_location": "L288"
+      "source_location": "L290"
     },
     {
       "id": "app_storefront_companysections",
@@ -28964,7 +29422,7 @@
       "file_type": "code",
       "norm_label": "companysections",
       "source_file": "app/storefront.tsx",
-      "source_location": "L266"
+      "source_location": "L268"
     },
     {
       "id": "app_storefront_deliveryoptions",
@@ -29008,7 +29466,7 @@
       "file_type": "code",
       "norm_label": "partnerlogos",
       "source_file": "app/storefront.tsx",
-      "source_location": "L273"
+      "source_location": "L275"
     },
     {
       "id": "app_storefront_proof",
@@ -29971,7 +30429,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/storefront.tsx",
-      "source_location": "L1016",
+      "source_location": "L1018",
       "weight": 1.0
     },
     {
@@ -29983,7 +30441,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/storefront.tsx",
-      "source_location": "L1135",
+      "source_location": "L1137",
       "weight": 1.0
     },
     {
@@ -29995,7 +30453,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/storefront.tsx",
-      "source_location": "L1207",
+      "source_location": "L1209",
       "weight": 1.0
     },
     {
@@ -30007,7 +30465,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/storefront.tsx",
-      "source_location": "L1208",
+      "source_location": "L1210",
       "weight": 1.0
     },
     {
@@ -30019,7 +30477,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/storefront.tsx",
-      "source_location": "L1209",
+      "source_location": "L1211",
       "weight": 1.0
     },
     {
@@ -30031,7 +30489,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/storefront.tsx",
-      "source_location": "L1596",
+      "source_location": "L1598",
       "weight": 1.0
     },
     {
@@ -30043,7 +30501,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/storefront.tsx",
-      "source_location": "L346",
+      "source_location": "L348",
       "weight": 1.0
     },
     {
@@ -30055,7 +30513,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/storefront.tsx",
-      "source_location": "L519",
+      "source_location": "L521",
       "weight": 1.0
     },
     {
@@ -30067,7 +30525,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/storefront.tsx",
-      "source_location": "L735",
+      "source_location": "L737",
       "weight": 1.0
     },
     {
@@ -49679,6 +50137,42 @@
       "weight": 1.0
     },
     {
+      "source": "scripts_polish_product_packshot_edges_alphalevels",
+      "target": "scripts_polish_product_packshot_edges_run",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L92",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_polish_product_packshot_edges_identify",
+      "target": "scripts_polish_product_packshot_edges_run",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L91",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_qa_packshots_alphalevels",
+      "target": "scripts_qa_packshots_run",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "scripts/qa-packshots.mjs",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
       "source": "server_order_api_createcallback",
       "target": "server_order_api_json",
       "relation": "calls",
@@ -51679,7 +52173,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L16",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -51691,7 +52185,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L17",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -51703,7 +52197,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L18",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -51715,7 +52209,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L19",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -51727,7 +52221,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L25",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -51739,7 +52233,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L22",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -51751,7 +52245,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L23",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -51763,7 +52257,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L24",
+      "source_location": "L27",
       "weight": 1.0
     },
     {
@@ -51775,7 +52269,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L26",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -53403,7 +53897,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/storefront.tsx",
-      "source_location": "L263",
+      "source_location": "L265",
       "weight": 1.0
     },
     {
@@ -53414,7 +53908,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/storefront.tsx",
-      "source_location": "L264",
+      "source_location": "L266",
       "weight": 1.0
     },
     {
@@ -53425,7 +53919,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/storefront.tsx",
-      "source_location": "L266",
+      "source_location": "L268",
       "weight": 1.0
     },
     {
@@ -53436,7 +53930,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/storefront.tsx",
-      "source_location": "L273",
+      "source_location": "L275",
       "weight": 1.0
     },
     {
@@ -53447,18 +53941,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/storefront.tsx",
-      "source_location": "L288",
-      "weight": 1.0
-    },
-    {
-      "source": "app_storefront",
-      "target": "app_storefront_storefront",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/storefront.tsx",
-      "source_location": "L298",
+      "source_location": "L290",
       "weight": 1.0
     },
     {
@@ -53470,6 +53953,17 @@
       "confidence_score": 1.0,
       "source_file": "app/storefront.tsx",
       "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "app_storefront",
+      "target": "app_storefront_storefront",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/storefront.tsx",
+      "source_location": "L300",
       "weight": 1.0
     },
     {
@@ -53568,7 +54062,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L122",
+      "source_location": "L131",
       "weight": 1.0
     },
     {
@@ -53579,12 +54073,12 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L126",
+      "source_location": "L135",
       "weight": 1.0
     },
     {
       "source": "changelog_codex_codex_changelog",
-      "target": "changelog_codex_2026_08_31t22_20_00_000z_version_13_1_0",
+      "target": "changelog_codex_2026_09_01_version_13_3_0",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -53601,7 +54095,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L148",
+      "source_location": "L157",
       "weight": 1.0
     },
     {
@@ -53612,7 +54106,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L152",
+      "source_location": "L161",
       "weight": 1.0
     },
     {
@@ -53623,7 +54117,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L164",
+      "source_location": "L173",
       "weight": 1.0
     },
     {
@@ -53634,7 +54128,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L168",
+      "source_location": "L177",
       "weight": 1.0
     },
     {
@@ -53645,7 +54139,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L180",
+      "source_location": "L189",
       "weight": 1.0
     },
     {
@@ -53656,7 +54150,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L184",
+      "source_location": "L193",
       "weight": 1.0
     },
     {
@@ -53667,7 +54161,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L196",
+      "source_location": "L205",
       "weight": 1.0
     },
     {
@@ -53678,7 +54172,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L209",
+      "source_location": "L218",
+      "weight": 1.0
+    },
+    {
+      "source": "changelog_codex_codex_changelog",
+      "target": "changelog_codex_2026_08_31t22_20_00_000z_version_13_1_0",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CHANGELOG.codex.md",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -53689,7 +54194,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L223",
+      "source_location": "L232",
       "weight": 1.0
     },
     {
@@ -53700,7 +54205,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L227",
+      "source_location": "L236",
       "weight": 1.0
     },
     {
@@ -53711,7 +54216,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L239",
+      "source_location": "L248",
       "weight": 1.0
     },
     {
@@ -53722,7 +54227,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L252",
+      "source_location": "L261",
       "weight": 1.0
     },
     {
@@ -53733,18 +54238,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L256",
-      "weight": 1.0
-    },
-    {
-      "source": "changelog_codex_codex_changelog",
-      "target": "changelog_codex_2026_08_28t09_06_44_112z_commerce_first_catalog_and_separate_care_guide",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CHANGELOG.codex.md",
-      "source_location": "L27",
+      "source_location": "L265",
       "weight": 1.0
     },
     {
@@ -53755,7 +54249,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L338",
+      "source_location": "L347",
       "weight": 1.0
     },
     {
@@ -53766,7 +54260,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L342",
+      "source_location": "L351",
+      "weight": 1.0
+    },
+    {
+      "source": "changelog_codex_codex_changelog",
+      "target": "changelog_codex_2026_08_28t09_06_44_112z_commerce_first_catalog_and_separate_care_guide",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CHANGELOG.codex.md",
+      "source_location": "L36",
       "weight": 1.0
     },
     {
@@ -53777,12 +54282,12 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L363",
+      "source_location": "L372",
       "weight": 1.0
     },
     {
       "source": "changelog_codex_codex_changelog",
-      "target": "changelog_codex_2026_09_01_version_13_3_0",
+      "target": "changelog_codex_2026_09_01_version_13_3_1",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -53888,6 +54393,17 @@
       "confidence_score": 1.0,
       "source_file": ".codex-logic/logic-map.md",
       "source_location": "L156",
+      "weight": 1.0
+    },
+    {
+      "source": "codex_logic_logic_map_logic_graph_xsanestet_site",
+      "target": "codex_logic_logic_map_2026_09_01_vector_packshot_edge_reconstruction",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".codex-logic/logic-map.md",
+      "source_location": "L164",
       "weight": 1.0
     },
     {
@@ -54570,6 +55086,17 @@
       "confidence_score": 1.0,
       "source_file": "docs/RELEASE_HISTORY.md",
       "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_release_history_github_\u0440\u0435\u043b\u0438\u0437\u044b",
+      "target": "docs_release_history_2026_09_01_v13_3_1",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/RELEASE_HISTORY.md",
+      "source_location": "L154",
       "weight": 1.0
     },
     {
@@ -55394,6 +55921,61 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/releases/2026.09.01-v13.3.0.md",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_releases_2026_09_01_v13_3_1",
+      "target": "docs_releases_2026_09_01_v13_3_1_anestet_2026_09_01_v13_3_1",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/releases/2026.09.01-v13.3.1.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_releases_2026_09_01_v13_3_1_anestet_2026_09_01_v13_3_1",
+      "target": "docs_releases_2026_09_01_v13_3_1_performance_work",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/releases/2026.09.01-v13.3.1.md",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_releases_2026_09_01_v13_3_1_anestet_2026_09_01_v13_3_1",
+      "target": "docs_releases_2026_09_01_v13_3_1_verification_gate",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/releases/2026.09.01-v13.3.1.md",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_releases_2026_09_01_v13_3_1_anestet_2026_09_01_v13_3_1",
+      "target": "docs_releases_2026_09_01_v13_3_1_deployment",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/releases/2026.09.01-v13.3.1.md",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_releases_2026_09_01_v13_3_1_anestet_2026_09_01_v13_3_1",
+      "target": "docs_releases_2026_09_01_v13_3_1_approved_change",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/releases/2026.09.01-v13.3.1.md",
       "source_location": "L5",
       "weight": 1.0
     },
@@ -67384,7 +67966,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L15",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -67406,7 +67988,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L21",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -67450,7 +68032,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L16",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -67461,7 +68043,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L17",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -67472,7 +68054,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L18",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -67483,7 +68065,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L19",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -67494,7 +68076,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L22",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -67505,7 +68087,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L23",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -67516,7 +68098,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L24",
+      "source_location": "L27",
       "weight": 1.0
     },
     {
@@ -67527,7 +68109,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L25",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -67538,12 +68120,12 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L26",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
       "source": "package_scripts",
-      "target": "package_scripts_lint",
+      "target": "package_scripts_start",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -67554,7 +68136,7 @@
     },
     {
       "source": "package_scripts",
-      "target": "package_scripts_assets_normalize",
+      "target": "package_scripts_lint",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -67565,7 +68147,7 @@
     },
     {
       "source": "package_scripts",
-      "target": "package_scripts_qa_admin",
+      "target": "package_scripts_assets_normalize",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -67576,13 +68158,46 @@
     },
     {
       "source": "package_scripts",
-      "target": "package_scripts_qa_layout",
+      "target": "package_scripts_assets_polish_edges",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
       "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_qa_packshots",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "package.json",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_qa_admin",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "package.json",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_qa_layout",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "package.json",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -67620,7 +68235,7 @@
     },
     {
       "source": "package_scripts",
-      "target": "package_scripts_start",
+      "target": "package_scripts_postbuild",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -67927,6 +68542,226 @@
       "weight": 1.0
     },
     {
+      "source": "scripts_polish_product_packshot_edges",
+      "target": "scripts_polish_product_packshot_edges_airlesspath",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_polish_product_packshot_edges",
+      "target": "scripts_polish_product_packshot_edges_pumppaths",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_polish_product_packshot_edges",
+      "target": "scripts_polish_product_packshot_edges_dropperpath",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_polish_product_packshot_edges",
+      "target": "scripts_polish_product_packshot_edges_root",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_polish_product_packshot_edges",
+      "target": "scripts_polish_product_packshot_edges_restoreddir",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_polish_product_packshot_edges",
+      "target": "scripts_polish_product_packshot_edges_geometries",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L73",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_polish_product_packshot_edges",
+      "target": "scripts_polish_product_packshot_edges_reportdir",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_polish_product_packshot_edges",
+      "target": "scripts_polish_product_packshot_edges_run",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L85",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_polish_product_packshot_edges",
+      "target": "scripts_polish_product_packshot_edges_maskdir",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_polish_product_packshot_edges",
+      "target": "scripts_polish_product_packshot_edges_identify",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L91",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_polish_product_packshot_edges",
+      "target": "scripts_polish_product_packshot_edges_alphalevels",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L92",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_polish_product_packshot_edges",
+      "target": "scripts_polish_product_packshot_edges_results",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L96",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_prune_export_assets",
+      "target": "scripts_prune_export_assets_legacydirectories",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/prune-export-assets.mjs",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_prune_export_assets",
+      "target": "scripts_prune_export_assets_removed",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/prune-export-assets.mjs",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_prune_export_assets",
+      "target": "scripts_prune_export_assets_packshotdir",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/prune-export-assets.mjs",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_prune_export_assets",
+      "target": "scripts_prune_export_assets_root",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/prune-export-assets.mjs",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_prune_export_assets",
+      "target": "scripts_prune_export_assets_fontzip",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/prune-export-assets.mjs",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_prune_export_assets",
+      "target": "scripts_prune_export_assets_out",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/prune-export-assets.mjs",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_prune_export_assets",
+      "target": "scripts_prune_export_assets_saved",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/prune-export-assets.mjs",
+      "source_location": "L62",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_prune_export_assets",
+      "target": "scripts_prune_export_assets_bytes",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/prune-export-assets.mjs",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
       "source": "scripts_qa_layout",
       "target": "scripts_qa_layout_mime",
       "relation": "contains",
@@ -68033,6 +68868,61 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/qa-layout.mjs",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_qa_packshots",
+      "target": "scripts_qa_packshots_run",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/qa-packshots.mjs",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_qa_packshots",
+      "target": "scripts_qa_packshots_alphalevels",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/qa-packshots.mjs",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_qa_packshots",
+      "target": "scripts_qa_packshots_failures",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/qa-packshots.mjs",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_qa_packshots",
+      "target": "scripts_qa_packshots_root",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/qa-packshots.mjs",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_qa_packshots",
+      "target": "scripts_qa_packshots_rows",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/qa-packshots.mjs",
       "source_location": "L8",
       "weight": 1.0
     },
@@ -73486,7 +74376,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "app/storefront.tsx",
-      "source_location": "L476",
+      "source_location": "L478",
       "weight": 1.0
     },
     {
@@ -73498,7 +74388,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "app/storefront.tsx",
-      "source_location": "L493",
+      "source_location": "L495",
       "weight": 1.0
     },
     {
@@ -80486,6 +81376,18 @@
       "weight": 1.0
     },
     {
+      "source": "scripts_prune_export_assets",
+      "target": "original_site_assets_components_ace_ace_beautifier_outputline_item",
+      "relation": "indirect_call",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "argument",
+      "source_file": "scripts/prune-export-assets.mjs",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
       "source": "original_site_assets_components_ace_ace_ace_min_f",
       "target": "original_site_assets_components_ace_ace_ace_min_g",
       "relation": "indirect_call",
@@ -81327,5 +82229,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "672632469f4bdfb37be07530b8b612efe5a380e2"
+  "built_at_commit": "d68302806bcd1a433e17e1932ac29a2c7787dfe9"
 }

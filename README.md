@@ -22,19 +22,19 @@ The deployable static bundle is written to `out/`.
 - Future Beauty — the default dark-blue optical presentation with a locally materialized GetLayers Opaline scene.
 - Clinical Luxury — the bright, precise alternative with a locally materialized GetLayers Shoal field.
 
-The sticky segmented control at the top switches between the two approved themes while preserving the same catalog, cart and checkout. The choice is saved in `qk-design-lab-v1` and mirrored in the `?design=` URL parameter; Future Beauty is the default.
+The compact Day/Night control switches between the two approved themes while preserving the same catalog, cart and checkout. The choice is saved in `qk-design-lab-v1` and mirrored in the `?design=` URL parameter; otherwise the browser/OS color preference selects the initial theme.
 
 The storefront now has one complete commerce-first structure; the former one-page mode and its comparison strip were retired. Legacy `?site=` links are normalized in place. The catalogue and thematic guide remain available as two clear internal routes within the same complete site.
 
 The site opens directly on products. Its hero rotates all eight current novelties every 7 seconds using one position-stable prism transition, supports pause/manual navigation and adds directly to the persistent cart. The product-led heading and source-derived description change with the packshot through one consistent blur transition that preserves the final typeface from the first frame. The dark theme shows one large animated optical halo around the whole packshot whenever its GetLayers scene is unavailable, disabled or reduced for the device; the halo and WebGL scene are mutually exclusive. The cart supports quantity changes, five delivery options, recipient details and address selection, creates a server-side order number and keeps WhatsApp as an explicit operator fallback.
 
-The first screen uses real product imagery and a product-aware brand lockup: `Anestet®` for professional lines and the official Queen Key Cosmetic wordmark without a second circular emblem for Queen Key. GetLayers scenes are decorative desktop atmosphere only; mobile, reduced-motion and WebGL-failure states receive the lightweight optical-halo fallback. The oversized footer brand stage was removed; the compact animated ANESTET / Clinical Care / Queen Key line remains. All 23 catalog packshots use real transparency instead of white rectangular backplates.
+The first screen uses real product imagery and a product-aware brand lockup: `Anestet®` for professional lines and the official Queen Key Cosmetic wordmark without a second circular emblem for Queen Key. GetLayers scenes are decorative desktop atmosphere only; mobile, reduced-motion and WebGL-failure states receive the lightweight optical-halo fallback. The oversized footer brand stage was removed; the compact animated ANESTET / Clinical Care / Queen Key line remains. All 23 catalog packshots use real transparency instead of white rectangular backplates. Nine formerly quantized alpha edges are reconstructed with fitted SVG lines and curves, never with blur; automated QA proves that their approved RGB and labels remain unchanged.
 
 ## Live preview
 
 <https://anestet.139-180-214-133.sslip.io/>
 
-The static export is deployed behind nginx with HTTPS. Releases are immutable directories under `/var/www/anestet/releases/`; `/var/www/anestet/current` is switched atomically. The pre-GitHub one-page release remains preserved as `20260828-v9`; the active storefront release is `20260901-v13.2.0-r2`, while the active Admin API build is `20260901-v13.2.0`. Order API remains on the compatible immutable `20260901-v13.1.2` release.
+The static export is deployed behind nginx with HTTPS. Releases are immutable directories under `/var/www/anestet/releases/`; `/var/www/anestet/current` is switched atomically. The pre-GitHub one-page release remains preserved as `20260828-v9`; the current release identifier is documented in the newest file under `docs/releases/`. Admin API and Order API are versioned independently.
 
 ## Versioning and public change history
 
@@ -67,6 +67,7 @@ The cumulative correction history and current architecture are tracked in `.code
 - `prefers-reduced-motion` fallback.
 - Keyboard-visible focus, semantic theme selector, semantic filters and cart controls.
 - All 23 transparent lossless WebP masters decode to the exact verified PNG RGBA; 600×600 card copies reduce catalogue transfer without changing labels or edges.
+- `npm run qa:packshots` validates dimensions, true transparency, antialiased alpha and zero RGB drift for every reconstructed silhouette.
 - The evidence photo uses the exact Queen Key Recovery Milk hero product rather than a generic dispenser.
 - Current production Lighthouse release evidence: Accessibility 100, Best Practices 100 and SEO 100. Synthetic Performance remains `REVIEW` because repeated public runs vary with response/render timing; the JSON reports are retained locally and no unstable score is presented as a release PASS.
 - `npm audit --omit=dev`: 0 vulnerabilities.
