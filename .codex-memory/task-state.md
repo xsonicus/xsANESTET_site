@@ -40,7 +40,7 @@
 - До получения официальных API-контрактов и ключей реальные внешние запросы fail-closed. Старую MODX можно читать как источник структуры/данных, но не менять.
 
 ## Проверка и выпуск
-- `2026.09.02-v13.4.0`: build, 11×2×2 layout/interaction gate, Future Beauty и Clinical Luxury desktop, Future Beauty 390×844 и console QA прошли; storefront атомарно опубликован в `/var/www/anestet/releases/20260902-v13.4.0`, публичная карточка и API smoke прошли. GitHub release остаётся последним шагом публикации.
+- `2026.09.02-v13.4.0`: build, 11×2×2 layout/interaction gate, Future Beauty и Clinical Luxury desktop, Future Beauty 390×844 и console QA прошли; storefront атомарно опубликован в `/var/www/anestet/releases/20260902-v13.4.0`, публичная карточка/API smoke и GitHub Storefront quality CI прошли; tag и GitHub Release опубликованы.
 - Перед preview/release обязательно npm run build && npm run qa:layout.
 - Матрица: 11 экранов × 2 темы × 2 представления, без overflow/clipping/collisions.
 - Визуальная QA выполняется локальным Codex Browser.
