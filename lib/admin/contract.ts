@@ -41,15 +41,17 @@ export type AdminErrorResponse = {
 };
 
 export type AdminIntegration = {
-  id: "onec" | "cdek" | "universal";
+  id: "onec" | "cdek" | "vk" | "universal";
   title: string;
   purpose: string;
   configured: boolean;
-  state: "not_configured" | "configured" | "adapter_pending";
+  state: "not_configured" | "configured" | "adapter_pending" | "connected" | "connection_failed";
   fields: Array<{ label: string; value: string }>;
   missing: string[];
   issues: string[];
-  externalRequestsEnabled: false;
+  externalRequestsEnabled: boolean;
+  credentialStoreReady?: boolean;
+  editableValues?: { groupDomain?: string; apiVersion?: string };
 };
 
 export type AdminIntegrationsResponse = {
@@ -60,8 +62,35 @@ export type AdminIntegrationsResponse = {
 export type AdminIntegrationCheckResponse = {
   ok: boolean;
   integrationId: AdminIntegration["id"];
-  state: "not_configured" | "adapter_pending";
-  externalRequestMade: false;
+  state: "not_configured" | "adapter_pending" | "connected" | "connection_failed";
+  externalRequestMade: boolean;
   checkedAt: string;
   error?: string;
+};
+
+export type VkFeedItem = {
+  id: string;
+  kind: "video" | "post";
+  title: string;
+  excerpt: string;
+  publishedAt: string;
+  duration: number;
+  posterUrl: string;
+  posterWidth: number;
+  posterHeight: number;
+  playerUrl: string | null;
+  sourceUrl: string;
+  videoUrl?: string;
+  productId: number | null;
+  published: boolean;
+  revision: number;
+  updatedAt: string;
+};
+
+export type AdminVkFeedResponse = {
+  ok: true;
+  feedRevision: number;
+  syncedAt: string | null;
+  sourceDomain: string | null;
+  items: VkFeedItem[];
 };

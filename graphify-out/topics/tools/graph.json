@@ -1,0 +1,791 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {
+    "topic": "tools",
+    "topic_label": "Tooling And Scripts",
+    "source_graph": "/Users/xsonicus/CodexRuntime/xsANESTET_site/graphify-out/graph.json",
+    "generated_at": "2026-09-01T06:03:09.619Z"
+  },
+  "nodes": [
+    {
+      "id": "lib_admin_vk_connector",
+      "label": "vk-connector.mjs",
+      "file_type": "code",
+      "source_file": "lib/admin/vk-connector.mjs",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "lib_admin_vk_connector_normalizevkwallresponse",
+      "label": "normalizeVkWallResponse()",
+      "file_type": "code",
+      "source_file": "lib/admin/vk-connector.mjs",
+      "source_location": "L63",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "lib_admin_vk_connector_syncvkfeed",
+      "label": "syncVkFeed()",
+      "file_type": "code",
+      "source_file": "lib/admin/vk-connector.mjs",
+      "source_location": "L185",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "lib_admin_vk_feed_store",
+      "label": "vk-feed-store.mjs",
+      "file_type": "code",
+      "source_file": "lib/admin/vk-feed-store.mjs",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "lib_admin_vk_feed_store_mergesyncedvkfeed",
+      "label": "mergeSyncedVkFeed()",
+      "file_type": "code",
+      "source_file": "lib/admin/vk-feed-store.mjs",
+      "source_location": "L74",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_admin_smoke",
+      "label": "admin-smoke.mjs",
+      "file_type": "code",
+      "source_file": "scripts/admin-smoke.mjs",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_admin_smoke_root",
+      "label": "root",
+      "file_type": "code",
+      "source_file": "scripts/admin-smoke.mjs",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_admin_smoke_catalogstore",
+      "label": "catalogStore",
+      "file_type": "code",
+      "source_file": "scripts/admin-smoke.mjs",
+      "source_location": "L12",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_admin_smoke_auditstore",
+      "label": "auditStore",
+      "file_type": "code",
+      "source_file": "scripts/admin-smoke.mjs",
+      "source_location": "L13",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_admin_smoke_vkfeedstore",
+      "label": "vkFeedStore",
+      "file_type": "code",
+      "source_file": "scripts/admin-smoke.mjs",
+      "source_location": "L14",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_admin_smoke_connectorsecretsstore",
+      "label": "connectorSecretsStore",
+      "file_type": "code",
+      "source_file": "scripts/admin-smoke.mjs",
+      "source_location": "L15",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_admin_smoke_connectorsecretskey",
+      "label": "connectorSecretsKey",
+      "file_type": "code",
+      "source_file": "scripts/admin-smoke.mjs",
+      "source_location": "L16",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_admin_smoke_salt",
+      "label": "salt",
+      "file_type": "code",
+      "source_file": "scripts/admin-smoke.mjs",
+      "source_location": "L21",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_admin_smoke_digest",
+      "label": "digest",
+      "file_type": "code",
+      "source_file": "scripts/admin-smoke.mjs",
+      "source_location": "L22",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_admin_smoke_freeport",
+      "label": "freePort()",
+      "file_type": "code",
+      "source_file": "scripts/admin-smoke.mjs",
+      "source_location": "L25",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_admin_smoke_assert",
+      "label": "assert()",
+      "file_type": "code",
+      "source_file": "scripts/admin-smoke.mjs",
+      "source_location": "L37",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_admin_smoke_jsonfetch",
+      "label": "jsonFetch()",
+      "file_type": "code",
+      "source_file": "scripts/admin-smoke.mjs",
+      "source_location": "L41",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_admin_smoke_normalizedvkfixture",
+      "label": "normalizedVkFixture",
+      "file_type": "code",
+      "source_file": "scripts/admin-smoke.mjs",
+      "source_location": "L50",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_admin_smoke_normalizedphotopost",
+      "label": "normalizedPhotoPost",
+      "file_type": "code",
+      "source_file": "scripts/admin-smoke.mjs",
+      "source_location": "L66",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_admin_smoke_child",
+      "label": "child",
+      "file_type": "code",
+      "source_file": "scripts/admin-smoke.mjs",
+      "source_location": "L69",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_normalize_product_packshots",
+      "label": "normalize-product-packshots.mjs",
+      "file_type": "code",
+      "source_file": "scripts/normalize-product-packshots.mjs",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_normalize_product_packshots_root",
+      "label": "root",
+      "file_type": "code",
+      "source_file": "scripts/normalize-product-packshots.mjs",
+      "source_location": "L6",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_normalize_product_packshots_outputdir",
+      "label": "outputDir",
+      "file_type": "code",
+      "source_file": "scripts/normalize-product-packshots.mjs",
+      "source_location": "L8",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_normalize_product_packshots_visibleheightbyvolume",
+      "label": "visibleHeightByVolume",
+      "file_type": "code",
+      "source_file": "scripts/normalize-product-packshots.mjs",
+      "source_location": "L11",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_normalize_product_packshots_rows",
+      "label": "rows",
+      "file_type": "code",
+      "source_file": "scripts/normalize-product-packshots.mjs",
+      "source_location": "L22",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_qa_layout",
+      "label": "qa-layout.mjs",
+      "file_type": "code",
+      "source_file": "scripts/qa-layout.mjs",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_qa_layout_root",
+      "label": "root",
+      "file_type": "code",
+      "source_file": "scripts/qa-layout.mjs",
+      "source_location": "L7",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_qa_layout_chromecandidates",
+      "label": "chromeCandidates",
+      "file_type": "code",
+      "source_file": "scripts/qa-layout.mjs",
+      "source_location": "L8",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_qa_layout_mime",
+      "label": "mime",
+      "file_type": "code",
+      "source_file": "scripts/qa-layout.mjs",
+      "source_location": "L16",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_qa_layout_findchrome",
+      "label": "findChrome()",
+      "file_type": "code",
+      "source_file": "scripts/qa-layout.mjs",
+      "source_location": "L27",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_qa_layout_server",
+      "label": "server",
+      "file_type": "code",
+      "source_file": "scripts/qa-layout.mjs",
+      "source_location": "L37",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_qa_layout_address",
+      "label": "address",
+      "file_type": "code",
+      "source_file": "scripts/qa-layout.mjs",
+      "source_location": "L53",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_qa_layout_viewports",
+      "label": "viewports",
+      "file_type": "code",
+      "source_file": "scripts/qa-layout.mjs",
+      "source_location": "L57",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_qa_layout_themes",
+      "label": "themes",
+      "file_type": "code",
+      "source_file": "scripts/qa-layout.mjs",
+      "source_location": "L70",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_qa_layout_views",
+      "label": "views",
+      "file_type": "code",
+      "source_file": "scripts/qa-layout.mjs",
+      "source_location": "L71",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_qa_layout_failures",
+      "label": "failures",
+      "file_type": "code",
+      "source_file": "scripts/qa-layout.mjs",
+      "source_location": "L72",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_sync_getlayers_three",
+      "label": "sync-getlayers-three.mjs",
+      "file_type": "code",
+      "source_file": "scripts/sync-getlayers-three.mjs",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_sync_getlayers_three_root",
+      "label": "root",
+      "file_type": "code",
+      "source_file": "scripts/sync-getlayers-three.mjs",
+      "source_location": "L5",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_sync_getlayers_three_threeroot",
+      "label": "threeRoot",
+      "file_type": "code",
+      "source_file": "scripts/sync-getlayers-three.mjs",
+      "source_location": "L6",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_sync_getlayers_three_vendorroot",
+      "label": "vendorRoot",
+      "file_type": "code",
+      "source_file": "scripts/sync-getlayers-three.mjs",
+      "source_location": "L7",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_sync_getlayers_three_getlayersroot",
+      "label": "getLayersRoot",
+      "file_type": "code",
+      "source_file": "scripts/sync-getlayers-three.mjs",
+      "source_location": "L8",
+      "_origin": "ast"
+    }
+  ],
+  "links": [
+    {
+      "source": "lib_admin_vk_connector",
+      "target": "lib_admin_vk_feed_store",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/admin/vk-connector.mjs",
+      "source_location": "L1",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "lib_admin_vk_connector",
+      "target": "lib_admin_vk_feed_store_mergesyncedvkfeed",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/admin/vk-connector.mjs",
+      "source_location": "L1",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "lib_admin_vk_connector",
+      "target": "lib_admin_vk_connector_normalizevkwallresponse",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/admin/vk-connector.mjs",
+      "source_location": "L63",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "lib_admin_vk_connector",
+      "target": "lib_admin_vk_connector_syncvkfeed",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/admin/vk-connector.mjs",
+      "source_location": "L185",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "lib_admin_vk_connector_syncvkfeed",
+      "target": "lib_admin_vk_connector_normalizevkwallresponse",
+      "relation": "indirect_call",
+      "context": "argument",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "lib/admin/vk-connector.mjs",
+      "source_location": "L195",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "lib_admin_vk_feed_store",
+      "target": "lib_admin_vk_feed_store_mergesyncedvkfeed",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "lib/admin/vk-feed-store.mjs",
+      "source_location": "L74",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_admin_smoke",
+      "target": "lib_admin_vk_connector",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/admin-smoke.mjs",
+      "source_location": "L7",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_admin_smoke",
+      "target": "lib_admin_vk_connector_normalizevkwallresponse",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/admin-smoke.mjs",
+      "source_location": "L7",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_admin_smoke",
+      "target": "lib_admin_vk_feed_store",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/admin-smoke.mjs",
+      "source_location": "L8",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_admin_smoke",
+      "target": "lib_admin_vk_feed_store_mergesyncedvkfeed",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/admin-smoke.mjs",
+      "source_location": "L8",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_admin_smoke",
+      "target": "scripts_admin_smoke_root",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/admin-smoke.mjs",
+      "source_location": "L10",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_admin_smoke",
+      "target": "scripts_admin_smoke_catalogstore",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/admin-smoke.mjs",
+      "source_location": "L12",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_admin_smoke",
+      "target": "scripts_admin_smoke_auditstore",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/admin-smoke.mjs",
+      "source_location": "L13",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_admin_smoke",
+      "target": "scripts_admin_smoke_vkfeedstore",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/admin-smoke.mjs",
+      "source_location": "L14",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_admin_smoke",
+      "target": "scripts_admin_smoke_connectorsecretsstore",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/admin-smoke.mjs",
+      "source_location": "L15",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_admin_smoke",
+      "target": "scripts_admin_smoke_connectorsecretskey",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/admin-smoke.mjs",
+      "source_location": "L16",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_admin_smoke",
+      "target": "scripts_admin_smoke_salt",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/admin-smoke.mjs",
+      "source_location": "L21",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_admin_smoke",
+      "target": "scripts_admin_smoke_digest",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/admin-smoke.mjs",
+      "source_location": "L22",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_admin_smoke",
+      "target": "scripts_admin_smoke_freeport",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/admin-smoke.mjs",
+      "source_location": "L25",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_admin_smoke",
+      "target": "scripts_admin_smoke_assert",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/admin-smoke.mjs",
+      "source_location": "L37",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_admin_smoke",
+      "target": "scripts_admin_smoke_jsonfetch",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/admin-smoke.mjs",
+      "source_location": "L41",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_admin_smoke",
+      "target": "scripts_admin_smoke_normalizedvkfixture",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/admin-smoke.mjs",
+      "source_location": "L50",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_admin_smoke",
+      "target": "scripts_admin_smoke_normalizedphotopost",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/admin-smoke.mjs",
+      "source_location": "L66",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_admin_smoke",
+      "target": "scripts_admin_smoke_child",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/admin-smoke.mjs",
+      "source_location": "L69",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_normalize_product_packshots",
+      "target": "scripts_normalize_product_packshots_root",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/normalize-product-packshots.mjs",
+      "source_location": "L6",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_normalize_product_packshots",
+      "target": "scripts_normalize_product_packshots_outputdir",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/normalize-product-packshots.mjs",
+      "source_location": "L8",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_normalize_product_packshots",
+      "target": "scripts_normalize_product_packshots_visibleheightbyvolume",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/normalize-product-packshots.mjs",
+      "source_location": "L11",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_normalize_product_packshots",
+      "target": "scripts_normalize_product_packshots_rows",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/normalize-product-packshots.mjs",
+      "source_location": "L22",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_qa_layout",
+      "target": "scripts_qa_layout_root",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/qa-layout.mjs",
+      "source_location": "L7",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_qa_layout",
+      "target": "scripts_qa_layout_chromecandidates",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/qa-layout.mjs",
+      "source_location": "L8",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_qa_layout",
+      "target": "scripts_qa_layout_mime",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/qa-layout.mjs",
+      "source_location": "L16",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_qa_layout",
+      "target": "scripts_qa_layout_findchrome",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/qa-layout.mjs",
+      "source_location": "L27",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_qa_layout",
+      "target": "scripts_qa_layout_server",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/qa-layout.mjs",
+      "source_location": "L37",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_qa_layout",
+      "target": "scripts_qa_layout_address",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/qa-layout.mjs",
+      "source_location": "L53",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_qa_layout",
+      "target": "scripts_qa_layout_viewports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/qa-layout.mjs",
+      "source_location": "L57",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_qa_layout",
+      "target": "scripts_qa_layout_themes",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/qa-layout.mjs",
+      "source_location": "L70",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_qa_layout",
+      "target": "scripts_qa_layout_views",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/qa-layout.mjs",
+      "source_location": "L71",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_qa_layout",
+      "target": "scripts_qa_layout_failures",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/qa-layout.mjs",
+      "source_location": "L72",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_sync_getlayers_three",
+      "target": "scripts_sync_getlayers_three_root",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/sync-getlayers-three.mjs",
+      "source_location": "L5",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_sync_getlayers_three",
+      "target": "scripts_sync_getlayers_three_threeroot",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/sync-getlayers-three.mjs",
+      "source_location": "L6",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_sync_getlayers_three",
+      "target": "scripts_sync_getlayers_three_vendorroot",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/sync-getlayers-three.mjs",
+      "source_location": "L7",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_sync_getlayers_three",
+      "target": "scripts_sync_getlayers_three_getlayersroot",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/sync-getlayers-three.mjs",
+      "source_location": "L8",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "lib_admin_vk_connector_syncvkfeed",
+      "target": "lib_admin_vk_feed_store_mergesyncedvkfeed",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": "lib/admin/vk-connector.mjs",
+      "source_location": "L197",
+      "weight": 1,
+      "_origin": "ast"
+    }
+  ],
+  "hyperedges": [],
+  "built_at_commit": null
+}

@@ -9,10 +9,13 @@ import type {
   AdminProductInput,
   AdminSession,
   AdminSessionState,
+  AdminVkFeedResponse,
+  VkFeedItem,
 } from "../../lib/admin/contract";
 import { AdminDashboard } from "./admin-dashboard";
 import { AdminIcon } from "./admin-icons";
 import { AdminIntegrations } from "./admin-integrations";
+import { AdminVkFeed } from "./admin-vk-feed";
 import { brandGroups, filterProducts, groupedProducts, type CatalogStatusFilter } from "./admin-catalog-model";
 import styles from "./admin.module.css";
 
@@ -53,7 +56,12 @@ export function AdminClient() {
   const [products, setProducts] = useState<AdminProduct[]>([]);
   const [integrations, setIntegrations] = useState<AdminIntegration[]>([]);
   const [checkingIntegration, setCheckingIntegration] = useState<string | null>(null);
+  const [savingVkSettings, setSavingVkSettings] = useState(false);
   const [integrationMessages, setIntegrationMessages] = useState<Record<string, string>>({});
+  const [vkFeed, setVkFeed] = useState<AdminVkFeedResponse | null>(null);
+  const [vkSyncing, setVkSyncing] = useState(false);
+  const [vkUpdatingId, setVkUpdatingId] = useState<string | null>(null);
+  const [vkMessage, setVkMessage] = useState("");
   const [selectedId, setSelectedId] = useState<number | null>(null);
   const [draft, setDraft] = useState<ProductDraft>(emptyProduct);
   const [message, setMessage] = useState("");
@@ -77,6 +85,11 @@ export function AdminClient() {
   const loadIntegrations = useCallback(async () => {
     const result = await api<AdminIntegrationsResponse>("/api/admin/integrations");
     setIntegrations(result.integrations);
+  }, []);
+
+  const loadVkFeed = useCallback(async () => {
+    const result = await api<AdminVkFeedResponse>("/api/admin/vk/items");
+    setVkFeed(result);
   }, []);
 
   useEffect(() => {
@@ -146,9 +159,47 @@ export function AdminClient() {
     setView("integrations");
     setMessage("");
     try {
-      await loadIntegrations();
+      await Promise.all([loadIntegrations(), loadVkFeed()]);
     } catch (error) {
       setIntegrationMessages({ global: error instanceof Error ? error.message : "Не удалось загрузить интеграции" });
+    }
+  }
+
+  async function syncVk() {
+    if (!session || vkSyncing) return;
+    setVkSyncing(true);
+    setVkMessage("");
+    try {
+      const result = await api<AdminVkFeedResponse>("/api/admin/vk/sync", {
+        method: "POST",
+        headers: { "X-CSRF-Token": session.csrfToken },
+      });
+      setVkFeed(result);
+      setVkMessage(`Получено роликов: ${result.items.length}. Проверьте привязки и публикацию.`);
+      await loadIntegrations();
+    } catch (error) {
+      setVkMessage(error instanceof Error ? error.message : "Синхронизация VK не выполнена");
+    } finally {
+      setVkSyncing(false);
+    }
+  }
+
+  async function updateVkItem(item: VkFeedItem, patch: { productId: number | null; published: boolean }) {
+    if (!session || vkUpdatingId) return;
+    setVkUpdatingId(item.id);
+    setVkMessage("");
+    try {
+      await api(`/api/admin/vk/items/${encodeURIComponent(item.id)}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json", "X-CSRF-Token": session.csrfToken },
+        body: JSON.stringify({ revision: item.revision, item: patch }),
+      });
+      await loadVkFeed();
+      setVkMessage(patch.published ? "Видео опубликовано на витрине" : "Настройки видео сохранены");
+    } catch (error) {
+      setVkMessage(error instanceof Error ? error.message : "Не удалось обновить видео");
+    } finally {
+      setVkUpdatingId(null);
     }
   }
 
@@ -177,6 +228,25 @@ export function AdminClient() {
     } finally {
       setCheckingIntegration(null);
       await loadIntegrations().catch(() => undefined);
+    }
+  }
+
+  async function saveVkSettings(settings: { groupDomain: string; apiVersion: string; accessToken: string }) {
+    if (!session) return;
+    setSavingVkSettings(true);
+    setIntegrationMessages((current) => ({ ...current, vk: "" }));
+    try {
+      await api("/api/admin/integrations/vk/settings", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json", "X-CSRF-Token": session.csrfToken },
+        body: JSON.stringify(settings),
+      });
+      setIntegrationMessages((current) => ({ ...current, vk: "Реквизиты VK сохранены в зашифрованном хранилище. Теперь можно проверить подключение" }));
+      await loadIntegrations();
+    } catch (error) {
+      setIntegrationMessages((current) => ({ ...current, vk: error instanceof Error ? error.message : "Не удалось сохранить реквизиты VK" }));
+    } finally {
+      setSavingVkSettings(false);
     }
   }
 
@@ -305,7 +375,21 @@ export function AdminClient() {
           </div>
         )}
 
-        {view === "integrations" && <AdminIntegrations integrations={integrations} messages={integrationMessages} checkingId={checkingIntegration} onCheck={checkConnection} />}
+        {view === "integrations" && (
+          <>
+            <AdminIntegrations integrations={integrations} messages={integrationMessages} checkingId={checkingIntegration} savingVkSettings={savingVkSettings} onCheck={checkConnection} onSaveVk={saveVkSettings} />
+            <AdminVkFeed
+              feed={vkFeed}
+              products={products}
+              connectorReady={integrations.some((integration) => integration.id === "vk" && integration.configured)}
+              syncing={vkSyncing}
+              updatingId={vkUpdatingId}
+              message={vkMessage}
+              onSync={syncVk}
+              onUpdate={updateVkItem}
+            />
+          </>
+        )}
       </section>
     </div>
   );

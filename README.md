@@ -24,21 +24,17 @@ The deployable static bundle is written to `out/`.
 
 The sticky segmented control at the top switches between the two approved themes while preserving the same catalog, cart and checkout. The choice is saved in `qk-design-lab-v1` and mirrored in the `?design=` URL parameter; Future Beauty is the default.
 
-The compact site-version control links the new site's related states:
+The storefront now has one complete commerce-first structure; the former one-page mode and its comparison strip were retired. Legacy `?site=` links are normalized in place. The catalogue and thematic guide remain available as two clear internal routes within the same complete site.
 
-- `Старый сайт` — opens the original `qkcosmetic.ru` storefront in a new tab for deliberate visual comparison only;
-- `Одностраничный` — the complete catalogue and care guide in one continuous page (`?site=onepage`);
-- `Полный сайт` — the commerce-first view with the catalogue and thematic guide separated (`?site=full`).
+The site opens directly on products. Its hero rotates all eight current novelties every 7 seconds using one position-stable prism transition, supports pause/manual navigation and adds directly to the persistent cart. The product-led heading and source-derived description change with the packshot through one consistent blur transition that preserves the final typeface from the first frame. The dark theme shows one large animated optical halo around the whole packshot whenever its GetLayers scene is unavailable, disabled or reduced for the device; the halo and WebGL scene are mutually exclusive. The cart supports quantity changes, five delivery options, recipient details and address selection, creates a server-side order number and keeps WhatsApp as an explicit operator fallback.
 
-The full view opens directly on products. Its hero rotates all eight current novelties every 7 seconds using one position-stable prism transition, supports pause/manual navigation and adds directly to the persistent cart. The product-led heading and source-derived description change with the packshot through one consistent blur transition that preserves the final typeface from the first frame. The cart supports quantity changes, five delivery options, recipient details and address selection, creates a server-side order number and keeps WhatsApp as an explicit operator fallback.
-
-The first screen uses the original ANESTET wordmark and real product imagery. GetLayers scenes are decorative desktop atmosphere only; mobile and reduced-motion users receive a static fallback. The footer combines the original high-resolution ANESTET and Queen Key brand assets. All 23 catalog packshots use real transparency instead of white rectangular backplates.
+The first screen uses real product imagery and a product-aware brand lockup: `Anestet®` for professional lines and the official Queen Key Cosmetic wordmark without a second circular emblem for Queen Key. GetLayers scenes are decorative desktop atmosphere only; mobile, reduced-motion and WebGL-failure states receive the lightweight optical-halo fallback. The oversized footer brand stage was removed; the compact animated ANESTET / Clinical Care / Queen Key line remains. All 23 catalog packshots use real transparency instead of white rectangular backplates.
 
 ## Live preview
 
 <https://anestet.139-180-214-133.sslip.io/>
 
-The static export is deployed behind nginx with HTTPS. Releases are immutable directories under `/var/www/anestet/releases/`; `/var/www/anestet/current` is switched atomically. The pre-GitHub one-page release remains preserved as `20260828-v9`; the active storefront build is `2026.09.01-v13.1.3-r3`. Order API and Admin API remain on the compatible immutable `2026.09.01-v13.1.2` release because this patch changes only static storefront code.
+The static export is deployed behind nginx with HTTPS. Releases are immutable directories under `/var/www/anestet/releases/`; `/var/www/anestet/current` is switched atomically. The pre-GitHub one-page release remains preserved as `20260828-v9`; the active storefront release is `20260901-v13.2.0-r2`, while the active Admin API build is `20260901-v13.2.0`. Order API remains on the compatible immutable `20260901-v13.1.2` release.
 
 ## Versioning and public change history
 
@@ -56,14 +52,18 @@ Repository: `https://github.com/xsonicus/xsANESTET_site`
 - Commerce integration plan for 1C, CDEK, warehouse stock, promotions and administration: `docs/COMMERCE_BACKEND_ROADMAP.md`.
 - Live adapter status and secret-handling boundary: `docs/INTEGRATION_STATUS.md`.
 - No passwords, private keys, database credentials, MODX session data, cache or server logs are stored in this project.
-- The static `/admin/` client uses a separate loopback admin service. Catalog changes share one server-side catalog with the storefront and Order API. Connector credentials for 1С, CDEK and future services are server-only env/secret values; the browser receives masked readiness states only.
+- The static `/admin/` client uses a separate loopback admin service. Catalog changes share one server-side catalog with the storefront and Order API. Connector credentials for 1С, CDEK and future services are server-only env/secret values; the browser receives masked readiness states only. The VK company token can be entered and tested in the protected admin UI and is encrypted at rest with AES-256-GCM; no real VK content is fabricated before an official token is supplied.
+
+## Durable project logic
+
+The cumulative correction history and current architecture are tracked in `.codex-logic/` and summarized in `docs/LOGIC_GRAPH_RU.md`. The generated Graphify graph and topic views live under `graphify-out/`; they preserve requirement → implementation → correction-of-correction → current approved behavior → verification relationships.
 
 ## Verification
 
 - Static Next.js export.
 - Desktop and mobile Playwright screenshots in `output/playwright/`.
 - Local visual acceptance is performed in the Codex in-app Browser against the local preview; external pages are not used as rendering evidence.
-- Automated `npm run qa:layout` gate: 11 target screens × 2 themes × 3 site presentations; text clipping, safe-edge violations, heading collisions, product/button overlap and horizontal overflow are release blockers. The matrix includes the tall 1431 × 1728 viewport.
+- Automated `npm run qa:layout` gate: 11 target screens × 2 themes × 2 store routes; text clipping, safe-edge violations, heading collisions, product/button overlap and horizontal overflow are release blockers. The matrix includes the tall 1431 × 1728 viewport.
 - `prefers-reduced-motion` fallback.
 - Keyboard-visible focus, semantic theme selector, semantic filters and cart controls.
 - All 23 transparent lossless WebP masters decode to the exact verified PNG RGBA; 600×600 card copies reduce catalogue transfer without changing labels or edges.

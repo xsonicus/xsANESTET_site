@@ -68,7 +68,7 @@ const viewports = [
   { width: 2048, height: 1000 },
 ];
 const themes = ["serum", "clinical"];
-const views = ["full-catalog", "full-guide", "onepage"];
+const views = ["catalog", "guide"];
 const failures = [];
 
 try {
@@ -89,12 +89,7 @@ try {
       await page.waitForTimeout(100);
       const theme = themes[themeIndex];
       for (const view of views) {
-        if (view === "onepage") {
-          await page.locator(".site-mode-switcher button").nth(0).click();
-        } else {
-          await page.locator(".site-mode-switcher button").nth(1).click();
-          await page.locator(".shopping-tabs button").nth(view === "full-catalog" ? 0 : 1).click();
-        }
+        await page.locator(".shopping-tabs button").nth(view === "catalog" ? 0 : 1).click();
         await page.waitForTimeout(100);
         const result = await page.evaluate(async () => {
         const visible = (element) => {

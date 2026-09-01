@@ -1,0 +1,650 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {
+    "topic": "codex",
+    "topic_label": "Codex Memory And Governance",
+    "source_graph": "/Users/xsonicus/CodexRuntime/xsANESTET_site/graphify-out/graph.json",
+    "generated_at": "2026-09-01T06:03:07.019Z"
+  },
+  "nodes": [
+    {
+      "id": "codex_logic_logic_map",
+      "label": "logic-map.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": ".codex-logic/logic-map.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "codex_logic_logic_map_logic_graph_xsanestet_site",
+      "label": "Logic Graph - xsANESTET_site",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": ".codex-logic/logic-map.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "codex_logic_logic_map_core_logic_boundaries",
+      "label": "Core Logic Boundaries",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": ".codex-logic/logic-map.md",
+      "source_location": "L5",
+      "_origin": "ast"
+    },
+    {
+      "id": "codex_logic_logic_map_model_and_weight_provenance",
+      "label": "Model And Weight Provenance",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": ".codex-logic/logic-map.md",
+      "source_location": "L17",
+      "_origin": "ast"
+    },
+    {
+      "id": "codex_logic_logic_map_graphify_discipline",
+      "label": "Graphify Discipline",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": ".codex-logic/logic-map.md",
+      "source_location": "L30",
+      "_origin": "ast"
+    },
+    {
+      "id": "codex_logic_logic_map_2026_09_01t05_11_33_523z_g1_storefront_structure_lineage",
+      "label": "2026-09-01T05:11:33.523Z - G1 Storefront structure lineage",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": ".codex-logic/logic-map.md",
+      "source_location": "L36",
+      "_origin": "ast"
+    },
+    {
+      "id": "codex_logic_logic_map_2026_09_01t05_11_33_657z_g2_approved_visual_themes",
+      "label": "2026-09-01T05:11:33.657Z - G2 Approved visual themes",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": ".codex-logic/logic-map.md",
+      "source_location": "L44",
+      "_origin": "ast"
+    },
+    {
+      "id": "codex_logic_logic_map_2026_09_01t05_11_33_772z_g3_hero_motion_and_copy_lineage",
+      "label": "2026-09-01T05:11:33.772Z - G3 Hero motion and copy lineage",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": ".codex-logic/logic-map.md",
+      "source_location": "L52",
+      "_origin": "ast"
+    },
+    {
+      "id": "codex_logic_logic_map_2026_09_01t05_11_33_886z_g4_getlayers_opaline_and_exclusive_fallback",
+      "label": "2026-09-01T05:11:33.886Z - G4 GetLayers Opaline and exclusive fallback",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": ".codex-logic/logic-map.md",
+      "source_location": "L60",
+      "_origin": "ast"
+    },
+    {
+      "id": "codex_logic_logic_map_2026_09_01t05_11_34_005z_g5_product_assets_and_shadows",
+      "label": "2026-09-01T05:11:34.005Z - G5 Product assets and shadows",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": ".codex-logic/logic-map.md",
+      "source_location": "L68",
+      "_origin": "ast"
+    },
+    {
+      "id": "codex_logic_logic_map_2026_09_01t05_11_34_121z_g6_founder_about_composition",
+      "label": "2026-09-01T05:11:34.121Z - G6 Founder About composition",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": ".codex-logic/logic-map.md",
+      "source_location": "L76",
+      "_origin": "ast"
+    },
+    {
+      "id": "codex_logic_logic_map_2026_09_01t05_11_34_236z_g7_brand_hierarchy_correction",
+      "label": "2026-09-01T05:11:34.236Z - G7 Brand hierarchy correction",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": ".codex-logic/logic-map.md",
+      "source_location": "L84",
+      "_origin": "ast"
+    },
+    {
+      "id": "codex_logic_logic_map_2026_09_01t05_11_34_348z_g8_commerce_and_care_navigation",
+      "label": "2026-09-01T05:11:34.348Z - G8 Commerce and care navigation",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": ".codex-logic/logic-map.md",
+      "source_location": "L92",
+      "_origin": "ast"
+    },
+    {
+      "id": "codex_logic_logic_map_2026_09_01t05_11_34_481z_g9_admin_and_connector_security",
+      "label": "2026-09-01T05:11:34.481Z - G9 Admin and connector security",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": ".codex-logic/logic-map.md",
+      "source_location": "L100",
+      "_origin": "ast"
+    },
+    {
+      "id": "codex_logic_logic_map_2026_09_01t05_11_34_600z_g10_vk_only_editorial_feed",
+      "label": "2026-09-01T05:11:34.600Z - G10 VK-only editorial feed",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": ".codex-logic/logic-map.md",
+      "source_location": "L108",
+      "_origin": "ast"
+    },
+    {
+      "id": "codex_logic_logic_map_2026_09_01t05_11_34_713z_g11_release_and_qa_gate",
+      "label": "2026-09-01T05:11:34.713Z - G11 Release and QA gate",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": ".codex-logic/logic-map.md",
+      "source_location": "L116",
+      "_origin": "ast"
+    },
+    {
+      "id": "codex_logic_logic_map_2026_09_01t05_11_34_827z_g12_historical_graph_backfill",
+      "label": "2026-09-01T05:11:34.827Z - G12 Historical graph backfill",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": ".codex-logic/logic-map.md",
+      "source_location": "L124",
+      "_origin": "ast"
+    },
+    {
+      "id": "codex_logic_logic_map_2026_09_01t05_17_14_919z_g13_graphify_runtime_recovery_and_active_project_graph",
+      "label": "2026-09-01T05:17:14.919Z - G13 Graphify runtime recovery and active project graph",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": ".codex-logic/logic-map.md",
+      "source_location": "L132",
+      "_origin": "ast"
+    },
+    {
+      "id": "codex_logic_logic_map_2026_09_01t05_57_13_775z_vk_official_channel_continuous_news_rail",
+      "label": "2026-09-01T05:57:13.775Z - VK official channel continuous news rail",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": ".codex-logic/logic-map.md",
+      "source_location": "L140",
+      "_origin": "ast"
+    },
+    {
+      "id": "codex_logic_model_training_protocol",
+      "label": "model-training-protocol.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": ".codex-logic/model-training-protocol.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "codex_logic_model_training_protocol_model_training_protocol_xsanestet_site",
+      "label": "Model Training Protocol - xsANESTET_site",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": ".codex-logic/model-training-protocol.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "codex_logic_model_training_protocol_required_provenance",
+      "label": "Required Provenance",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": ".codex-logic/model-training-protocol.md",
+      "source_location": "L5",
+      "_origin": "ast"
+    },
+    {
+      "id": "codex_logic_model_training_protocol_anti_fake_anti_lookahead_rules",
+      "label": "Anti-Fake / Anti-Lookahead Rules",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": ".codex-logic/model-training-protocol.md",
+      "source_location": "L22",
+      "_origin": "ast"
+    },
+    {
+      "id": "codex_logic_model_training_protocol_monthly_self_learning_loop",
+      "label": "Monthly Self-Learning Loop",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": ".codex-logic/model-training-protocol.md",
+      "source_location": "L32",
+      "_origin": "ast"
+    },
+    {
+      "id": "codex_skill_lab_readme",
+      "label": "README.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": ".codex-skill-lab/README.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "codex_skill_lab_readme_project_skill_lab",
+      "label": "Project Skill Lab",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": ".codex-skill-lab/README.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "codex_web_design_quality_gates",
+      "label": "quality-gates.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": ".codex-web-design/quality-gates.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "codex_web_design_quality_gates_website_quality_gates",
+      "label": "Website Quality Gates",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": ".codex-web-design/quality-gates.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "codex_web_design_quality_gates_plan",
+      "label": "Plan",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": ".codex-web-design/quality-gates.md",
+      "source_location": "L3",
+      "_origin": "ast"
+    },
+    {
+      "id": "codex_web_design_quality_gates_implementation",
+      "label": "Implementation",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": ".codex-web-design/quality-gates.md",
+      "source_location": "L11",
+      "_origin": "ast"
+    },
+    {
+      "id": "codex_web_design_quality_gates_release",
+      "label": "Release",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": ".codex-web-design/quality-gates.md",
+      "source_location": "L19",
+      "_origin": "ast"
+    },
+    {
+      "id": "agents",
+      "label": "AGENTS.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "AGENTS.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "agents_website_design_lab",
+      "label": "Website Design Lab",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "AGENTS.md",
+      "source_location": "L2",
+      "_origin": "ast"
+    },
+    {
+      "id": "agents_anestet_release_gate",
+      "label": "ANESTET release gate",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "AGENTS.md",
+      "source_location": "L13",
+      "_origin": "ast"
+    },
+    {
+      "id": "agents_this_is_not_the_next_js_you_know",
+      "label": "This is NOT the Next.js you know",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "AGENTS.md",
+      "source_location": "L21",
+      "_origin": "ast"
+    },
+    {
+      "id": "agents_project_logic_graph",
+      "label": "Project Logic Graph",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "AGENTS.md",
+      "source_location": "L30",
+      "_origin": "ast"
+    }
+  ],
+  "links": [
+    {
+      "source": "codex_logic_logic_map",
+      "target": "codex_logic_logic_map_logic_graph_xsanestet_site",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".codex-logic/logic-map.md",
+      "source_location": "L1",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "codex_logic_logic_map_logic_graph_xsanestet_site",
+      "target": "codex_logic_logic_map_core_logic_boundaries",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".codex-logic/logic-map.md",
+      "source_location": "L5",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "codex_logic_logic_map_logic_graph_xsanestet_site",
+      "target": "codex_logic_logic_map_model_and_weight_provenance",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".codex-logic/logic-map.md",
+      "source_location": "L17",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "codex_logic_logic_map_logic_graph_xsanestet_site",
+      "target": "codex_logic_logic_map_graphify_discipline",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".codex-logic/logic-map.md",
+      "source_location": "L30",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "codex_logic_logic_map_logic_graph_xsanestet_site",
+      "target": "codex_logic_logic_map_2026_09_01t05_11_33_523z_g1_storefront_structure_lineage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".codex-logic/logic-map.md",
+      "source_location": "L36",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "codex_logic_logic_map_logic_graph_xsanestet_site",
+      "target": "codex_logic_logic_map_2026_09_01t05_11_33_657z_g2_approved_visual_themes",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".codex-logic/logic-map.md",
+      "source_location": "L44",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "codex_logic_logic_map_logic_graph_xsanestet_site",
+      "target": "codex_logic_logic_map_2026_09_01t05_11_33_772z_g3_hero_motion_and_copy_lineage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".codex-logic/logic-map.md",
+      "source_location": "L52",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "codex_logic_logic_map_logic_graph_xsanestet_site",
+      "target": "codex_logic_logic_map_2026_09_01t05_11_33_886z_g4_getlayers_opaline_and_exclusive_fallback",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".codex-logic/logic-map.md",
+      "source_location": "L60",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "codex_logic_logic_map_logic_graph_xsanestet_site",
+      "target": "codex_logic_logic_map_2026_09_01t05_11_34_005z_g5_product_assets_and_shadows",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".codex-logic/logic-map.md",
+      "source_location": "L68",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "codex_logic_logic_map_logic_graph_xsanestet_site",
+      "target": "codex_logic_logic_map_2026_09_01t05_11_34_121z_g6_founder_about_composition",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".codex-logic/logic-map.md",
+      "source_location": "L76",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "codex_logic_logic_map_logic_graph_xsanestet_site",
+      "target": "codex_logic_logic_map_2026_09_01t05_11_34_236z_g7_brand_hierarchy_correction",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".codex-logic/logic-map.md",
+      "source_location": "L84",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "codex_logic_logic_map_logic_graph_xsanestet_site",
+      "target": "codex_logic_logic_map_2026_09_01t05_11_34_348z_g8_commerce_and_care_navigation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".codex-logic/logic-map.md",
+      "source_location": "L92",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "codex_logic_logic_map_logic_graph_xsanestet_site",
+      "target": "codex_logic_logic_map_2026_09_01t05_11_34_481z_g9_admin_and_connector_security",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".codex-logic/logic-map.md",
+      "source_location": "L100",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "codex_logic_logic_map_logic_graph_xsanestet_site",
+      "target": "codex_logic_logic_map_2026_09_01t05_11_34_600z_g10_vk_only_editorial_feed",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".codex-logic/logic-map.md",
+      "source_location": "L108",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "codex_logic_logic_map_logic_graph_xsanestet_site",
+      "target": "codex_logic_logic_map_2026_09_01t05_11_34_713z_g11_release_and_qa_gate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".codex-logic/logic-map.md",
+      "source_location": "L116",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "codex_logic_logic_map_logic_graph_xsanestet_site",
+      "target": "codex_logic_logic_map_2026_09_01t05_11_34_827z_g12_historical_graph_backfill",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".codex-logic/logic-map.md",
+      "source_location": "L124",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "codex_logic_logic_map_logic_graph_xsanestet_site",
+      "target": "codex_logic_logic_map_2026_09_01t05_17_14_919z_g13_graphify_runtime_recovery_and_active_project_graph",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".codex-logic/logic-map.md",
+      "source_location": "L132",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "codex_logic_logic_map_logic_graph_xsanestet_site",
+      "target": "codex_logic_logic_map_2026_09_01t05_57_13_775z_vk_official_channel_continuous_news_rail",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".codex-logic/logic-map.md",
+      "source_location": "L140",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "codex_logic_model_training_protocol",
+      "target": "codex_logic_model_training_protocol_model_training_protocol_xsanestet_site",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".codex-logic/model-training-protocol.md",
+      "source_location": "L1",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "codex_logic_model_training_protocol_model_training_protocol_xsanestet_site",
+      "target": "codex_logic_model_training_protocol_required_provenance",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".codex-logic/model-training-protocol.md",
+      "source_location": "L5",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "codex_logic_model_training_protocol_model_training_protocol_xsanestet_site",
+      "target": "codex_logic_model_training_protocol_anti_fake_anti_lookahead_rules",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".codex-logic/model-training-protocol.md",
+      "source_location": "L22",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "codex_logic_model_training_protocol_model_training_protocol_xsanestet_site",
+      "target": "codex_logic_model_training_protocol_monthly_self_learning_loop",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".codex-logic/model-training-protocol.md",
+      "source_location": "L32",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "codex_skill_lab_readme",
+      "target": "codex_skill_lab_readme_project_skill_lab",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".codex-skill-lab/README.md",
+      "source_location": "L1",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "codex_web_design_quality_gates",
+      "target": "codex_web_design_quality_gates_website_quality_gates",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".codex-web-design/quality-gates.md",
+      "source_location": "L1",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "codex_web_design_quality_gates_website_quality_gates",
+      "target": "codex_web_design_quality_gates_plan",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".codex-web-design/quality-gates.md",
+      "source_location": "L3",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "codex_web_design_quality_gates_website_quality_gates",
+      "target": "codex_web_design_quality_gates_implementation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".codex-web-design/quality-gates.md",
+      "source_location": "L11",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "codex_web_design_quality_gates_website_quality_gates",
+      "target": "codex_web_design_quality_gates_release",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".codex-web-design/quality-gates.md",
+      "source_location": "L19",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "agents",
+      "target": "agents_website_design_lab",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L2",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "agents",
+      "target": "agents_anestet_release_gate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L13",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "agents",
+      "target": "agents_this_is_not_the_next_js_you_know",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L21",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "agents_this_is_not_the_next_js_you_know",
+      "target": "agents_project_logic_graph",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L30",
+      "weight": 1,
+      "_origin": "ast"
+    }
+  ],
+  "hyperedges": [],
+  "built_at_commit": null
+}

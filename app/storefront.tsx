@@ -21,8 +21,7 @@ type OrderForm = {
 const CART_STORAGE_KEY = "anestet-cart-v1";
 const FAVORITES_STORAGE_KEY = "anestet-favorites-v1";
 const DESIGN_STORAGE_KEY = "qk-design-lab-v1";
-const SITE_RELEASE = "2026.09.01-v13.1.3";
-const LEGACY_SITE_URL = "https://qkcosmetic.ru/";
+const SITE_RELEASE = "2026.09.01-v13.2.0";
 const GITHUB_RELEASES_URL = "https://github.com/xsonicus/xsANESTET_site/releases";
 const HERO_WORDMARK_PATH = "M1784 0H1502L1341 344H457L296 0H14L734 1500H1064ZM899 1291 559 562H1239ZM3248 298V1500H3504V0H3168L2222 1216V0H1966V1500H2310ZM4147 640 4081 228H5096V0H3788L3908 750L3788 1500H5086V1272H4081L4147 860H5038V640ZM5548 488Q5560 398 5623 330Q5686 262 5790.5 225Q5895 188 6030 188Q6163 188 6262 216.5Q6361 245 6414.5 298Q6468 351 6468 422Q6468 482 6438.5 520Q6409 558 6341.5 581.5Q6274 605 6154 620L5830 662Q5647 686 5533.5 737Q5420 788 5366 871.5Q5312 955 5312 1078Q5312 1214 5395 1315.5Q5478 1417 5630.5 1472.5Q5783 1528 5986 1528Q6186 1528 6343.5 1468Q6501 1408 6593 1299.5Q6685 1191 6694 1050H6426Q6416 1129 6359 1188Q6302 1247 6204.5 1279.5Q6107 1312 5980 1312Q5858 1312 5766.5 1285Q5675 1258 5625.5 1207Q5576 1156 5576 1088Q5576 1033 5604 997.5Q5632 962 5695.5 938.5Q5759 915 5868 900L6196 854Q6401 826 6516.5 778.5Q6632 731 6682 653Q6732 575 6732 450Q6732 307 6644 198.5Q6556 90 6396 31Q6236 -28 6026 -28Q5812 -28 5645.5 36.5Q5479 101 5383.5 218Q5288 335 5280 488ZM6842 1500H8346V1268H7726V0H7462V1268H6842ZM8853 640 8787 228H9802V0H8494L8614 750L8494 1500H9792V1272H8787L8853 860H9744V640ZM9942 1500H11446V1268H10826V0H10562V1268H9942Z";
 const SUPPORT_EMAIL = "support@anestet.com";
@@ -125,12 +124,54 @@ const brandPrinciples = [
   ["Фокус на формуле", "В центре продукта — рабочий состав, эффективность и удобство применения."],
 ] as const;
 
-const socialCards = [
-  { network: "VK", icon: "/assets/icons/social/vk.svg", eyebrow: "Видео", title: "Процедуры и продукты в работе", note: "Официальная видеолента ANESTET", href: "https://vk.com/video/@queenkeyanestet" },
-  { network: "VK", icon: "/assets/icons/social/vk.svg", eyebrow: "Новости", title: "Запуски, формулы и события", note: "Сообщество Queen Key × ANESTET", href: "https://vk.com/queenkeyanestet" },
-  { network: "Telegram", icon: "/assets/icons/social/telegram.svg", eyebrow: "Канал", title: "Коротко о главном для мастеров", note: "Официальный Telegram ANESTET", href: "https://t.me/Anestetprofessional" },
-  { network: "Taplink", icon: "/assets/icons/social/taplink.svg", eyebrow: "Все площадки", title: "Контакты и актуальные ссылки", note: "Официальный Taplink бренда", href: "https://taplink.cc/anestet" },
-] as const;
+type VkFeedItem = {
+  id: string;
+  kind: "video" | "post";
+  title: string;
+  excerpt: string;
+  publishedAt: string;
+  duration: number;
+  posterUrl: string;
+  posterWidth: number;
+  posterHeight: number;
+  playerUrl: string | null;
+  sourceUrl: string;
+  productId: number | null;
+};
+
+function HeroBrandLockup({ product }: { product: Product }) {
+  if (product.brand === "QUEEN KEY") {
+    return <span className="hero-context-brand queen-key"><Image src="/assets/img/logo-footer.svg" alt="Queen Key Cosmetic" width={193} height={43} /></span>;
+  }
+  return <span className="hero-context-brand anestet" aria-label="Anestet, зарегистрированный товарный знак">Anestet<sup>®</sup></span>;
+}
+
+function isVkFeedItem(value: unknown): value is VkFeedItem {
+  if (!value || typeof value !== "object") return false;
+  const item = value as Partial<VkFeedItem>;
+  try {
+    const poster = new URL(String(item.posterUrl));
+    const baseValid = typeof item.id === "string"
+      && item.id.length > 0
+      && (item.kind === "video" || item.kind === "post")
+      && typeof item.title === "string"
+      && item.title.length > 0
+      && (item.productId === null || (Number.isInteger(item.productId) && Number(item.productId) > 0))
+      && poster.protocol === "https:";
+    if (!baseValid || item.kind === "post") return baseValid;
+    const player = new URL(String(item.playerUrl));
+    return player.protocol === "https:"
+      && ["vk.com", "vk.ru", "vkvideo.ru"].some((host) => player.hostname === host || player.hostname.endsWith(`.${host}`))
+      && player.pathname === "/video_ext.php";
+  } catch {
+    return false;
+  }
+}
+
+function videoDuration(seconds: number) {
+  if (!seconds) return "Видео";
+  return `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, "0")}`;
+}
 
 const careStages = [
   {
@@ -210,7 +251,6 @@ const productPackshot = (product: Product) => product.image;
 const productCardPackshot = (product: Product) => product.image.replace(/-alpha-restored-v2\.webp$/, "-card.webp");
 
 type ShoppingMode = "catalog" | "guide";
-type SiteMode = "onepage" | "full";
 type CompanySection = "partners" | "delivery" | "certificates" | "contacts";
 
 const companySections: Array<{ id: CompanySection; label: string }> = [
@@ -249,11 +289,11 @@ export default function Storefront() {
   const [catalogProducts, setCatalogProducts] = useState<Product[]>(products);
   const [theme, setTheme] = useState<ThemeId>("serum");
   const [ambientMotionEnabled, setAmbientMotionEnabled] = useState(false);
+  const [heroGraphicsReady, setHeroGraphicsReady] = useState(false);
   const [filter, setFilter] = useState("Все");
   const [catalogStageId, setCatalogStageId] = useState<CareStageId | null>(null);
   const [focusedProductId, setFocusedProductId] = useState<number | null>(null);
   const [shoppingMode, setShoppingMode] = useState<ShoppingMode>("catalog");
-  const [siteMode, setSiteMode] = useState<SiteMode>("full");
   const [companySection, setCompanySection] = useState<CompanySection>("partners");
   const [heroProductIndex, setHeroProductIndex] = useState(0);
   const [departingHeroProductIndex, setDepartingHeroProductIndex] = useState<number | null>(null);
@@ -274,7 +314,10 @@ export default function Storefront() {
   const [callbackConsent, setCallbackConsent] = useState(false);
   const [callbackMarketing, setCallbackMarketing] = useState(false);
   const [callbackState, setCallbackState] = useState<{ submitting?: boolean; success?: string; error?: string }>({});
+  const [vkPublications, setVkPublications] = useState<VkFeedItem[]>([]);
+  const [openVkVideo, setOpenVkVideo] = useState<VkFeedItem | null>(null);
   const cartDialogRef = useRef<HTMLDialogElement>(null);
+  const vkVideoDialogRef = useRef<HTMLDialogElement>(null);
   const heroProductIndexRef = useRef(0);
   const heroProductIdRef = useRef<number | null>(null);
   const heroTransitionTimerRef = useRef<number | null>(null);
@@ -306,8 +349,6 @@ export default function Storefront() {
 
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search);
-    const requestedMode = searchParams.get("site");
-    setSiteMode(requestedMode === "onepage" ? "onepage" : "full");
     const requestedDesign = searchParams.get("design");
     let storedDesign: string | null = null;
     try {
@@ -318,9 +359,10 @@ export default function Storefront() {
     const queryDesign = themes.find((item) => item.slug === requestedDesign);
     const savedDesign = themes.find((item) => item.slug === storedDesign);
     setTheme(queryDesign?.id ?? savedDesign?.id ?? "serum");
-    if (searchParams.has("motion")) {
+    if (searchParams.has("motion") || searchParams.has("site")) {
       const cleanUrl = new URL(window.location.href);
       cleanUrl.searchParams.delete("motion");
+      cleanUrl.searchParams.delete("site");
       window.history.replaceState({}, "", `${cleanUrl.pathname}${cleanUrl.search}${cleanUrl.hash}`);
     }
     const requestedStage = careStages.find((stage) => stage.id === searchParams.get("stage"));
@@ -333,6 +375,34 @@ export default function Storefront() {
         setFocusedProductId(requestedProductId);
       }
     }
+  }, []);
+
+  useEffect(() => {
+    setHeroGraphicsReady(false);
+    if (theme !== "serum" || !ambientMotionEnabled) return;
+    const receiveGraphicsStatus = (event: MessageEvent) => {
+      const frame = document.querySelector<HTMLIFrameElement>(".getlayers-opaline");
+      if (event.origin !== window.location.origin || event.source !== frame?.contentWindow || event.data?.type !== "anestet-graphic-status") return;
+      setHeroGraphicsReady((ready) => event.data.status === "ready" ? true : ready ? true : false);
+    };
+    window.addEventListener("message", receiveGraphicsStatus);
+    return () => window.removeEventListener("message", receiveGraphicsStatus);
+  }, [ambientMotionEnabled, theme]);
+
+  useEffect(() => {
+    if (["localhost", "127.0.0.1"].includes(window.location.hostname)) return;
+    let active = true;
+    fetch("/api/content/vk")
+      .then(async (response) => {
+        if (!response.ok) throw new Error("VK feed unavailable");
+        return response.json() as Promise<{ ok?: boolean; items?: unknown[] }>;
+      })
+      .then((result) => {
+        if (!active || !result.ok || !Array.isArray(result.items)) return;
+        setVkPublications(result.items.filter(isVkFeedItem));
+      })
+      .catch(() => undefined);
+    return () => { active = false; };
   }, []);
 
   useEffect(() => {
@@ -421,6 +491,16 @@ export default function Storefront() {
   }, [cartOpen]);
 
   useEffect(() => {
+    const dialog = vkVideoDialogRef.current;
+    if (!dialog) return;
+    if (openVkVideo && !dialog.open) dialog.showModal();
+    if (!openVkVideo && dialog.open) dialog.close();
+    const previousOverflow = document.body.style.overflow;
+    if (openVkVideo) document.body.style.overflow = "hidden";
+    return () => { document.body.style.overflow = previousOverflow; };
+  }, [openVkVideo]);
+
+  useEffect(() => {
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     const compactViewport = window.matchMedia("(max-width: 760px)");
     let interval: number | undefined;
@@ -481,7 +561,7 @@ export default function Storefront() {
     );
     nodes.forEach((node) => observer.observe(node));
     return () => observer.disconnect();
-  }, [theme, filter, shoppingMode, siteMode, catalogProducts]);
+  }, [theme, filter, shoppingMode, catalogProducts]);
 
   useEffect(() => {
     const nodes = document.querySelectorAll<HTMLElement>("[data-motion]");
@@ -517,7 +597,7 @@ export default function Storefront() {
       opalineFrame?.removeEventListener("load", refresh);
       document.removeEventListener("visibilitychange", refresh);
     };
-  }, [ambientMotionEnabled, theme, shoppingMode, siteMode]);
+  }, [ambientMotionEnabled, theme, shoppingMode]);
 
   const filters = ["Все", "ANESTET", "LIGHT DEP", "Уход"];
   const selectedCareStage = careStages.find((stage) => stage.id === catalogStageId) ?? null;
@@ -621,7 +701,7 @@ export default function Storefront() {
           payment: orderForm.payment,
           comment: orderForm.comment,
           items: cartEntries.map(({ product, quantity }) => ({ id: product.id, quantity })),
-          source: siteMode,
+          source: "full",
           release: SITE_RELEASE,
         }),
       });
@@ -646,7 +726,7 @@ export default function Storefront() {
       const response = await fetch("/api/callbacks", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ phone: callbackPhone, consent: callbackConsent, marketing: callbackMarketing, source: siteMode, release: SITE_RELEASE }),
+        body: JSON.stringify({ phone: callbackPhone, consent: callbackConsent, marketing: callbackMarketing, source: "full", release: SITE_RELEASE }),
       });
       const result = await response.json() as { ok?: boolean; requestId?: string; error?: string };
       if (!response.ok || !result.ok) throw new Error(result.error || "Не удалось отправить заявку");
@@ -659,12 +739,6 @@ export default function Storefront() {
     }
   };
   const showHeroProduct = (direction: number) => changeHeroProduct(direction);
-  const chooseSiteMode = (mode: SiteMode) => {
-    setSiteMode(mode);
-    const url = new URL(window.location.href);
-    url.searchParams.set("site", mode);
-    window.history.replaceState({}, "", `${url.pathname}${url.search}${url.hash}`);
-  };
   const chooseDesign = (id: ThemeId) => {
     const design = themes.find((item) => item.id === id) ?? themes[0];
     setTheme(design.id);
@@ -716,6 +790,15 @@ export default function Storefront() {
     updateCatalogDeepLink(null, null, "catalog");
     scrollToSectionAfterRender("#catalog");
   };
+  const showLinkedProduct = (productId: number) => {
+    setFilter("Все");
+    setCatalogStageId(null);
+    setFocusedProductId(productId);
+    setShoppingMode("catalog");
+    setOpenVkVideo(null);
+    updateCatalogDeepLink(null, productId, `product-${productId}`);
+    window.setTimeout(() => scrollToSectionAfterRender(`#product-${productId}`), 80);
+  };
   const showGuide = () => {
     setCatalogStageId(null);
     setFocusedProductId(null);
@@ -734,13 +817,6 @@ export default function Storefront() {
   return (
     <main className="site-shell">
       <a className="skip-link" href="#shopping">К выбору товаров</a>
-
-      <nav className="site-mode-switcher" aria-label="Версия сайта">
-        <span>Версия сайта</span>
-        <a href={LEGACY_SITE_URL} target="_blank" rel="noreferrer" aria-label="Старый сайт — открыть в новой вкладке">Старый сайт</a>
-        <button type="button" className={siteMode === "onepage" ? "active" : ""} aria-pressed={siteMode === "onepage"} onClick={() => chooseSiteMode("onepage")}>Одностраничный</button>
-        <button type="button" className={siteMode === "full" ? "active" : ""} aria-pressed={siteMode === "full"} onClick={() => chooseSiteMode("full")}>Полный сайт</button>
-      </nav>
 
       <div className="design-switcher" aria-label="Выбор визуальной версии">
         <div className="switcher-kicker" aria-hidden="true"><span>QK Design Lab</span><strong>2 темы · 1 магазин</strong></div>
@@ -769,16 +845,19 @@ export default function Storefront() {
         <nav className="primary-nav" aria-label="Главное меню">
           <a href="#catalog" onClick={(event) => { event.preventDefault(); showAllCatalog(); }}>Каталог</a>
           <a href="#guide" onClick={(event) => { event.preventDefault(); showGuide(); }}>Система ухода</a>
-          {siteMode === "full" && <a href="#about">О бренде</a>}
+          <a href="#about">О бренде</a>
           <a href="#company-info" onClick={() => openCompanySection("contacts")}>Поддержка</a>
         </nav>
         <div className="header-actions">
           <nav className="header-socials" aria-label="Социальные сети и поддержка">
-            <a href="https://vk.com/queenkeyanestet" target="_blank" rel="noreferrer" aria-label="ANESTET во ВКонтакте">
+            <a href="https://vk.ru/queenkeyanestet" target="_blank" rel="noreferrer" aria-label="ANESTET во ВКонтакте">
               <Image src="/assets/icons/social/vk.svg" alt="" width={24} height={24} aria-hidden="true" />
             </a>
             <a href="https://t.me/Anestetprofessional" target="_blank" rel="noreferrer" aria-label="ANESTET в Telegram">
               <Image src="/assets/icons/social/telegram.svg" alt="" width={24} height={24} aria-hidden="true" />
+            </a>
+            <a href="https://taplink.cc/anestet" target="_blank" rel="noreferrer" aria-label="Все официальные ссылки ANESTET в Taplink">
+              <Image src="/assets/icons/social/taplink.svg" alt="" width={24} height={24} aria-hidden="true" />
             </a>
           </nav>
           <a className="header-support-button" href="#company-info" onClick={() => openCompanySection("contacts")} aria-label={`Поддержка — открыть контакты: ${SUPPORT_EMAIL}`}>
@@ -912,7 +991,46 @@ export default function Storefront() {
         </div>
       </dialog>
 
-      <section className="hero" id="top" aria-labelledby="hero-title" data-motion>
+      <dialog
+        className="vk-video-dialog"
+        ref={vkVideoDialogRef}
+        aria-labelledby="vk-video-dialog-title"
+        onCancel={() => setOpenVkVideo(null)}
+        onClose={() => setOpenVkVideo(null)}
+        onClick={(event) => { if (event.target === event.currentTarget) setOpenVkVideo(null); }}
+      >
+        {openVkVideo?.kind === "video" && openVkVideo.playerUrl && (
+          <div className="vk-video-panel">
+            <header>
+              <div><p>VK / официальный ролик</p><h2 id="vk-video-dialog-title">{openVkVideo.title}</h2></div>
+              <button type="button" onClick={() => setOpenVkVideo(null)} aria-label="Закрыть видео"><CloseIcon size={22} /></button>
+            </header>
+            <div className="vk-video-player">
+              <iframe
+                src={openVkVideo.playerUrl}
+                title={openVkVideo.title}
+                loading="lazy"
+                allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+                sandbox="allow-scripts allow-same-origin allow-presentation allow-popups"
+                allowFullScreen
+                referrerPolicy="strict-origin-when-cross-origin"
+              />
+            </div>
+            <footer>
+              <a href={openVkVideo.sourceUrl} target="_blank" rel="noreferrer">Исходный пост VK <ArrowIcon /></a>
+              {openVkVideo.productId !== null && <button type="button" onClick={() => showLinkedProduct(openVkVideo.productId!)}>Перейти к товару <ArrowIcon /></button>}
+            </footer>
+          </div>
+        )}
+      </dialog>
+
+      <section
+        className="hero"
+        id="top"
+        aria-labelledby="hero-title"
+        data-motion
+        data-graphics={theme === "serum" && (!ambientMotionEnabled || !heroGraphicsReady) ? "fallback" : "active"}
+      >
         <div className="hero-atmosphere" aria-hidden="true">
           <span className="serum-orb serum-orb-a" />
           <span className="serum-orb serum-orb-b" />
@@ -920,7 +1038,7 @@ export default function Storefront() {
           <span className="shoal-field" />
         </div>
         {ambientMotionEnabled && theme === "clinical" && <iframe className="getlayers-frame getlayers-shoal" src="/assets/getlayers/shoal/index.html" title="" aria-hidden="true" tabIndex={-1} />}
-        {ambientMotionEnabled && theme === "serum" && <iframe className="getlayers-frame getlayers-opaline" src="/assets/getlayers/opaline/index.html#embed=hero" title="" aria-hidden="true" tabIndex={-1} />}
+        {ambientMotionEnabled && theme === "serum" && <iframe className="getlayers-frame getlayers-opaline" src="/assets/getlayers/opaline/index.html#embed=hero" title="" aria-hidden="true" tabIndex={-1} onError={() => setHeroGraphicsReady(false)} />}
         <div className="hero-brand-rail" aria-hidden="true">
           <div className="hero-brand-track">
             {[0, 1].map((group) => (
@@ -949,12 +1067,14 @@ export default function Storefront() {
           <div className="hero-copy-stage">
             {departingHeroProduct && (
               <div className="hero-copy-product departing" aria-hidden="true">
+                <HeroBrandLockup product={departingHeroProduct} />
                 <p className="eyebrow"><SparkIcon /> {heroEyebrow(departingHeroProduct)}</p>
                 <p className="hero-product-headline hero-departing-title">{heroHeadline(departingHeroProduct)}</p>
                 <p className="hero-lead">{heroDescription(departingHeroProduct)}</p>
               </div>
             )}
             <div className={heroAnimating ? "hero-copy-product arriving" : "hero-copy-product"} key={`hero-copy-${heroProduct.id}-${heroMotionCycle}`}>
+              <HeroBrandLockup product={heroProduct} />
               <p className="eyebrow"><SparkIcon /> {heroEyebrow(heroProduct)}</p>
               <h1 id="hero-title" className="hero-product-headline">{heroHeadline(heroProduct)}</h1>
               <p className="hero-lead">{heroDescription(heroProduct)}</p>
@@ -1033,7 +1153,7 @@ export default function Storefront() {
         <div className="scroll-cue" aria-hidden="true"><span /> Листайте</div>
       </section>
 
-      {siteMode === "full" ? <section className="shopping-navigation" id="shopping" aria-labelledby="shopping-title">
+      <section className="shopping-navigation" id="shopping" aria-labelledby="shopping-title">
         <div>
           <p className="section-index">Быстрый маршрут</p>
           <h2 id="shopping-title"><span>Сразу купить</span><span>или подобрать</span></h2>
@@ -1046,9 +1166,9 @@ export default function Storefront() {
             <span>02</span><strong>Подбор по этапам</strong><small>Понятный маршрут до, во время и после процедуры</small>
           </button>
         </div>
-      </section> : <div className="onepage-anchor" id="shopping" />}
+      </section>
 
-      {(shoppingMode === "guide" || siteMode === "onepage") && (
+      {shoppingMode === "guide" && (
         <div id="shopping-panel-guide" role="region" aria-label="Подбор средств по этапам">
         <section className="care-system" id="system">
         <div className="section-heading" data-reveal>
@@ -1125,7 +1245,7 @@ export default function Storefront() {
         </div>
       )}
 
-      {(shoppingMode === "catalog" || siteMode === "onepage") && (
+      {shoppingMode === "catalog" && (
       <section className="catalog" id="catalog" role="region" aria-label="Каталог товаров">
         <div className="catalog-head" data-reveal>
           <div>
@@ -1199,9 +1319,7 @@ export default function Storefront() {
         <p data-reveal>Все цифры основаны на текущем каталоге и опубликованных документах сайта.</p>
       </section>
 
-      {siteMode === "full" && (
-        <>
-        <section className="about-brand" id="about" aria-labelledby="about-title" data-motion>
+      <section className="about-brand" id="about" aria-labelledby="about-title" data-motion>
           <div className="about-portrait" data-reveal>
             <span className="about-year">2016—2026</span>
             <span className="about-optical-core" aria-hidden="true" />
@@ -1220,15 +1338,13 @@ export default function Storefront() {
               ))}
             </div>
           </div>
-        </section>
-        <nav className="brand-links about-section-links" aria-label="Материалы о компании">
+      </section>
+      <nav className="brand-links about-section-links" aria-label="Материалы о компании">
           <a href="#company-info" onClick={() => openCompanySection("partners")}>Партнёрам <ArrowIcon /></a>
           <a href="#company-info" onClick={() => openCompanySection("delivery")}>Доставка и оплата <ArrowIcon /></a>
           <a href="#company-info" onClick={() => openCompanySection("certificates")}>Сертификаты <ArrowIcon /></a>
           <a href="#company-info" onClick={() => openCompanySection("contacts")}>Контакты <ArrowIcon /></a>
-        </nav>
-        </>
-      )}
+      </nav>
 
       <section className="company-info" id="company-info" aria-labelledby="company-info-title">
         <header data-reveal>
@@ -1328,24 +1444,43 @@ export default function Storefront() {
 
       <section className="social-feed" id="social" aria-labelledby="social-title" data-motion>
         <header data-reveal>
-          <div><p className="section-index">ANESTET в эфире</p><h2 id="social-title">Новости, видео, формулы</h2></div>
-          <p>Официальные площадки бренда. Карточки ведут прямо в исходную публикационную ленту.</p>
+          <div><p className="section-index">ANESTET в эфире</p><h2 id="social-title">Продукты в движении</h2></div>
+          <p>{vkPublications.length ? "Живая лента официального VK: обложка, краткое описание и заголовок каждой новости; видео запускаются прямо на сайте, фотопубликации открываются в сообществе." : "Единая официальная лента VK. После подключения токена здесь появятся все доступные новости и ролики с реальными превью публикаций."}</p>
         </header>
-        <div className="social-feed-window">
-          <div className="social-feed-track">
-            {[...socialCards, ...socialCards].map((card, index) => (
-              <a className="social-card" href={card.href} target="_blank" rel="noreferrer" key={`${card.network}-${card.eyebrow}-${index}`} aria-hidden={index >= socialCards.length ? "true" : undefined} tabIndex={index >= socialCards.length ? -1 : undefined}>
-                <div className="social-network"><Image src={card.icon} alt="" width={64} height={64} aria-hidden="true" /><span>{card.network}</span></div>
-                <Image className="social-network-watermark" src={card.icon} alt="" width={210} height={210} aria-hidden="true" />
-                <p>{card.eyebrow}</p>
-                <h3>{card.title}</h3>
-                <small>{card.note}</small>
-                <ArrowIcon />
-              </a>
-            ))}
+        {vkPublications.length ? (
+          <div className="vk-video-rail" aria-label="Новости и видео официального сообщества VK">
+            <div className="vk-video-track">
+            {(vkPublications.length > 1 ? [...vkPublications, ...vkPublications] : vkPublications).map((publication, index) => {
+              const duplicate = index >= vkPublications.length;
+              const product = catalogProducts.find((item) => item.id === publication.productId);
+              const content = <>
+                <span className="vk-video-poster">
+                  <img src={publication.posterUrl} alt="" width={publication.posterWidth} height={publication.posterHeight} loading="lazy" decoding="async" referrerPolicy="no-referrer" />
+                  {publication.kind === "video" && <i className="vk-play-mark" aria-hidden="true"><span /></i>}
+                  <small>{publication.kind === "video" ? videoDuration(publication.duration) : "Новость"}</small>
+                </span>
+                <span className="vk-video-copy">
+                  <span><Image src="/assets/icons/social/vk.svg" alt="" width={22} height={22} aria-hidden="true" /> Официальный VK</span>
+                  <strong>{publication.title}</strong>
+                  <p>{publication.excerpt || "Официальная публикация сообщества ANESTET × Queen Key."}</p>
+                  <small>{product ? `К товару · ${product.compactTitle}` : publication.kind === "video" ? "Смотреть ролик" : "Читать публикацию"}</small>
+                </span>
+              </>;
+              return (
+                publication.kind === "video"
+                  ? <button className="vk-video-card" type="button" key={`${publication.id}-${duplicate ? "copy" : "main"}`} onClick={() => setOpenVkVideo(publication)} aria-label={`Смотреть видео: ${publication.title}`} aria-hidden={duplicate || undefined} tabIndex={duplicate ? -1 : undefined}>{content}</button>
+                  : <a className="vk-video-card" href={publication.sourceUrl} target="_blank" rel="noreferrer" key={`${publication.id}-${duplicate ? "copy" : "main"}`} aria-label={`Читать публикацию VK: ${publication.title}`} aria-hidden={duplicate || undefined} tabIndex={duplicate ? -1 : undefined}>{content}</a>
+              );
+            })}
+            </div>
           </div>
-        </div>
-        <p className="social-feed-note">Автоматическая загрузка отдельных постов подключается через VK API; до выдачи токена здесь используются официальные разделы сообщества.</p>
+        ) : (
+          <a className="vk-feed-empty-state" href="https://vk.ru/queenkeyanestet" target="_blank" rel="noreferrer">
+            <span className="vk-feed-empty-visual" aria-hidden="true"><i /><b /><Image src="/assets/icons/social/vk.svg" alt="" width={54} height={54} /></span>
+            <span><small>Официальное сообщество</small><strong>Новости и видео Queen Key × ANESTET</strong><em>Открыть публикации VK <ArrowIcon /></em></span>
+          </a>
+        )}
+        <p className="social-feed-note">Источник: официальное сообщество Queen Key × ANESTET. API-токен хранится только на сервере; синхронизированные публикации можно скрыть или связать с товаром в админке.</p>
       </section>
 
       <section className="callback-section" id="callback" aria-labelledby="callback-title" data-motion>
@@ -1391,21 +1526,6 @@ export default function Storefront() {
         <div className="footer-fashion-motion" aria-hidden="true">
           <span className="footer-fashion-thread" />
         </div>
-        <div className="footer-brand-stage">
-          <div className="footer-brand-primary" data-reveal>
-            <p className="footer-brand-kicker"><span>ANESTET / PROFESSIONAL CARE</span><span>МОСКВА · 2026</span></p>
-            <Image className="footer-anestet-logo" src="/assets/img/optimized/anestet-logo-blue-990-lossless.webp" alt="ANESTET" width={990} height={381} />
-            <p className="footer-brand-statement">Профессиональный уход<br />{" "}до процедуры, во время и после.</p>
-          </div>
-          <div className="footer-brand-secondary" data-reveal>
-            <div className="footer-brand-orbit">
-              <span className="footer-orbit-ring" aria-hidden="true" />
-              <span className="footer-qk-mark-window"><Image className="footer-qk-mark" src="/assets/img/optimized/queen-key-mark-512-lossless.webp" alt="Queen Key" width={512} height={591} /></span>
-            </div>
-            <Image className="footer-qk-lockup" src="/assets/img/logo-footer.svg" alt="QK Cosmetic" width={193} height={43} />
-            <p><span>PREMIUM CARE</span></p>
-          </div>
-        </div>
         <div className="footer-brand-line" aria-hidden="true">
           <span>ANESTET</span><span>CLINICAL CARE</span><span>QUEEN KEY</span><i />
         </div>
@@ -1416,7 +1536,7 @@ export default function Storefront() {
           <div><p>Дизайн</p><span>{themes.find((item) => item.id === theme)?.number} / {themes.find((item) => item.id === theme)?.title}</span></div>
         </div>
         <nav className="footer-socials" aria-label="Социальные сети ANESTET">
-          <a href="https://vk.com/queenkeyanestet" target="_blank" rel="noreferrer">VK</a>
+          <a href="https://vk.ru/queenkeyanestet" target="_blank" rel="noreferrer">VK</a>
           <a href="https://t.me/Anestetprofessional" target="_blank" rel="noreferrer">Telegram</a>
           <a href="https://taplink.cc/anestet" target="_blank" rel="noreferrer">Все ссылки</a>
           <a href={`mailto:${SUPPORT_EMAIL}`}>Поддержка</a>

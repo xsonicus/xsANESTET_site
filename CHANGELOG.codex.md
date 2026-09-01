@@ -325,3 +325,19 @@ Preserved the approved gamma-corrected Opaline appearance while removing the zer
 - Risk/Rollback: low
 - Issue/Request: Production evidence needed to distinguish resolved WebGL main-thread work from remaining public network variability.
 Recorded final public cold/warm desktop measurements after the zero-bloom release, including stable zero TBT and remaining network/Speed Index variance.
+
+## 2026-09-01T04:32:51.526Z - Version 13.2.0
+
+- Previous version: 13.1.3
+- Bump: minor
+## 2026-09-01T07:49:34.133Z - Release v13.2.0: approved storefront, VK feed and durable logic graph
+- ID: 2026-09-01T07-49-34-133Z-release-v13.2.0-approved-storefront-vk-feed-and-durable-logic-graph
+- Version: 13.2.0
+- Category: release
+- Branch: main
+- Head: 834538b
+- Files: app/storefront.tsx, app/globals.css, app/admin/admin-client.tsx, app/admin/admin-integrations.tsx, app/admin/admin-vk-feed.tsx, app/admin/admin.module.css, lib/admin/config.mjs, lib/admin/contract.ts, lib/admin/integrations.mjs, lib/admin/server.mjs, lib/admin/connector-secret-store.mjs, lib/admin/vk-connector.mjs, lib/admin/vk-feed-store.mjs, public/assets/getlayers/opaline.html, public/assets/getlayers/opaline/index.html, scripts/qa-layout.mjs, scripts/admin-smoke.mjs, deploy/anestet-admin-api.env.example, deploy/anestet-backup.sh, deploy/anestet.139-180-214-133.sslip.io.conf, deploy/anestet.139-180-214-133.sslip.io.production.conf, .codex-logic, .graphifyignore, graphify-out, docs/LOGIC_GRAPH_RU.md, docs/releases/2026.09.01-v13.2.0.md, README.md, docs/RELEASE_HISTORY.md
+- Verification: npm run build; npm run qa:layout (11 control widths x 2 themes x 2 views); npm run qa:admin; npx tsc --noEmit; npm audit --omit=dev (0 vulnerabilities); git diff --check; Codex Browser desktop/mobile visual and console review; Production TLS/API/nginx/systemd smoke tests
+- Risk/Rollback: Medium: broad storefront motion/layout and admin API changes; mitigated by eleven-width geometry QA across both themes/views, browser visual review, protected API smoke tests, TypeScript/build checks, immutable VPS releases and rollback preservation.
+- Issue/Request: Complete the accumulated design, motion, responsive, product-media, admin connector, VK publishing, performance, correction-lineage and VPS release corrections without regressing either approved theme.
+Finalized the two-theme ANESTET storefront and admin release: approved Prism hero motion, responsive product/about/footer refinements, mutually exclusive Opaline and lightweight fallback graphics, authentic transparent product media, encrypted VK connector with public moving news rail for queenkeyanestet, cumulative correction lineage and Graphify logic graph. Deployed immutable storefront 20260901-v13.2.0-r2 and Admin API 20260901-v13.2.0 to production.

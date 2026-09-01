@@ -8,7 +8,7 @@ list_file=$(mktemp)
 trap 'rm -f "$list_file"' EXIT HUP INT TERM
 
 install -d -o root -g root -m 0700 "$backup_root"
-for name in catalog.json admin-audit.jsonl orders.jsonl callbacks.jsonl; do
+for name in catalog.json vk-feed.json connector-secrets.enc.json admin-audit.jsonl orders.jsonl callbacks.jsonl; do
   if [ -f "/var/lib/anestet/$name" ]; then
     printf '%s\n' "var/lib/anestet/$name" >> "$list_file"
   fi

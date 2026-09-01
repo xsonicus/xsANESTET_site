@@ -25,3 +25,17 @@ This version has breaking changes — APIs, conventions, and file structure may 
 This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
 
 <!-- END:nextjs-agent-rules -->
+
+<!-- PROJECT_LOGIC_GRAPH_START -->
+## Project Logic Graph
+
+Use `project-logic-graph` for projects where code logic must not be lost across prompts, branches, or compaction.
+
+- At the start of a new project or major branch, attach `project-logic-graph` to the current project root and run `init_project`.
+- Before changing important architecture, trading strategy, execution, risk, model-training, or data-processing logic, inspect the graph with `query_graph`, `path_query`, or `affected`.
+- After meaningful logic changes, run `update_graph` and record the change with `write_logic_ledger`.
+- If raw `graphify update` reports that HTML was skipped because the graph is too large, immediately run `split_graph`; never leave a large graph without `graphify-out/topics/*` visual slices.
+- For ML/trading systems, document model weights as provenance and protocol: feature sources, training windows, validation windows, retraining cadence, leakage controls, walk-forward tests, and live/backtest parity. Do not store binary weights or raw datasets in `.codex-logic/`.
+- Never store secrets, tokens, `.env` values, private sessions, raw market datasets, model checkpoints, or private keys in `.codex-logic/` or Graphify memory.
+
+<!-- PROJECT_LOGIC_GRAPH_END -->

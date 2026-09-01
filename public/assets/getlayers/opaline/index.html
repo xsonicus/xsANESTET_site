@@ -43,6 +43,20 @@
 <body>
 <canvas id="scene"></canvas>
 
+<script>
+window.__anestetGraphicsReady = false
+function reportAnestetGraphicsStatus(status) {
+  if (window.parent === window) return
+  window.parent.postMessage({ type: 'anestet-graphic-status', status }, window.location.origin)
+}
+window.addEventListener('error', () => {
+  if (!window.__anestetGraphicsReady) reportAnestetGraphicsStatus('failed')
+})
+window.addEventListener('unhandledrejection', () => {
+  if (!window.__anestetGraphicsReady) reportAnestetGraphicsStatus('failed')
+})
+</script>
+
 <!-- UI PANEL — remove this block to drop the controls -->
 <div id="ui-panel">
   <button id="ui-toggle" type="button" aria-label="Toggle controls">⚙ controls</button>
@@ -629,6 +643,7 @@ window.addEventListener('resize', resize); resize()
 /* ---------- RENDER LOOP (single scene render → gamma) ---------- */
 let motionActive = true
 let renderHandle = 0
+let readyReported = false
 function render() {
   renderHandle = 0
   if (!motionActive || document.hidden) return
@@ -636,6 +651,11 @@ function render() {
   mouse.y += (mouseTarget.y - mouse.y) * 0.06
   sceneObj.render(mouse)
   composer.render()
+  if (!readyReported) {
+    readyReported = true
+    window.__anestetGraphicsReady = true
+    reportAnestetGraphicsStatus('ready')
+  }
   renderHandle = requestAnimationFrame(render)
 }
 function syncRenderLoop() {
@@ -648,6 +668,10 @@ window.addEventListener('message', event => {
   syncRenderLoop()
 })
 document.addEventListener('visibilitychange', syncRenderLoop)
+canvas.addEventListener('webglcontextlost', () => {
+  window.__anestetGraphicsReady = false
+  reportAnestetGraphicsStatus('failed')
+})
 syncRenderLoop()
 
 /* ===== UI (remove this block to drop the panel) ===== */

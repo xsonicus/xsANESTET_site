@@ -18,11 +18,13 @@ browser /admin/
       | same-origin HTTPS, HttpOnly cookie, Origin + CSRF
       v
 nginx /api/admin/*  --->  admin service :4318  ---> catalog.json
+                                                |-> vk-feed.json
                                                 `-> admin-audit.jsonl
                               |
                               `-> server-only connector adapters (future)
 
 storefront runtime     ---- public /api/catalog --------------^
+storefront video rail  ---- public /api/content/vk -----------^
 order validation       ---- shared ANESTET_CATALOG_STORE -----^
 1C connector           ---- future master-data adapter -------^
 ```
@@ -39,6 +41,8 @@ order validation       ---- shared ANESTET_CATALOG_STORE -----^
 - Audit contains actor, action and changed field names, not credentials or full request bodies.
 - Connector credentials exist only in the server process environment; status responses are fully redacted.
 - A connector check without complete configuration or an installed protocol adapter performs zero external requests.
+- The VK token is used only in a server-side POST to the allowlisted `api.vk.com/method/wall.get`; the token, raw API response and unapproved posts never reach the storefront.
+- VK videos are fail-closed twice: import does not publish, and publication requires a valid product mapping plus an optimistic item revision.
 
 ## Non-goals for this bounded MVP
 
@@ -54,4 +58,5 @@ order validation       ---- shared ANESTET_CATALOG_STORE -----^
 2. Provision one shared `catalog.json` for both loopback services and verify backup/restore.
 3. Add an explicit cache/ETag policy to the public catalog endpoint when traffic requires it.
 4. Add 1С adapter, SKU mapping, synchronization timestamps and conflict policy.
-5. Replace single-admin PBKDF2 auth with audited SSO when more operators or roles are required.
+5. Install an official VK access token, review imported videos and publish the approved product mappings.
+6. Replace single-admin PBKDF2 auth with audited SSO when more operators or roles are required.

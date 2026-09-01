@@ -1,0 +1,50 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {
+    "topic": "deploy",
+    "topic_label": "Deploy And Operations",
+    "source_graph": "/Users/xsonicus/CodexRuntime/xsANESTET_site/graphify-out/graph.json",
+    "generated_at": "2026-09-01T06:02:56.591Z"
+  },
+  "nodes": [
+    {
+      "id": "deploy_anestet_backup",
+      "label": "anestet-backup.sh",
+      "file_type": "code",
+      "source_file": "deploy/anestet-backup.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "_origin": "ast"
+    },
+    {
+      "id": "deploy_anestet_backup_sh__entry",
+      "label": "anestet-backup.sh script",
+      "file_type": "code",
+      "source_file": "deploy/anestet-backup.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "_origin": "ast"
+    }
+  ],
+  "links": [
+    {
+      "source": "deploy_anestet_backup",
+      "target": "deploy_anestet_backup_sh__entry",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "deploy/anestet-backup.sh",
+      "source_location": "L1",
+      "weight": 1,
+      "_origin": "ast"
+    }
+  ],
+  "hyperedges": [],
+  "built_at_commit": null
+}
