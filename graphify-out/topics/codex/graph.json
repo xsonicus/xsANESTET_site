@@ -5,7 +5,7 @@
     "topic": "codex",
     "topic_label": "Codex Memory And Governance",
     "source_graph": "/Users/xsonicus/CodexRuntime/xsANESTET_site/graphify-out/graph.json",
-    "generated_at": "2026-09-02T05:23:55.421Z"
+    "generated_at": "2026-09-02T06:17:04.538Z"
   },
   "nodes": [
     {
@@ -222,6 +222,15 @@
       "node_kind": "heading",
       "source_file": ".codex-logic/logic-map.md",
       "source_location": "L178",
+      "_origin": "ast"
+    },
+    {
+      "id": "codex_logic_logic_map_2026_09_02t06_16_48_689z_v13_4_4_retina_detail_packshots_and_bounded_care_guide_rhythm",
+      "label": "2026-09-02T06:16:48.689Z - v13.4.4 Retina detail packshots and bounded care-guide rhythm",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": ".codex-logic/logic-map.md",
+      "source_location": "L186",
       "_origin": "ast"
     },
     {
@@ -606,6 +615,16 @@
       "confidence": "EXTRACTED",
       "source_file": ".codex-logic/logic-map.md",
       "source_location": "L178",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "codex_logic_logic_map_logic_graph_xsanestet_site",
+      "target": "codex_logic_logic_map_2026_09_02t06_16_48_689z_v13_4_4_retina_detail_packshots_and_bounded_care_guide_rhythm",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".codex-logic/logic-map.md",
+      "source_location": "L186",
       "weight": 1,
       "_origin": "ast"
     },

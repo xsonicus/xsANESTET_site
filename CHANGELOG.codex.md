@@ -405,3 +405,11 @@ Added the generated v13.2.0 release notes to the durable versioning archive afte
 - Rebalanced the founder scene after the previous over-compression while preserving the lower navigation seam.
 - Reduced oversized openings in catalog, company information and VK sections; tightened the evidence-to-social transition.
 - Extended layout QA with title-ratio, title-ceiling, catalog/company opening and founder balanced-spacing assertions.
+
+## 2026-09-02T09:11:22+03:00 - Version 13.4.4
+
+- Added true 2000×2000 RGBA detail derivatives for all 23 products; the nine reconstructed silhouettes are rasterized directly from their approved SVG geometry without blur.
+- Product detail cards now open on the cached 600 px catalog image, prefetch on intent and replace it with the 2× asset without blank frames or layout movement.
+- Extended packshot QA with detail resolution and 320 KiB budgets; layout QA now simulates a 500 ms delayed detail request and verifies preview-to-Retina replacement.
+- Shortened the care-system heading to `Выбор по этапу` and bounded the empty space below its three cards and before `Сначала задача. Затем формула.` in both themes and mobile.
+- Release gate: build, 11 экранов × 2 темы × 2 представления, 23/23 packshots, delayed-network detail interaction, admin smoke, TypeScript and dependency audit.

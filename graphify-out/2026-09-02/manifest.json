@@ -114,9 +114,9 @@
     "semantic_hash": ""
   },
   "app/storefront.tsx": {
-    "mtime": 1788324565.7319465,
-    "seen": 1788324670.025496,
-    "ast_hash": "aebe37fbde1c474d10a8ae5e8c42d566",
+    "mtime": 1788326603.9077873,
+    "seen": 1788326634.943064,
+    "ast_hash": "7762583fc734e38972e8f7684bb579c3",
     "semantic_hash": ""
   },
   "deploy/anestet-backup.sh": {
@@ -2550,9 +2550,9 @@
     "semantic_hash": ""
   },
   "package.json": {
-    "mtime": 1788324565.731073,
-    "seen": 1788324670.025673,
-    "ast_hash": "1b4efdcab54dce5eacb675aa452767b4",
+    "mtime": 1788326603.906923,
+    "seen": 1788326634.943251,
+    "ast_hash": "ecca414c38afe379c6167945fbd5b85b",
     "semantic_hash": ""
   },
   "scripts/admin-smoke.mjs": {
@@ -2568,9 +2568,9 @@
     "semantic_hash": ""
   },
   "scripts/qa-layout.mjs": {
-    "mtime": 1788324591.4911044,
-    "seen": 1788324670.025675,
-    "ast_hash": "69be3b93cbdf99799ebf184af7a0e7aa",
+    "mtime": 1788326468.6538372,
+    "seen": 1788326634.943254,
+    "ast_hash": "d8fe8d06c87b044d625a09cb2c729c7c",
     "semantic_hash": ""
   },
   "scripts/sync-getlayers-three.mjs": {
@@ -2592,9 +2592,9 @@
     "semantic_hash": ""
   },
   ".codex-logic/logic-map.md": {
-    "mtime": 1788298531.614559,
-    "seen": 1788298743.4506361,
-    "ast_hash": "76ac6eb0e10d6f34a981b4a776eecbaf",
+    "mtime": 1788326629.8347726,
+    "seen": 1788326634.9432561,
+    "ast_hash": "9438833edb91cb9bbf57c61e96c708f9",
     "semantic_hash": ""
   },
   ".codex-logic/model-training-protocol.md": {
@@ -2628,9 +2628,9 @@
     "semantic_hash": ""
   },
   "CHANGELOG.codex.md": {
-    "mtime": 1788298531.6128545,
-    "seen": 1788298743.450639,
-    "ast_hash": "2f1323e09de6f113749ad5b7f2b009f1",
+    "mtime": 1788326603.9086893,
+    "seen": 1788326634.9432588,
+    "ast_hash": "62e0404d25a811b30a6a3364b689ed29",
     "semantic_hash": ""
   },
   "README.md": {
@@ -2670,9 +2670,9 @@
     "semantic_hash": ""
   },
   "docs/RELEASE_HISTORY.md": {
-    "mtime": 1788298531.6131654,
-    "seen": 1788298743.4506419,
-    "ast_hash": "1bbcee17183cf1f42a4cf72d6ee854af",
+    "mtime": 1788326603.909009,
+    "seen": 1788326634.9432619,
+    "ast_hash": "13a7ca22ded43a7824ed0bf2aa1b81da",
     "semantic_hash": ""
   },
   "docs/admin/ARCHITECTURE.md": {
@@ -2850,8 +2850,8 @@
     "semantic_hash": ""
   },
   "public/assets/getlayers/opaline/index.html": {
-    "mtime": 1788324603.4414864,
-    "seen": 1788324670.025698,
+    "mtime": 1788326477.4196372,
+    "seen": 1788326634.943281,
     "ast_hash": "95e013984c943cb363d30a9c8b945d05",
     "semantic_hash": ""
   },
@@ -2862,8 +2862,8 @@
     "semantic_hash": ""
   },
   "public/assets/getlayers/shoal/index.html": {
-    "mtime": 1788324603.4422114,
-    "seen": 1788324670.0256991,
+    "mtime": 1788326477.4203541,
+    "seen": 1788326634.943282,
     "ast_hash": "d1ab81578a480f77ce3c1dd8e27616b3",
     "semantic_hash": ""
   },
@@ -6843,6 +6843,108 @@
     "mtime": 1788324312.5484934,
     "seen": 1788324670.026004,
     "ast_hash": "221fd956a761121778d66e790dbcfe42",
+    "semantic_hash": ""
+  },
+  "docs/releases/2026.09.02-v13.4.2.md": {
+    "mtime": 1788325234.6686454,
+    "seen": 1788326634.943274,
+    "ast_hash": "e77cd0980bb22c64ccb1c6361fb2d25d",
+    "semantic_hash": ""
+  },
+  "docs/releases/2026.09.02-v13.4.3.md": {
+    "mtime": 1788326603.9091213,
+    "seen": 1788326634.943275,
+    "ast_hash": "35c99d89515a08a339d7d54878af95a3",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/release-13.4.2/public-about-dark.png": {
+    "mtime": 1788325061.2942486,
+    "seen": 1788326634.943305,
+    "ast_hash": "7c35f65bf46fd6882a7e5958857ae6de",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/release-13.4.2/public-about-light.png": {
+    "mtime": 1788325073.7305906,
+    "seen": 1788326634.943306,
+    "ast_hash": "c17816ce4a55b5dc22ec729ae0b490e8",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/release-13.4.2/public-catalog-mobile.png": {
+    "mtime": 1788325077.3734212,
+    "seen": 1788326634.943306,
+    "ast_hash": "ad4b87fcfa85a3feb07ba6e9cda7e69f",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/release-13.4.2/public-mobile.png": {
+    "mtime": 1788325056.3860495,
+    "seen": 1788326634.943307,
+    "ast_hash": "39dc6b775bb55187f983d1a475306549",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/release-13.4.3/dark-about.png": {
+    "mtime": 1788326290.523913,
+    "seen": 1788326634.943307,
+    "ast_hash": "670a3301b975899f9517adb8221978c5",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/release-13.4.3/dark-catalog.png": {
+    "mtime": 1788326520.796699,
+    "seen": 1788326634.943307,
+    "ast_hash": "1aaab6df8fb6693a446fda1ac9ccfc0b",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/release-13.4.3/dark-company.png": {
+    "mtime": 1788326290.66511,
+    "seen": 1788326634.943308,
+    "ast_hash": "0d76561d65a517122701f11c051323eb",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/release-13.4.3/dark-evidence-social.png": {
+    "mtime": 1788326290.7749903,
+    "seen": 1788326634.943308,
+    "ast_hash": "557bcbbcf9a78f1b3e8acec2216e6ea6",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/release-13.4.3/desktop-review.jpg": {
+    "mtime": 1788326307.435,
+    "seen": 1788326634.943309,
+    "ast_hash": "a49b7ee38b7ce822cf0ff61352ca0548",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/release-13.4.3/light-about.png": {
+    "mtime": 1788326291.6923914,
+    "seen": 1788326634.943309,
+    "ast_hash": "c71a3a86a7379bc7aceeb3617fb24ad8",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/release-13.4.3/light-catalog.png": {
+    "mtime": 1788326521.861895,
+    "seen": 1788326634.94331,
+    "ast_hash": "97aa1428f9d32249af191650d2a25abd",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/release-13.4.3/light-company.png": {
+    "mtime": 1788326291.8166597,
+    "seen": 1788326634.94331,
+    "ast_hash": "0131e3266af31dfd6827e114e8989a05",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/release-13.4.3/light-evidence-social.png": {
+    "mtime": 1788326291.9271393,
+    "seen": 1788326634.9433112,
+    "ast_hash": "d28c5d92703bc5a9a8e773335384a0c0",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/release-13.4.3/mobile-company.png": {
+    "mtime": 1788326292.7313266,
+    "seen": 1788326634.9433112,
+    "ast_hash": "c3f388f91f3d9fa3833a184cf011cfe4",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/release-13.4.3/mobile-evidence.png": {
+    "mtime": 1788326292.8226051,
+    "seen": 1788326634.943312,
+    "ast_hash": "096fb7a568ab4ce01a3aaf4db7c17d0b",
     "semantic_hash": ""
   }
 }

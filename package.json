@@ -1,6 +1,6 @@
 {
   "name": "xs-anestet-design-lab",
-  "version": "13.4.3",
+  "version": "13.4.4",
   "private": true,
   "scripts": {
     "prebuild": "node scripts/sync-getlayers-three.mjs",
@@ -11,6 +11,7 @@
     "lint": "next lint",
     "assets:normalize": "node scripts/normalize-product-packshots.mjs",
     "assets:polish-edges": "node scripts/polish-product-packshot-edges.mjs",
+    "assets:detail": "node scripts/build-product-detail-packshots.mjs",
     "qa:packshots": "node scripts/qa-packshots.mjs",
     "qa:admin": "node scripts/admin-smoke.mjs",
     "qa:layout": "node scripts/qa-layout.mjs"

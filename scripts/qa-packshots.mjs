@@ -1,4 +1,4 @@
-import { access, readFile } from "node:fs/promises";
+import { access, readFile, stat } from "node:fs/promises";
 import { spawnSync } from "node:child_process";
 import { join } from "node:path";
 import process from "node:process";
@@ -29,14 +29,19 @@ for (const product of rows) {
     ? `${product.id}-card-${vectorVersion}.webp`
     : `${product.id}-card.webp`;
   const card = join(root, "public/assets/img/restored/packshots-v13", cardName);
+  const detail = join(root, "public/assets/img/restored/packshots-v13/details-v5", `${product.id}.webp`);
   await access(master);
   await access(card);
+  await access(detail);
 
   const masterInfo = run(["identify", "-format", "%wx%h|%[channels]|%[opaque]", master]);
   const cardInfo = run(["identify", "-format", "%wx%h|%[channels]|%[opaque]", card]);
+  const detailInfo = run(["identify", "-format", "%wx%h|%[channels]|%[opaque]", detail]);
   const levels = alphaLevels(master);
   if (masterInfo !== "1000x1000|srgba 4.0|False") failures.push(`${product.id}: master ${masterInfo}`);
   if (cardInfo !== "600x600|srgba 4.0|False") failures.push(`${product.id}: card ${cardInfo}`);
+  if (detailInfo !== "2000x2000|srgba 4.0|False") failures.push(`${product.id}: detail ${detailInfo}`);
+  if ((await stat(detail)).size > 320 * 1024) failures.push(`${product.id}: detail asset exceeds 320 KiB`);
   if (levels < 48) failures.push(`${product.id}: only ${levels} alpha levels`);
 
   if (vectorVersion) {
@@ -50,4 +55,4 @@ for (const product of rows) {
 }
 
 if (failures.length) throw new Error(`PACKSHOT QA FAIL:\n${failures.join("\n")}`);
-console.log("PACKSHOT QA PASS: 23/23 transparent masters and cards; antialiased alpha >= 48 levels; vector-mask RGB unchanged.");
+console.log("PACKSHOT QA PASS: 23/23 transparent masters, cards and 2x detail assets; antialiased alpha >= 48 levels; vector-mask RGB unchanged; detail assets <= 320 KiB.");

@@ -5,7 +5,7 @@
     "topic": "tools",
     "topic_label": "Tooling And Scripts",
     "source_graph": "/Users/xsonicus/CodexRuntime/xsANESTET_site/graphify-out/graph.json",
-    "generated_at": "2026-09-02T05:23:55.525Z"
+    "generated_at": "2026-09-02T06:17:04.636Z"
   },
   "nodes": [
     {
@@ -181,6 +181,71 @@
       "file_type": "code",
       "source_file": "scripts/admin-smoke.mjs",
       "source_location": "L69",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_build_product_detail_packshots",
+      "label": "build-product-detail-packshots.mjs",
+      "file_type": "code",
+      "source_file": "scripts/build-product-detail-packshots.mjs",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_build_product_detail_packshots_root",
+      "label": "root",
+      "file_type": "code",
+      "source_file": "scripts/build-product-detail-packshots.mjs",
+      "source_location": "L6",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_build_product_detail_packshots_restoreddir",
+      "label": "restoredDir",
+      "file_type": "code",
+      "source_file": "scripts/build-product-detail-packshots.mjs",
+      "source_location": "L7",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_build_product_detail_packshots_outputdir",
+      "label": "outputDir",
+      "file_type": "code",
+      "source_file": "scripts/build-product-detail-packshots.mjs",
+      "source_location": "L8",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_build_product_detail_packshots_maskdir",
+      "label": "maskDir",
+      "file_type": "code",
+      "source_file": "scripts/build-product-detail-packshots.mjs",
+      "source_location": "L9",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_build_product_detail_packshots_products",
+      "label": "products",
+      "file_type": "code",
+      "source_file": "scripts/build-product-detail-packshots.mjs",
+      "source_location": "L11",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_build_product_detail_packshots_run",
+      "label": "run()",
+      "file_type": "code",
+      "source_file": "scripts/build-product-detail-packshots.mjs",
+      "source_location": "L19",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_build_product_detail_packshots_results",
+      "label": "results",
+      "file_type": "code",
+      "source_file": "scripts/build-product-detail-packshots.mjs",
+      "source_location": "L26",
       "_origin": "ast"
     },
     {
@@ -832,6 +897,76 @@
       "confidence": "EXTRACTED",
       "source_file": "scripts/admin-smoke.mjs",
       "source_location": "L69",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_product_detail_packshots",
+      "target": "scripts_build_product_detail_packshots_root",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build-product-detail-packshots.mjs",
+      "source_location": "L6",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_product_detail_packshots",
+      "target": "scripts_build_product_detail_packshots_restoreddir",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build-product-detail-packshots.mjs",
+      "source_location": "L7",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_product_detail_packshots",
+      "target": "scripts_build_product_detail_packshots_outputdir",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build-product-detail-packshots.mjs",
+      "source_location": "L8",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_product_detail_packshots",
+      "target": "scripts_build_product_detail_packshots_maskdir",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build-product-detail-packshots.mjs",
+      "source_location": "L9",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_product_detail_packshots",
+      "target": "scripts_build_product_detail_packshots_products",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build-product-detail-packshots.mjs",
+      "source_location": "L11",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_product_detail_packshots",
+      "target": "scripts_build_product_detail_packshots_run",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build-product-detail-packshots.mjs",
+      "source_location": "L19",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_build_product_detail_packshots",
+      "target": "scripts_build_product_detail_packshots_results",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/build-product-detail-packshots.mjs",
+      "source_location": "L26",
       "weight": 1,
       "_origin": "ast"
     },

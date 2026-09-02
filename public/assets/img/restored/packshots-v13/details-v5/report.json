@@ -1,0 +1,169 @@
+{
+  "generatedAt": "2026-09-02T05:57:52.969Z",
+  "canvas": "2000x2000",
+  "alphaQuality": 100,
+  "webpQuality": 92,
+  "products": [
+    {
+      "id": 17,
+      "source": "17-alpha-restored-v4.webp",
+      "output": "17.webp",
+      "vectorAlphaAt2x": true,
+      "bytes": 59210
+    },
+    {
+      "id": 33,
+      "source": "33-alpha-restored-v4.webp",
+      "output": "33.webp",
+      "vectorAlphaAt2x": true,
+      "bytes": 48564
+    },
+    {
+      "id": 34,
+      "source": "34-alpha-restored-v4.webp",
+      "output": "34.webp",
+      "vectorAlphaAt2x": true,
+      "bytes": 58142
+    },
+    {
+      "id": 35,
+      "source": "35-alpha-restored-v4.webp",
+      "output": "35.webp",
+      "vectorAlphaAt2x": true,
+      "bytes": 54674
+    },
+    {
+      "id": 36,
+      "source": "36-alpha-restored-v4.webp",
+      "output": "36.webp",
+      "vectorAlphaAt2x": true,
+      "bytes": 50522
+    },
+    {
+      "id": 37,
+      "source": "37-alpha-restored-v4.webp",
+      "output": "37.webp",
+      "vectorAlphaAt2x": true,
+      "bytes": 65328
+    },
+    {
+      "id": 38,
+      "source": "38-alpha-restored-v4.webp",
+      "output": "38.webp",
+      "vectorAlphaAt2x": true,
+      "bytes": 56056
+    },
+    {
+      "id": 39,
+      "source": "39-alpha-restored-v4.webp",
+      "output": "39.webp",
+      "vectorAlphaAt2x": true,
+      "bytes": 54670
+    },
+    {
+      "id": 40,
+      "source": "40-alpha-restored-v4.webp",
+      "output": "40.webp",
+      "vectorAlphaAt2x": true,
+      "bytes": 43296
+    },
+    {
+      "id": 42,
+      "source": "42-alpha-restored-v2.webp",
+      "output": "42.webp",
+      "vectorAlphaAt2x": false,
+      "bytes": 99052
+    },
+    {
+      "id": 48,
+      "source": "48-alpha-restored-v2.webp",
+      "output": "48.webp",
+      "vectorAlphaAt2x": false,
+      "bytes": 57486
+    },
+    {
+      "id": 49,
+      "source": "49-alpha-restored-v2.webp",
+      "output": "49.webp",
+      "vectorAlphaAt2x": false,
+      "bytes": 57088
+    },
+    {
+      "id": 50,
+      "source": "50-alpha-restored-v2.webp",
+      "output": "50.webp",
+      "vectorAlphaAt2x": false,
+      "bytes": 56708
+    },
+    {
+      "id": 51,
+      "source": "51-alpha-restored-v2.webp",
+      "output": "51.webp",
+      "vectorAlphaAt2x": false,
+      "bytes": 84918
+    },
+    {
+      "id": 52,
+      "source": "52-alpha-restored-v2.webp",
+      "output": "52.webp",
+      "vectorAlphaAt2x": false,
+      "bytes": 69404
+    },
+    {
+      "id": 53,
+      "source": "53-alpha-restored-v2.webp",
+      "output": "53.webp",
+      "vectorAlphaAt2x": false,
+      "bytes": 108652
+    },
+    {
+      "id": 54,
+      "source": "54-alpha-restored-v2.webp",
+      "output": "54.webp",
+      "vectorAlphaAt2x": false,
+      "bytes": 114852
+    },
+    {
+      "id": 55,
+      "source": "55-alpha-restored-v2.webp",
+      "output": "55.webp",
+      "vectorAlphaAt2x": false,
+      "bytes": 71222
+    },
+    {
+      "id": 56,
+      "source": "56-alpha-restored-v2.webp",
+      "output": "56.webp",
+      "vectorAlphaAt2x": false,
+      "bytes": 106548
+    },
+    {
+      "id": 57,
+      "source": "57-alpha-restored-v2.webp",
+      "output": "57.webp",
+      "vectorAlphaAt2x": false,
+      "bytes": 64736
+    },
+    {
+      "id": 58,
+      "source": "58-alpha-restored-v2.webp",
+      "output": "58.webp",
+      "vectorAlphaAt2x": false,
+      "bytes": 50604
+    },
+    {
+      "id": 59,
+      "source": "59-alpha-restored-v2.webp",
+      "output": "59.webp",
+      "vectorAlphaAt2x": false,
+      "bytes": 55502
+    },
+    {
+      "id": 60,
+      "source": "60-alpha-restored-v2.webp",
+      "output": "60.webp",
+      "vectorAlphaAt2x": false,
+      "bytes": 128056
+    }
+  ]
+}

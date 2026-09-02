@@ -336,6 +336,19 @@ try {
             if (Number.parseFloat(catalogStyle.paddingTop) > 84) collisions.push("catalog retains an excessive blank opening");
           }
 
+          const careSystem = document.querySelector(".care-system");
+          const selectionGuide = document.querySelector(".selection-guide");
+          const guideRoute = document.querySelector(".guide-route");
+          if (careSystem && selectionGuide && visible(careSystem) && visible(selectionGuide)) {
+            const careStyle = getComputedStyle(careSystem);
+            const guideStyle = getComputedStyle(selectionGuide);
+            if (Number.parseFloat(careStyle.paddingBottom) > 64) collisions.push("care-system retains excessive space below the three stages");
+            if (Number.parseFloat(guideStyle.paddingTop) > 68) collisions.push("selection guide retains an excessive blank opening");
+          }
+          if (guideRoute && visible(guideRoute) && Number.parseFloat(getComputedStyle(guideRoute).marginTop) > 56) {
+            collisions.push("guide route starts after an excessive vertical gap");
+          }
+
           const companyInfo = document.querySelector(".company-info");
           if (companyInfo && visible(companyInfo)) {
             const companyStyle = getComputedStyle(companyInfo);
@@ -436,6 +449,10 @@ try {
 
   const interactionPage = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
   try {
+    await interactionPage.route("**/assets/img/restored/packshots-v13/details-v5/*.webp", async (route) => {
+      await new Promise((resolve) => setTimeout(resolve, 500));
+      await route.continue();
+    });
     await interactionPage.emulateMedia({ colorScheme: "dark", reducedMotion: "no-preference" });
     await interactionPage.goto(`${baseUrl}/?design=cinematic&qa=motion`, { waitUntil: "networkidle" });
     await interactionPage.evaluate(() => document.fonts.ready);
@@ -501,6 +518,22 @@ try {
 
     await interactionPage.locator(".hero-packshot-frame").click();
     await interactionPage.locator(".product-detail-dialog[open]").waitFor();
+    const detailLoadingState = await interactionPage.evaluate(() => {
+      const preview = document.querySelector(".product-detail-dialog[open] .product-detail-packshot-preview");
+      const retina = document.querySelector(".product-detail-dialog[open] .product-detail-packshot-retina");
+      const wrapper = document.querySelector(".product-detail-dialog[open] .product-detail-packshot");
+      return {
+        previewComplete: preview instanceof HTMLImageElement && preview.complete && preview.naturalWidth > 0,
+        previewOpacity: preview ? Number(getComputedStyle(preview).opacity) : -1,
+        retinaReadyEarly: wrapper?.classList.contains("retina-ready") ?? false,
+        retinaNaturalWidthEarly: retina instanceof HTMLImageElement ? retina.naturalWidth : -1,
+      };
+    });
+    if (!detailLoadingState.previewComplete || detailLoadingState.previewOpacity < 0.9 || detailLoadingState.retinaReadyEarly || detailLoadingState.retinaNaturalWidthEarly > 0) {
+      failures.push({ width: 1440, height: 1000, theme: "serum", view: "product-detail-loading", collisions: [`cached product preview does not protect the delayed 2x image load (${JSON.stringify(detailLoadingState)})`], horizontalOverflow: 0, overflowElements: [], textOverflow: [] });
+    }
+    await interactionPage.locator(".product-detail-packshot.retina-ready").waitFor({ timeout: 3000 });
+    await interactionPage.waitForTimeout(220);
     const detailResult = await interactionPage.evaluate(() => {
       const dialog = document.querySelector(".product-detail-dialog[open]");
       const cart = document.querySelector(".cart-button span");
@@ -513,12 +546,28 @@ try {
         const itemRect = item.getBoundingClientRect();
         return accordionRect ? itemRect.left - accordionRect.left : -1;
       });
-      return { left: rect.left, top: rect.top, right: rect.right, bottom: rect.bottom, cart: cart?.textContent ?? "", facts, sectionInsets, hasScan: Boolean(dialog.querySelector(".product-detail-scan")), scrollable: dialog.scrollHeight >= dialog.clientHeight };
+      const preview = dialog.querySelector(".product-detail-packshot-preview");
+      const retina = dialog.querySelector(".product-detail-packshot-retina");
+      return {
+        left: rect.left,
+        top: rect.top,
+        right: rect.right,
+        bottom: rect.bottom,
+        cart: cart?.textContent ?? "",
+        facts,
+        sectionInsets,
+        hasScan: Boolean(dialog.querySelector(".product-detail-scan")),
+        scrollable: dialog.scrollHeight >= dialog.clientHeight,
+        retinaNaturalWidth: retina instanceof HTMLImageElement ? retina.naturalWidth : -1,
+        retinaNaturalHeight: retina instanceof HTMLImageElement ? retina.naturalHeight : -1,
+        retinaOpacity: retina ? Number(getComputedStyle(retina).opacity) : -1,
+        previewOpacity: preview ? Number(getComputedStyle(preview).opacity) : -1,
+      };
     });
     if (!detailResult || detailResult.left < -1 || detailResult.top < -1 || detailResult.right > 1441 || detailResult.bottom > 1001) {
       failures.push({ width: 1440, height: 1000, theme: "serum", view: "product-detail", collisions: ["product detail dialog is outside the viewport"], horizontalOverflow: 0, overflowElements: [], textOverflow: [] });
     }
-    if (detailResult?.facts.length !== 3 || !detailResult.facts.every(Boolean) || detailResult.hasScan || !detailResult.scrollable || detailResult.sectionInsets.length < 3 || detailResult.sectionInsets.some((inset) => inset < 16)) {
+    if (detailResult?.facts.length !== 3 || !detailResult.facts.every(Boolean) || detailResult.hasScan || !detailResult.scrollable || detailResult.sectionInsets.length < 3 || detailResult.sectionInsets.some((inset) => inset < 16) || detailResult.retinaNaturalWidth !== 2000 || detailResult.retinaNaturalHeight !== 2000 || detailResult.retinaOpacity < 0.99 || detailResult.previewOpacity > 0.01) {
       failures.push({ width: 1440, height: 1000, theme: "serum", view: "product-detail", collisions: [`product detail hierarchy, glare removal or safe section inset is incomplete (${JSON.stringify(detailResult)})`], horizontalOverflow: 0, overflowElements: [], textOverflow: [] });
     }
     const cartBefore = detailResult?.cart;

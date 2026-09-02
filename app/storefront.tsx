@@ -22,7 +22,7 @@ type OrderForm = {
 const CART_STORAGE_KEY = "anestet-cart-v1";
 const FAVORITES_STORAGE_KEY = "anestet-favorites-v1";
 const DESIGN_STORAGE_KEY = "qk-design-lab-v1";
-const SITE_RELEASE = "2026.09.02-v13.4.3";
+const SITE_RELEASE = "2026.09.02-v13.4.4";
 const GITHUB_RELEASES_URL = "https://github.com/xsonicus/xsANESTET_site/releases";
 const HERO_WORDMARK_PATH = "M1784 0H1502L1341 344H457L296 0H14L734 1500H1064ZM899 1291 559 562H1239ZM3248 298V1500H3504V0H3168L2222 1216V0H1966V1500H2310ZM4147 640 4081 228H5096V0H3788L3908 750L3788 1500H5086V1272H4081L4147 860H5038V640ZM5548 488Q5560 398 5623 330Q5686 262 5790.5 225Q5895 188 6030 188Q6163 188 6262 216.5Q6361 245 6414.5 298Q6468 351 6468 422Q6468 482 6438.5 520Q6409 558 6341.5 581.5Q6274 605 6154 620L5830 662Q5647 686 5533.5 737Q5420 788 5366 871.5Q5312 955 5312 1078Q5312 1214 5395 1315.5Q5478 1417 5630.5 1472.5Q5783 1528 5986 1528Q6186 1528 6343.5 1468Q6501 1408 6593 1299.5Q6685 1191 6694 1050H6426Q6416 1129 6359 1188Q6302 1247 6204.5 1279.5Q6107 1312 5980 1312Q5858 1312 5766.5 1285Q5675 1258 5625.5 1207Q5576 1156 5576 1088Q5576 1033 5604 997.5Q5632 962 5695.5 938.5Q5759 915 5868 900L6196 854Q6401 826 6516.5 778.5Q6632 731 6682 653Q6732 575 6732 450Q6732 307 6644 198.5Q6556 90 6396 31Q6236 -28 6026 -28Q5812 -28 5645.5 36.5Q5479 101 5383.5 218Q5288 335 5280 488ZM6842 1500H8346V1268H7726V0H7462V1268H6842ZM8853 640 8787 228H9802V0H8494L8614 750L8494 1500H9792V1272H8787L8853 860H9744V640ZM9942 1500H11446V1268H10826V0H10562V1268H9942Z";
 const SUPPORT_EMAIL = "support@anestet.com";
@@ -262,6 +262,7 @@ const proof = [
 ];
 
 const productPackshot = (product: Product) => product.image;
+const productDetailPackshot = (product: Product) => `/assets/img/restored/packshots-v13/details-v5/${product.id}.webp`;
 const productCardPackshot = (product: Product) => {
   const vectorVersion = product.image.match(/-alpha-restored-(v[34])\.webp$/)?.[1];
   return vectorVersion
@@ -338,6 +339,7 @@ export default function Storefront() {
   const [vkPublications, setVkPublications] = useState<VkFeedItem[]>([]);
   const [openVkVideo, setOpenVkVideo] = useState<VkFeedItem | null>(null);
   const [openProductId, setOpenProductId] = useState<number | null>(null);
+  const [loadedDetailProductId, setLoadedDetailProductId] = useState<number | null>(null);
   const cartDialogRef = useRef<HTMLDialogElement>(null);
   const vkVideoDialogRef = useRef<HTMLDialogElement>(null);
   const productDialogRef = useRef<HTMLDialogElement>(null);
@@ -897,7 +899,18 @@ export default function Storefront() {
   };
   const showProductDetails = (productId: number) => {
     setHeroCarouselPaused(true);
+    setLoadedDetailProductId(null);
     setOpenProductId(productId);
+  };
+  const preloadProductDetails = (product: Product) => {
+    const source = productDetailPackshot(product);
+    if (document.head.querySelector(`link[data-product-detail-preload="${product.id}"]`)) return;
+    const preload = document.createElement("link");
+    preload.rel = "preload";
+    preload.as = "image";
+    preload.href = source;
+    preload.dataset.productDetailPreload = String(product.id);
+    document.head.appendChild(preload);
   };
   const closeProductDetails = () => {
     setOpenProductId(null);
@@ -1143,8 +1156,9 @@ export default function Storefront() {
               <span className="product-detail-coordinate product-detail-coordinate-top" aria-hidden="true">FORMULA / {String(openProduct.id).padStart(2, "0")}</span>
               <span className="product-detail-coordinate product-detail-coordinate-side" aria-hidden="true">ANESTET LAB · MOSCOW</span>
               <span className="product-detail-grid" aria-hidden="true" />
-              <div className="product-detail-packshot">
-                <Image src={productPackshot(openProduct)} alt={openProduct.title} fill sizes="(max-width: 760px) 88vw, 42vw" loading="eager" />
+              <div className={loadedDetailProductId === openProduct.id ? "product-detail-packshot retina-ready" : "product-detail-packshot"}>
+                <Image className="product-detail-packshot-preview" src={productCardPackshot(openProduct)} alt="" fill sizes="(max-width: 760px) 88vw, 42vw" aria-hidden="true" />
+                <Image className="product-detail-packshot-retina" src={productDetailPackshot(openProduct)} alt={openProduct.title} fill sizes="(max-width: 760px) 88vw, 42vw" loading="eager" onLoad={() => setLoadedDetailProductId(openProduct.id)} />
               </div>
               <span className="product-detail-orbit" aria-hidden="true" />
             </div>
@@ -1252,7 +1266,7 @@ export default function Storefront() {
         >
           <div className="product-halo" aria-hidden="true" />
           <p className="hero-product-code">{heroProduct.brand} / NEW / {heroProduct.id} / ? НАЛИЧИЕ</p>
-          <button type="button" className="hero-packshot-frame hero-product-detail-trigger" onClick={() => showProductDetails(heroProduct.id)} aria-label={`Открыть карточку товара: ${heroProduct.title}`}>
+          <button type="button" className="hero-packshot-frame hero-product-detail-trigger" onPointerEnter={() => preloadProductDetails(heroProduct)} onFocus={() => preloadProductDetails(heroProduct)} onClick={() => showProductDetails(heroProduct.id)} aria-label={`Открыть карточку товара: ${heroProduct.title}`}>
             {departingHeroProduct && (
               <Image
                 className="hero-product-image departing transition-prism"
@@ -1327,7 +1341,7 @@ export default function Storefront() {
         <section className="care-system" id="system">
         <div className="section-heading" data-reveal>
           <p className="section-index">Система / 01—03</p>
-          <h2>Выбор по этапу, не по догадке</h2>
+          <h2>Выбор по этапу</h2>
           <p>Вместо длинной витрины — три ясные задачи. Это помогает быстрее найти подходящий формат и объём.</p>
         </div>
         <div className="care-steps" data-motion>
@@ -1441,7 +1455,7 @@ export default function Storefront() {
                   <span className="product-tag">{product.tag}</span>
                   <div className="product-badges">{product.isNew && <span className="product-new">Новинка</span>}{product.compareAtPrice && <span className="product-discount">Скидка</span>}</div>
                   <button type="button" className={favorites.includes(product.id) ? "product-favorite active" : "product-favorite"} aria-pressed={favorites.includes(product.id)} aria-label={favorites.includes(product.id) ? `Убрать из избранного: ${product.title}` : `Добавить в избранное: ${product.title}`} onClick={() => toggleFavorite(product.id)}><HeartIcon size={22} /></button>
-                  <button type="button" className="product-packshot-frame product-detail-trigger" onClick={() => showProductDetails(product.id)} aria-label={`Открыть карточку товара: ${product.title}`}>
+                  <button type="button" className="product-packshot-frame product-detail-trigger" onPointerEnter={() => preloadProductDetails(product)} onFocus={() => preloadProductDetails(product)} onTouchStart={() => preloadProductDetails(product)} onClick={() => showProductDetails(product.id)} aria-label={`Открыть карточку товара: ${product.title}`}>
                     <Image src={productCardPackshot(product)} alt={product.title} fill sizes="(max-width: 390px) 100vw, (max-width: 760px) 50vw, (max-width: 1100px) 33vw, 25vw" loading="lazy" />
                     <span>Подробнее</span>
                   </button>
@@ -1452,7 +1466,7 @@ export default function Storefront() {
                 </button>
                 <div className="product-info">
                   <BrandLabel brand={product.brand} className="product-brand-label" />
-                  <h3><button type="button" className="product-title-trigger" onClick={() => showProductDetails(product.id)}>{product.compactTitle}</button></h3>
+                  <h3><button type="button" className="product-title-trigger" onPointerEnter={() => preloadProductDetails(product)} onFocus={() => preloadProductDetails(product)} onClick={() => showProductDetails(product.id)}>{product.compactTitle}</button></h3>
                   <span className="product-price"><strong>{formatPrice(product.price)}</strong>{product.compareAtPrice && <del>{formatPrice(product.compareAtPrice)}</del>}</span>
                   <span className="availability-inline" title="Наличие уточняется менеджером перед подтверждением заказа"><b aria-hidden="true">?</b><span>Наличие уточняется</span></span>
                 </div>

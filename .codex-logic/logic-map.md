@@ -182,3 +182,11 @@ Introduced shared 42-60px primary and 38-54px medium title tokens; capped catalo
 Files: app/globals.css, scripts/qa-layout.mjs, .codex-memory/correction-register.md, .codex-memory/task-state.md, docs/releases/2026.09.02-v13.4.3.md
 Validation: npm run build && npm run qa:layout; Local 1440px Future Beauty and Clinical Luxury visual QA; Local 390px company/evidence visual QA; Computed downstream title ratio <=1.25 and ceiling <=64px
 Risks: Founder spacing is a correction-of-correction; do not restore the superseded 470px over-compressed desktop stage or the earlier oversized empty floor.; Keep mobile explicit title and stacking rules independent from desktop tokens.
+
+## 2026-09-02T06:16:48.689Z - v13.4.4 Retina detail packshots and bounded care-guide rhythm
+
+Correction-of-correction: the v4 SVG silhouettes were geometrically correct, but their visible product occupied too few physical pixels in the 1000px master for a DPR2 detail card. All 23 products now receive lightweight 2000x2000 RGBA detail derivatives; IDs 17 and 33-40 are rasterized directly from approved SVG paths without blur. Product dialogs use the cached 600px card as an immediate preview, prefetch detail on intent, and swap after decode without layout movement. The care heading is shortened to 'Выбор по этапу' and the care-to-guide vertical gaps are bounded by shared responsive spacing budgets.
+
+Files: app/storefront.tsx, app/globals.css, scripts/build-product-detail-packshots.mjs, scripts/qa-packshots.mjs, scripts/qa-layout.mjs, public/assets/img/restored/packshots-v13/details-v5, .codex-memory/correction-register.md
+Validation: 23/23 2000x2000 RGBA detail assets under 320 KiB; 500ms delayed-network QA preserves visible preview and completes full Retina swap; 11 widths x 2 themes x 2 views layout gate passes; Dark, light and 390px guide visual evidence captured
+Risks: Do not replace exact silhouette reconstruction with blur or generative edits.; Keep the cached preview until the high-resolution image has decoded.; Do not reopen giant care/guide gaps when changing shared section spacing.
