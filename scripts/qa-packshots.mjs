@@ -24,8 +24,9 @@ const alphaLevels = (path) => run([path, "-alpha", "extract", "-format", "%c", "
 const failures = [];
 for (const product of rows) {
   const master = join(root, "public", product.image.replace(/^\//, ""));
-  const cardName = product.image.includes("-alpha-restored-v3.webp")
-    ? `${product.id}-card-v3.webp`
+  const vectorVersion = product.image.match(/-alpha-restored-(v[34])\.webp$/)?.[1];
+  const cardName = vectorVersion
+    ? `${product.id}-card-${vectorVersion}.webp`
     : `${product.id}-card.webp`;
   const card = join(root, "public/assets/img/restored/packshots-v13", cardName);
   await access(master);
@@ -38,9 +39,9 @@ for (const product of rows) {
   if (cardInfo !== "600x600|srgba 4.0|False") failures.push(`${product.id}: card ${cardInfo}`);
   if (levels < 48) failures.push(`${product.id}: only ${levels} alpha levels`);
 
-  if (product.image.includes("-alpha-restored-v3.webp")) {
+  if (vectorVersion) {
     const previous = join(root, "public/assets/img/restored/packshots-v13", `${product.id}-alpha-restored-v2.png`);
-    const rebuilt = join(root, "public/assets/img/restored/packshots-v13", `${product.id}-alpha-restored-v3.png`);
+    const rebuilt = join(root, "public/assets/img/restored/packshots-v13", `${product.id}-alpha-restored-${vectorVersion}.png`);
     await access(previous);
     await access(rebuilt);
     const changedRgbPixels = Number.parseFloat(run(["compare", "-metric", "AE", "-alpha", "off", previous, rebuilt, "null:"]));
@@ -49,4 +50,4 @@ for (const product of rows) {
 }
 
 if (failures.length) throw new Error(`PACKSHOT QA FAIL:\n${failures.join("\n")}`);
-console.log("PACKSHOT QA PASS: 23/23 transparent masters and cards; antialiased alpha >= 48 levels; v3 RGB unchanged.");
+console.log("PACKSHOT QA PASS: 23/23 transparent masters and cards; antialiased alpha >= 48 levels; vector-mask RGB unchanged.");

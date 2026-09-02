@@ -272,6 +272,39 @@ try {
             collisions.push("mobile quick route is not fully visible in the first viewport");
           }
         }
+        if (innerWidth <= 760) {
+          if (document.querySelector(".mobile-hero-optic")) collisions.push("obsolete mobile hero optic is still rendered");
+          const routeButtons = [...document.querySelectorAll(".hero-quick-route .shopping-tabs button")].filter(visible);
+          if (routeButtons.some((button) => button.getBoundingClientRect().height > 72)) collisions.push("mobile quick route is taller than the compact 72px budget");
+          const heroProduct = document.querySelector(".hero-product");
+          if (heroProduct && visible(heroProduct) && heroProduct.getBoundingClientRect().top >= innerHeight) collisions.push("mobile product does not begin inside the first viewport");
+
+          const firstProductInfo = document.querySelector(".product-card .product-info");
+          const firstProductPrice = firstProductInfo?.querySelector(".product-price");
+          const firstProductBrand = firstProductInfo?.querySelector(".product-brand-label");
+          const firstProductTitle = firstProductInfo?.querySelector("h3");
+          const firstAvailability = firstProductInfo?.querySelector(".availability-inline");
+          if (firstProductPrice && firstProductBrand && firstProductTitle && visible(firstProductPrice)) {
+            const priceRect = firstProductPrice.getBoundingClientRect();
+            const brandRect = firstProductBrand.getBoundingClientRect();
+            const titleRect = firstProductTitle.getBoundingClientRect();
+            const copyMidpoint = (brandRect.top + titleRect.bottom) / 2;
+            const priceMidpoint = (priceRect.top + priceRect.bottom) / 2;
+            if (Math.abs(copyMidpoint - priceMidpoint) > 8) collisions.push("mobile catalog price is not vertically centred against brand and title");
+          }
+          if (firstAvailability && visible(firstAvailability) && firstAvailability.getBoundingClientRect().width > 26) collisions.push("mobile availability status is not collapsed to the compact marker");
+        }
+
+        const about = document.querySelector(".about-brand");
+        const aboutPrinciples = document.querySelector(".about-principles");
+        const founderImage = document.querySelector(".about-portrait img");
+        if (innerWidth > 760 && about && aboutPrinciples && founderImage && visible(about) && visible(aboutPrinciples) && visible(founderImage)) {
+          const aboutRect = about.getBoundingClientRect();
+          const principlesRect = aboutPrinciples.getBoundingClientRect();
+          const founderRect = founderImage.getBoundingClientRect();
+          if (aboutRect.bottom - principlesRect.bottom > 42) collisions.push("founder section retains an excessive empty floor below the principles grid");
+          if (Math.abs(aboutRect.bottom - founderRect.bottom) > 28) collisions.push("founder portrait legs do not meet the lower navigation seam");
+        }
 
         document.querySelectorAll(".guide-stage").forEach((stage, index) => {
           const header = stage.querySelector("header");

@@ -6,22 +6,21 @@ import process from "node:process";
 const root = process.cwd();
 const restoredDir = join(root, "public/assets/img/restored/packshots-v13");
 const reportDir = join(root, ".codex-web-design/packshot-edge-audit");
-const maskDir = join(reportDir, "vector-masks-v3");
+const maskDir = join(reportDir, "vector-masks-v4");
 
 const airlessPath = ({ cx, top, bottom, capLeft, capRight, bodyLeft, bodyRight, shoulder }) => `
-  M ${cx - 22} ${top}
-  C ${cx - 64} ${top}, ${capLeft + 13} ${top + 5}, ${capLeft + 5} ${top + 15}
+  M ${capLeft + 5} ${top + 15}
   C ${capLeft} ${top + 21}, ${capLeft} ${top + 30}, ${capLeft} ${top + 42}
   L ${capLeft} ${shoulder - 22}
   C ${capLeft} ${shoulder - 8}, ${bodyLeft} ${shoulder - 2}, ${bodyLeft} ${shoulder + 18}
   L ${bodyLeft} ${bottom - 25}
-  C ${bodyLeft} ${bottom - 8}, ${bodyLeft + 24} ${bottom}, ${cx} ${bottom}
-  C ${bodyRight - 24} ${bottom}, ${bodyRight} ${bottom - 8}, ${bodyRight} ${bottom - 25}
+  C ${bodyLeft} ${bottom - 8}, ${bodyLeft + 24} ${bottom + 1}, ${cx} ${bottom + 1}
+  C ${bodyRight - 24} ${bottom + 1}, ${bodyRight} ${bottom - 8}, ${bodyRight} ${bottom - 25}
   L ${bodyRight} ${shoulder + 18}
   C ${bodyRight} ${shoulder - 2}, ${capRight} ${shoulder - 8}, ${capRight} ${shoulder - 22}
   L ${capRight} ${top + 42}
   C ${capRight} ${top + 30}, ${capRight} ${top + 21}, ${capRight - 5} ${top + 15}
-  C ${capRight - 13} ${top + 5}, ${cx + 64} ${top}, ${cx + 22} ${top}
+  Q ${cx} ${top - 9}, ${capLeft + 5} ${top + 15}
   Z`;
 
 const pumpPaths = ({ bodyLeft, bodyRight, bodyTop, bottom, collarLeft, collarRight, stemLeft, stemRight, nozzleLeft, nozzleRight, nozzleTop }) => [
@@ -100,9 +99,9 @@ for (const [idText, paths] of Object.entries(geometries)) {
   const previous = join(restoredDir, `${id}-alpha-restored-v2.png`);
   const vectorMask = join(maskDir, `${id}-silhouette.svg`);
   const rasterMask = join(maskDir, `${id}-silhouette-4x-aa.png`);
-  const outputPng = join(restoredDir, `${id}-alpha-restored-v3.png`);
-  const outputWebp = join(restoredDir, `${id}-alpha-restored-v3.webp`);
-  const outputCard = join(restoredDir, `${id}-card-v3.webp`);
+  const outputPng = join(restoredDir, `${id}-alpha-restored-v4.png`);
+  const outputWebp = join(restoredDir, `${id}-alpha-restored-v4.webp`);
+  const outputCard = join(restoredDir, `${id}-card-v4.webp`);
 
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 1000 1000">
   <rect width="1000" height="1000" fill="black"/>
@@ -139,7 +138,7 @@ for (const [idText, paths] of Object.entries(geometries)) {
     alphaLevels: levels,
     changedRgbPixels,
     fullCanvasSilhouetteDelta: silhouetteDelta,
-    method: "product-specific SVG silhouette; 4x vector rasterization; Lanczos downsample; lossless WebP",
+    method: "product-specific SVG silhouette; single fitted top/bottom curves; 4x vector rasterization; Lanczos downsample; lossless WebP",
   });
 }
 

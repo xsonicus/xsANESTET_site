@@ -1,16 +1,16 @@
 # Graph Report - xsANESTET_site  (2026-09-02)
 
 ## Corpus Check
-- 475 files · ~3,770,900 words
+- 476 files · ~3,771,334 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 2561 nodes · 4513 edges · 467 communities (94 shown, 69 thin omitted)
-- Extraction: 85% EXTRACTED · 15% INFERRED · 0% AMBIGUOUS · INFERRED: 655 edges (avg confidence: 0.85)
+- 2569 nodes · 4520 edges · 468 communities (95 shown, 69 thin omitted)
+- Extraction: 86% EXTRACTED · 14% INFERRED · 0% AMBIGUOUS · INFERRED: 655 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `5a33d81e`
+- Built from commit: `fa3fd9fa`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -104,7 +104,7 @@
 - 2026.08.31-v13.0.0
 - 2026.09.01-v13.1.2
 - validation.mjs
-- at
+- k
 - mode-markdown.js
 - paragraph
 - genericCommentToggle
@@ -121,7 +121,7 @@
 - mode-handlebars.js
 - mode-livescript.js
 - mode-luapage.js
-- o
+- ANESTET 2026.09.02-v13.4.1
 - script.js
 - normalize-product-packshots.mjs
 - sync-getlayers-three.mjs
@@ -178,6 +178,7 @@
 - ANESTET 2026.09.02-v13.4.0
 - ProofOfWork
 - z
+- ln
 
 ## God Nodes (most connected - your core abstractions)
 1. `z()` - 47 edges
@@ -188,8 +189,8 @@
 6. `UserBehaviorTracker` - 27 edges
 7. `s()` - 25 edges
 8. `ne` - 25 edges
-9. `Base` - 24 edges
-10. `Codex Changelog` - 24 edges
+9. `Codex Changelog` - 25 edges
+10. `Base` - 24 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `Z()` --indirect_call--> `K()`  [INFERRED]
@@ -206,7 +207,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (467 total, 69 thin omitted)
+## Communities (468 total, 69 thin omitted)
 
 ### Community 0 - "swiper-bundle.min.js"
 Cohesion: 0.08
@@ -222,7 +223,7 @@ Nodes (67): A(), at(), B(), bn(), e(), t(), bt(), c() (+59 more)
 
 ### Community 3 - "plupload.full.min.js"
 Cohesion: 0.09
-Nodes (57): a(), a(), c(), d(), l(), m(), i(), u() (+49 more)
+Nodes (56): a(), a(), c(), d(), l(), m(), i(), u() (+48 more)
 
 ### Community 4 - "emmet.js"
 Cohesion: 0.04
@@ -253,8 +254,8 @@ Cohesion: 0.08
 Nodes (18): a(), B(), clone(), u(), e(), H(), i(), isIdentStart() (+10 more)
 
 ### Community 11 - "jquery.min.js"
-Cohesion: 0.08
-Nodes (22): an(), bt(), ct(), er(), ht(), I(), Kn(), ln() (+14 more)
+Cohesion: 0.07
+Nodes (25): an(), at(), bt(), ct(), er(), ft(), ht(), I() (+17 more)
 
 ### Community 12 - "ace.min.js"
 Cohesion: 0.18
@@ -270,7 +271,7 @@ Nodes (26): clearLoginFailures(), createSession(), destroySession(), expiredSess
 
 ### Community 17 - "sortable.min.js"
 Cohesion: 0.13
-Nodes (16): a(), b(), d(), e(), f(), h(), It(), k() (+8 more)
+Nodes (27): G(), a(), b(), d(), e(), f(), h(), I() (+19 more)
 
 ### Community 18 - "compilerOptions"
 Cohesion: 0.07
@@ -282,11 +283,11 @@ Nodes (3): AppConfig, DIContainer, Mscdek
 
 ### Community 22 - "Codex Changelog"
 Cohesion: 0.08
-Nodes (24): 2026-08-28T09:06:44.112Z - Commerce-first catalog and separate care guide, 2026-08-28T12:34:37.388Z - Version 11.1.0, 2026-08-28T12:34:37.393Z - Autonomous storefront content and complete novelty experience, 2026-08-28T13:25:24.258Z - Version 11.1.1, 2026-08-28T13:26:27.148Z - Extend the hero promise to always and everywhere, 2026-08-28T13:35:23.555Z - Version 11.1.2, 2026-08-28T13:36:46.879Z - Restore the three-way site comparison switcher, 2026-08-28T13:52:04.516Z - Version 11.1.3 (+16 more)
+Nodes (25): 2026-08-28T09:06:44.112Z - Commerce-first catalog and separate care guide, 2026-08-28T12:34:37.388Z - Version 11.1.0, 2026-08-28T12:34:37.393Z - Autonomous storefront content and complete novelty experience, 2026-08-28T13:25:24.258Z - Version 11.1.1, 2026-08-28T13:26:27.148Z - Extend the hero promise to always and everywhere, 2026-08-28T13:35:23.555Z - Version 11.1.2, 2026-08-28T13:36:46.879Z - Restore the three-way site comparison switcher, 2026-08-28T13:52:04.516Z - Version 11.1.3 (+17 more)
 
 ### Community 23 - "GitHub-релизы"
-Cohesion: 0.09
-Nodes (22): 2026.08.28-v10, 2026.08.28-v10.1, 2026.08.28-v10.2, 2026.08.28-v11, 2026.08.28-v11.0.1, 2026.08.28-v11.1.0, 2026.08.28-v11.1.1, 2026.08.28-v11.1.2 (+14 more)
+Cohesion: 0.08
+Nodes (23): 2026.08.28-v10, 2026.08.28-v10.1, 2026.08.28-v10.2, 2026.08.28-v11, 2026.08.28-v11.0.1, 2026.08.28-v11.1.0, 2026.08.28-v11.1.1, 2026.08.28-v11.1.2 (+15 more)
 
 ### Community 25 - "Logic Graph - xsANESTET_site"
 Cohesion: 0.09
@@ -464,9 +465,9 @@ Nodes (5): 2026.09.01-v13.1.2, Исправлено, Откат, Проверк�
 Cohesion: 0.47
 Nodes (5): money(), text(), TEXT_LIMITS, validateExpectedRevision(), validateProduct()
 
-### Community 89 - "at"
-Cohesion: 0.19
-Nodes (13): C(), at(), ft(), it(), k(), kt(), Mn(), mt() (+5 more)
+### Community 89 - "k"
+Cohesion: 0.40
+Nodes (5): C(), k(), Mn(), qn(), s()
 
 ### Community 90 - "mode-markdown.js"
 Cohesion: 0.47
@@ -508,9 +509,9 @@ Nodes (4): 2026.08.31-v13.1.1, Откат, Проверка, Что заверш
 Cohesion: 0.40
 Nodes (4): ANESTET 2026.09.01-v13.2.1, Approved changes, Deployment, Verification
 
-### Community 107 - "o"
-Cohesion: 0.42
-Nodes (10): G(), I(), l(), N(), o(), qt(), w(), z() (+2 more)
+### Community 107 - "ANESTET 2026.09.02-v13.4.1"
+Cohesion: 0.40
+Nodes (4): ANESTET 2026.09.02-v13.4.1, Current approved implementation, Release gate, Rollback
 
 ### Community 109 - "normalize-product-packshots.mjs"
 Cohesion: 0.40
@@ -577,16 +578,20 @@ Cohesion: 0.50
 Nodes (3): formatPrice(), Product, products
 
 ### Community 464 - "ANESTET 2026.09.02-v13.4.0"
-Cohesion: 0.40
-Nodes (4): ANESTET 2026.09.02-v13.4.0, Compatibility, Product detail experience, Release gate
+Cohesion: 0.33
+Nodes (5): ANESTET 2026.09.02-v13.4.0, Compatibility, Deployment, Product detail experience, Release gate
 
 ### Community 466 - "z"
 Cohesion: 0.67
 Nodes (3): z(), P(), F()
 
+### Community 467 - "ln"
+Cohesion: 0.50
+Nodes (5): ln(), nn(), nr(), rn(), un()
+
 ## Knowledge Gaps
-- **317 isolated node(s):** `BrandGroup`, `ProductDraft`, `ApiResult`, `emptyProduct`, `Props` (+312 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1056 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **323 isolated node(s):** `BrandGroup`, `ProductDraft`, `ApiResult`, `emptyProduct`, `Props` (+318 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1063 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **69 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
@@ -603,6 +608,6 @@ _Questions this graph is uniquely positioned to answer:_
 - **Are the 44 inferred relationships involving `n()` (e.g. with `a()` and `at()`) actually correct?**
   _`n()` has 44 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `BrandGroup`, `ProductDraft`, `ApiResult` to the rest of the system?**
-  _317 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _323 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `swiper-bundle.min.js` be split into smaller, more focused modules?**
   _Cohesion score 0.07859531772575251 - nodes in this community are weakly interconnected._

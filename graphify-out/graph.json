@@ -742,7 +742,7 @@
       "file_type": "code",
       "norm_label": "companysection",
       "source_file": "app/storefront.tsx",
-      "source_location": "L270"
+      "source_location": "L273"
     },
     {
       "id": "app_storefront_deliveryid",
@@ -781,7 +781,7 @@
       "file_type": "code",
       "norm_label": "shoppingmode",
       "source_file": "app/storefront.tsx",
-      "source_location": "L269"
+      "source_location": "L272"
     },
     {
       "id": "app_storefront_themeid",
@@ -3993,18 +3993,6 @@
       "source_location": "L6"
     },
     {
-      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_at",
-      "label": "at()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "jquery.min.js",
-      "file_type": "code",
-      "norm_label": "at()",
-      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
-      "source_location": "L4"
-    },
-    {
       "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_bt",
       "label": "bt()",
       "_callable": true,
@@ -4051,18 +4039,6 @@
       "norm_label": "er()",
       "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
       "source_location": "L6"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_ft",
-      "label": "ft()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "jquery.min.js",
-      "file_type": "code",
-      "norm_label": "ft()",
-      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
-      "source_location": "L4"
     },
     {
       "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_gn",
@@ -4149,18 +4125,6 @@
       "source_location": "L6"
     },
     {
-      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_it",
-      "label": "it()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "jquery.min.js",
-      "file_type": "code",
-      "norm_label": "it()",
-      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
-      "source_location": "L5"
-    },
-    {
       "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_kn",
       "label": "Kn()",
       "_callable": true,
@@ -4173,16 +4137,16 @@
       "source_location": "L6"
     },
     {
-      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_kt",
-      "label": "kt()",
+      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_ln",
+      "label": "ln()",
       "_callable": true,
       "_origin": "ast",
       "community": 11,
       "community_name": "jquery.min.js",
       "file_type": "code",
-      "norm_label": "kt()",
+      "norm_label": "ln()",
       "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
-      "source_location": "L4"
+      "source_location": "L6"
     },
     {
       "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_lt",
@@ -4209,18 +4173,6 @@
       "source_location": "L4"
     },
     {
-      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_mt",
-      "label": "mt()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "jquery.min.js",
-      "file_type": "code",
-      "norm_label": "mt()",
-      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
-      "source_location": "L4"
-    },
-    {
       "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_n",
       "label": "_n()",
       "_callable": true,
@@ -4229,6 +4181,30 @@
       "community_name": "jquery.min.js",
       "file_type": "code",
       "norm_label": "_n()",
+      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
+      "source_location": "L6"
+    },
+    {
+      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_nn",
+      "label": "nn()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "jquery.min.js",
+      "file_type": "code",
+      "norm_label": "nn()",
+      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
+      "source_location": "L6"
+    },
+    {
+      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_nr",
+      "label": "nr()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "jquery.min.js",
+      "file_type": "code",
+      "norm_label": "nr()",
       "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
       "source_location": "L6"
     },
@@ -4293,6 +4269,18 @@
       "source_location": "L5"
     },
     {
+      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_rn",
+      "label": "rn()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "jquery.min.js",
+      "file_type": "code",
+      "norm_label": "rn()",
+      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
+      "source_location": "L6"
+    },
+    {
       "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_rr",
       "label": "rr()",
       "_callable": true,
@@ -4315,30 +4303,6 @@
       "norm_label": "sn()",
       "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
       "source_location": "L6"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_st",
-      "label": "st()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "jquery.min.js",
-      "file_type": "code",
-      "norm_label": "st()",
-      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
-      "source_location": "L4"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_st_t",
-      "label": "t()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "jquery.min.js",
-      "file_type": "code",
-      "norm_label": "t()",
-      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
-      "source_location": "L4"
     },
     {
       "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_t",
@@ -4387,6 +4351,18 @@
       "norm_label": "tt()",
       "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
       "source_location": "L4"
+    },
+    {
+      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_un",
+      "label": "un()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "jquery.min.js",
+      "file_type": "code",
+      "norm_label": "un()",
+      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
+      "source_location": "L6"
     },
     {
       "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_ut",
@@ -4445,18 +4421,6 @@
       "community_name": "jquery.min.js",
       "file_type": "code",
       "norm_label": "xt()",
-      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
-      "source_location": "L4"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_yt",
-      "label": "yt()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "community_name": "jquery.min.js",
-      "file_type": "code",
-      "norm_label": "yt()",
       "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
       "source_location": "L4"
     },
@@ -6765,18 +6729,6 @@
       "source_location": "L434"
     },
     {
-      "id": "original_site_assets_components_ace_ace_worker_javascript_g",
-      "label": "G()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 17,
-      "community_name": "sortable.min.js",
-      "file_type": "code",
-      "norm_label": "g()",
-      "source_file": "original_site/assets/components/ace/ace/worker-javascript.js",
-      "source_location": "L1"
-    },
-    {
       "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_a",
       "label": "a()",
       "_callable": true,
@@ -6885,18 +6837,6 @@
       "source_location": "L2"
     },
     {
-      "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_i",
-      "label": "I()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 17,
-      "community_name": "sortable.min.js",
-      "file_type": "code",
-      "norm_label": "i()",
-      "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
-      "source_location": "L2"
-    },
-    {
       "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_it",
       "label": "It()",
       "_callable": true,
@@ -6933,18 +6873,6 @@
       "source_location": "L2"
     },
     {
-      "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_l",
-      "label": "l()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 17,
-      "community_name": "sortable.min.js",
-      "file_type": "code",
-      "norm_label": "l()",
-      "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
-      "source_location": "L2"
-    },
-    {
       "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_m",
       "label": "m()",
       "_callable": true,
@@ -6969,18 +6897,6 @@
       "source_location": "L2"
     },
     {
-      "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_n",
-      "label": "N()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 17,
-      "community_name": "sortable.min.js",
-      "file_type": "code",
-      "norm_label": "n()",
-      "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
-      "source_location": "L2"
-    },
-    {
       "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_nt",
       "label": "Nt()",
       "_callable": true,
@@ -6993,18 +6909,6 @@
       "source_location": "L2"
     },
     {
-      "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_o",
-      "label": "o()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 17,
-      "community_name": "sortable.min.js",
-      "file_type": "code",
-      "norm_label": "o()",
-      "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
-      "source_location": "L2"
-    },
-    {
       "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_pt",
       "label": "Pt()",
       "_callable": true,
@@ -7013,18 +6917,6 @@
       "community_name": "sortable.min.js",
       "file_type": "code",
       "norm_label": "pt()",
-      "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
-      "source_location": "L2"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_qt",
-      "label": "qt()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 17,
-      "community_name": "sortable.min.js",
-      "file_type": "code",
-      "norm_label": "qt()",
       "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
       "source_location": "L2"
     },
@@ -7049,18 +6941,6 @@
       "community_name": "sortable.min.js",
       "file_type": "code",
       "norm_label": "rt()",
-      "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
-      "source_location": "L2"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_s",
-      "label": "S()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 17,
-      "community_name": "sortable.min.js",
-      "file_type": "code",
-      "norm_label": "s()",
       "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
       "source_location": "L2"
     },
@@ -7113,18 +6993,6 @@
       "source_location": "L2"
     },
     {
-      "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_w",
-      "label": "w()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 17,
-      "community_name": "sortable.min.js",
-      "file_type": "code",
-      "norm_label": "w()",
-      "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
-      "source_location": "L2"
-    },
-    {
       "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_x",
       "label": "X()",
       "_callable": true,
@@ -7171,42 +7039,6 @@
       "norm_label": "yt()",
       "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
       "source_location": "L2"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_z",
-      "label": "z()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 17,
-      "community_name": "sortable.min.js",
-      "file_type": "code",
-      "norm_label": "z()",
-      "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
-      "source_location": "L2"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_ot",
-      "label": "ot()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 17,
-      "community_name": "sortable.min.js",
-      "file_type": "code",
-      "norm_label": "ot()",
-      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
-      "source_location": "L5"
-    },
-    {
-      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_qt",
-      "label": "qt()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 17,
-      "community_name": "sortable.min.js",
-      "file_type": "code",
-      "norm_label": "qt()",
-      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
-      "source_location": "L5"
     },
     {
       "id": "original_site_assets_components_msfavorites_js_default_module",
@@ -10941,6 +10773,18 @@
       "source_location": "L13"
     },
     {
+      "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_s",
+      "label": "S()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "plupload.full.min.js",
+      "file_type": "code",
+      "norm_label": "s()",
+      "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
+      "source_location": "L2"
+    },
+    {
       "id": "original_site_assets_components_fetchit_js_fetchit_fetchit_clearerror",
       "label": ".clearError()",
       "_callable": true,
@@ -13806,7 +13650,7 @@
       "file_type": "code",
       "norm_label": "alphalevels()",
       "source_file": "scripts/polish-product-packshot-edges.mjs",
-      "source_location": "L92"
+      "source_location": "L91"
     },
     {
       "id": "scripts_polish_product_packshot_edges_dropperpath",
@@ -13818,7 +13662,7 @@
       "file_type": "code",
       "norm_label": "dropperpath()",
       "source_file": "scripts/polish-product-packshot-edges.mjs",
-      "source_location": "L50"
+      "source_location": "L49"
     },
     {
       "id": "scripts_polish_product_packshot_edges_identify",
@@ -13830,7 +13674,7 @@
       "file_type": "code",
       "norm_label": "identify()",
       "source_file": "scripts/polish-product-packshot-edges.mjs",
-      "source_location": "L91"
+      "source_location": "L90"
     },
     {
       "id": "scripts_polish_product_packshot_edges_pumppaths",
@@ -13842,7 +13686,7 @@
       "file_type": "code",
       "norm_label": "pumppaths()",
       "source_file": "scripts/polish-product-packshot-edges.mjs",
-      "source_location": "L27"
+      "source_location": "L26"
     },
     {
       "id": "scripts_polish_product_packshot_edges_run",
@@ -13854,7 +13698,7 @@
       "file_type": "code",
       "norm_label": "run()",
       "source_file": "scripts/polish-product-packshot-edges.mjs",
-      "source_location": "L85"
+      "source_location": "L84"
     },
     {
       "id": "original_site_assets_components_ace_emmet_emmet_addcomments",
@@ -14670,7 +14514,7 @@
       "file_type": "code",
       "norm_label": "storefront()",
       "source_file": "app/storefront.tsx",
-      "source_location": "L304"
+      "source_location": "L307"
     },
     {
       "id": "app_storefront_videoduration",
@@ -15045,64 +14889,124 @@
       "source_location": "L4"
     },
     {
-      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_ln",
-      "label": "ln()",
+      "id": "original_site_assets_components_ace_ace_worker_javascript_g",
+      "label": "G()",
       "_callable": true,
       "_origin": "ast",
       "community": 467,
-      "community_name": "ln",
+      "community_name": "o",
       "file_type": "code",
-      "norm_label": "ln()",
-      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
-      "source_location": "L6"
+      "norm_label": "g()",
+      "source_file": "original_site/assets/components/ace/ace/worker-javascript.js",
+      "source_location": "L1"
     },
     {
-      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_nn",
-      "label": "nn()",
+      "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_i",
+      "label": "I()",
       "_callable": true,
       "_origin": "ast",
       "community": 467,
-      "community_name": "ln",
+      "community_name": "o",
       "file_type": "code",
-      "norm_label": "nn()",
-      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
-      "source_location": "L6"
+      "norm_label": "i()",
+      "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
+      "source_location": "L2"
     },
     {
-      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_nr",
-      "label": "nr()",
+      "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_l",
+      "label": "l()",
       "_callable": true,
       "_origin": "ast",
       "community": 467,
-      "community_name": "ln",
+      "community_name": "o",
       "file_type": "code",
-      "norm_label": "nr()",
-      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
-      "source_location": "L6"
+      "norm_label": "l()",
+      "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
+      "source_location": "L2"
     },
     {
-      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_rn",
-      "label": "rn()",
+      "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_n",
+      "label": "N()",
       "_callable": true,
       "_origin": "ast",
       "community": 467,
-      "community_name": "ln",
+      "community_name": "o",
       "file_type": "code",
-      "norm_label": "rn()",
-      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
-      "source_location": "L6"
+      "norm_label": "n()",
+      "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
+      "source_location": "L2"
     },
     {
-      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_un",
-      "label": "un()",
+      "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_o",
+      "label": "o()",
       "_callable": true,
       "_origin": "ast",
       "community": 467,
-      "community_name": "ln",
+      "community_name": "o",
       "file_type": "code",
-      "norm_label": "un()",
+      "norm_label": "o()",
+      "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
+      "source_location": "L2"
+    },
+    {
+      "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_qt",
+      "label": "qt()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 467,
+      "community_name": "o",
+      "file_type": "code",
+      "norm_label": "qt()",
+      "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
+      "source_location": "L2"
+    },
+    {
+      "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_w",
+      "label": "w()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 467,
+      "community_name": "o",
+      "file_type": "code",
+      "norm_label": "w()",
+      "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
+      "source_location": "L2"
+    },
+    {
+      "id": "original_site_assets_components_minishop2_js_mgr_misc_sortable_sortable_min_z",
+      "label": "z()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 467,
+      "community_name": "o",
+      "file_type": "code",
+      "norm_label": "z()",
+      "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
+      "source_location": "L2"
+    },
+    {
+      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_ot",
+      "label": "ot()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 467,
+      "community_name": "o",
+      "file_type": "code",
+      "norm_label": "ot()",
       "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
-      "source_location": "L6"
+      "source_location": "L5"
+    },
+    {
+      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_qt",
+      "label": "qt()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 467,
+      "community_name": "o",
+      "file_type": "code",
+      "norm_label": "qt()",
+      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
+      "source_location": "L5"
     },
     {
       "id": "server_order_api_clean",
@@ -19826,11 +19730,47 @@
       "_callable": true,
       "_origin": "ast",
       "community": 89,
-      "community_name": "k",
+      "community_name": "at",
       "file_type": "code",
       "norm_label": "c()",
       "source_file": "original_site/assets/components/minishop2/js/mgr/misc/sortable/sortable.min.js",
       "source_location": "L2"
+    },
+    {
+      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_at",
+      "label": "at()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 89,
+      "community_name": "at",
+      "file_type": "code",
+      "norm_label": "at()",
+      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
+      "source_location": "L4"
+    },
+    {
+      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_ft",
+      "label": "ft()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 89,
+      "community_name": "at",
+      "file_type": "code",
+      "norm_label": "ft()",
+      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
+      "source_location": "L4"
+    },
+    {
+      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_it",
+      "label": "it()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 89,
+      "community_name": "at",
+      "file_type": "code",
+      "norm_label": "it()",
+      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
+      "source_location": "L5"
     },
     {
       "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_k",
@@ -19838,11 +19778,23 @@
       "_callable": true,
       "_origin": "ast",
       "community": 89,
-      "community_name": "k",
+      "community_name": "at",
       "file_type": "code",
       "norm_label": "k()",
       "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
       "source_location": "L6"
+    },
+    {
+      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_kt",
+      "label": "kt()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 89,
+      "community_name": "at",
+      "file_type": "code",
+      "norm_label": "kt()",
+      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
+      "source_location": "L4"
     },
     {
       "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_mn",
@@ -19850,11 +19802,23 @@
       "_callable": true,
       "_origin": "ast",
       "community": 89,
-      "community_name": "k",
+      "community_name": "at",
       "file_type": "code",
       "norm_label": "mn()",
       "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
       "source_location": "L6"
+    },
+    {
+      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_mt",
+      "label": "mt()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 89,
+      "community_name": "at",
+      "file_type": "code",
+      "norm_label": "mt()",
+      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
+      "source_location": "L4"
     },
     {
       "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_qn",
@@ -19862,7 +19826,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 89,
-      "community_name": "k",
+      "community_name": "at",
       "file_type": "code",
       "norm_label": "qn()",
       "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
@@ -19874,11 +19838,47 @@
       "_callable": true,
       "_origin": "ast",
       "community": 89,
-      "community_name": "k",
+      "community_name": "at",
       "file_type": "code",
       "norm_label": "s()",
       "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
       "source_location": "L6"
+    },
+    {
+      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_st",
+      "label": "st()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 89,
+      "community_name": "at",
+      "file_type": "code",
+      "norm_label": "st()",
+      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
+      "source_location": "L4"
+    },
+    {
+      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_st_t",
+      "label": "t()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 89,
+      "community_name": "at",
+      "file_type": "code",
+      "norm_label": "t()",
+      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
+      "source_location": "L4"
+    },
+    {
+      "id": "original_site_assets_components_minishop2_js_web_lib_jquery_min_yt",
+      "label": "yt()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 89,
+      "community_name": "at",
+      "file_type": "code",
+      "norm_label": "yt()",
+      "source_file": "original_site/assets/components/minishop2/js/web/lib/jquery.min.js",
+      "source_location": "L4"
     },
     {
       "id": "original_site_assets_js_jquery_inputmask_a",
@@ -21253,6 +21253,18 @@
       "source_location": "L5"
     },
     {
+      "id": "docs_releases_2026_09_02_v13_4_1_publication",
+      "label": "Publication",
+      "_origin": "ast",
+      "community": 107,
+      "community_name": "ANESTET 2026.09.02-v13.4.1",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "publication",
+      "source_file": "docs/releases/2026.09.02-v13.4.1.md",
+      "source_location": "L22"
+    },
+    {
       "id": "docs_releases_2026_09_02_v13_4_1_release_gate",
       "label": "Release gate",
       "_origin": "ast",
@@ -21274,7 +21286,7 @@
       "node_kind": "heading",
       "norm_label": "rollback",
       "source_file": "docs/releases/2026.09.02-v13.4.1.md",
-      "source_location": "L21"
+      "source_location": "L30"
     },
     {
       "id": "original_site_assets_js_script",
@@ -27044,7 +27056,7 @@
       "file_type": "code",
       "norm_label": "geometries",
       "source_file": "scripts/polish-product-packshot-edges.mjs",
-      "source_location": "L73"
+      "source_location": "L72"
     },
     {
       "id": "scripts_polish_product_packshot_edges_maskdir",
@@ -27088,7 +27100,7 @@
       "file_type": "code",
       "norm_label": "results",
       "source_file": "scripts/polish-product-packshot-edges.mjs",
-      "source_location": "L96"
+      "source_location": "L95"
     },
     {
       "id": "scripts_polish_product_packshot_edges_root",
@@ -29615,7 +29627,7 @@
       "file_type": "code",
       "norm_label": "certificatedocuments",
       "source_file": "app/storefront.tsx",
-      "source_location": "L294"
+      "source_location": "L297"
     },
     {
       "id": "app_storefront_companysections",
@@ -29626,7 +29638,7 @@
       "file_type": "code",
       "norm_label": "companysections",
       "source_file": "app/storefront.tsx",
-      "source_location": "L272"
+      "source_location": "L275"
     },
     {
       "id": "app_storefront_deliveryoptions",
@@ -29670,7 +29682,7 @@
       "file_type": "code",
       "norm_label": "partnerlogos",
       "source_file": "app/storefront.tsx",
-      "source_location": "L279"
+      "source_location": "L282"
     },
     {
       "id": "app_storefront_proof",
@@ -30633,7 +30645,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/storefront.tsx",
-      "source_location": "L1022",
+      "source_location": "L1025",
       "weight": 1.0
     },
     {
@@ -30645,7 +30657,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/storefront.tsx",
-      "source_location": "L1144",
+      "source_location": "L1147",
       "weight": 1.0
     },
     {
@@ -30657,7 +30669,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/storefront.tsx",
-      "source_location": "L1156",
+      "source_location": "L1159",
       "weight": 1.0
     },
     {
@@ -30669,7 +30681,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/storefront.tsx",
-      "source_location": "L1224",
+      "source_location": "L1227",
       "weight": 1.0
     },
     {
@@ -30681,7 +30693,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/storefront.tsx",
-      "source_location": "L1225",
+      "source_location": "L1228",
       "weight": 1.0
     },
     {
@@ -30693,7 +30705,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/storefront.tsx",
-      "source_location": "L1226",
+      "source_location": "L1229",
       "weight": 1.0
     },
     {
@@ -30705,7 +30717,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/storefront.tsx",
-      "source_location": "L1613",
+      "source_location": "L1615",
       "weight": 1.0
     },
     {
@@ -30717,7 +30729,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/storefront.tsx",
-      "source_location": "L352",
+      "source_location": "L355",
       "weight": 1.0
     },
     {
@@ -30729,7 +30741,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/storefront.tsx",
-      "source_location": "L525",
+      "source_location": "L528",
       "weight": 1.0
     },
     {
@@ -30741,7 +30753,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "app/storefront.tsx",
-      "source_location": "L741",
+      "source_location": "L744",
       "weight": 1.0
     },
     {
@@ -50361,7 +50373,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "scripts/polish-product-packshot-edges.mjs",
-      "source_location": "L92",
+      "source_location": "L91",
       "weight": 1.0
     },
     {
@@ -50373,7 +50385,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "scripts/polish-product-packshot-edges.mjs",
-      "source_location": "L91",
+      "source_location": "L90",
       "weight": 1.0
     },
     {
@@ -54124,7 +54136,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/storefront.tsx",
-      "source_location": "L269",
+      "source_location": "L272",
       "weight": 1.0
     },
     {
@@ -54135,7 +54147,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/storefront.tsx",
-      "source_location": "L270",
+      "source_location": "L273",
       "weight": 1.0
     },
     {
@@ -54146,7 +54158,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/storefront.tsx",
-      "source_location": "L272",
+      "source_location": "L275",
       "weight": 1.0
     },
     {
@@ -54157,7 +54169,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/storefront.tsx",
-      "source_location": "L279",
+      "source_location": "L282",
       "weight": 1.0
     },
     {
@@ -54168,7 +54180,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/storefront.tsx",
-      "source_location": "L294",
+      "source_location": "L297",
       "weight": 1.0
     },
     {
@@ -54190,7 +54202,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/storefront.tsx",
-      "source_location": "L304",
+      "source_location": "L307",
       "weight": 1.0
     },
     {
@@ -56340,13 +56352,24 @@
     },
     {
       "source": "docs_releases_2026_09_02_v13_4_1_anestet_2026_09_02_v13_4_1",
+      "target": "docs_releases_2026_09_02_v13_4_1_publication",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/releases/2026.09.02-v13.4.1.md",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_releases_2026_09_02_v13_4_1_anestet_2026_09_02_v13_4_1",
       "target": "docs_releases_2026_09_02_v13_4_1_rollback",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/releases/2026.09.02-v13.4.1.md",
-      "source_location": "L21",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -68941,7 +68964,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/polish-product-packshot-edges.mjs",
-      "source_location": "L27",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -68952,7 +68975,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/polish-product-packshot-edges.mjs",
-      "source_location": "L50",
+      "source_location": "L49",
       "weight": 1.0
     },
     {
@@ -68985,7 +69008,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/polish-product-packshot-edges.mjs",
-      "source_location": "L73",
+      "source_location": "L72",
       "weight": 1.0
     },
     {
@@ -69007,7 +69030,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/polish-product-packshot-edges.mjs",
-      "source_location": "L85",
+      "source_location": "L84",
       "weight": 1.0
     },
     {
@@ -69029,7 +69052,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/polish-product-packshot-edges.mjs",
-      "source_location": "L91",
+      "source_location": "L90",
       "weight": 1.0
     },
     {
@@ -69040,7 +69063,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/polish-product-packshot-edges.mjs",
-      "source_location": "L92",
+      "source_location": "L91",
       "weight": 1.0
     },
     {
@@ -69051,7 +69074,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/polish-product-packshot-edges.mjs",
-      "source_location": "L96",
+      "source_location": "L95",
       "weight": 1.0
     },
     {
@@ -74757,7 +74780,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "app/storefront.tsx",
-      "source_location": "L482",
+      "source_location": "L485",
       "weight": 1.0
     },
     {
@@ -74769,7 +74792,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "app/storefront.tsx",
-      "source_location": "L499",
+      "source_location": "L502",
       "weight": 1.0
     },
     {
@@ -82610,5 +82633,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "fa3fd9fa5849f6e4c044f322f071f2c2c8f056b6"
+  "built_at_commit": "637cf9f76bb628df6de48146a0b07a343729dcbe"
 }

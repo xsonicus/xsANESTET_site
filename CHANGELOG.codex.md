@@ -2,6 +2,16 @@
 
 Project: xsANESTET_site
 
+## 2026-09-02 - Version 13.4.2
+
+- Removed the rejected decorative optic from the mobile hero and eliminated its artificial viewport-height floor, bringing the product into the first viewport.
+- Reduced the mobile quick-route controls to a 72px maximum height without changing their catalogue/guide behavior.
+- Re-composed the founder section in both themes: 470px stage, larger 520px source portrait clipped into the lower navigation seam, smaller orbits and compact principle spacing.
+- Rebuilt the nine geometric product silhouettes as v4; airless bottles now use one fitted top curve, straight walls and one bottom arc, with zero RGB drift and no blur.
+- Reworked mobile catalogue metadata so the 18px bold price centres against brand/title and availability collapses to the `?` marker.
+- Extended the release gate with first-viewport, removed-optic, route-height, founder empty-floor, portrait seam, price alignment and compact status assertions.
+- Verification: `npm run build && npm run qa:layout && npm run qa:packshots`; 11 widths × 2 themes × 2 views; dark/light founder and 390×844 hero/catalog visual review.
+
 ## 2026-09-02 - Version 13.4.1
 
 - Removed the product-detail scan glare from markup and CSS while preserving the quiet panel, packshot and copy reveal.
