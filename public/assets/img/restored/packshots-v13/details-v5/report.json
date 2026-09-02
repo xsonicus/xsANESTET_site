@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-02T05:57:52.969Z",
+  "generatedAt": "2026-09-02T07:36:24.691Z",
   "canvas": "2000x2000",
   "alphaQuality": 100,
   "webpQuality": 92,
@@ -139,24 +139,24 @@
     },
     {
       "id": 57,
-      "source": "57-alpha-restored-v2.webp",
+      "source": "57-alpha-restored-v4.webp",
       "output": "57.webp",
-      "vectorAlphaAt2x": false,
-      "bytes": 64736
+      "vectorAlphaAt2x": true,
+      "bytes": 66602
     },
     {
       "id": 58,
-      "source": "58-alpha-restored-v2.webp",
+      "source": "58-alpha-restored-v4.webp",
       "output": "58.webp",
-      "vectorAlphaAt2x": false,
-      "bytes": 50604
+      "vectorAlphaAt2x": true,
+      "bytes": 48274
     },
     {
       "id": 59,
-      "source": "59-alpha-restored-v2.webp",
+      "source": "59-alpha-restored-v4.webp",
       "output": "59.webp",
-      "vectorAlphaAt2x": false,
-      "bytes": 55502
+      "vectorAlphaAt2x": true,
+      "bytes": 58408
     },
     {
       "id": 60,

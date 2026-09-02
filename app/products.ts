@@ -31,9 +31,9 @@ export const products: Product[] = [
   { id: 54, brand: "LIGHT DEP", title: "Гель косметический для лица, 300 мл", compactTitle: "Face Gel · 300 мл", price: 4350, image: "/assets/img/restored/packshots-v13/54-alpha-restored-v2.webp", tag: "Для лица" },
   { id: 55, brand: "LIGHT DEP PRO", title: "Гель косметический professional, 30 мл", compactTitle: "Professional · 30 мл", price: 950, image: "/assets/img/restored/packshots-v13/55-alpha-restored-v2.webp", tag: "Для мастеров" },
   { id: 56, brand: "LIGHT DEP PRO", title: "Гель косметический professional, 300 мл", compactTitle: "Professional · 300 мл", price: 4750, image: "/assets/img/restored/packshots-v13/56-alpha-restored-v2.webp", tag: "Для мастеров" },
-  { id: 57, brand: "АНЕСТОДЕРМ", title: "Гель косметический Анестодерм, 300 мл", compactTitle: "Анестодерм · 300 мл", price: 5050, image: "/assets/img/restored/packshots-v13/57-alpha-restored-v2.webp", tag: "Профессиональный объём" },
-  { id: 58, brand: "MILDEP", title: "Крем Mildep Professional, 30 мл", compactTitle: "Mildep Pro · 30 мл", price: 700, image: "/assets/img/restored/packshots-v13/58-alpha-restored-v2.webp", tag: "Крем" },
-  { id: 59, brand: "MILDEP", title: "Крем Mildep Professional, 300 мл", compactTitle: "Mildep Pro · 300 мл", price: 4000, image: "/assets/img/restored/packshots-v13/59-alpha-restored-v2.webp", tag: "Профессиональный объём" },
+  { id: 57, brand: "АНЕСТОДЕРМ", title: "Гель косметический Анестодерм, 300 мл", compactTitle: "Анестодерм · 300 мл", price: 5050, image: "/assets/img/restored/packshots-v13/57-alpha-restored-v4.webp", tag: "Профессиональный объём" },
+  { id: 58, brand: "MILDEP", title: "Крем Mildep Professional, 30 мл", compactTitle: "Mildep Pro · 30 мл", price: 700, image: "/assets/img/restored/packshots-v13/58-alpha-restored-v4.webp", tag: "Крем" },
+  { id: 59, brand: "MILDEP", title: "Крем Mildep Professional, 300 мл", compactTitle: "Mildep Pro · 300 мл", price: 4000, image: "/assets/img/restored/packshots-v13/59-alpha-restored-v4.webp", tag: "Профессиональный объём" },
   { id: 60, brand: "QUEEN KEY", title: "Восстанавливающие сливки с Д-пантенолом, 200 мл", compactTitle: "Recovery Milk · 200 мл", price: 890, compareAtPrice: 1190, image: "/assets/img/restored/packshots-v13/60-alpha-restored-v2.webp", tag: "После процедуры", isNew: true },
 ];
 

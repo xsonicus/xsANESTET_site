@@ -897,8 +897,8 @@
       "_origin": "ast"
     },
     {
-      "id": "app_storefront_productpackshot",
-      "label": "productPackshot()",
+      "id": "app_storefront_productdetailpackshot",
+      "label": "productDetailPackshot()",
       "file_type": "code",
       "source_file": "app/storefront.tsx",
       "source_location": "L264",
@@ -906,11 +906,11 @@
       "_origin": "ast"
     },
     {
-      "id": "app_storefront_productdetailpackshot",
-      "label": "productDetailPackshot()",
+      "id": "app_storefront_preloadproductpackshot",
+      "label": "preloadProductPackshot()",
       "file_type": "code",
       "source_file": "app/storefront.tsx",
-      "source_location": "L265",
+      "source_location": "L266",
       "_callable": true,
       "_origin": "ast"
     },
@@ -919,7 +919,7 @@
       "label": "productCardPackshot()",
       "file_type": "code",
       "source_file": "app/storefront.tsx",
-      "source_location": "L266",
+      "source_location": "L276",
       "_callable": true,
       "_origin": "ast"
     },
@@ -928,7 +928,7 @@
       "label": "ShoppingMode",
       "file_type": "code",
       "source_file": "app/storefront.tsx",
-      "source_location": "L273",
+      "source_location": "L283",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast"
@@ -938,7 +938,7 @@
       "label": "CompanySection",
       "file_type": "code",
       "source_file": "app/storefront.tsx",
-      "source_location": "L274",
+      "source_location": "L284",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast"
@@ -948,7 +948,7 @@
       "label": "companySections",
       "file_type": "code",
       "source_file": "app/storefront.tsx",
-      "source_location": "L276",
+      "source_location": "L286",
       "_origin": "ast"
     },
     {
@@ -956,7 +956,7 @@
       "label": "partnerLogos",
       "file_type": "code",
       "source_file": "app/storefront.tsx",
-      "source_location": "L283",
+      "source_location": "L293",
       "_origin": "ast"
     },
     {
@@ -964,7 +964,7 @@
       "label": "certificateDocuments",
       "file_type": "code",
       "source_file": "app/storefront.tsx",
-      "source_location": "L298",
+      "source_location": "L308",
       "_origin": "ast"
     },
     {
@@ -972,7 +972,7 @@
       "label": "Storefront()",
       "file_type": "code",
       "source_file": "app/storefront.tsx",
-      "source_location": "L308",
+      "source_location": "L318",
       "_callable": true,
       "_origin": "ast"
     },
@@ -19872,11 +19872,29 @@
       "_origin": "ast"
     },
     {
+      "id": "scripts_polish_product_packshot_edges_widepumppaths",
+      "label": "widePumpPaths()",
+      "file_type": "code",
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L72",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_polish_product_packshot_edges_tubepath",
+      "label": "tubePath()",
+      "file_type": "code",
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L90",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
       "id": "scripts_polish_product_packshot_edges_geometries",
       "label": "geometries",
       "file_type": "code",
       "source_file": "scripts/polish-product-packshot-edges.mjs",
-      "source_location": "L72",
+      "source_location": "L103",
       "_origin": "ast"
     },
     {
@@ -19884,7 +19902,7 @@
       "label": "run()",
       "file_type": "code",
       "source_file": "scripts/polish-product-packshot-edges.mjs",
-      "source_location": "L84",
+      "source_location": "L118",
       "_callable": true,
       "_origin": "ast"
     },
@@ -19893,7 +19911,7 @@
       "label": "identify()",
       "file_type": "code",
       "source_file": "scripts/polish-product-packshot-edges.mjs",
-      "source_location": "L90",
+      "source_location": "L124",
       "_callable": true,
       "_origin": "ast"
     },
@@ -19902,7 +19920,7 @@
       "label": "alphaLevels()",
       "file_type": "code",
       "source_file": "scripts/polish-product-packshot-edges.mjs",
-      "source_location": "L91",
+      "source_location": "L125",
       "_callable": true,
       "_origin": "ast"
     },
@@ -19911,7 +19929,7 @@
       "label": "results",
       "file_type": "code",
       "source_file": "scripts/polish-product-packshot-edges.mjs",
-      "source_location": "L95",
+      "source_location": "L129",
       "_origin": "ast"
     },
     {
@@ -20093,11 +20111,27 @@
       "_origin": "ast"
     },
     {
+      "id": "scripts_qa_packshots_catalogseed",
+      "label": "catalogSeed",
+      "file_type": "code",
+      "source_file": "scripts/qa-packshots.mjs",
+      "source_location": "L8",
+      "_origin": "ast"
+    },
+    {
       "id": "scripts_qa_packshots_rows",
       "label": "rows",
       "file_type": "code",
       "source_file": "scripts/qa-packshots.mjs",
-      "source_location": "L8",
+      "source_location": "L9",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_qa_packshots_seedbyid",
+      "label": "seedById",
+      "file_type": "code",
+      "source_file": "scripts/qa-packshots.mjs",
+      "source_location": "L15",
       "_origin": "ast"
     },
     {
@@ -20105,7 +20139,7 @@
       "label": "run()",
       "file_type": "code",
       "source_file": "scripts/qa-packshots.mjs",
-      "source_location": "L15",
+      "source_location": "L17",
       "_callable": true,
       "_origin": "ast"
     },
@@ -20114,7 +20148,7 @@
       "label": "alphaLevels()",
       "file_type": "code",
       "source_file": "scripts/qa-packshots.mjs",
-      "source_location": "L21",
+      "source_location": "L23",
       "_callable": true,
       "_origin": "ast"
     },
@@ -20123,7 +20157,7 @@
       "label": "failures",
       "file_type": "code",
       "source_file": "scripts/qa-packshots.mjs",
-      "source_location": "L24",
+      "source_location": "L26",
       "_origin": "ast"
     },
     {
@@ -20745,6 +20779,24 @@
       "_origin": "ast"
     },
     {
+      "id": "codex_logic_logic_map_2026_09_02t07_15_11_812z_keep_hero_packshots_authoritative_across_catalog_hydration",
+      "label": "2026-09-02T07:15:11.812Z - Keep hero packshots authoritative across catalog hydration",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": ".codex-logic/logic-map.md",
+      "source_location": "L194",
+      "_origin": "ast"
+    },
+    {
+      "id": "codex_logic_logic_map_2026_09_02t07_38_03_027z_extend_exact_vector_silhouettes_to_anestoderm_and_mildep",
+      "label": "2026-09-02T07:38:03.027Z - Extend exact vector silhouettes to Anestoderm and Mildep",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": ".codex-logic/logic-map.md",
+      "source_location": "L202",
+      "_origin": "ast"
+    },
+    {
       "id": "codex_logic_model_training_protocol",
       "label": "model-training-protocol.md",
       "file_type": "document",
@@ -20916,12 +20968,21 @@
       "_origin": "ast"
     },
     {
+      "id": "changelog_codex_2026_09_02_version_13_4_5",
+      "label": "2026-09-02 - Version 13.4.5",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "CHANGELOG.codex.md",
+      "source_location": "L5",
+      "_origin": "ast"
+    },
+    {
       "id": "changelog_codex_2026_09_02_version_13_4_2",
       "label": "2026-09-02 - Version 13.4.2",
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L5",
+      "source_location": "L13",
       "_origin": "ast"
     },
     {
@@ -20930,7 +20991,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L15",
+      "source_location": "L23",
       "_origin": "ast"
     },
     {
@@ -20939,7 +21000,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L22",
+      "source_location": "L30",
       "_origin": "ast"
     },
     {
@@ -20948,7 +21009,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L32",
+      "source_location": "L40",
       "_origin": "ast"
     },
     {
@@ -20957,7 +21018,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L41",
+      "source_location": "L49",
       "_origin": "ast"
     },
     {
@@ -20966,7 +21027,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L54",
+      "source_location": "L62",
       "_origin": "ast"
     },
     {
@@ -20975,7 +21036,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L149",
+      "source_location": "L157",
       "_origin": "ast"
     },
     {
@@ -20984,7 +21045,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L153",
+      "source_location": "L161",
       "_origin": "ast"
     },
     {
@@ -20993,7 +21054,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L175",
+      "source_location": "L183",
       "_origin": "ast"
     },
     {
@@ -21002,7 +21063,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L179",
+      "source_location": "L187",
       "_origin": "ast"
     },
     {
@@ -21011,7 +21072,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L191",
+      "source_location": "L199",
       "_origin": "ast"
     },
     {
@@ -21020,7 +21081,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L195",
+      "source_location": "L203",
       "_origin": "ast"
     },
     {
@@ -21029,7 +21090,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L207",
+      "source_location": "L215",
       "_origin": "ast"
     },
     {
@@ -21038,7 +21099,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L211",
+      "source_location": "L219",
       "_origin": "ast"
     },
     {
@@ -21047,7 +21108,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L223",
+      "source_location": "L231",
       "_origin": "ast"
     },
     {
@@ -21056,7 +21117,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L236",
+      "source_location": "L244",
       "_origin": "ast"
     },
     {
@@ -21065,7 +21126,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L250",
+      "source_location": "L258",
       "_origin": "ast"
     },
     {
@@ -21074,7 +21135,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L254",
+      "source_location": "L262",
       "_origin": "ast"
     },
     {
@@ -21083,7 +21144,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L266",
+      "source_location": "L274",
       "_origin": "ast"
     },
     {
@@ -21092,7 +21153,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L279",
+      "source_location": "L287",
       "_origin": "ast"
     },
     {
@@ -21101,7 +21162,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L283",
+      "source_location": "L291",
       "_origin": "ast"
     },
     {
@@ -21110,7 +21171,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L365",
+      "source_location": "L373",
       "_origin": "ast"
     },
     {
@@ -21119,7 +21180,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L369",
+      "source_location": "L377",
       "_origin": "ast"
     },
     {
@@ -21128,7 +21189,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L390",
+      "source_location": "L398",
       "_origin": "ast"
     },
     {
@@ -21137,7 +21198,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L396",
+      "source_location": "L404",
       "_origin": "ast"
     },
     {
@@ -21146,7 +21207,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L402",
+      "source_location": "L410",
       "_origin": "ast"
     },
     {
@@ -21155,7 +21216,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L409",
+      "source_location": "L417",
       "_origin": "ast"
     },
     {
@@ -21465,12 +21526,21 @@
       "_origin": "ast"
     },
     {
+      "id": "docs_release_history_2026_09_02_v13_4_5",
+      "label": "2026.09.02-v13.4.5",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/RELEASE_HISTORY.md",
+      "source_location": "L15",
+      "_origin": "ast"
+    },
+    {
       "id": "docs_release_history_2026_09_02_v13_4_2",
       "label": "2026.09.02-v13.4.2",
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L15",
+      "source_location": "L22",
       "_origin": "ast"
     },
     {
@@ -21479,7 +21549,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L23",
+      "source_location": "L30",
       "_origin": "ast"
     },
     {
@@ -21488,7 +21558,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L29",
+      "source_location": "L36",
       "_origin": "ast"
     },
     {
@@ -21497,7 +21567,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L43",
+      "source_location": "L50",
       "_origin": "ast"
     },
     {
@@ -21506,7 +21576,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L49",
+      "source_location": "L56",
       "_origin": "ast"
     },
     {
@@ -21515,7 +21585,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L54",
+      "source_location": "L61",
       "_origin": "ast"
     },
     {
@@ -21524,7 +21594,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L60",
+      "source_location": "L67",
       "_origin": "ast"
     },
     {
@@ -21533,7 +21603,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L70",
+      "source_location": "L77",
       "_origin": "ast"
     },
     {
@@ -21542,7 +21612,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L75",
+      "source_location": "L82",
       "_origin": "ast"
     },
     {
@@ -21551,7 +21621,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L80",
+      "source_location": "L87",
       "_origin": "ast"
     },
     {
@@ -21560,7 +21630,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L86",
+      "source_location": "L93",
       "_origin": "ast"
     },
     {
@@ -21569,7 +21639,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L91",
+      "source_location": "L98",
       "_origin": "ast"
     },
     {
@@ -21578,7 +21648,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L102",
+      "source_location": "L109",
       "_origin": "ast"
     },
     {
@@ -21587,7 +21657,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L111",
+      "source_location": "L118",
       "_origin": "ast"
     },
     {
@@ -21596,7 +21666,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L119",
+      "source_location": "L126",
       "_origin": "ast"
     },
     {
@@ -21605,7 +21675,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L130",
+      "source_location": "L137",
       "_origin": "ast"
     },
     {
@@ -21614,7 +21684,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L139",
+      "source_location": "L146",
       "_origin": "ast"
     },
     {
@@ -21623,7 +21693,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L147",
+      "source_location": "L154",
       "_origin": "ast"
     },
     {
@@ -21632,7 +21702,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L154",
+      "source_location": "L161",
       "_origin": "ast"
     },
     {
@@ -21641,7 +21711,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L163",
+      "source_location": "L170",
       "_origin": "ast"
     },
     {
@@ -21650,7 +21720,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L174",
+      "source_location": "L181",
       "_origin": "ast"
     },
     {
@@ -21659,7 +21729,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L181",
+      "source_location": "L188",
       "_origin": "ast"
     },
     {
@@ -21668,7 +21738,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L189",
+      "source_location": "L196",
       "_origin": "ast"
     },
     {
@@ -22914,12 +22984,93 @@
       "_origin": "ast"
     },
     {
+      "id": "docs_releases_2026_09_02_v13_4_4_production_evidence",
+      "label": "Production evidence",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/releases/2026.09.02-v13.4.4.md",
+      "source_location": "L37",
+      "_origin": "ast"
+    },
+    {
       "id": "docs_releases_2026_09_02_v13_4_4_rollback",
       "label": "Rollback",
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "docs/releases/2026.09.02-v13.4.4.md",
-      "source_location": "L37",
+      "source_location": "L46",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_releases_2026_09_02_v13_4_5",
+      "label": "2026.09.02-v13.4.5.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "docs/releases/2026.09.02-v13.4.5.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_releases_2026_09_02_v13_4_5_anestet_2026_09_02_v13_4_5",
+      "label": "ANESTET 2026.09.02-v13.4.5",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/releases/2026.09.02-v13.4.5.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_releases_2026_09_02_v13_4_5_scope",
+      "label": "Scope",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/releases/2026.09.02-v13.4.5.md",
+      "source_location": "L3",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_releases_2026_09_02_v13_4_5_root_cause_and_correction",
+      "label": "Root cause and correction",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/releases/2026.09.02-v13.4.5.md",
+      "source_location": "L7",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_releases_2026_09_02_v13_4_5_additional_exact_masks",
+      "label": "Additional exact masks",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/releases/2026.09.02-v13.4.5.md",
+      "source_location": "L15",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_releases_2026_09_02_v13_4_5_regression_gate",
+      "label": "Regression gate",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/releases/2026.09.02-v13.4.5.md",
+      "source_location": "L21",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_releases_2026_09_02_v13_4_5_verification",
+      "label": "Verification",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/releases/2026.09.02-v13.4.5.md",
+      "source_location": "L27",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_releases_2026_09_02_v13_4_5_rollback",
+      "label": "Rollback",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/releases/2026.09.02-v13.4.5.md",
+      "source_location": "L33",
       "_origin": "ast"
     },
     {
@@ -24785,7 +24936,7 @@
     },
     {
       "source": "app_storefront",
-      "target": "app_storefront_productpackshot",
+      "target": "app_storefront_productdetailpackshot",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/storefront.tsx",
@@ -24795,17 +24946,7 @@
     },
     {
       "source": "app_storefront",
-      "target": "app_storefront_productdetailpackshot",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/storefront.tsx",
-      "source_location": "L265",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "app_storefront",
-      "target": "app_storefront_productcardpackshot",
+      "target": "app_storefront_preloadproductpackshot",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/storefront.tsx",
@@ -24815,27 +24956,7 @@
     },
     {
       "source": "app_storefront",
-      "target": "app_storefront_shoppingmode",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/storefront.tsx",
-      "source_location": "L273",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "app_storefront",
-      "target": "app_storefront_companysection",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/storefront.tsx",
-      "source_location": "L274",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "app_storefront",
-      "target": "app_storefront_companysections",
+      "target": "app_storefront_productcardpackshot",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/storefront.tsx",
@@ -24845,7 +24966,7 @@
     },
     {
       "source": "app_storefront",
-      "target": "app_storefront_partnerlogos",
+      "target": "app_storefront_shoppingmode",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/storefront.tsx",
@@ -24855,11 +24976,41 @@
     },
     {
       "source": "app_storefront",
+      "target": "app_storefront_companysection",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/storefront.tsx",
+      "source_location": "L284",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_storefront",
+      "target": "app_storefront_companysections",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/storefront.tsx",
+      "source_location": "L286",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_storefront",
+      "target": "app_storefront_partnerlogos",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/storefront.tsx",
+      "source_location": "L293",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_storefront",
       "target": "app_storefront_certificatedocuments",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/storefront.tsx",
-      "source_location": "L298",
+      "source_location": "L308",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -24869,7 +25020,29 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/storefront.tsx",
-      "source_location": "L308",
+      "source_location": "L318",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_storefront_preloadproductpackshot",
+      "target": "app_storefront_productdetailpackshot",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/storefront.tsx",
+      "source_location": "L267",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_storefront_storefront",
+      "target": "app_storefront_preloadproductpackshot",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/storefront.tsx",
+      "source_location": "L374",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -24881,7 +25054,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.85,
       "source_file": "app/storefront.tsx",
-      "source_location": "L487",
+      "source_location": "L498",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -24893,7 +25066,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.85,
       "source_file": "app/storefront.tsx",
-      "source_location": "L504",
+      "source_location": "L515",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -24904,18 +25077,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/storefront.tsx",
-      "source_location": "L530",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "app_storefront_storefront",
-      "target": "app_storefront_productdetailpackshot",
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/storefront.tsx",
-      "source_location": "L906",
+      "source_location": "L549",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -24926,7 +25088,18 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/storefront.tsx",
-      "source_location": "L1038",
+      "source_location": "L1047",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "app_storefront_storefront",
+      "target": "app_storefront_productdetailpackshot",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/storefront.tsx",
+      "source_location": "L1170",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -24937,7 +25110,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/storefront.tsx",
-      "source_location": "L1173",
+      "source_location": "L1182",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -24948,7 +25121,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/storefront.tsx",
-      "source_location": "L1241",
+      "source_location": "L1250",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -24959,7 +25132,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/storefront.tsx",
-      "source_location": "L1242",
+      "source_location": "L1251",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -24970,18 +25143,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/storefront.tsx",
-      "source_location": "L1243",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "app_storefront_storefront",
-      "target": "app_storefront_productpackshot",
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app/storefront.tsx",
-      "source_location": "L1274",
+      "source_location": "L1252",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -24992,7 +25154,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/storefront.tsx",
-      "source_location": "L1629",
+      "source_location": "L1638",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -70342,7 +70504,7 @@
     },
     {
       "source": "scripts_polish_product_packshot_edges",
-      "target": "scripts_polish_product_packshot_edges_geometries",
+      "target": "scripts_polish_product_packshot_edges_widepumppaths",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/polish-product-packshot-edges.mjs",
@@ -70352,17 +70514,7 @@
     },
     {
       "source": "scripts_polish_product_packshot_edges",
-      "target": "scripts_polish_product_packshot_edges_run",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/polish-product-packshot-edges.mjs",
-      "source_location": "L84",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "scripts_polish_product_packshot_edges",
-      "target": "scripts_polish_product_packshot_edges_identify",
+      "target": "scripts_polish_product_packshot_edges_tubepath",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/polish-product-packshot-edges.mjs",
@@ -70372,11 +70524,41 @@
     },
     {
       "source": "scripts_polish_product_packshot_edges",
+      "target": "scripts_polish_product_packshot_edges_geometries",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L103",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_polish_product_packshot_edges",
+      "target": "scripts_polish_product_packshot_edges_run",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L118",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_polish_product_packshot_edges",
+      "target": "scripts_polish_product_packshot_edges_identify",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L124",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_polish_product_packshot_edges",
       "target": "scripts_polish_product_packshot_edges_alphalevels",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/polish-product-packshot-edges.mjs",
-      "source_location": "L91",
+      "source_location": "L125",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -70386,7 +70568,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/polish-product-packshot-edges.mjs",
-      "source_location": "L95",
+      "source_location": "L129",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -70397,7 +70579,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "scripts/polish-product-packshot-edges.mjs",
-      "source_location": "L90",
+      "source_location": "L124",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -70408,7 +70590,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "scripts/polish-product-packshot-edges.mjs",
-      "source_location": "L91",
+      "source_location": "L125",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -70736,7 +70918,7 @@
     },
     {
       "source": "scripts_qa_packshots",
-      "target": "scripts_qa_packshots_rows",
+      "target": "scripts_qa_packshots_catalogseed",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/qa-packshots.mjs",
@@ -70746,7 +70928,17 @@
     },
     {
       "source": "scripts_qa_packshots",
-      "target": "scripts_qa_packshots_run",
+      "target": "scripts_qa_packshots_rows",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/qa-packshots.mjs",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_qa_packshots",
+      "target": "scripts_qa_packshots_seedbyid",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/qa-packshots.mjs",
@@ -70756,11 +70948,21 @@
     },
     {
       "source": "scripts_qa_packshots",
+      "target": "scripts_qa_packshots_run",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/qa-packshots.mjs",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_qa_packshots",
       "target": "scripts_qa_packshots_alphalevels",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/qa-packshots.mjs",
-      "source_location": "L21",
+      "source_location": "L23",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -70770,7 +70972,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/qa-packshots.mjs",
-      "source_location": "L24",
+      "source_location": "L26",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -70781,7 +70983,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "scripts/qa-packshots.mjs",
-      "source_location": "L21",
+      "source_location": "L23",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -71739,6 +71941,26 @@
       "_origin": "ast"
     },
     {
+      "source": "codex_logic_logic_map_logic_graph_xsanestet_site",
+      "target": "codex_logic_logic_map_2026_09_02t07_15_11_812z_keep_hero_packshots_authoritative_across_catalog_hydration",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".codex-logic/logic-map.md",
+      "source_location": "L194",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "codex_logic_logic_map_logic_graph_xsanestet_site",
+      "target": "codex_logic_logic_map_2026_09_02t07_38_03_027z_extend_exact_vector_silhouettes_to_anestoderm_and_mildep",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".codex-logic/logic-map.md",
+      "source_location": "L202",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "codex_logic_model_training_protocol",
       "target": "codex_logic_model_training_protocol_model_training_protocol_xsanestet_site",
       "relation": "contains",
@@ -71880,7 +72102,7 @@
     },
     {
       "source": "changelog_codex_codex_changelog",
-      "target": "changelog_codex_2026_09_02_version_13_4_2",
+      "target": "changelog_codex_2026_09_02_version_13_4_5",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CHANGELOG.codex.md",
@@ -71890,11 +72112,21 @@
     },
     {
       "source": "changelog_codex_codex_changelog",
+      "target": "changelog_codex_2026_09_02_version_13_4_2",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CHANGELOG.codex.md",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "changelog_codex_codex_changelog",
       "target": "changelog_codex_2026_09_02_version_13_4_1",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L15",
+      "source_location": "L23",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -71904,7 +72136,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L22",
+      "source_location": "L30",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -71914,7 +72146,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L32",
+      "source_location": "L40",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -71924,7 +72156,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L41",
+      "source_location": "L49",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -71934,7 +72166,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L54",
+      "source_location": "L62",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -71944,7 +72176,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L149",
+      "source_location": "L157",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -71954,7 +72186,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L153",
+      "source_location": "L161",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -71964,7 +72196,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L175",
+      "source_location": "L183",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -71974,7 +72206,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L179",
+      "source_location": "L187",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -71984,7 +72216,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L191",
+      "source_location": "L199",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -71994,7 +72226,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L195",
+      "source_location": "L203",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -72004,7 +72236,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L207",
+      "source_location": "L215",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -72014,7 +72246,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L211",
+      "source_location": "L219",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -72024,7 +72256,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L223",
+      "source_location": "L231",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -72034,7 +72266,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L236",
+      "source_location": "L244",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -72044,7 +72276,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L250",
+      "source_location": "L258",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -72054,7 +72286,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L254",
+      "source_location": "L262",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -72064,7 +72296,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L266",
+      "source_location": "L274",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -72074,7 +72306,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L279",
+      "source_location": "L287",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -72084,7 +72316,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L283",
+      "source_location": "L291",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -72094,7 +72326,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L365",
+      "source_location": "L373",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -72104,7 +72336,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L369",
+      "source_location": "L377",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -72114,7 +72346,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L390",
+      "source_location": "L398",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -72124,7 +72356,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L396",
+      "source_location": "L404",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -72134,7 +72366,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L402",
+      "source_location": "L410",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -72144,7 +72376,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L409",
+      "source_location": "L417",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -72420,7 +72652,7 @@
     },
     {
       "source": "docs_release_history_github_релизы",
-      "target": "docs_release_history_2026_09_02_v13_4_2",
+      "target": "docs_release_history_2026_09_02_v13_4_5",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/RELEASE_HISTORY.md",
@@ -72430,11 +72662,21 @@
     },
     {
       "source": "docs_release_history_github_релизы",
+      "target": "docs_release_history_2026_09_02_v13_4_2",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/RELEASE_HISTORY.md",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_release_history_github_релизы",
       "target": "docs_release_history_2026_09_02_v13_4_1",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L23",
+      "source_location": "L30",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -72444,7 +72686,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L29",
+      "source_location": "L36",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -72454,7 +72696,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L43",
+      "source_location": "L50",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -72464,7 +72706,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L49",
+      "source_location": "L56",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -72474,7 +72716,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L54",
+      "source_location": "L61",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -72484,7 +72726,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L60",
+      "source_location": "L67",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -72494,7 +72736,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L70",
+      "source_location": "L77",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -72504,7 +72746,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L75",
+      "source_location": "L82",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -72514,7 +72756,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L80",
+      "source_location": "L87",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -72524,7 +72766,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L86",
+      "source_location": "L93",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -72534,7 +72776,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L91",
+      "source_location": "L98",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -72544,7 +72786,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L102",
+      "source_location": "L109",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -72554,7 +72796,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L111",
+      "source_location": "L118",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -72564,7 +72806,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L119",
+      "source_location": "L126",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -72574,7 +72816,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L130",
+      "source_location": "L137",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -72584,7 +72826,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L139",
+      "source_location": "L146",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -72594,7 +72836,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L147",
+      "source_location": "L154",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -72604,7 +72846,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L154",
+      "source_location": "L161",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -72614,7 +72856,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L163",
+      "source_location": "L170",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -72624,7 +72866,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L174",
+      "source_location": "L181",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -72634,7 +72876,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L181",
+      "source_location": "L188",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -72644,7 +72886,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L189",
+      "source_location": "L196",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -73760,11 +74002,91 @@
     },
     {
       "source": "docs_releases_2026_09_02_v13_4_4_anestet_2026_09_02_v13_4_4",
-      "target": "docs_releases_2026_09_02_v13_4_4_rollback",
+      "target": "docs_releases_2026_09_02_v13_4_4_production_evidence",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/releases/2026.09.02-v13.4.4.md",
       "source_location": "L37",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_releases_2026_09_02_v13_4_4_anestet_2026_09_02_v13_4_4",
+      "target": "docs_releases_2026_09_02_v13_4_4_rollback",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/releases/2026.09.02-v13.4.4.md",
+      "source_location": "L46",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_releases_2026_09_02_v13_4_5",
+      "target": "docs_releases_2026_09_02_v13_4_5_anestet_2026_09_02_v13_4_5",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/releases/2026.09.02-v13.4.5.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_releases_2026_09_02_v13_4_5_anestet_2026_09_02_v13_4_5",
+      "target": "docs_releases_2026_09_02_v13_4_5_scope",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/releases/2026.09.02-v13.4.5.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_releases_2026_09_02_v13_4_5_anestet_2026_09_02_v13_4_5",
+      "target": "docs_releases_2026_09_02_v13_4_5_root_cause_and_correction",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/releases/2026.09.02-v13.4.5.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_releases_2026_09_02_v13_4_5_anestet_2026_09_02_v13_4_5",
+      "target": "docs_releases_2026_09_02_v13_4_5_additional_exact_masks",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/releases/2026.09.02-v13.4.5.md",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_releases_2026_09_02_v13_4_5_anestet_2026_09_02_v13_4_5",
+      "target": "docs_releases_2026_09_02_v13_4_5_regression_gate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/releases/2026.09.02-v13.4.5.md",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_releases_2026_09_02_v13_4_5_anestet_2026_09_02_v13_4_5",
+      "target": "docs_releases_2026_09_02_v13_4_5_verification",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/releases/2026.09.02-v13.4.5.md",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_releases_2026_09_02_v13_4_5_anestet_2026_09_02_v13_4_5",
+      "target": "docs_releases_2026_09_02_v13_4_5_rollback",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/releases/2026.09.02-v13.4.5.md",
+      "source_location": "L33",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -74239,7 +74561,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/storefront.tsx",
-      "source_location": "L357",
+      "source_location": "L367",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -74251,7 +74573,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/storefront.tsx",
-      "source_location": "L746",
+      "source_location": "L765",
       "weight": 1.0,
       "_origin": "ast"
     },

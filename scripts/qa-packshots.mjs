@@ -5,12 +5,14 @@ import process from "node:process";
 
 const root = process.cwd();
 const productSource = await readFile(join(root, "app/products.ts"), "utf8");
+const catalogSeed = JSON.parse(await readFile(join(root, "lib/admin/catalog.seed.json"), "utf8"));
 const rows = [...productSource.matchAll(/\{ id: (\d+).*?image: "([^"]+)"/g)].map((match) => ({
   id: Number(match[1]),
   image: match[2],
 }));
 
 if (rows.length !== 23) throw new Error(`Expected 23 product images, found ${rows.length}`);
+const seedById = new Map(catalogSeed.products.map((product) => [product.id, product]));
 
 const run = (args) => {
   const result = spawnSync("magick", args, { encoding: "utf8" });
@@ -23,6 +25,9 @@ const alphaLevels = (path) => run([path, "-alpha", "extract", "-format", "%c", "
 
 const failures = [];
 for (const product of rows) {
+  if (seedById.get(product.id)?.image !== product.image) {
+    failures.push(`${product.id}: admin seed image ${seedById.get(product.id)?.image ?? "missing"} differs from approved ${product.image}`);
+  }
   const master = join(root, "public", product.image.replace(/^\//, ""));
   const vectorVersion = product.image.match(/-alpha-restored-(v[34])\.webp$/)?.[1];
   const cardName = vectorVersion
@@ -55,4 +60,4 @@ for (const product of rows) {
 }
 
 if (failures.length) throw new Error(`PACKSHOT QA FAIL:\n${failures.join("\n")}`);
-console.log("PACKSHOT QA PASS: 23/23 transparent masters, cards and 2x detail assets; antialiased alpha >= 48 levels; vector-mask RGB unchanged; detail assets <= 320 KiB.");
+console.log("PACKSHOT QA PASS: 23/23 approved catalog/admin sources, transparent masters, cards and 2x detail assets; antialiased alpha >= 48 levels; vector-mask RGB unchanged; detail assets <= 320 KiB.");

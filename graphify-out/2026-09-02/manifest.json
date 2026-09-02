@@ -114,9 +114,9 @@
     "semantic_hash": ""
   },
   "app/storefront.tsx": {
-    "mtime": 1788326603.9077873,
-    "seen": 1788326634.943064,
-    "ast_hash": "7762583fc734e38972e8f7684bb579c3",
+    "mtime": 1788332901.4896524,
+    "seen": 1788333327.3664,
+    "ast_hash": "ec2527680c30a2f6c11cded6be209a51",
     "semantic_hash": ""
   },
   "deploy/anestet-backup.sh": {
@@ -144,9 +144,9 @@
     "semantic_hash": ""
   },
   "lib/admin/catalog.seed.json": {
-    "mtime": 1788205936.825984,
-    "seen": 1788242016.025235,
-    "ast_hash": "e11cf207ee0d7cdf333c617bc7d82ab3",
+    "mtime": 1788333008.0227742,
+    "seen": 1788333327.366403,
+    "ast_hash": "3c036774b89bf15f3f41d97b4e0af730",
     "semantic_hash": ""
   },
   "lib/admin/config.mjs": {
@@ -2550,9 +2550,9 @@
     "semantic_hash": ""
   },
   "package.json": {
-    "mtime": 1788326603.906923,
-    "seen": 1788326634.943251,
-    "ast_hash": "ecca414c38afe379c6167945fbd5b85b",
+    "mtime": 1788332901.4900246,
+    "seen": 1788333327.366615,
+    "ast_hash": "ab736ad4a2f76f841ed8643038a0f90c",
     "semantic_hash": ""
   },
   "scripts/admin-smoke.mjs": {
@@ -2568,9 +2568,9 @@
     "semantic_hash": ""
   },
   "scripts/qa-layout.mjs": {
-    "mtime": 1788326468.6538372,
-    "seen": 1788326634.943254,
-    "ast_hash": "d8fe8d06c87b044d625a09cb2c729c7c",
+    "mtime": 1788333180.2878304,
+    "seen": 1788333327.3666198,
+    "ast_hash": "9cf56532f0d500e35c2d1cfd528704c9",
     "semantic_hash": ""
   },
   "scripts/sync-getlayers-three.mjs": {
@@ -2592,9 +2592,9 @@
     "semantic_hash": ""
   },
   ".codex-logic/logic-map.md": {
-    "mtime": 1788326629.8347726,
-    "seen": 1788326634.9432561,
-    "ast_hash": "9438833edb91cb9bbf57c61e96c708f9",
+    "mtime": 1788333311.8126893,
+    "seen": 1788333327.366623,
+    "ast_hash": "dbf4e2bd07b97d959fd9a2563c76736f",
     "semantic_hash": ""
   },
   ".codex-logic/model-training-protocol.md": {
@@ -2628,15 +2628,15 @@
     "semantic_hash": ""
   },
   "CHANGELOG.codex.md": {
-    "mtime": 1788326603.9086893,
-    "seen": 1788326634.9432588,
-    "ast_hash": "62e0404d25a811b30a6a3364b689ed29",
+    "mtime": 1788329633.281515,
+    "seen": 1788329823.974617,
+    "ast_hash": "72847d9d70befa82ae948e413e2981ac",
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1788296923.020701,
-    "seen": 1788297487.471794,
-    "ast_hash": "162f57a13a9fe3f7d065c5dd49c28a59",
+    "mtime": 1788329381.2631164,
+    "seen": 1788329823.974617,
+    "ast_hash": "9b83aa89430f4cb883f698f552e1d777",
     "semantic_hash": ""
   },
   "docs/COMMERCE_BACKEND_ROADMAP.md": {
@@ -2670,9 +2670,9 @@
     "semantic_hash": ""
   },
   "docs/RELEASE_HISTORY.md": {
-    "mtime": 1788326603.909009,
-    "seen": 1788326634.9432619,
-    "ast_hash": "13a7ca22ded43a7824ed0bf2aa1b81da",
+    "mtime": 1788330833.5322351,
+    "seen": 1788333327.3666298,
+    "ast_hash": "b89b08273f358d43f751cb29fe08cceb",
     "semantic_hash": ""
   },
   "docs/admin/ARCHITECTURE.md": {
@@ -2850,8 +2850,8 @@
     "semantic_hash": ""
   },
   "public/assets/getlayers/opaline/index.html": {
-    "mtime": 1788326477.4196372,
-    "seen": 1788326634.943281,
+    "mtime": 1788333111.5435984,
+    "seen": 1788333327.366654,
     "ast_hash": "95e013984c943cb363d30a9c8b945d05",
     "semantic_hash": ""
   },
@@ -2862,8 +2862,8 @@
     "semantic_hash": ""
   },
   "public/assets/getlayers/shoal/index.html": {
-    "mtime": 1788326477.4203541,
-    "seen": 1788326634.943282,
+    "mtime": 1788333111.5445876,
+    "seen": 1788333327.3666549,
     "ast_hash": "d1ab81578a480f77ce3c1dd8e27616b3",
     "semantic_hash": ""
   },
@@ -6246,9 +6246,9 @@
     "semantic_hash": ""
   },
   "scripts/qa-packshots.mjs": {
-    "mtime": 1788324145.7176747,
-    "seen": 1788324670.025675,
-    "ast_hash": "4a926a029e12347adb1ee3e7de1869ef",
+    "mtime": 1788333072.2452753,
+    "seen": 1788333327.366621,
+    "ast_hash": "f3dc42d397477820dae2edf0e6b61d29",
     "semantic_hash": ""
   },
   "docs/releases/2026.09.01-v13.3.1.md": {
@@ -6852,9 +6852,9 @@
     "semantic_hash": ""
   },
   "docs/releases/2026.09.02-v13.4.3.md": {
-    "mtime": 1788326603.9091213,
-    "seen": 1788326634.943275,
-    "ast_hash": "35c99d89515a08a339d7d54878af95a3",
+    "mtime": 1788327295.895028,
+    "seen": 1788329823.974634,
+    "ast_hash": "5589283c8e646f630a009eb178cc7fc3",
     "semantic_hash": ""
   },
   ".codex-web-design/release-13.4.2/public-about-dark.png": {
@@ -6945,6 +6945,318 @@
     "mtime": 1788326292.8226051,
     "seen": 1788326634.943312,
     "ast_hash": "096fb7a568ab4ce01a3aaf4db7c17d0b",
+    "semantic_hash": ""
+  },
+  "public/assets/img/restored/packshots-v13/details-v5/report.json": {
+    "mtime": 1788328672.970521,
+    "seen": 1788329823.974607,
+    "ast_hash": "f743bb75efaa19698d7be4a304181eaa",
+    "semantic_hash": ""
+  },
+  "scripts/build-product-detail-packshots.mjs": {
+    "mtime": 1788328569.581912,
+    "seen": 1788329823.974609,
+    "ast_hash": "1acf40a6451fcaa15eb12f92efdd6db6",
+    "semantic_hash": ""
+  },
+  "docs/releases/2026.09.02-v13.4.4.md": {
+    "mtime": 1788330833.531983,
+    "seen": 1788333327.366648,
+    "ast_hash": "31571a9d93ee9429fdd8010b98954130",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/release-13.4.3/public/cinematic-about.png": {
+    "mtime": 1788327161.0223303,
+    "seen": 1788329823.974676,
+    "ast_hash": "517389f142992a425ca8d593caddef34",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/release-13.4.3/public/cinematic-catalog.png": {
+    "mtime": 1788327160.8894975,
+    "seen": 1788329823.974676,
+    "ast_hash": "66a3a32bcff7327abd89e92e70590cfa",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/release-13.4.3/public/cinematic-company.png": {
+    "mtime": 1788327161.1249285,
+    "seen": 1788329823.974677,
+    "ast_hash": "8a08a3dec2baa8ebc5322e96fb2395a8",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/release-13.4.3/public/cinematic-evidence.png": {
+    "mtime": 1788327161.234018,
+    "seen": 1788329823.974677,
+    "ast_hash": "8004582af1ad8d8e7558219153332e24",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/release-13.4.3/public/clinical-about.png": {
+    "mtime": 1788327165.5807014,
+    "seen": 1788329823.974677,
+    "ast_hash": "2034b96adc0127b1be3c135135f6c12f",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/release-13.4.3/public/clinical-catalog.png": {
+    "mtime": 1788327165.4194107,
+    "seen": 1788329823.974678,
+    "ast_hash": "316b9990e6ee77ff6c3d51d68959cf88",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/release-13.4.3/public/clinical-company.png": {
+    "mtime": 1788327165.7053664,
+    "seen": 1788329823.974678,
+    "ast_hash": "21cd970f96453f4d002100203a5af1e5",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/release-13.4.3/public/clinical-evidence.png": {
+    "mtime": 1788327165.8146286,
+    "seen": 1788329823.974679,
+    "ast_hash": "f34087f9426ee63480cd450fe6946497",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/release-13.4.3/public/mobile-catalog.png": {
+    "mtime": 1788327172.1257277,
+    "seen": 1788329823.97468,
+    "ast_hash": "8203d32796ac2709388d61d71e38c0bd",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/release-13.4.4/local/cinematic-care.png": {
+    "mtime": 1788328916.570756,
+    "seen": 1788329823.97468,
+    "ast_hash": "da709304b04976a6fd11a36bf5034274",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/release-13.4.4/local/cinematic-detail-17-retina.png": {
+    "mtime": 1788328940.546937,
+    "seen": 1788329823.97468,
+    "ast_hash": "6e3c1bb4f07e17fd0cfdb3d06bb78f3d",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/release-13.4.4/local/cinematic-detail-17.png": {
+    "mtime": 1788328916.338682,
+    "seen": 1788329823.9746811,
+    "ast_hash": "aa529307f6d007131b1e082634663e0d",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/release-13.4.4/local/cinematic-guide.png": {
+    "mtime": 1788328916.7539825,
+    "seen": 1788329823.9746811,
+    "ast_hash": "4805d6c0ae22cec75ffd530c403c4a6c",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/release-13.4.4/local/clinical-care.png": {
+    "mtime": 1788328918.0949514,
+    "seen": 1788329823.974682,
+    "ast_hash": "52598ec0683b7444785e0e682495b3c0",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/release-13.4.4/local/clinical-detail-17.png": {
+    "mtime": 1788328917.8807905,
+    "seen": 1788329823.974682,
+    "ast_hash": "046a6b401def4b3343e779505aaa4a5f",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/release-13.4.4/local/clinical-guide.png": {
+    "mtime": 1788328918.2490492,
+    "seen": 1788329823.9746828,
+    "ast_hash": "ed6c27490670d66852dc94f50a301ce8",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/release-13.4.4/local/mobile-care.png": {
+    "mtime": 1788328919.1621962,
+    "seen": 1788329823.9746828,
+    "ast_hash": "64f276db84b5444809675e14dfafaa07",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/release-13.4.4/local/mobile-guide.png": {
+    "mtime": 1788328919.2877853,
+    "seen": 1788329823.9746828,
+    "ast_hash": "cb2dbe97e47c0151c9cdb1493fe413e1",
+    "semantic_hash": ""
+  },
+  "public/assets/img/restored/packshots-v13/details-v5/17.webp": {
+    "mtime": 1788328586.2262964,
+    "seen": 1788329823.9751801,
+    "ast_hash": "f96888e043602931b8cc65ea13e735e8",
+    "semantic_hash": ""
+  },
+  "public/assets/img/restored/packshots-v13/details-v5/33.webp": {
+    "mtime": 1788328590.0106459,
+    "seen": 1788329823.9751801,
+    "ast_hash": "e337ecfdf30537d1fe9b6a2eba414706",
+    "semantic_hash": ""
+  },
+  "public/assets/img/restored/packshots-v13/details-v5/34.webp": {
+    "mtime": 1788328593.8605018,
+    "seen": 1788329823.975181,
+    "ast_hash": "8f9e96699e5c2941e61a4ccd772fe703",
+    "semantic_hash": ""
+  },
+  "public/assets/img/restored/packshots-v13/details-v5/35.webp": {
+    "mtime": 1788328597.6690621,
+    "seen": 1788329823.975182,
+    "ast_hash": "5c38b276e076505618f10e706ad5251d",
+    "semantic_hash": ""
+  },
+  "public/assets/img/restored/packshots-v13/details-v5/36.webp": {
+    "mtime": 1788328601.4824047,
+    "seen": 1788329823.975182,
+    "ast_hash": "479fe58b4b7bad0dee41b8011106f514",
+    "semantic_hash": ""
+  },
+  "public/assets/img/restored/packshots-v13/details-v5/37.webp": {
+    "mtime": 1788328605.4750688,
+    "seen": 1788329823.975182,
+    "ast_hash": "6db789afb76334fd3116a4d33538abb2",
+    "semantic_hash": ""
+  },
+  "public/assets/img/restored/packshots-v13/details-v5/38.webp": {
+    "mtime": 1788328609.2919912,
+    "seen": 1788329823.975183,
+    "ast_hash": "13a965a57625a23a5852ff9715eabc64",
+    "semantic_hash": ""
+  },
+  "public/assets/img/restored/packshots-v13/details-v5/39.webp": {
+    "mtime": 1788328613.0923028,
+    "seen": 1788329823.975183,
+    "ast_hash": "b863d76363d4a9e40049f3ddcf0e3a40",
+    "semantic_hash": ""
+  },
+  "public/assets/img/restored/packshots-v13/details-v5/40.webp": {
+    "mtime": 1788328616.9609106,
+    "seen": 1788329823.975184,
+    "ast_hash": "f6f8aff0a8c1332404bb743e11615eff",
+    "semantic_hash": ""
+  },
+  "public/assets/img/restored/packshots-v13/details-v5/42.webp": {
+    "mtime": 1788328620.6265016,
+    "seen": 1788329823.975184,
+    "ast_hash": "2943d2a3f5846a2eb6ea99c0b9a95cc0",
+    "semantic_hash": ""
+  },
+  "public/assets/img/restored/packshots-v13/details-v5/48.webp": {
+    "mtime": 1788328624.2780416,
+    "seen": 1788329823.975185,
+    "ast_hash": "1aed9fbdeffe59ab00a5ec6f0204b467",
+    "semantic_hash": ""
+  },
+  "public/assets/img/restored/packshots-v13/details-v5/49.webp": {
+    "mtime": 1788328627.9454894,
+    "seen": 1788329823.975185,
+    "ast_hash": "19d58b046ab0290b325acfdf4d33d8e7",
+    "semantic_hash": ""
+  },
+  "public/assets/img/restored/packshots-v13/details-v5/50.webp": {
+    "mtime": 1788328631.6972835,
+    "seen": 1788329823.9751859,
+    "ast_hash": "3589e892b83d9a73b59ba4693398b7c5",
+    "semantic_hash": ""
+  },
+  "public/assets/img/restored/packshots-v13/details-v5/51.webp": {
+    "mtime": 1788328636.1097808,
+    "seen": 1788329823.9751859,
+    "ast_hash": "177f26af156cbb09ece4236e872847a6",
+    "semantic_hash": ""
+  },
+  "public/assets/img/restored/packshots-v13/details-v5/52.webp": {
+    "mtime": 1788328640.1824403,
+    "seen": 1788329823.9751859,
+    "ast_hash": "465ed20cb1e39a09ae779aacc6de3dcb",
+    "semantic_hash": ""
+  },
+  "public/assets/img/restored/packshots-v13/details-v5/53.webp": {
+    "mtime": 1788328644.795466,
+    "seen": 1788329823.9751868,
+    "ast_hash": "ed0260199831089b809746aff7dac2dc",
+    "semantic_hash": ""
+  },
+  "public/assets/img/restored/packshots-v13/details-v5/54.webp": {
+    "mtime": 1788328649.0773847,
+    "seen": 1788329823.9751868,
+    "ast_hash": "1c10a62b9751912ddd21f7180f7eeed5",
+    "semantic_hash": ""
+  },
+  "public/assets/img/restored/packshots-v13/details-v5/55.webp": {
+    "mtime": 1788328653.1957645,
+    "seen": 1788329823.975188,
+    "ast_hash": "86aa2c2d23707ed753d0958c57b82f64",
+    "semantic_hash": ""
+  },
+  "public/assets/img/restored/packshots-v13/details-v5/56.webp": {
+    "mtime": 1788328657.5020792,
+    "seen": 1788329823.975188,
+    "ast_hash": "d57d0fa62528018e486b70660a658882",
+    "semantic_hash": ""
+  },
+  "public/assets/img/restored/packshots-v13/details-v5/57.webp": {
+    "mtime": 1788328661.3073251,
+    "seen": 1788329823.975189,
+    "ast_hash": "dfbd284b2b57d20e6952f212ebd42aa8",
+    "semantic_hash": ""
+  },
+  "public/assets/img/restored/packshots-v13/details-v5/58.webp": {
+    "mtime": 1788328665.1465826,
+    "seen": 1788329823.975189,
+    "ast_hash": "7a5fb4a787b226f76bffa7afca85f974",
+    "semantic_hash": ""
+  },
+  "public/assets/img/restored/packshots-v13/details-v5/59.webp": {
+    "mtime": 1788328668.7975934,
+    "seen": 1788329823.975189,
+    "ast_hash": "e4d67a840e413eb160e4a488f2e4c542",
+    "semantic_hash": ""
+  },
+  "public/assets/img/restored/packshots-v13/details-v5/60.webp": {
+    "mtime": 1788328672.9404526,
+    "seen": 1788329823.97519,
+    "ast_hash": "bf90c4dac1773ea9e1d2224d89db3cf8",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/release-13.4.4/public/cinematic-care.png": {
+    "mtime": 1788330715.499526,
+    "seen": 1788333327.3667011,
+    "ast_hash": "1734c1c833015262b29818b15339afaa",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/release-13.4.4/public/cinematic-detail-17.png": {
+    "mtime": 1788330715.3359184,
+    "seen": 1788333327.366702,
+    "ast_hash": "dc9e3bcf8c7f4bbbbe44bf4288b17d33",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/release-13.4.4/public/cinematic-guide.png": {
+    "mtime": 1788330716.5733657,
+    "seen": 1788333327.366702,
+    "ast_hash": "078c774c8f59cc1cb3ff7f7a84088170",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/release-13.4.4/public/clinical-care.png": {
+    "mtime": 1788330724.254387,
+    "seen": 1788333327.366703,
+    "ast_hash": "a2dd5135e54aa678f25a2beb233607d2",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/release-13.4.4/public/clinical-detail-17.png": {
+    "mtime": 1788330724.1051092,
+    "seen": 1788333327.366703,
+    "ast_hash": "9f62ad3c4e33c7eed71bc4ecd1a3be03",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/release-13.4.4/public/clinical-guide.png": {
+    "mtime": 1788330725.2808318,
+    "seen": 1788333327.3667042,
+    "ast_hash": "9789b7bc0a9d38f3516a305eefdbaf20",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/release-13.4.4/public/mobile-care.png": {
+    "mtime": 1788330733.0079393,
+    "seen": 1788333327.3667042,
+    "ast_hash": "0afe92e4e45cb0aedb05f2e1d20f7ec5",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/release-13.4.4/public/mobile-guide.png": {
+    "mtime": 1788330733.1219401,
+    "seen": 1788333327.366705,
+    "ast_hash": "c2ad473edf650e46bfec7b8defdd66a5",
     "semantic_hash": ""
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "xs-anestet-design-lab",
-  "version": "13.4.4",
+  "version": "13.4.5",
   "private": true,
   "scripts": {
     "prebuild": "node scripts/sync-getlayers-three.mjs",

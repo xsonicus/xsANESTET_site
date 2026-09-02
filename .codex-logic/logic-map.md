@@ -190,3 +190,19 @@ Correction-of-correction: the v4 SVG silhouettes were geometrically correct, but
 Files: app/storefront.tsx, app/globals.css, scripts/build-product-detail-packshots.mjs, scripts/qa-packshots.mjs, scripts/qa-layout.mjs, public/assets/img/restored/packshots-v13/details-v5, .codex-memory/correction-register.md
 Validation: 23/23 2000x2000 RGBA detail assets under 320 KiB; 500ms delayed-network QA preserves visible preview and completes full Retina swap; 11 widths x 2 themes x 2 views layout gate passes; Dark, light and 390px guide visual evidence captured
 Risks: Do not replace exact silhouette reconstruction with blur or generative edits.; Keep the cached preview until the high-resolution image has decoded.; Do not reopen giant care/guide gaps when changing shared section spacing.
+
+## 2026-09-02T07:15:11.812Z - Keep hero packshots authoritative across catalog hydration
+
+The public catalog API may update commercial fields after hydration, but it must not replace approved local media for known product IDs. Hero incoming, departing and settled layers now all use the same 2000x2000 details-v5 source; adjacent hero assets are preloaded and QA cycles every hero item across transition and settled states. The admin seed is synchronized with approved v4 paths and packshot QA rejects future source drift.
+
+Files: app/storefront.tsx, lib/admin/catalog.seed.json, scripts/qa-layout.mjs, scripts/qa-packshots.mjs
+Validation: npx tsc --noEmit; npm run qa:packshots; npm run build && npm run qa:layout
+Risks: Known catalog IDs intentionally keep repository-approved media even when the API supplies a different image path; new API-only IDs retain their API image.
+
+## 2026-09-02T07:38:03.027Z - Extend exact vector silhouettes to Anestoderm and Mildep
+
+User visual QA identified rough masks on Anestoderm 300 ml and Mildep Pro 30/300 ml. Added deterministic product-specific SVG paths for the wide pump bottles and tapered tube/cap, rerasterized master/card/detail assets, and kept RGB comparison at zero. A local 2000x2000 detail review caught and corrected a dark lower-cap fringe before release.
+
+Files: scripts/polish-product-packshot-edges.mjs, app/products.ts, lib/admin/catalog.seed.json, public/assets/img/restored/packshots-v13/57-alpha-restored-v4.webp, public/assets/img/restored/packshots-v13/58-alpha-restored-v4.webp, public/assets/img/restored/packshots-v13/59-alpha-restored-v4.webp, public/assets/img/restored/packshots-v13/details-v5/57.webp, public/assets/img/restored/packshots-v13/details-v5/58.webp, public/assets/img/restored/packshots-v13/details-v5/59.webp
+Validation: npm run assets:polish-edges: 12 products; npm run assets:detail: 23/23; npm run qa:packshots; npm run build && npm run qa:layout; Local Clinical Luxury detail review at 2000x2000 for products 57, 58 and 59; console clean
+Risks: Vector masks must remain inside the physical white product boundary so transparent source RGB cannot create dark edge slivers.

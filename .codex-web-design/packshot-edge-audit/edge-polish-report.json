@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-02T04:45:13.056Z",
+  "generatedAt": "2026-09-02T07:34:48.958Z",
   "correction": "Vector geometry replaces the rejected Gaussian alpha approach.",
   "products": [
     {
@@ -99,6 +99,39 @@
       "alphaLevels": 248,
       "changedRgbPixels": 0,
       "fullCanvasSilhouetteDelta": 0.005694,
+      "method": "product-specific SVG silhouette; single fitted top/bottom curves; 4x vector rasterization; Lanczos downsample; lossless WebP"
+    },
+    {
+      "id": 57,
+      "officialRgbSource": "57-alpha-restored-v2.png",
+      "vectorMask": "57-silhouette.svg",
+      "master": "57-alpha-restored-v4.webp",
+      "card": "57-card-v4.webp",
+      "alphaLevels": 250,
+      "changedRgbPixels": 0,
+      "fullCanvasSilhouetteDelta": 0.008697,
+      "method": "product-specific SVG silhouette; single fitted top/bottom curves; 4x vector rasterization; Lanczos downsample; lossless WebP"
+    },
+    {
+      "id": 58,
+      "officialRgbSource": "58-alpha-restored-v2.png",
+      "vectorMask": "58-silhouette.svg",
+      "master": "58-alpha-restored-v4.webp",
+      "card": "58-card-v4.webp",
+      "alphaLevels": 256,
+      "changedRgbPixels": 0,
+      "fullCanvasSilhouetteDelta": 0.00466,
+      "method": "product-specific SVG silhouette; single fitted top/bottom curves; 4x vector rasterization; Lanczos downsample; lossless WebP"
+    },
+    {
+      "id": 59,
+      "officialRgbSource": "59-alpha-restored-v2.png",
+      "vectorMask": "59-silhouette.svg",
+      "master": "59-alpha-restored-v4.webp",
+      "card": "59-card-v4.webp",
+      "alphaLevels": 250,
+      "changedRgbPixels": 0,
+      "fullCanvasSilhouetteDelta": 0.008697,
       "method": "product-specific SVG silhouette; single fitted top/bottom curves; 4x vector rasterization; Lanczos downsample; lossless WebP"
     }
   ]

@@ -477,6 +477,24 @@ try {
       failures.push({ width: 1440, height: 1000, theme: "serum", view: "graphic-anchor", collisions: ["opaline graphic is not aligned with the fixed weighted product centre"], horizontalOverflow: 0, overflowElements: [], textOverflow: [] });
     }
 
+    const readHeroPackshots = () => interactionPage.evaluate(() => [...document.querySelectorAll(".hero-product-image")].map((image) => ({
+      source: image instanceof HTMLImageElement ? image.currentSrc : "",
+      width: image instanceof HTMLImageElement ? image.naturalWidth : 0,
+      height: image instanceof HTMLImageElement ? image.naturalHeight : 0,
+      complete: image instanceof HTMLImageElement ? image.complete : false,
+    })));
+    const observedHeroSources = new Set();
+    const assertHeroPackshots = async (view) => {
+      const packshots = await readHeroPackshots();
+      packshots.forEach((packshot) => observedHeroSources.add(packshot.source));
+      const invalid = packshots.filter((packshot) => !packshot.source.includes("/details-v5/") || packshot.width !== 2000 || packshot.height !== 2000 || !packshot.complete);
+      if (!packshots.length || invalid.length) {
+        failures.push({ width: 1440, height: 1000, theme: "serum", view, collisions: [`hero did not keep the approved 2000px source (${JSON.stringify(packshots)})`], horizontalOverflow: 0, overflowElements: [], textOverflow: [] });
+      }
+    };
+    await assertHeroPackshots("hero-packshot-initial");
+    await interactionPage.locator(".hero-carousel-toggle").click();
+
     await interactionPage.locator(".hero-product-controls button:not(.previous):not(.hero-carousel-toggle)").click();
     const priceFrames = [];
     for (let sample = 0; sample < 8; sample += 1) {
@@ -492,8 +510,12 @@ try {
           fontFamily: style?.fontFamily ?? "",
           fontWeight: style?.fontWeight ?? "",
           numericVariant: style?.fontVariantNumeric ?? "",
+          packshots: [...document.querySelectorAll(".hero-product-image")].map((image) => image instanceof HTMLImageElement ? ({ source: image.currentSrc, width: image.naturalWidth, height: image.naturalHeight }) : null),
         };
       }));
+    }
+    if (priceFrames.some((sample) => sample.packshots.some((packshot) => !packshot || !packshot.source.includes("/details-v5/") || packshot.width !== 2000 || packshot.height !== 2000))) {
+      failures.push({ width: 1440, height: 1000, theme: "serum", view: "hero-packshot-transition", collisions: ["hero changed image source or resolution during the product transition"], horizontalOverflow: 0, overflowElements: [], textOverflow: [] });
     }
     if (priceFrames.some((sample) => sample.departing > 0.035 && sample.arriving > 0.035)) {
       failures.push({ width: 1440, height: 1000, theme: "serum", view: "price-transition", collisions: ["old and new prices are visibly superimposed during transition"], horizontalOverflow: 0, overflowElements: [], textOverflow: [] });
@@ -516,6 +538,17 @@ try {
       failures.push({ width: 1440, height: 1000, theme: "serum", view: "graphic-anchor", collisions: ["opaline graphic anchor moved when the product changed"], horizontalOverflow: 0, overflowElements: [], textOverflow: [] });
     }
 
+    await interactionPage.waitForTimeout(650);
+    await assertHeroPackshots("hero-packshot-settled-1");
+    for (let productIndex = 2; productIndex <= 8; productIndex += 1) {
+      await interactionPage.locator(".hero-product-controls button:not(.previous):not(.hero-carousel-toggle)").click();
+      await interactionPage.waitForTimeout(1300);
+      await assertHeroPackshots(`hero-packshot-settled-${productIndex}`);
+    }
+    if (observedHeroSources.size !== 8) {
+      failures.push({ width: 1440, height: 1000, theme: "serum", view: "hero-packshot-coverage", collisions: [`expected 8 unique hero sources, observed ${observedHeroSources.size}`], horizontalOverflow: 0, overflowElements: [], textOverflow: [] });
+    }
+
     await interactionPage.locator(".hero-packshot-frame").click();
     await interactionPage.locator(".product-detail-dialog[open]").waitFor();
     const detailLoadingState = await interactionPage.evaluate(() => {
@@ -529,8 +562,10 @@ try {
         retinaNaturalWidthEarly: retina instanceof HTMLImageElement ? retina.naturalWidth : -1,
       };
     });
-    if (!detailLoadingState.previewComplete || detailLoadingState.previewOpacity < 0.9 || detailLoadingState.retinaReadyEarly || detailLoadingState.retinaNaturalWidthEarly > 0) {
-      failures.push({ width: 1440, height: 1000, theme: "serum", view: "product-detail-loading", collisions: [`cached product preview does not protect the delayed 2x image load (${JSON.stringify(detailLoadingState)})`], horizontalOverflow: 0, overflowElements: [], textOverflow: [] });
+    const detailProtectedByPreview = detailLoadingState.previewComplete && detailLoadingState.previewOpacity >= 0.9 && !detailLoadingState.retinaReadyEarly && detailLoadingState.retinaNaturalWidthEarly === 0;
+    const detailAlreadyCached = detailLoadingState.retinaReadyEarly && detailLoadingState.retinaNaturalWidthEarly === 2000;
+    if (!detailProtectedByPreview && !detailAlreadyCached) {
+      failures.push({ width: 1440, height: 1000, theme: "serum", view: "product-detail-loading", collisions: [`product detail has neither a cached 2x image nor a protective preview (${JSON.stringify(detailLoadingState)})`], horizontalOverflow: 0, overflowElements: [], textOverflow: [] });
     }
     await interactionPage.locator(".product-detail-packshot.retina-ready").waitFor({ timeout: 3000 });
     await interactionPage.waitForFunction(() => {

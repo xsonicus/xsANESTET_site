@@ -2,6 +2,14 @@
 
 Project: xsANESTET_site
 
+## 2026-09-02 - Version 13.4.5
+
+- Fixed the exact clean-to-jagged hero regression: `/api/catalog` hydration can no longer replace approved local packshots for known products with stale v2 paths.
+- Unified incoming, departing and settled hero layers on the lightweight 2000×2000 `details-v5` source and preloaded adjacent products.
+- Rebuilt Anestoderm 300 ml and Mildep Pro 30/300 ml with exact vector alpha silhouettes for the pump, bottle shoulders, tube walls and cap; approved RGB and label pixels remain unchanged.
+- Synchronized the admin seed v4 paths and extended QA to reject catalog/admin media drift or any source/resolution change across all eight hero transitions.
+- Verification: `npx tsc --noEmit`; `npm run qa:packshots`; `npm run build && npm run qa:layout`.
+
 ## 2026-09-02 - Version 13.4.2
 
 - Removed the rejected decorative optic from the mobile hero and eliminated its artificial viewport-height floor, bringing the product into the first viewport.

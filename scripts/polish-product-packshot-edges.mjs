@@ -69,6 +69,37 @@ const dropperPath = ({ cx, top, bottom, tipHalf, shoulderHalf, bottleLeft, bottl
   C ${cx + shoulderHalf - 23} ${top + 96}, ${cx + tipHalf + 9} ${top + 51}, ${cx + tipHalf + 6} ${top + 15}
   Q ${cx + tipHalf + 5} ${top + 4}, ${cx + tipHalf} ${top} Z`;
 
+const widePumpPaths = () => [
+  `M 278 350 C 286 335, 306 330, 335 329 L 397 329
+   C 405 329, 410 321, 410 311 L 410 188
+   C 410 180, 417 175, 425 175 L 557 175
+   C 566 175, 573 181, 573 190 L 573 311
+   C 573 321, 579 329, 588 329 L 664 329
+   C 716 329, 741 340, 743 366 L 743 919
+   C 743 939, 730 948, 709 949 L 288 949
+   C 267 948, 255 938, 255 919 L 255 368
+   C 255 359, 263 352, 278 350 Z`,
+  `M 421 128 L 566 128 L 566 175 L 421 175 Z`,
+  `M 288 54 C 339 50, 456 51, 542 52
+   C 559 52, 567 59, 567 72 L 567 126
+   L 421 126 L 421 130 L 322 130
+   C 300 130, 288 119, 286 99 L 286 68
+   C 286 61, 286 57, 288 54 Z`,
+];
+
+const tubePath = () => `
+  M 322 142 Q 500 138, 678 142
+  L 677 188
+  C 674 257, 665 359, 654 463
+  L 642 574
+  C 640 596, 633 614, 628 625
+  L 628 765 L 625 774 L 625 837
+  C 625 849, 617 856, 604 856
+  L 396 856 C 383 856, 375 849, 375 837
+  L 375 774 L 372 765 L 372 625
+  C 367 614, 360 596, 358 574
+  L 346 463 C 335 359, 326 257, 323 188 Z`;
+
 const geometries = {
   17: [airlessPath({ cx: 500, top: 144, bottom: 855, capLeft: 380, capRight: 619, bodyLeft: 376, bodyRight: 623, shoulder: 401 })],
   34: [airlessPath({ cx: 499, top: 144, bottom: 855, capLeft: 381, capRight: 617, bodyLeft: 379, bodyRight: 619, shoulder: 401 })],
@@ -79,6 +110,9 @@ const geometries = {
   36: pumpPaths({ bodyLeft: 406, bodyRight: 593, bodyTop: 218, bottom: 944, collarLeft: 453, collarRight: 543, stemLeft: 468, stemRight: 527, nozzleLeft: 460, nozzleRight: 586, nozzleTop: 54 }),
   38: [dropperPath({ cx: 500, top: 224, bottom: 775, tipHalf: 9, shoulderHalf: 82, bottleLeft: 402, bottleRight: 597 })],
   40: [dropperPath({ cx: 500, top: 224, bottom: 774, tipHalf: 10, shoulderHalf: 81, bottleLeft: 401, bottleRight: 598 })],
+  57: widePumpPaths(),
+  58: [tubePath()],
+  59: widePumpPaths(),
 };
 
 const run = (args) => {
