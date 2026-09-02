@@ -533,7 +533,11 @@ try {
       failures.push({ width: 1440, height: 1000, theme: "serum", view: "product-detail-loading", collisions: [`cached product preview does not protect the delayed 2x image load (${JSON.stringify(detailLoadingState)})`], horizontalOverflow: 0, overflowElements: [], textOverflow: [] });
     }
     await interactionPage.locator(".product-detail-packshot.retina-ready").waitFor({ timeout: 3000 });
-    await interactionPage.waitForTimeout(220);
+    await interactionPage.waitForFunction(() => {
+      const preview = document.querySelector(".product-detail-dialog[open] .product-detail-packshot-preview");
+      const retina = document.querySelector(".product-detail-dialog[open] .product-detail-packshot-retina");
+      return Boolean(preview && retina && Number(getComputedStyle(preview).opacity) <= 0.01 && Number(getComputedStyle(retina).opacity) >= 0.99);
+    }, undefined, { timeout: 3000 });
     const detailResult = await interactionPage.evaluate(() => {
       const dialog = document.querySelector(".product-detail-dialog[open]");
       const cart = document.querySelector(".cart-button span");
