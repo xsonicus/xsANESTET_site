@@ -1,16 +1,16 @@
 # Graph Report - xsANESTET_site  (2026-09-02)
 
 ## Corpus Check
-- 476 files · ~3,771,334 words
+- 476 files · ~3,910,079 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 2569 nodes · 4520 edges · 468 communities (95 shown, 69 thin omitted)
+- 2570 nodes · 4521 edges · 468 communities (95 shown, 69 thin omitted)
 - Extraction: 86% EXTRACTED · 14% INFERRED · 0% AMBIGUOUS · INFERRED: 655 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `fa3fd9fa`
+- Built from commit: `637cf9f7`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -104,7 +104,7 @@
 - 2026.08.31-v13.0.0
 - 2026.09.01-v13.1.2
 - validation.mjs
-- k
+- at
 - mode-markdown.js
 - paragraph
 - genericCommentToggle
@@ -178,7 +178,7 @@
 - ANESTET 2026.09.02-v13.4.0
 - ProofOfWork
 - z
-- ln
+- o
 
 ## God Nodes (most connected - your core abstractions)
 1. `z()` - 47 edges
@@ -223,7 +223,7 @@ Nodes (67): A(), at(), B(), bn(), e(), t(), bt(), c() (+59 more)
 
 ### Community 3 - "plupload.full.min.js"
 Cohesion: 0.09
-Nodes (56): a(), a(), c(), d(), l(), m(), i(), u() (+48 more)
+Nodes (57): a(), a(), c(), d(), l(), m(), i(), u() (+49 more)
 
 ### Community 4 - "emmet.js"
 Cohesion: 0.04
@@ -254,8 +254,8 @@ Cohesion: 0.08
 Nodes (18): a(), B(), clone(), u(), e(), H(), i(), isIdentStart() (+10 more)
 
 ### Community 11 - "jquery.min.js"
-Cohesion: 0.07
-Nodes (25): an(), at(), bt(), ct(), er(), ft(), ht(), I() (+17 more)
+Cohesion: 0.08
+Nodes (22): an(), bt(), ct(), er(), ht(), I(), Kn(), ln() (+14 more)
 
 ### Community 12 - "ace.min.js"
 Cohesion: 0.18
@@ -271,7 +271,7 @@ Nodes (26): clearLoginFailures(), createSession(), destroySession(), expiredSess
 
 ### Community 17 - "sortable.min.js"
 Cohesion: 0.13
-Nodes (27): G(), a(), b(), d(), e(), f(), h(), I() (+19 more)
+Nodes (16): a(), b(), d(), e(), f(), h(), It(), k() (+8 more)
 
 ### Community 18 - "compilerOptions"
 Cohesion: 0.07
@@ -465,9 +465,9 @@ Nodes (5): 2026.09.01-v13.1.2, Исправлено, Откат, Проверк�
 Cohesion: 0.47
 Nodes (5): money(), text(), TEXT_LIMITS, validateExpectedRevision(), validateProduct()
 
-### Community 89 - "k"
-Cohesion: 0.40
-Nodes (5): C(), k(), Mn(), qn(), s()
+### Community 89 - "at"
+Cohesion: 0.19
+Nodes (13): C(), at(), ft(), it(), k(), kt(), Mn(), mt() (+5 more)
 
 ### Community 90 - "mode-markdown.js"
 Cohesion: 0.47
@@ -510,8 +510,8 @@ Cohesion: 0.40
 Nodes (4): ANESTET 2026.09.01-v13.2.1, Approved changes, Deployment, Verification
 
 ### Community 107 - "ANESTET 2026.09.02-v13.4.1"
-Cohesion: 0.40
-Nodes (4): ANESTET 2026.09.02-v13.4.1, Current approved implementation, Release gate, Rollback
+Cohesion: 0.33
+Nodes (5): ANESTET 2026.09.02-v13.4.1, Current approved implementation, Publication, Release gate, Rollback
 
 ### Community 109 - "normalize-product-packshots.mjs"
 Cohesion: 0.40
@@ -585,13 +585,13 @@ Nodes (5): ANESTET 2026.09.02-v13.4.0, Compatibility, Deployment, Product detail
 Cohesion: 0.67
 Nodes (3): z(), P(), F()
 
-### Community 467 - "ln"
-Cohesion: 0.50
-Nodes (5): ln(), nn(), nr(), rn(), un()
+### Community 467 - "o"
+Cohesion: 0.42
+Nodes (10): G(), I(), l(), N(), o(), qt(), w(), z() (+2 more)
 
 ## Knowledge Gaps
-- **323 isolated node(s):** `BrandGroup`, `ProductDraft`, `ApiResult`, `emptyProduct`, `Props` (+318 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1063 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **324 isolated node(s):** `BrandGroup`, `ProductDraft`, `ApiResult`, `emptyProduct`, `Props` (+319 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1064 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **69 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
@@ -608,6 +608,6 @@ _Questions this graph is uniquely positioned to answer:_
 - **Are the 44 inferred relationships involving `n()` (e.g. with `a()` and `at()`) actually correct?**
   _`n()` has 44 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `BrandGroup`, `ProductDraft`, `ApiResult` to the rest of the system?**
-  _323 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _324 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `swiper-bundle.min.js` be split into smaller, more focused modules?**
   _Cohesion score 0.07859531772575251 - nodes in this community are weakly interconnected._

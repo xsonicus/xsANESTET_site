@@ -108,15 +108,15 @@
     "semantic_hash": ""
   },
   "app/products.ts": {
-    "mtime": 1788294151.1349137,
-    "seen": 1788295719.878102,
-    "ast_hash": "0029ce26c82818636977191a40ae8286",
+    "mtime": 1788324251.0581436,
+    "seen": 1788324670.025496,
+    "ast_hash": "bf1238e495afd90cbf511b11b3839598",
     "semantic_hash": ""
   },
   "app/storefront.tsx": {
-    "mtime": 1788298460.09177,
-    "seen": 1788298743.450441,
-    "ast_hash": "04fb89fc5801262e6d78e5a1bc6b7e63",
+    "mtime": 1788324565.7319465,
+    "seen": 1788324670.025496,
+    "ast_hash": "aebe37fbde1c474d10a8ae5e8c42d566",
     "semantic_hash": ""
   },
   "deploy/anestet-backup.sh": {
@@ -2550,9 +2550,9 @@
     "semantic_hash": ""
   },
   "package.json": {
-    "mtime": 1788298460.0933309,
-    "seen": 1788298743.45063,
-    "ast_hash": "bb4d07126979f256ab7d297d110c051e",
+    "mtime": 1788324565.731073,
+    "seen": 1788324670.025673,
+    "ast_hash": "1b4efdcab54dce5eacb675aa452767b4",
     "semantic_hash": ""
   },
   "scripts/admin-smoke.mjs": {
@@ -2568,9 +2568,9 @@
     "semantic_hash": ""
   },
   "scripts/qa-layout.mjs": {
-    "mtime": 1788298460.0926359,
-    "seen": 1788298743.450633,
-    "ast_hash": "901a47119c52ed0251b92b78a6957e14",
+    "mtime": 1788324591.4911044,
+    "seen": 1788324670.025675,
+    "ast_hash": "69be3b93cbdf99799ebf184af7a0e7aa",
     "semantic_hash": ""
   },
   "scripts/sync-getlayers-three.mjs": {
@@ -2850,8 +2850,8 @@
     "semantic_hash": ""
   },
   "public/assets/getlayers/opaline/index.html": {
-    "mtime": 1788298542.5092742,
-    "seen": 1788298743.45066,
+    "mtime": 1788324603.4414864,
+    "seen": 1788324670.025698,
     "ast_hash": "95e013984c943cb363d30a9c8b945d05",
     "semantic_hash": ""
   },
@@ -2862,8 +2862,8 @@
     "semantic_hash": ""
   },
   "public/assets/getlayers/shoal/index.html": {
-    "mtime": 1788298542.5099413,
-    "seen": 1788298743.4506612,
+    "mtime": 1788324603.4422114,
+    "seen": 1788324670.0256991,
     "ast_hash": "d1ab81578a480f77ce3c1dd8e27616b3",
     "semantic_hash": ""
   },
@@ -6228,15 +6228,15 @@
     "semantic_hash": ""
   },
   ".codex-web-design/packshot-edge-audit/edge-polish-report.json": {
-    "mtime": 1788295614.3911107,
-    "seen": 1788295719.87809,
-    "ast_hash": "fa11fb54c45810b05f3720b2fe25368d",
+    "mtime": 1788324313.0572987,
+    "seen": 1788324670.025488,
+    "ast_hash": "521baa65f4f2a84a7bbecd2fc44035bd",
     "semantic_hash": ""
   },
   "scripts/polish-product-packshot-edges.mjs": {
-    "mtime": 1788295008.984106,
-    "seen": 1788295719.8783748,
-    "ast_hash": "22e6b5d03abeacbe749294c2a1871bd6",
+    "mtime": 1788324290.137295,
+    "seen": 1788324670.0256739,
+    "ast_hash": "e476ae32bddba5872d25af6f95f374d5",
     "semantic_hash": ""
   },
   "scripts/prune-export-assets.mjs": {
@@ -6246,9 +6246,9 @@
     "semantic_hash": ""
   },
   "scripts/qa-packshots.mjs": {
-    "mtime": 1788295008.9843192,
-    "seen": 1788295719.878377,
-    "ast_hash": "e6b37ee2993851ab3377d4b75bbb802b",
+    "mtime": 1788324145.7176747,
+    "seen": 1788324670.025675,
+    "ast_hash": "4a926a029e12347adb1ee3e7de1869ef",
     "semantic_hash": ""
   },
   "docs/releases/2026.09.01-v13.3.1.md": {
@@ -6540,9 +6540,309 @@
     "semantic_hash": ""
   },
   "docs/releases/2026.09.02-v13.4.1.md": {
-    "mtime": 1788298531.6149766,
-    "seen": 1788298743.450654,
-    "ast_hash": "86f8aac87d8f2441af0ddfcda53a624c",
+    "mtime": 1788299099.7893703,
+    "seen": 1788324670.025693,
+    "ast_hash": "069bce5503dd15f5f471ac086f016c52",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/packshot-edge-audit/vector-masks-v4/17-silhouette-4x-aa.png": {
+    "mtime": 1788324300.073528,
+    "seen": 1788324670.025712,
+    "ast_hash": "a04023832db882c829fe2e35b3daf2ee",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/packshot-edge-audit/vector-masks-v4/17-silhouette.svg": {
+    "mtime": 1788324299.4552631,
+    "seen": 1788324670.025713,
+    "ast_hash": "e699adeaf403fa158d8e72b6bb8b0a2f",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/packshot-edge-audit/vector-masks-v4/33-silhouette-4x-aa.png": {
+    "mtime": 1788324301.5935044,
+    "seen": 1788324670.025713,
+    "ast_hash": "8fceee8ee0fd2f1dc07f929fbf2fe078",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/packshot-edge-audit/vector-masks-v4/33-silhouette.svg": {
+    "mtime": 1788324300.9733658,
+    "seen": 1788324670.025713,
+    "ast_hash": "3eac808c7e182712d338242ef10948b9",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/packshot-edge-audit/vector-masks-v4/34-silhouette-4x-aa.png": {
+    "mtime": 1788324303.110938,
+    "seen": 1788324670.025714,
+    "ast_hash": "1d5364511f4f7d7b5273f9b2e62dccbe",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/packshot-edge-audit/vector-masks-v4/34-silhouette.svg": {
+    "mtime": 1788324302.4845915,
+    "seen": 1788324670.025714,
+    "ast_hash": "3c04335d6c6a6edfbdb7ec6f216c6097",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/packshot-edge-audit/vector-masks-v4/35-silhouette-4x-aa.png": {
+    "mtime": 1788324304.6348681,
+    "seen": 1788324670.0257149,
+    "ast_hash": "5047cd66c56eaa606be330ddaa393bbf",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/packshot-edge-audit/vector-masks-v4/35-silhouette.svg": {
+    "mtime": 1788324304.011883,
+    "seen": 1788324670.0257149,
+    "ast_hash": "b4f113b6c193ab5efc4f4fbfb39ba166",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/packshot-edge-audit/vector-masks-v4/36-silhouette-4x-aa.png": {
+    "mtime": 1788324306.1541815,
+    "seen": 1788324670.025716,
+    "ast_hash": "17e7ec639c3249def856c67db5618868",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/packshot-edge-audit/vector-masks-v4/36-silhouette.svg": {
+    "mtime": 1788324305.5313833,
+    "seen": 1788324670.025716,
+    "ast_hash": "255f8a32c61a2101652f1de643cc4fc2",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/packshot-edge-audit/vector-masks-v4/37-silhouette-4x-aa.png": {
+    "mtime": 1788324307.6704779,
+    "seen": 1788324670.025716,
+    "ast_hash": "b350f00cf4964b8d03ddf4ca8634b425",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/packshot-edge-audit/vector-masks-v4/37-silhouette.svg": {
+    "mtime": 1788324307.0390172,
+    "seen": 1788324670.025717,
+    "ast_hash": "75d46297517b96b8f6b9e1452688b704",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/packshot-edge-audit/vector-masks-v4/38-silhouette-4x-aa.png": {
+    "mtime": 1788324309.184513,
+    "seen": 1788324670.025717,
+    "ast_hash": "12d4493f128c0903c2a2521e45249372",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/packshot-edge-audit/vector-masks-v4/38-silhouette.svg": {
+    "mtime": 1788324308.5697865,
+    "seen": 1788324670.025718,
+    "ast_hash": "7e732f441fb6a955f73d34bb50c3009f",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/packshot-edge-audit/vector-masks-v4/39-silhouette-4x-aa.png": {
+    "mtime": 1788324310.670726,
+    "seen": 1788324670.025718,
+    "ast_hash": "a1b3aca196a9116883f1b7abbd71d597",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/packshot-edge-audit/vector-masks-v4/39-silhouette.svg": {
+    "mtime": 1788324310.0423925,
+    "seen": 1788324670.025719,
+    "ast_hash": "35cb6ac8f3bc12b08003cc67790ba357",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/packshot-edge-audit/vector-masks-v4/40-silhouette-4x-aa.png": {
+    "mtime": 1788324312.1962726,
+    "seen": 1788324670.025719,
+    "ast_hash": "3b7567a01b33ab604bb9aeab7ce4cc34",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/packshot-edge-audit/vector-masks-v4/40-silhouette.svg": {
+    "mtime": 1788324311.5736234,
+    "seen": 1788324670.025719,
+    "ast_hash": "ee0da7103717c7dfec18d0b360ef66c9",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/release-13.4.2/about-dark.png": {
+    "mtime": 1788324499.5956504,
+    "seen": 1788324670.0257201,
+    "ast_hash": "fae75a00eac3461c6e47e3efeb7a579e",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/release-13.4.2/about-light.png": {
+    "mtime": 1788324500.4415262,
+    "seen": 1788324670.0257201,
+    "ast_hash": "60edb7180bdb3aef1c813a2108bf31d8",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/release-13.4.2/mobile-catalog.png": {
+    "mtime": 1788324498.7366242,
+    "seen": 1788324670.0257201,
+    "ast_hash": "920c844a1b47b7e96f4e1e4e8e9b3850",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/release-13.4.2/mobile-hero.png": {
+    "mtime": 1788324497.9313195,
+    "seen": 1788324670.025721,
+    "ast_hash": "d3547b55cf9827a0a89e6df233c00bad",
+    "semantic_hash": ""
+  },
+  ".codex-web-design/release-13.4.2/mobile-product-card.png": {
+    "mtime": 1788324526.3169475,
+    "seen": 1788324670.025721,
+    "ast_hash": "372ef567d1a2fc527d88b532b2db9a2f",
+    "semantic_hash": ""
+  },
+  "public/assets/img/restored/packshots-v13/17-alpha-restored-v4.png": {
+    "mtime": 1788324300.148748,
+    "seen": 1788324670.025964,
+    "ast_hash": "2be47a70f3afd39b15a5a2240781625e",
+    "semantic_hash": ""
+  },
+  "public/assets/img/restored/packshots-v13/17-alpha-restored-v4.webp": {
+    "mtime": 1788324300.3168397,
+    "seen": 1788324670.025964,
+    "ast_hash": "4790d4b8e5fad7adc31d7554eb422f27",
+    "semantic_hash": ""
+  },
+  "public/assets/img/restored/packshots-v13/17-card-v4.webp": {
+    "mtime": 1788324300.4503338,
+    "seen": 1788324670.025965,
+    "ast_hash": "6173b1300be84b4996a5ffd90b897758",
+    "semantic_hash": ""
+  },
+  "public/assets/img/restored/packshots-v13/33-alpha-restored-v4.png": {
+    "mtime": 1788324301.6697261,
+    "seen": 1788324670.0259688,
+    "ast_hash": "d1bdd6a197437ee11ba5feffd209aabb",
+    "semantic_hash": ""
+  },
+  "public/assets/img/restored/packshots-v13/33-alpha-restored-v4.webp": {
+    "mtime": 1788324301.8376145,
+    "seen": 1788324670.0259688,
+    "ast_hash": "d7bf577efb3d63cf4e61cf4ccfbe4b00",
+    "semantic_hash": ""
+  },
+  "public/assets/img/restored/packshots-v13/33-card-v4.webp": {
+    "mtime": 1788324301.9708087,
+    "seen": 1788324670.02597,
+    "ast_hash": "8f7eaaa0380e62930bbcf451b78b47ae",
+    "semantic_hash": ""
+  },
+  "public/assets/img/restored/packshots-v13/34-alpha-restored-v4.png": {
+    "mtime": 1788324303.186748,
+    "seen": 1788324670.025974,
+    "ast_hash": "bdf9cc5e945c4fbd4f7b7fb714671868",
+    "semantic_hash": ""
+  },
+  "public/assets/img/restored/packshots-v13/34-alpha-restored-v4.webp": {
+    "mtime": 1788324303.3573458,
+    "seen": 1788324670.025974,
+    "ast_hash": "c3f0d5bd99748c499816ccd2e3891858",
+    "semantic_hash": ""
+  },
+  "public/assets/img/restored/packshots-v13/34-card-v4.webp": {
+    "mtime": 1788324303.4921227,
+    "seen": 1788324670.025975,
+    "ast_hash": "2fece0bd0b7b1f385a9520ae9ebc8980",
+    "semantic_hash": ""
+  },
+  "public/assets/img/restored/packshots-v13/35-alpha-restored-v4.png": {
+    "mtime": 1788324304.7137184,
+    "seen": 1788324670.0259788,
+    "ast_hash": "1f3bd959b5ffe84a300a21a8ec8f2622",
+    "semantic_hash": ""
+  },
+  "public/assets/img/restored/packshots-v13/35-alpha-restored-v4.webp": {
+    "mtime": 1788324304.885597,
+    "seen": 1788324670.0259788,
+    "ast_hash": "92fa97a03b909bcdb87b35dea25526c8",
+    "semantic_hash": ""
+  },
+  "public/assets/img/restored/packshots-v13/35-card-v4.webp": {
+    "mtime": 1788324305.017403,
+    "seen": 1788324670.02598,
+    "ast_hash": "199ade3317447d89bbfca1882640c0e4",
+    "semantic_hash": ""
+  },
+  "public/assets/img/restored/packshots-v13/36-alpha-restored-v4.png": {
+    "mtime": 1788324306.2275298,
+    "seen": 1788324670.025983,
+    "ast_hash": "582793a86c476206e4e67581fd264021",
+    "semantic_hash": ""
+  },
+  "public/assets/img/restored/packshots-v13/36-alpha-restored-v4.webp": {
+    "mtime": 1788324306.397248,
+    "seen": 1788324670.025984,
+    "ast_hash": "590c45b806baba210e06c5bd0ec3ba5e",
+    "semantic_hash": ""
+  },
+  "public/assets/img/restored/packshots-v13/36-card-v4.webp": {
+    "mtime": 1788324306.5283592,
+    "seen": 1788324670.025985,
+    "ast_hash": "e2d2e59e31401d558ac6298f538ffa58",
+    "semantic_hash": ""
+  },
+  "public/assets/img/restored/packshots-v13/37-alpha-restored-v4.png": {
+    "mtime": 1788324307.7502618,
+    "seen": 1788324670.025988,
+    "ast_hash": "5c7e8ab551f6509088e469c855935738",
+    "semantic_hash": ""
+  },
+  "public/assets/img/restored/packshots-v13/37-alpha-restored-v4.webp": {
+    "mtime": 1788324307.9227786,
+    "seen": 1788324670.025989,
+    "ast_hash": "2f4605b9aca4cc4329784973f0e4601e",
+    "semantic_hash": ""
+  },
+  "public/assets/img/restored/packshots-v13/37-card-v4.webp": {
+    "mtime": 1788324308.0587263,
+    "seen": 1788324670.0259898,
+    "ast_hash": "bb6b679efba13a293b0075f78c8c26fc",
+    "semantic_hash": ""
+  },
+  "public/assets/img/restored/packshots-v13/38-alpha-restored-v4.png": {
+    "mtime": 1788324309.255571,
+    "seen": 1788324670.0259929,
+    "ast_hash": "7f3a43b94b5b79f40a301c9e96b1942d",
+    "semantic_hash": ""
+  },
+  "public/assets/img/restored/packshots-v13/38-alpha-restored-v4.webp": {
+    "mtime": 1788324309.4082525,
+    "seen": 1788324670.0259929,
+    "ast_hash": "ddfb4fb75941a795d5fc5748d9cb5cd1",
+    "semantic_hash": ""
+  },
+  "public/assets/img/restored/packshots-v13/38-card-v4.webp": {
+    "mtime": 1788324309.5340302,
+    "seen": 1788324670.025994,
+    "ast_hash": "8a248f751d64bbf87ce03e7ca9265dd6",
+    "semantic_hash": ""
+  },
+  "public/assets/img/restored/packshots-v13/39-alpha-restored-v4.png": {
+    "mtime": 1788324310.7515867,
+    "seen": 1788324670.025998,
+    "ast_hash": "2971c240ce5bc46f709743849577a470",
+    "semantic_hash": ""
+  },
+  "public/assets/img/restored/packshots-v13/39-alpha-restored-v4.webp": {
+    "mtime": 1788324310.924258,
+    "seen": 1788324670.025998,
+    "ast_hash": "ae6cca9dc214a6abdc9c00ff52f3d805",
+    "semantic_hash": ""
+  },
+  "public/assets/img/restored/packshots-v13/39-card-v4.webp": {
+    "mtime": 1788324311.057425,
+    "seen": 1788324670.025999,
+    "ast_hash": "da7f6dabd0f3f07fab484838d558f63d",
+    "semantic_hash": ""
+  },
+  "public/assets/img/restored/packshots-v13/40-alpha-restored-v4.png": {
+    "mtime": 1788324312.2682042,
+    "seen": 1788324670.026003,
+    "ast_hash": "d2ddf20d53d19282b498ed75a6d7df81",
+    "semantic_hash": ""
+  },
+  "public/assets/img/restored/packshots-v13/40-alpha-restored-v4.webp": {
+    "mtime": 1788324312.4208145,
+    "seen": 1788324670.026003,
+    "ast_hash": "9f219eceb6b1d7f9efdcc4ab357aa0db",
+    "semantic_hash": ""
+  },
+  "public/assets/img/restored/packshots-v13/40-card-v4.webp": {
+    "mtime": 1788324312.5484934,
+    "seen": 1788324670.026004,
+    "ast_hash": "221fd956a761121778d66e790dbcfe42",
     "semantic_hash": ""
   }
 }

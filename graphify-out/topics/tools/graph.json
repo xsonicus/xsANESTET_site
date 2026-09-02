@@ -5,7 +5,7 @@
     "topic": "tools",
     "topic_label": "Tooling And Scripts",
     "source_graph": "/Users/xsonicus/CodexRuntime/xsANESTET_site/graphify-out/graph.json",
-    "generated_at": "2026-09-01T06:03:09.619Z"
+    "generated_at": "2026-09-02T05:23:55.525Z"
   },
   "nodes": [
     {
@@ -48,6 +48,15 @@
       "file_type": "code",
       "source_file": "lib/admin/vk-feed-store.mjs",
       "source_location": "L74",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "original_site_assets_components_ace_ace_beautifier_outputline_item",
+      "label": ".item()",
+      "file_type": "code",
+      "source_file": "original_site/assets/components/ace/ace/beautifier.js",
+      "source_location": "L136",
       "_callable": true,
       "_origin": "ast"
     },
@@ -215,6 +224,189 @@
       "_origin": "ast"
     },
     {
+      "id": "scripts_polish_product_packshot_edges",
+      "label": "polish-product-packshot-edges.mjs",
+      "file_type": "code",
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_polish_product_packshot_edges_root",
+      "label": "root",
+      "file_type": "code",
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L6",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_polish_product_packshot_edges_restoreddir",
+      "label": "restoredDir",
+      "file_type": "code",
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L7",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_polish_product_packshot_edges_reportdir",
+      "label": "reportDir",
+      "file_type": "code",
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L8",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_polish_product_packshot_edges_maskdir",
+      "label": "maskDir",
+      "file_type": "code",
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L9",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_polish_product_packshot_edges_airlesspath",
+      "label": "airlessPath()",
+      "file_type": "code",
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L11",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_polish_product_packshot_edges_pumppaths",
+      "label": "pumpPaths()",
+      "file_type": "code",
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L26",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_polish_product_packshot_edges_dropperpath",
+      "label": "dropperPath()",
+      "file_type": "code",
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L49",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_polish_product_packshot_edges_geometries",
+      "label": "geometries",
+      "file_type": "code",
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L72",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_polish_product_packshot_edges_run",
+      "label": "run()",
+      "file_type": "code",
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L84",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_polish_product_packshot_edges_identify",
+      "label": "identify()",
+      "file_type": "code",
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L90",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_polish_product_packshot_edges_alphalevels",
+      "label": "alphaLevels()",
+      "file_type": "code",
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L91",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_polish_product_packshot_edges_results",
+      "label": "results",
+      "file_type": "code",
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L95",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_prune_export_assets",
+      "label": "prune-export-assets.mjs",
+      "file_type": "code",
+      "source_file": "scripts/prune-export-assets.mjs",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_prune_export_assets_root",
+      "label": "root",
+      "file_type": "code",
+      "source_file": "scripts/prune-export-assets.mjs",
+      "source_location": "L5",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_prune_export_assets_out",
+      "label": "out",
+      "file_type": "code",
+      "source_file": "scripts/prune-export-assets.mjs",
+      "source_location": "L6",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_prune_export_assets_bytes",
+      "label": "bytes()",
+      "file_type": "code",
+      "source_file": "scripts/prune-export-assets.mjs",
+      "source_location": "L9",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_prune_export_assets_legacydirectories",
+      "label": "legacyDirectories",
+      "file_type": "code",
+      "source_file": "scripts/prune-export-assets.mjs",
+      "source_location": "L19",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_prune_export_assets_removed",
+      "label": "removed",
+      "file_type": "code",
+      "source_file": "scripts/prune-export-assets.mjs",
+      "source_location": "L26",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_prune_export_assets_packshotdir",
+      "label": "packshotDir",
+      "file_type": "code",
+      "source_file": "scripts/prune-export-assets.mjs",
+      "source_location": "L40",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_prune_export_assets_fontzip",
+      "label": "fontZip",
+      "file_type": "code",
+      "source_file": "scripts/prune-export-assets.mjs",
+      "source_location": "L53",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_prune_export_assets_saved",
+      "label": "saved",
+      "file_type": "code",
+      "source_file": "scripts/prune-export-assets.mjs",
+      "source_location": "L62",
+      "_origin": "ast"
+    },
+    {
       "id": "scripts_qa_layout",
       "label": "qa-layout.mjs",
       "file_type": "code",
@@ -301,6 +493,56 @@
       "file_type": "code",
       "source_file": "scripts/qa-layout.mjs",
       "source_location": "L72",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_qa_packshots",
+      "label": "qa-packshots.mjs",
+      "file_type": "code",
+      "source_file": "scripts/qa-packshots.mjs",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_qa_packshots_root",
+      "label": "root",
+      "file_type": "code",
+      "source_file": "scripts/qa-packshots.mjs",
+      "source_location": "L6",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_qa_packshots_rows",
+      "label": "rows",
+      "file_type": "code",
+      "source_file": "scripts/qa-packshots.mjs",
+      "source_location": "L8",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_qa_packshots_run",
+      "label": "run()",
+      "file_type": "code",
+      "source_file": "scripts/qa-packshots.mjs",
+      "source_location": "L15",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_qa_packshots_alphalevels",
+      "label": "alphaLevels()",
+      "file_type": "code",
+      "source_file": "scripts/qa-packshots.mjs",
+      "source_location": "L21",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_qa_packshots_failures",
+      "label": "failures",
+      "file_type": "code",
+      "source_file": "scripts/qa-packshots.mjs",
+      "source_location": "L24",
       "_origin": "ast"
     },
     {
@@ -634,6 +876,228 @@
       "_origin": "ast"
     },
     {
+      "source": "scripts_polish_product_packshot_edges",
+      "target": "scripts_polish_product_packshot_edges_root",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L6",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_polish_product_packshot_edges",
+      "target": "scripts_polish_product_packshot_edges_restoreddir",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L7",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_polish_product_packshot_edges",
+      "target": "scripts_polish_product_packshot_edges_reportdir",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L8",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_polish_product_packshot_edges",
+      "target": "scripts_polish_product_packshot_edges_maskdir",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L9",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_polish_product_packshot_edges",
+      "target": "scripts_polish_product_packshot_edges_airlesspath",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L11",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_polish_product_packshot_edges",
+      "target": "scripts_polish_product_packshot_edges_pumppaths",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L26",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_polish_product_packshot_edges",
+      "target": "scripts_polish_product_packshot_edges_dropperpath",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L49",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_polish_product_packshot_edges",
+      "target": "scripts_polish_product_packshot_edges_geometries",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L72",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_polish_product_packshot_edges",
+      "target": "scripts_polish_product_packshot_edges_run",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L84",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_polish_product_packshot_edges",
+      "target": "scripts_polish_product_packshot_edges_identify",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L90",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_polish_product_packshot_edges",
+      "target": "scripts_polish_product_packshot_edges_alphalevels",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L91",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_polish_product_packshot_edges",
+      "target": "scripts_polish_product_packshot_edges_results",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L95",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_polish_product_packshot_edges_identify",
+      "target": "scripts_polish_product_packshot_edges_run",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L90",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_polish_product_packshot_edges_alphalevels",
+      "target": "scripts_polish_product_packshot_edges_run",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/polish-product-packshot-edges.mjs",
+      "source_location": "L91",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_prune_export_assets",
+      "target": "scripts_prune_export_assets_root",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/prune-export-assets.mjs",
+      "source_location": "L5",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_prune_export_assets",
+      "target": "scripts_prune_export_assets_out",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/prune-export-assets.mjs",
+      "source_location": "L6",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_prune_export_assets",
+      "target": "scripts_prune_export_assets_bytes",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/prune-export-assets.mjs",
+      "source_location": "L9",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_prune_export_assets",
+      "target": "scripts_prune_export_assets_legacydirectories",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/prune-export-assets.mjs",
+      "source_location": "L19",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_prune_export_assets",
+      "target": "scripts_prune_export_assets_removed",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/prune-export-assets.mjs",
+      "source_location": "L26",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_prune_export_assets",
+      "target": "scripts_prune_export_assets_packshotdir",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/prune-export-assets.mjs",
+      "source_location": "L40",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_prune_export_assets",
+      "target": "scripts_prune_export_assets_fontzip",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/prune-export-assets.mjs",
+      "source_location": "L53",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_prune_export_assets",
+      "target": "scripts_prune_export_assets_saved",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/prune-export-assets.mjs",
+      "source_location": "L62",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
       "source": "scripts_qa_layout",
       "target": "scripts_qa_layout_root",
       "relation": "contains",
@@ -734,6 +1198,67 @@
       "_origin": "ast"
     },
     {
+      "source": "scripts_qa_packshots",
+      "target": "scripts_qa_packshots_root",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/qa-packshots.mjs",
+      "source_location": "L6",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_qa_packshots",
+      "target": "scripts_qa_packshots_rows",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/qa-packshots.mjs",
+      "source_location": "L8",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_qa_packshots",
+      "target": "scripts_qa_packshots_run",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/qa-packshots.mjs",
+      "source_location": "L15",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_qa_packshots",
+      "target": "scripts_qa_packshots_alphalevels",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/qa-packshots.mjs",
+      "source_location": "L21",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_qa_packshots",
+      "target": "scripts_qa_packshots_failures",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/qa-packshots.mjs",
+      "source_location": "L24",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_qa_packshots_alphalevels",
+      "target": "scripts_qa_packshots_run",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/qa-packshots.mjs",
+      "source_location": "L21",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
       "source": "scripts_sync_getlayers_three",
       "target": "scripts_sync_getlayers_three_root",
       "relation": "contains",
@@ -782,6 +1307,18 @@
       "confidence_score": 1,
       "source_file": "lib/admin/vk-connector.mjs",
       "source_location": "L197",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_prune_export_assets",
+      "target": "original_site_assets_components_ace_ace_beautifier_outputline_item",
+      "relation": "indirect_call",
+      "context": "argument",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "scripts/prune-export-assets.mjs",
+      "source_location": "L29",
       "weight": 1,
       "_origin": "ast"
     }

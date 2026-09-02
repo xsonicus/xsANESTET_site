@@ -398,3 +398,10 @@ Added the generated v13.2.0 release notes to the durable versioning archive afte
 - Rebuilt product detail cards as compact formula dossiers with faster fact scanning, clearer accordions and a stronger purchase rail.
 - Added a one-shot packshot scan and staggered reveal using compositor-friendly CSS only; reduced-motion receives an immediate static presentation.
 - Preserved the independent product-click and add-to-cart actions across both themes and mobile layouts.
+
+## 2026-09-02T08:22:26+03:00 - Version 13.4.3
+
+- Added a shared downstream type scale: 42–60px primary section titles and 38–54px medium titles.
+- Rebalanced the founder scene after the previous over-compression while preserving the lower navigation seam.
+- Reduced oversized openings in catalog, company information and VK sections; tightened the evidence-to-social transition.
+- Extended layout QA with title-ratio, title-ceiling, catalog/company opening and founder balanced-spacing assertions.

@@ -174,3 +174,11 @@ The first shadow-free v2 cutouts preserved official RGB but nine products retain
 Files: scripts/polish-product-packshot-edges.mjs, scripts/qa-packshots.mjs, app/products.ts, public/assets/img/restored/packshots-v13
 Validation: 9/9 vector silhouettes; zero RGB delta; 23/23 transparent masters/cards; 11 widths x 2 themes x 2 views; local dark/light/mobile browser review.
 Risk: A future source crop or canvas normalization change requires refitting that product's SVG geometry rather than applying a generic smoothing filter.
+
+## 2026-09-02T05:23:49.834Z - G14 downstream typography and vertical-density correction
+
+Introduced shared 42-60px primary and 38-54px medium title tokens; capped catalog, company, evidence and VK section openings; corrected founder over-compression with a 540px minimum stage and 580px portrait while preserving the lower seam. Extended QA to prevent title-scale and empty-opening regressions.
+
+Files: app/globals.css, scripts/qa-layout.mjs, .codex-memory/correction-register.md, .codex-memory/task-state.md, docs/releases/2026.09.02-v13.4.3.md
+Validation: npm run build && npm run qa:layout; Local 1440px Future Beauty and Clinical Luxury visual QA; Local 390px company/evidence visual QA; Computed downstream title ratio <=1.25 and ceiling <=64px
+Risks: Founder spacing is a correction-of-correction; do not restore the superseded 470px over-compressed desktop stage or the earlier oversized empty floor.; Keep mobile explicit title and stacking rules independent from desktop tokens.

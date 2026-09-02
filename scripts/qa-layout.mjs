@@ -302,8 +302,55 @@ try {
           const aboutRect = about.getBoundingClientRect();
           const principlesRect = aboutPrinciples.getBoundingClientRect();
           const founderRect = founderImage.getBoundingClientRect();
-          if (aboutRect.bottom - principlesRect.bottom > 42) collisions.push("founder section retains an excessive empty floor below the principles grid");
+          const principlesFloor = aboutRect.bottom - principlesRect.bottom;
+          if (principlesFloor < 32) collisions.push("founder section has become too tight below the principles grid");
+          if (principlesFloor > 72) collisions.push("founder section retains an excessive empty floor below the principles grid");
           if (Math.abs(aboutRect.bottom - founderRect.bottom) > 28) collisions.push("founder portrait legs do not meet the lower navigation seam");
+          if (innerWidth >= 1200 && (aboutRect.height < 520 || aboutRect.height > 680)) collisions.push("founder section is outside the balanced 520-680px desktop height band");
+
+          const aboutCopy = about.querySelector(".about-copy");
+          if (innerWidth >= 1100 && aboutCopy) {
+            const aboutCopyStyle = getComputedStyle(aboutCopy);
+            const copyTopPadding = Number.parseFloat(aboutCopyStyle.paddingTop);
+            const copyBottomPadding = Number.parseFloat(aboutCopyStyle.paddingBottom);
+            if (copyTopPadding < 36 || copyBottomPadding < 36) collisions.push("founder copy padding is too tight for the shared section rhythm");
+            if (copyTopPadding > 72 || copyBottomPadding > 72) collisions.push("founder copy padding is excessively loose");
+          }
+        }
+
+        if (innerWidth > 760) {
+          const proportionalTitles = [
+            document.querySelector(".catalog-head h2"),
+            document.querySelector(".about-copy h2"),
+            document.querySelector(".company-info h2"),
+            document.querySelector(".evidence h2"),
+            document.querySelector(".social-feed h2"),
+          ].filter((title) => title && visible(title));
+          const titleSizes = proportionalTitles.map((title) => Number.parseFloat(getComputedStyle(title).fontSize));
+          if (titleSizes.some((size) => size > 64)) collisions.push("a downstream section title exceeds the 64px hierarchy ceiling");
+          if (titleSizes.length > 1 && Math.max(...titleSizes) / Math.min(...titleSizes) > 1.25) collisions.push("downstream section title scale is visually disproportionate");
+
+          const catalog = document.querySelector(".catalog");
+          if (catalog && visible(catalog)) {
+            const catalogStyle = getComputedStyle(catalog);
+            if (Number.parseFloat(catalogStyle.paddingTop) > 84) collisions.push("catalog retains an excessive blank opening");
+          }
+
+          const companyInfo = document.querySelector(".company-info");
+          if (companyInfo && visible(companyInfo)) {
+            const companyStyle = getComputedStyle(companyInfo);
+            const companyTopPadding = Number.parseFloat(companyStyle.paddingTop);
+            const companyBottomPadding = Number.parseFloat(companyStyle.paddingBottom);
+            if (companyTopPadding > 84 || companyBottomPadding > 84) collisions.push("company information section retains excessive vertical padding");
+          }
+
+          const socialFeed = document.querySelector(".social-feed");
+          const socialTitle = socialFeed?.querySelector("h2");
+          if (socialFeed && socialTitle && visible(socialFeed) && visible(socialTitle)) {
+            const socialRect = socialFeed.getBoundingClientRect();
+            const socialTitleRect = socialTitle.getBoundingClientRect();
+            if (socialTitleRect.top - socialRect.top > 110) collisions.push("social section title starts after an excessive blank opening");
+          }
         }
 
         document.querySelectorAll(".guide-stage").forEach((stage, index) => {

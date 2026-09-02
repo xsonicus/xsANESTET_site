@@ -5,7 +5,7 @@
     "topic": "docs",
     "topic_label": "Docs And Research",
     "source_graph": "/Users/xsonicus/CodexRuntime/xsANESTET_site/graphify-out/graph.json",
-    "generated_at": "2026-09-01T06:03:03.472Z"
+    "generated_at": "2026-09-02T05:23:55.320Z"
   },
   "nodes": [
     {
@@ -72,12 +72,48 @@
       "_origin": "ast"
     },
     {
+      "id": "changelog_codex_2026_09_02_version_13_4_2",
+      "label": "2026-09-02 - Version 13.4.2",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "CHANGELOG.codex.md",
+      "source_location": "L5",
+      "_origin": "ast"
+    },
+    {
+      "id": "changelog_codex_2026_09_02_version_13_4_1",
+      "label": "2026-09-02 - Version 13.4.1",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "CHANGELOG.codex.md",
+      "source_location": "L15",
+      "_origin": "ast"
+    },
+    {
+      "id": "changelog_codex_2026_09_01_version_13_3_1",
+      "label": "2026-09-01 - Version 13.3.1",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "CHANGELOG.codex.md",
+      "source_location": "L22",
+      "_origin": "ast"
+    },
+    {
+      "id": "changelog_codex_2026_09_01_version_13_3_0",
+      "label": "2026-09-01 - Version 13.3.0",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "CHANGELOG.codex.md",
+      "source_location": "L32",
+      "_origin": "ast"
+    },
+    {
       "id": "changelog_codex_2026_08_31t22_20_00_000z_version_13_1_0",
       "label": "2026-08-31T22:20:00.000Z - Version 13.1.0",
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L5",
+      "source_location": "L41",
       "_origin": "ast"
     },
     {
@@ -86,7 +122,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L18",
+      "source_location": "L54",
       "_origin": "ast"
     },
     {
@@ -95,7 +131,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L113",
+      "source_location": "L149",
       "_origin": "ast"
     },
     {
@@ -104,7 +140,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L117",
+      "source_location": "L153",
       "_origin": "ast"
     },
     {
@@ -113,7 +149,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L139",
+      "source_location": "L175",
       "_origin": "ast"
     },
     {
@@ -122,7 +158,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L143",
+      "source_location": "L179",
       "_origin": "ast"
     },
     {
@@ -131,7 +167,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L155",
+      "source_location": "L191",
       "_origin": "ast"
     },
     {
@@ -140,7 +176,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L159",
+      "source_location": "L195",
       "_origin": "ast"
     },
     {
@@ -149,7 +185,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L171",
+      "source_location": "L207",
       "_origin": "ast"
     },
     {
@@ -158,7 +194,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L175",
+      "source_location": "L211",
       "_origin": "ast"
     },
     {
@@ -167,7 +203,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L187",
+      "source_location": "L223",
       "_origin": "ast"
     },
     {
@@ -176,7 +212,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L200",
+      "source_location": "L236",
       "_origin": "ast"
     },
     {
@@ -185,7 +221,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L214",
+      "source_location": "L250",
       "_origin": "ast"
     },
     {
@@ -194,7 +230,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L218",
+      "source_location": "L254",
       "_origin": "ast"
     },
     {
@@ -203,7 +239,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L230",
+      "source_location": "L266",
       "_origin": "ast"
     },
     {
@@ -212,7 +248,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L243",
+      "source_location": "L279",
       "_origin": "ast"
     },
     {
@@ -221,7 +257,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L247",
+      "source_location": "L283",
       "_origin": "ast"
     },
     {
@@ -230,7 +266,43 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L329",
+      "source_location": "L365",
+      "_origin": "ast"
+    },
+    {
+      "id": "changelog_codex_2026_09_01t07_49_34_133z_release_v13_2_0_approved_storefront_vk_feed_and_durable_logic_graph",
+      "label": "2026-09-01T07:49:34.133Z - Release v13.2.0: approved storefront, VK feed and durable logic graph",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "CHANGELOG.codex.md",
+      "source_location": "L369",
+      "_origin": "ast"
+    },
+    {
+      "id": "changelog_codex_2026_09_01_version_13_2_1",
+      "label": "2026-09-01 - Version 13.2.1",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "CHANGELOG.codex.md",
+      "source_location": "L390",
+      "_origin": "ast"
+    },
+    {
+      "id": "changelog_codex_2026_09_02_version_13_4_0",
+      "label": "2026-09-02 - Version 13.4.0",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "CHANGELOG.codex.md",
+      "source_location": "L396",
+      "_origin": "ast"
+    },
+    {
+      "id": "changelog_codex_2026_09_02t08_22_26_03_00_version_13_4_3",
+      "label": "2026-09-02T08:22:26+03:00 - Version 13.4.3",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "CHANGELOG.codex.md",
+      "source_location": "L402",
       "_origin": "ast"
     },
     {
@@ -275,7 +347,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "README.md",
-      "source_location": "L33",
+      "source_location": "L35",
       "_origin": "ast"
     },
     {
@@ -284,7 +356,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "README.md",
-      "source_location": "L39",
+      "source_location": "L41",
       "_origin": "ast"
     },
     {
@@ -293,7 +365,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "README.md",
-      "source_location": "L48",
+      "source_location": "L50",
       "_origin": "ast"
     },
     {
@@ -302,7 +374,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "README.md",
-      "source_location": "L57",
+      "source_location": "L59",
       "_origin": "ast"
     },
     {
@@ -311,7 +383,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "README.md",
-      "source_location": "L61",
+      "source_location": "L63",
       "_origin": "ast"
     },
     {
@@ -540,12 +612,39 @@
       "_origin": "ast"
     },
     {
+      "id": "docs_release_history_2026_09_02_v13_4_2",
+      "label": "2026.09.02-v13.4.2",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/RELEASE_HISTORY.md",
+      "source_location": "L15",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_release_history_2026_09_02_v13_4_1",
+      "label": "2026.09.02-v13.4.1",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/RELEASE_HISTORY.md",
+      "source_location": "L23",
+      "_origin": "ast"
+    },
+    {
       "id": "docs_release_history_2026_08_28_v10",
       "label": "2026.08.28-v10",
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L15",
+      "source_location": "L29",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_release_history_2026_09_02_v13_4_0",
+      "label": "2026.09.02-v13.4.0",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/RELEASE_HISTORY.md",
+      "source_location": "L43",
       "_origin": "ast"
     },
     {
@@ -554,7 +653,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L29",
+      "source_location": "L49",
       "_origin": "ast"
     },
     {
@@ -563,7 +662,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L34",
+      "source_location": "L54",
       "_origin": "ast"
     },
     {
@@ -572,7 +671,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L40",
+      "source_location": "L60",
       "_origin": "ast"
     },
     {
@@ -581,7 +680,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L50",
+      "source_location": "L70",
       "_origin": "ast"
     },
     {
@@ -590,7 +689,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L55",
+      "source_location": "L75",
       "_origin": "ast"
     },
     {
@@ -599,7 +698,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L60",
+      "source_location": "L80",
       "_origin": "ast"
     },
     {
@@ -608,7 +707,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L66",
+      "source_location": "L86",
       "_origin": "ast"
     },
     {
@@ -617,7 +716,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L71",
+      "source_location": "L91",
       "_origin": "ast"
     },
     {
@@ -626,7 +725,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L82",
+      "source_location": "L102",
       "_origin": "ast"
     },
     {
@@ -635,7 +734,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L91",
+      "source_location": "L111",
       "_origin": "ast"
     },
     {
@@ -644,7 +743,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L99",
+      "source_location": "L119",
       "_origin": "ast"
     },
     {
@@ -653,7 +752,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L110",
+      "source_location": "L130",
       "_origin": "ast"
     },
     {
@@ -662,7 +761,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L119",
+      "source_location": "L139",
       "_origin": "ast"
     },
     {
@@ -671,7 +770,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L127",
+      "source_location": "L147",
       "_origin": "ast"
     },
     {
@@ -680,7 +779,7 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L134",
+      "source_location": "L154",
       "_origin": "ast"
     },
     {
@@ -689,7 +788,25 @@
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L143",
+      "source_location": "L163",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_release_history_2026_09_01_v13_3_1",
+      "label": "2026.09.01-v13.3.1",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/RELEASE_HISTORY.md",
+      "source_location": "L174",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_release_history_2026_09_02_v13_4_3",
+      "label": "2026.09.02-v13.4.3",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/RELEASE_HISTORY.md",
+      "source_location": "L181",
       "_origin": "ast"
     },
     {
@@ -1494,12 +1611,381 @@
       "_origin": "ast"
     },
     {
+      "id": "docs_releases_2026_09_01_v13_2_0_production",
+      "label": "Production",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/releases/2026.09.01-v13.2.0.md",
+      "source_location": "L35",
+      "_origin": "ast"
+    },
+    {
       "id": "docs_releases_2026_09_01_v13_2_0_откат",
       "label": "Откат",
       "file_type": "document",
       "node_kind": "heading",
       "source_file": "docs/releases/2026.09.01-v13.2.0.md",
-      "source_location": "L35",
+      "source_location": "L43",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_releases_2026_09_01_v13_2_1",
+      "label": "2026.09.01-v13.2.1.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "docs/releases/2026.09.01-v13.2.1.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_releases_2026_09_01_v13_2_1_anestet_2026_09_01_v13_2_1",
+      "label": "ANESTET 2026.09.01-v13.2.1",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/releases/2026.09.01-v13.2.1.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_releases_2026_09_01_v13_2_1_approved_changes",
+      "label": "Approved changes",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/releases/2026.09.01-v13.2.1.md",
+      "source_location": "L5",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_releases_2026_09_01_v13_2_1_verification",
+      "label": "Verification",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/releases/2026.09.01-v13.2.1.md",
+      "source_location": "L13",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_releases_2026_09_01_v13_2_1_deployment",
+      "label": "Deployment",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/releases/2026.09.01-v13.2.1.md",
+      "source_location": "L21",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_releases_2026_09_01_v13_3_0",
+      "label": "2026.09.01-v13.3.0.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "docs/releases/2026.09.01-v13.3.0.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_releases_2026_09_01_v13_3_0_anestet_2026_09_01_v13_3_0",
+      "label": "ANESTET 2026.09.01-v13.3.0",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/releases/2026.09.01-v13.3.0.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_releases_2026_09_01_v13_3_0_approved_changes",
+      "label": "Approved changes",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/releases/2026.09.01-v13.3.0.md",
+      "source_location": "L5",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_releases_2026_09_01_v13_3_0_verification_gate",
+      "label": "Verification gate",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/releases/2026.09.01-v13.3.0.md",
+      "source_location": "L13",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_releases_2026_09_01_v13_3_0_deployment",
+      "label": "Deployment",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/releases/2026.09.01-v13.3.0.md",
+      "source_location": "L20",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_releases_2026_09_01_v13_3_1",
+      "label": "2026.09.01-v13.3.1.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "docs/releases/2026.09.01-v13.3.1.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_releases_2026_09_01_v13_3_1_anestet_2026_09_01_v13_3_1",
+      "label": "ANESTET 2026.09.01-v13.3.1",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/releases/2026.09.01-v13.3.1.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_releases_2026_09_01_v13_3_1_approved_change",
+      "label": "Approved change",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/releases/2026.09.01-v13.3.1.md",
+      "source_location": "L5",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_releases_2026_09_01_v13_3_1_performance_work",
+      "label": "Performance work",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/releases/2026.09.01-v13.3.1.md",
+      "source_location": "L13",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_releases_2026_09_01_v13_3_1_verification_gate",
+      "label": "Verification gate",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/releases/2026.09.01-v13.3.1.md",
+      "source_location": "L19",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_releases_2026_09_01_v13_3_1_deployment",
+      "label": "Deployment",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/releases/2026.09.01-v13.3.1.md",
+      "source_location": "L27",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_releases_2026_09_02_v13_4_0",
+      "label": "2026.09.02-v13.4.0.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "docs/releases/2026.09.02-v13.4.0.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_releases_2026_09_02_v13_4_0_anestet_2026_09_02_v13_4_0",
+      "label": "ANESTET 2026.09.02-v13.4.0",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/releases/2026.09.02-v13.4.0.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_releases_2026_09_02_v13_4_0_product_detail_experience",
+      "label": "Product detail experience",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/releases/2026.09.02-v13.4.0.md",
+      "source_location": "L3",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_releases_2026_09_02_v13_4_0_compatibility",
+      "label": "Compatibility",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/releases/2026.09.02-v13.4.0.md",
+      "source_location": "L11",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_releases_2026_09_02_v13_4_0_release_gate",
+      "label": "Release gate",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/releases/2026.09.02-v13.4.0.md",
+      "source_location": "L17",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_releases_2026_09_02_v13_4_0_deployment",
+      "label": "Deployment",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/releases/2026.09.02-v13.4.0.md",
+      "source_location": "L24",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_releases_2026_09_02_v13_4_1",
+      "label": "2026.09.02-v13.4.1.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "docs/releases/2026.09.02-v13.4.1.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_releases_2026_09_02_v13_4_1_anestet_2026_09_02_v13_4_1",
+      "label": "ANESTET 2026.09.02-v13.4.1",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/releases/2026.09.02-v13.4.1.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_releases_2026_09_02_v13_4_1_current_approved_implementation",
+      "label": "Current approved implementation",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/releases/2026.09.02-v13.4.1.md",
+      "source_location": "L5",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_releases_2026_09_02_v13_4_1_release_gate",
+      "label": "Release gate",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/releases/2026.09.02-v13.4.1.md",
+      "source_location": "L13",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_releases_2026_09_02_v13_4_1_publication",
+      "label": "Publication",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/releases/2026.09.02-v13.4.1.md",
+      "source_location": "L22",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_releases_2026_09_02_v13_4_1_rollback",
+      "label": "Rollback",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/releases/2026.09.02-v13.4.1.md",
+      "source_location": "L30",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_releases_2026_09_02_v13_4_2",
+      "label": "2026.09.02-v13.4.2.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "docs/releases/2026.09.02-v13.4.2.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_releases_2026_09_02_v13_4_2_anestet_2026_09_02_v13_4_2",
+      "label": "ANESTET 2026.09.02-v13.4.2",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/releases/2026.09.02-v13.4.2.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_releases_2026_09_02_v13_4_2_current_approved_implementation",
+      "label": "Current approved implementation",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/releases/2026.09.02-v13.4.2.md",
+      "source_location": "L5",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_releases_2026_09_02_v13_4_2_release_gate",
+      "label": "Release gate",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/releases/2026.09.02-v13.4.2.md",
+      "source_location": "L14",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_releases_2026_09_02_v13_4_2_publication",
+      "label": "Publication",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/releases/2026.09.02-v13.4.2.md",
+      "source_location": "L22",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_releases_2026_09_02_v13_4_2_rollback",
+      "label": "Rollback",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/releases/2026.09.02-v13.4.2.md",
+      "source_location": "L31",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_releases_2026_09_02_v13_4_3",
+      "label": "2026.09.02-v13.4.3.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "docs/releases/2026.09.02-v13.4.3.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_releases_2026_09_02_v13_4_3_anestet_2026_09_02_v13_4_3",
+      "label": "ANESTET 2026.09.02-v13.4.3",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/releases/2026.09.02-v13.4.3.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_releases_2026_09_02_v13_4_3_current_approved_implementation",
+      "label": "Current approved implementation",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/releases/2026.09.02-v13.4.3.md",
+      "source_location": "L5",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_releases_2026_09_02_v13_4_3_release_gate",
+      "label": "Release gate",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/releases/2026.09.02-v13.4.3.md",
+      "source_location": "L13",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_releases_2026_09_02_v13_4_3_publication",
+      "label": "Publication",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/releases/2026.09.02-v13.4.3.md",
+      "source_location": "L21",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_releases_2026_09_02_v13_4_3_rollback",
+      "label": "Rollback",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "docs/releases/2026.09.02-v13.4.3.md",
+      "source_location": "L25",
       "_origin": "ast"
     }
   ],
@@ -1556,7 +2042,7 @@
     },
     {
       "source": "changelog_codex_codex_changelog",
-      "target": "changelog_codex_2026_08_31t22_20_00_000z_version_13_1_0",
+      "target": "changelog_codex_2026_09_02_version_13_4_2",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CHANGELOG.codex.md",
@@ -1566,11 +2052,51 @@
     },
     {
       "source": "changelog_codex_codex_changelog",
+      "target": "changelog_codex_2026_09_02_version_13_4_1",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CHANGELOG.codex.md",
+      "source_location": "L15",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "changelog_codex_codex_changelog",
+      "target": "changelog_codex_2026_09_01_version_13_3_1",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CHANGELOG.codex.md",
+      "source_location": "L22",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "changelog_codex_codex_changelog",
+      "target": "changelog_codex_2026_09_01_version_13_3_0",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CHANGELOG.codex.md",
+      "source_location": "L32",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "changelog_codex_codex_changelog",
+      "target": "changelog_codex_2026_08_31t22_20_00_000z_version_13_1_0",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CHANGELOG.codex.md",
+      "source_location": "L41",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "changelog_codex_codex_changelog",
       "target": "changelog_codex_2026_08_28t09_06_44_112z_commerce_first_catalog_and_separate_care_guide",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L18",
+      "source_location": "L54",
       "weight": 1,
       "_origin": "ast"
     },
@@ -1580,7 +2106,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L113",
+      "source_location": "L149",
       "weight": 1,
       "_origin": "ast"
     },
@@ -1590,7 +2116,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L117",
+      "source_location": "L153",
       "weight": 1,
       "_origin": "ast"
     },
@@ -1600,7 +2126,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L139",
+      "source_location": "L175",
       "weight": 1,
       "_origin": "ast"
     },
@@ -1610,7 +2136,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L143",
+      "source_location": "L179",
       "weight": 1,
       "_origin": "ast"
     },
@@ -1620,7 +2146,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L155",
+      "source_location": "L191",
       "weight": 1,
       "_origin": "ast"
     },
@@ -1630,7 +2156,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L159",
+      "source_location": "L195",
       "weight": 1,
       "_origin": "ast"
     },
@@ -1640,7 +2166,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L171",
+      "source_location": "L207",
       "weight": 1,
       "_origin": "ast"
     },
@@ -1650,7 +2176,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L175",
+      "source_location": "L211",
       "weight": 1,
       "_origin": "ast"
     },
@@ -1660,7 +2186,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L187",
+      "source_location": "L223",
       "weight": 1,
       "_origin": "ast"
     },
@@ -1670,7 +2196,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L200",
+      "source_location": "L236",
       "weight": 1,
       "_origin": "ast"
     },
@@ -1680,7 +2206,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L214",
+      "source_location": "L250",
       "weight": 1,
       "_origin": "ast"
     },
@@ -1690,7 +2216,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L218",
+      "source_location": "L254",
       "weight": 1,
       "_origin": "ast"
     },
@@ -1700,7 +2226,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L230",
+      "source_location": "L266",
       "weight": 1,
       "_origin": "ast"
     },
@@ -1710,7 +2236,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L243",
+      "source_location": "L279",
       "weight": 1,
       "_origin": "ast"
     },
@@ -1720,7 +2246,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L247",
+      "source_location": "L283",
       "weight": 1,
       "_origin": "ast"
     },
@@ -1730,7 +2256,47 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CHANGELOG.codex.md",
-      "source_location": "L329",
+      "source_location": "L365",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "changelog_codex_codex_changelog",
+      "target": "changelog_codex_2026_09_01t07_49_34_133z_release_v13_2_0_approved_storefront_vk_feed_and_durable_logic_graph",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CHANGELOG.codex.md",
+      "source_location": "L369",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "changelog_codex_codex_changelog",
+      "target": "changelog_codex_2026_09_01_version_13_2_1",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CHANGELOG.codex.md",
+      "source_location": "L390",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "changelog_codex_codex_changelog",
+      "target": "changelog_codex_2026_09_02_version_13_4_0",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CHANGELOG.codex.md",
+      "source_location": "L396",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "changelog_codex_codex_changelog",
+      "target": "changelog_codex_2026_09_02t08_22_26_03_00_version_13_4_3",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CHANGELOG.codex.md",
+      "source_location": "L402",
       "weight": 1,
       "_origin": "ast"
     },
@@ -1770,7 +2336,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "README.md",
-      "source_location": "L33",
+      "source_location": "L35",
       "weight": 1,
       "_origin": "ast"
     },
@@ -1780,7 +2346,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "README.md",
-      "source_location": "L39",
+      "source_location": "L41",
       "weight": 1,
       "_origin": "ast"
     },
@@ -1790,7 +2356,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "README.md",
-      "source_location": "L48",
+      "source_location": "L50",
       "weight": 1,
       "_origin": "ast"
     },
@@ -1800,7 +2366,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "README.md",
-      "source_location": "L57",
+      "source_location": "L59",
       "weight": 1,
       "_origin": "ast"
     },
@@ -1810,7 +2376,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "README.md",
-      "source_location": "L61",
+      "source_location": "L63",
       "weight": 1,
       "_origin": "ast"
     },
@@ -2006,7 +2572,7 @@
     },
     {
       "source": "docs_release_history_github_релизы",
-      "target": "docs_release_history_2026_08_28_v10",
+      "target": "docs_release_history_2026_09_02_v13_4_2",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/RELEASE_HISTORY.md",
@@ -2016,7 +2582,17 @@
     },
     {
       "source": "docs_release_history_github_релизы",
-      "target": "docs_release_history_2026_08_28_v10_1",
+      "target": "docs_release_history_2026_09_02_v13_4_1",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/RELEASE_HISTORY.md",
+      "source_location": "L23",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_release_history_github_релизы",
+      "target": "docs_release_history_2026_08_28_v10",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/RELEASE_HISTORY.md",
@@ -2026,11 +2602,31 @@
     },
     {
       "source": "docs_release_history_github_релизы",
+      "target": "docs_release_history_2026_09_02_v13_4_0",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/RELEASE_HISTORY.md",
+      "source_location": "L43",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_release_history_github_релизы",
+      "target": "docs_release_history_2026_08_28_v10_1",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/RELEASE_HISTORY.md",
+      "source_location": "L49",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_release_history_github_релизы",
       "target": "docs_release_history_2026_08_28_v10_2",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L34",
+      "source_location": "L54",
       "weight": 1,
       "_origin": "ast"
     },
@@ -2040,7 +2636,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L40",
+      "source_location": "L60",
       "weight": 1,
       "_origin": "ast"
     },
@@ -2050,7 +2646,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L50",
+      "source_location": "L70",
       "weight": 1,
       "_origin": "ast"
     },
@@ -2060,7 +2656,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L55",
+      "source_location": "L75",
       "weight": 1,
       "_origin": "ast"
     },
@@ -2070,7 +2666,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L60",
+      "source_location": "L80",
       "weight": 1,
       "_origin": "ast"
     },
@@ -2080,7 +2676,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L66",
+      "source_location": "L86",
       "weight": 1,
       "_origin": "ast"
     },
@@ -2090,7 +2686,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L71",
+      "source_location": "L91",
       "weight": 1,
       "_origin": "ast"
     },
@@ -2100,7 +2696,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L82",
+      "source_location": "L102",
       "weight": 1,
       "_origin": "ast"
     },
@@ -2110,7 +2706,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L91",
+      "source_location": "L111",
       "weight": 1,
       "_origin": "ast"
     },
@@ -2120,7 +2716,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L99",
+      "source_location": "L119",
       "weight": 1,
       "_origin": "ast"
     },
@@ -2130,7 +2726,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L110",
+      "source_location": "L130",
       "weight": 1,
       "_origin": "ast"
     },
@@ -2140,7 +2736,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L119",
+      "source_location": "L139",
       "weight": 1,
       "_origin": "ast"
     },
@@ -2150,7 +2746,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L127",
+      "source_location": "L147",
       "weight": 1,
       "_origin": "ast"
     },
@@ -2160,7 +2756,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L134",
+      "source_location": "L154",
       "weight": 1,
       "_origin": "ast"
     },
@@ -2170,7 +2766,27 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/RELEASE_HISTORY.md",
-      "source_location": "L143",
+      "source_location": "L163",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_release_history_github_релизы",
+      "target": "docs_release_history_2026_09_01_v13_3_1",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/RELEASE_HISTORY.md",
+      "source_location": "L174",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_release_history_github_релизы",
+      "target": "docs_release_history_2026_09_02_v13_4_3",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/RELEASE_HISTORY.md",
+      "source_location": "L181",
       "weight": 1,
       "_origin": "ast"
     },
@@ -2876,11 +3492,351 @@
     },
     {
       "source": "docs_releases_2026_09_01_v13_2_0_2026_09_01_v13_2_0",
-      "target": "docs_releases_2026_09_01_v13_2_0_откат",
+      "target": "docs_releases_2026_09_01_v13_2_0_production",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/releases/2026.09.01-v13.2.0.md",
       "source_location": "L35",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_releases_2026_09_01_v13_2_0_2026_09_01_v13_2_0",
+      "target": "docs_releases_2026_09_01_v13_2_0_откат",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/releases/2026.09.01-v13.2.0.md",
+      "source_location": "L43",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_releases_2026_09_01_v13_2_1",
+      "target": "docs_releases_2026_09_01_v13_2_1_anestet_2026_09_01_v13_2_1",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/releases/2026.09.01-v13.2.1.md",
+      "source_location": "L1",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_releases_2026_09_01_v13_2_1_anestet_2026_09_01_v13_2_1",
+      "target": "docs_releases_2026_09_01_v13_2_1_approved_changes",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/releases/2026.09.01-v13.2.1.md",
+      "source_location": "L5",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_releases_2026_09_01_v13_2_1_anestet_2026_09_01_v13_2_1",
+      "target": "docs_releases_2026_09_01_v13_2_1_verification",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/releases/2026.09.01-v13.2.1.md",
+      "source_location": "L13",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_releases_2026_09_01_v13_2_1_anestet_2026_09_01_v13_2_1",
+      "target": "docs_releases_2026_09_01_v13_2_1_deployment",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/releases/2026.09.01-v13.2.1.md",
+      "source_location": "L21",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_releases_2026_09_01_v13_3_0",
+      "target": "docs_releases_2026_09_01_v13_3_0_anestet_2026_09_01_v13_3_0",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/releases/2026.09.01-v13.3.0.md",
+      "source_location": "L1",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_releases_2026_09_01_v13_3_0_anestet_2026_09_01_v13_3_0",
+      "target": "docs_releases_2026_09_01_v13_3_0_approved_changes",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/releases/2026.09.01-v13.3.0.md",
+      "source_location": "L5",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_releases_2026_09_01_v13_3_0_anestet_2026_09_01_v13_3_0",
+      "target": "docs_releases_2026_09_01_v13_3_0_verification_gate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/releases/2026.09.01-v13.3.0.md",
+      "source_location": "L13",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_releases_2026_09_01_v13_3_0_anestet_2026_09_01_v13_3_0",
+      "target": "docs_releases_2026_09_01_v13_3_0_deployment",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/releases/2026.09.01-v13.3.0.md",
+      "source_location": "L20",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_releases_2026_09_01_v13_3_1",
+      "target": "docs_releases_2026_09_01_v13_3_1_anestet_2026_09_01_v13_3_1",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/releases/2026.09.01-v13.3.1.md",
+      "source_location": "L1",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_releases_2026_09_01_v13_3_1_anestet_2026_09_01_v13_3_1",
+      "target": "docs_releases_2026_09_01_v13_3_1_approved_change",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/releases/2026.09.01-v13.3.1.md",
+      "source_location": "L5",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_releases_2026_09_01_v13_3_1_anestet_2026_09_01_v13_3_1",
+      "target": "docs_releases_2026_09_01_v13_3_1_performance_work",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/releases/2026.09.01-v13.3.1.md",
+      "source_location": "L13",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_releases_2026_09_01_v13_3_1_anestet_2026_09_01_v13_3_1",
+      "target": "docs_releases_2026_09_01_v13_3_1_verification_gate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/releases/2026.09.01-v13.3.1.md",
+      "source_location": "L19",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_releases_2026_09_01_v13_3_1_anestet_2026_09_01_v13_3_1",
+      "target": "docs_releases_2026_09_01_v13_3_1_deployment",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/releases/2026.09.01-v13.3.1.md",
+      "source_location": "L27",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_releases_2026_09_02_v13_4_0",
+      "target": "docs_releases_2026_09_02_v13_4_0_anestet_2026_09_02_v13_4_0",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/releases/2026.09.02-v13.4.0.md",
+      "source_location": "L1",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_releases_2026_09_02_v13_4_0_anestet_2026_09_02_v13_4_0",
+      "target": "docs_releases_2026_09_02_v13_4_0_product_detail_experience",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/releases/2026.09.02-v13.4.0.md",
+      "source_location": "L3",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_releases_2026_09_02_v13_4_0_anestet_2026_09_02_v13_4_0",
+      "target": "docs_releases_2026_09_02_v13_4_0_compatibility",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/releases/2026.09.02-v13.4.0.md",
+      "source_location": "L11",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_releases_2026_09_02_v13_4_0_anestet_2026_09_02_v13_4_0",
+      "target": "docs_releases_2026_09_02_v13_4_0_release_gate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/releases/2026.09.02-v13.4.0.md",
+      "source_location": "L17",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_releases_2026_09_02_v13_4_0_anestet_2026_09_02_v13_4_0",
+      "target": "docs_releases_2026_09_02_v13_4_0_deployment",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/releases/2026.09.02-v13.4.0.md",
+      "source_location": "L24",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_releases_2026_09_02_v13_4_1",
+      "target": "docs_releases_2026_09_02_v13_4_1_anestet_2026_09_02_v13_4_1",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/releases/2026.09.02-v13.4.1.md",
+      "source_location": "L1",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_releases_2026_09_02_v13_4_1_anestet_2026_09_02_v13_4_1",
+      "target": "docs_releases_2026_09_02_v13_4_1_current_approved_implementation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/releases/2026.09.02-v13.4.1.md",
+      "source_location": "L5",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_releases_2026_09_02_v13_4_1_anestet_2026_09_02_v13_4_1",
+      "target": "docs_releases_2026_09_02_v13_4_1_release_gate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/releases/2026.09.02-v13.4.1.md",
+      "source_location": "L13",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_releases_2026_09_02_v13_4_1_anestet_2026_09_02_v13_4_1",
+      "target": "docs_releases_2026_09_02_v13_4_1_publication",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/releases/2026.09.02-v13.4.1.md",
+      "source_location": "L22",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_releases_2026_09_02_v13_4_1_anestet_2026_09_02_v13_4_1",
+      "target": "docs_releases_2026_09_02_v13_4_1_rollback",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/releases/2026.09.02-v13.4.1.md",
+      "source_location": "L30",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_releases_2026_09_02_v13_4_2",
+      "target": "docs_releases_2026_09_02_v13_4_2_anestet_2026_09_02_v13_4_2",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/releases/2026.09.02-v13.4.2.md",
+      "source_location": "L1",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_releases_2026_09_02_v13_4_2_anestet_2026_09_02_v13_4_2",
+      "target": "docs_releases_2026_09_02_v13_4_2_current_approved_implementation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/releases/2026.09.02-v13.4.2.md",
+      "source_location": "L5",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_releases_2026_09_02_v13_4_2_anestet_2026_09_02_v13_4_2",
+      "target": "docs_releases_2026_09_02_v13_4_2_release_gate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/releases/2026.09.02-v13.4.2.md",
+      "source_location": "L14",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_releases_2026_09_02_v13_4_2_anestet_2026_09_02_v13_4_2",
+      "target": "docs_releases_2026_09_02_v13_4_2_publication",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/releases/2026.09.02-v13.4.2.md",
+      "source_location": "L22",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_releases_2026_09_02_v13_4_2_anestet_2026_09_02_v13_4_2",
+      "target": "docs_releases_2026_09_02_v13_4_2_rollback",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/releases/2026.09.02-v13.4.2.md",
+      "source_location": "L31",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_releases_2026_09_02_v13_4_3",
+      "target": "docs_releases_2026_09_02_v13_4_3_anestet_2026_09_02_v13_4_3",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/releases/2026.09.02-v13.4.3.md",
+      "source_location": "L1",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_releases_2026_09_02_v13_4_3_anestet_2026_09_02_v13_4_3",
+      "target": "docs_releases_2026_09_02_v13_4_3_current_approved_implementation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/releases/2026.09.02-v13.4.3.md",
+      "source_location": "L5",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_releases_2026_09_02_v13_4_3_anestet_2026_09_02_v13_4_3",
+      "target": "docs_releases_2026_09_02_v13_4_3_release_gate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/releases/2026.09.02-v13.4.3.md",
+      "source_location": "L13",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_releases_2026_09_02_v13_4_3_anestet_2026_09_02_v13_4_3",
+      "target": "docs_releases_2026_09_02_v13_4_3_publication",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/releases/2026.09.02-v13.4.3.md",
+      "source_location": "L21",
+      "weight": 1,
+      "_origin": "ast"
+    },
+    {
+      "source": "docs_releases_2026_09_02_v13_4_3_anestet_2026_09_02_v13_4_3",
+      "target": "docs_releases_2026_09_02_v13_4_3_rollback",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/releases/2026.09.02-v13.4.3.md",
+      "source_location": "L25",
       "weight": 1,
       "_origin": "ast"
     }
